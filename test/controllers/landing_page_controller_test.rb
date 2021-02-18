@@ -1,8 +1,8 @@
-require "test_helper"
+require 'test_helper'
 
 class LandingPageControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get landing_page_index_url
+  test 'should get index' do
+    get root_path
     assert_response :success
   end
 end
