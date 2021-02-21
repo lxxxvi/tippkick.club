@@ -7,6 +7,7 @@ ruby '3.0.0'
 # gem 'image_processing', '~> 1.2'
 # gem 'redis', '~> 4.0'
 gem 'bootsnap', require: false
+gem 'devise'
 gem 'haml-rails'
 gem 'pg'
 gem 'puma'

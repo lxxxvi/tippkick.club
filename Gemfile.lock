@@ -63,6 +63,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.2)
       msgpack (~> 1.0)
@@ -82,6 +83,12 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    devise (4.7.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     erubi (1.10.0)
     erubis (2.7.0)
     ffi (1.14.2)
@@ -121,6 +128,7 @@ GEM
     nio4r (2.5.5)
     nokogiri (1.11.1-arm64-darwin)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
@@ -167,6 +175,9 @@ GEM
       ffi (~> 1.0)
     redis (4.2.5)
     regexp_parser (2.0.3)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.4)
     rubocop (1.9.1)
       parallel (~> 1.10)
@@ -216,6 +227,8 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -244,6 +257,7 @@ DEPENDENCIES
   bootsnap
   byebug
   capybara
+  devise
   haml-rails
   listen
   pg
