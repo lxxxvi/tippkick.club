@@ -1,0 +1,6 @@
+DEFAULTS: &DEFAULTS
+  encrypted_password: "$2a$12$tyCO4i6OKZHgiq4lWHpIJugtkBivBlUPXOa1GBar3x5W9IGqixPzS" # abc
+
+diego:
+  <<: *DEFAULTS
+  email: "diego@tippkick.test"
