@@ -15,5 +15,5 @@ class Game < ApplicationRecord
     quarter_finals: 'quarter_finals',
     semi_finals: 'semi_finals',
     final: 'final'
-  }, _prefix: true
+  }, _suffix: :phase
 end
