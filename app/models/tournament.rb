@@ -1,2 +1,0 @@
-class Tournament < ApplicationRecord
-end
