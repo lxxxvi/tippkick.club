@@ -4,7 +4,9 @@ development:
   channel_prefix: tippkick_club_development
 
 test:
-  adapter: test
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/0" } %>
+  channel_prefix: tippkick_club_test
 
 production:
   adapter: redis
