@@ -1,0 +1,20 @@
+game_tur_ita_group:
+  venue: "Rome"
+  tournament_phase: "group"
+  home_team_name: "TUR"
+  guest_team_name: "ITA"
+  home_team_score: 0
+  guest_team_score: 0
+  kickoff_at: 2021-06-11 19:00:00
+  final_whistle_at:
+
+game_wal_sui_group:
+  venue: "Baku"
+  tournament_phase: "group"
+  home_team_name: "WAL"
+  guest_team_name: "SUI"
+  home_team_score: 0
+  guest_team_score: 0
+  kickoff_at: 2021-06-12 13:00:00
+  final_whistle_at:
+
