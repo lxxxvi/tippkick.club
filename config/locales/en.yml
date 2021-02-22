@@ -14,3 +14,9 @@ en:
               cannot_be_changed_before_kickoff: "cannot be changed before kickoff"
             home_team_score:
               cannot_be_changed_before_kickoff: "cannot be changed before kickoff"
+        prediction:
+          attributes:
+            guest_team_score:
+              cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
+            home_team_score:
+              cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
