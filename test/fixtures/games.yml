@@ -11,6 +11,8 @@ game_1:
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "ITA"
+  home_team_score: 0
+  guest_team_score: 1
   kickoff_at: 2021-06-11 19:00:00
 
 game_2:
@@ -19,6 +21,8 @@ game_2:
   tournament_phase: "group"
   home_team_name: "WAL"
   guest_team_name: "SUI"
+  home_team_score: 1
+  guest_team_score: 1
   kickoff_at: 2021-06-12 13:00:00
 
 game_13:
@@ -27,6 +31,8 @@ game_13:
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "WAL"
+  home_team_score: 0
+  guest_team_score: 2
   kickoff_at: 2021-06-16 16:00:00
 
 game_14:
@@ -35,6 +41,8 @@ game_14:
   tournament_phase: "group"
   home_team_name: "ITA"
   guest_team_name: "SUI"
+  home_team_score: 1
+  guest_team_score: 1
   kickoff_at: 2021-06-16 19:00:00
 
 game_25:
@@ -61,6 +69,8 @@ game_3:
   tournament_phase: "group"
   home_team_name: "DEN"
   guest_team_name: "FIN"
+  home_team_score: 2
+  guest_team_score: 1
   kickoff_at: 2021-06-12 16:00:00
 
 game_4:
@@ -69,6 +79,8 @@ game_4:
   tournament_phase: "group"
   home_team_name: "BEL"
   guest_team_name: "RUS"
+  home_team_score: 0
+  guest_team_score: 0
   kickoff_at: 2021-06-12 19:00:00
 
 game_15:
@@ -77,6 +89,8 @@ game_15:
   tournament_phase: "group"
   home_team_name: "FIN"
   guest_team_name: "RUS"
+  home_team_score: 1
+  guest_team_score: 2
   kickoff_at: 2021-06-16 13:00:00
 
 game_16:
@@ -85,6 +99,8 @@ game_16:
   tournament_phase: "group"
   home_team_name: "DEN"
   guest_team_name: "BEL"
+  home_team_score: 1
+  guest_team_score: 1
   kickoff_at: 2021-06-17 16:00:00
 
 game_27:
@@ -111,6 +127,8 @@ game_6:
   tournament_phase: "group"
   home_team_name: "AUT"
   guest_team_name: "MKD"
+  home_team_score: 3
+  guest_team_score: 0
   kickoff_at: 2021-06-13 16:00:00
 
 game_5:
@@ -119,6 +137,8 @@ game_5:
   tournament_phase: "group"
   home_team_name: "NED"
   guest_team_name: "UKR"
+  home_team_score: 3
+  guest_team_score: 1
   kickoff_at: 2021-06-13 19:00:00
 
 game_18:
@@ -127,6 +147,8 @@ game_18:
   tournament_phase: "group"
   home_team_name: "UKR"
   guest_team_name: "MKD"
+  home_team_score: 2
+  guest_team_score: 0
   kickoff_at: 2021-06-17 13:00:00
 
 game_17:
@@ -135,6 +157,8 @@ game_17:
   tournament_phase: "group"
   home_team_name: "NED"
   guest_team_name: "AUT"
+  home_team_score: 0
+  guest_team_score: 2
   kickoff_at: 2021-06-17 13:00:00
 
 game_29:
@@ -161,6 +185,8 @@ game_7:
   tournament_phase: "group"
   home_team_name: "ENG"
   guest_team_name: "CRO"
+  home_team_score: 0
+  guest_team_score: 0
   kickoff_at: 2021-06-13 13:00:00
 
 game_8:
@@ -169,6 +195,8 @@ game_8:
   tournament_phase: "group"
   home_team_name: "SCO"
   guest_team_name: "CZE"
+  home_team_score: 2
+  guest_team_score: 2
   kickoff_at: 2021-06-14 13:00:00
 
 game_19:
@@ -177,6 +205,8 @@ game_19:
   tournament_phase: "group"
   home_team_name: "CRO"
   guest_team_name: "CZE"
+  home_team_score: 1
+  guest_team_score: 2
   kickoff_at: 2021-06-18 16:00:00
 
 game_20:
@@ -185,6 +215,8 @@ game_20:
   tournament_phase: "group"
   home_team_name: "ENG"
   guest_team_name: "SCO"
+  home_team_score: 3
+  guest_team_score: 1
   kickoff_at: 2021-06-18 19:00:00
 
 game_31:
@@ -211,6 +243,8 @@ game_10:
   tournament_phase: "group"
   home_team_name: "POL"
   guest_team_name: "SVK"
+  home_team_score: 1
+  guest_team_score: 1
   kickoff_at: 2021-06-14 16:00:00
 
 game_9:
@@ -219,6 +253,8 @@ game_9:
   tournament_phase: "group"
   home_team_name: "ESP"
   guest_team_name: "SWE"
+  home_team_score: 2
+  guest_team_score: 0
   kickoff_at: 2021-06-14 19:00:00
 
 game_21:
@@ -227,6 +263,8 @@ game_21:
   tournament_phase: "group"
   home_team_name: "SWE"
   guest_team_name: "SVK"
+  home_team_score: 0
+  guest_team_score: 1
   kickoff_at: 2021-06-18 13:00:00
 
 game_22:
@@ -235,6 +273,8 @@ game_22:
   tournament_phase: "group"
   home_team_name: "ESP"
   guest_team_name: "POL"
+  home_team_score: 1
+  guest_team_score: 0
   kickoff_at: 2021-06-19 19:00:00
 
 game_33:
@@ -261,6 +301,8 @@ game_11:
   tournament_phase: "group"
   home_team_name: "HUN"
   guest_team_name: "POR"
+  home_team_score: 0
+  guest_team_score: 2
   kickoff_at: 2021-06-15 16:00:00
 
 game_12:
@@ -269,6 +311,8 @@ game_12:
   tournament_phase: "group"
   home_team_name: "FRA"
   guest_team_name: "GER"
+  home_team_score: 0
+  guest_team_score: 1
   kickoff_at: 2021-06-15 19:00:00
 
 game_23:
@@ -277,6 +321,8 @@ game_23:
   tournament_phase: "group"
   home_team_name: "HUN"
   guest_team_name: "FRA"
+  home_team_score: 1
+  guest_team_score: 1
   kickoff_at: 2021-06-19 13:00:00
 
 game_24:
@@ -285,6 +331,8 @@ game_24:
   tournament_phase: "group"
   home_team_name: "POR"
   guest_team_name: "GER"
+  home_team_score: 0
+  guest_team_score: 2
   kickoff_at: 2021-06-19 16:00:00
 
 game_35:
