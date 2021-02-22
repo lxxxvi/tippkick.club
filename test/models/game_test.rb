@@ -26,7 +26,7 @@ class GameTest < ActiveSupport::TestCase
     end
   end
 
-  test 'validate scores_can_only_be_changed_after_kickoff' do
+  test 'validate scores_cannot_change_before_kickoff' do
     game = games(:game_25)
 
     travel_to game.kickoff_at do

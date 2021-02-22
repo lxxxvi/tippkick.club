@@ -10,7 +10,7 @@ class Game < ApplicationRecord
   validates :tournament_phase, uniqueness: { scope: %i[home_team_name guest_team_name] }
 
   validate :final_whistle_is_after_kickoff
-  validate :scores_can_only_be_changed_after_kickoff
+  validate :scores_cannot_change_before_kickoff
 
   enum tournament_phase: {
     group: 'group',
@@ -33,7 +33,7 @@ class Game < ApplicationRecord
     errors.add(:final_whistle_at, :cannot_be_before_kickoff)
   end
 
-  def scores_can_only_be_changed_after_kickoff
+  def scores_cannot_change_before_kickoff
     return unless scores_changed?
     return if kickoff_at.past?
 
