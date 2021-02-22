@@ -1,20 +1,433 @@
-game_tur_ita_group:
+DEFAULTS: &DEFAULTS
+  home_team_score: 0
+  guest_team_score: 0
+  final_whistle_at:
+
+# Group A
+
+game_1:
+  <<: *DEFAULTS
   venue: "Rome"
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "ITA"
-  home_team_score: 0
-  guest_team_score: 0
   kickoff_at: 2021-06-11 19:00:00
-  final_whistle_at:
 
-game_wal_sui_group:
+game_2:
+  <<: *DEFAULTS
   venue: "Baku"
   tournament_phase: "group"
   home_team_name: "WAL"
   guest_team_name: "SUI"
-  home_team_score: 0
-  guest_team_score: 0
   kickoff_at: 2021-06-12 13:00:00
-  final_whistle_at:
+
+game_13:
+  <<: *DEFAULTS
+  venue: "Baku"
+  tournament_phase: "group"
+  home_team_name: "TUR"
+  guest_team_name: "WAL"
+  kickoff_at: 2021-06-16 16:00:00
+
+game_14:
+  <<: *DEFAULTS
+  venue: "Rome"
+  tournament_phase: "group"
+  home_team_name: "ITA"
+  guest_team_name: "SUI"
+  kickoff_at: 2021-06-16 19:00:00
+
+game_25:
+  <<: *DEFAULTS
+  venue: "Baku"
+  tournament_phase: "group"
+  home_team_name: "SUI"
+  guest_team_name: "TUR"
+  kickoff_at: 2021-06-20 16:00:00
+
+game_26:
+  <<: *DEFAULTS
+  venue: "Rome"
+  tournament_phase: "group"
+  home_team_name: "ITA"
+  guest_team_name: "wAL"
+  kickoff_at: 2021-06-20 16:00:00
+
+# Group B
+
+game_3:
+  <<: *DEFAULTS
+  venue: "Copenhagen"
+  tournament_phase: "group"
+  home_team_name: "DEN"
+  guest_team_name: "FIN"
+  kickoff_at: 2021-06-12 16:00:00
+
+game_4:
+  <<: *DEFAULTS
+  venue: "Saint Petersburg"
+  tournament_phase: "group"
+  home_team_name: "BEL"
+  guest_team_name: "RUS"
+  kickoff_at: 2021-06-12 19:00:00
+
+game_15:
+  <<: *DEFAULTS
+  venue: "Saint Petersburg"
+  tournament_phase: "group"
+  home_team_name: "FIN"
+  guest_team_name: "RUS"
+  kickoff_at: 2021-06-16 13:00:00
+
+game_16:
+  <<: *DEFAULTS
+  venue: "Copenhagen"
+  tournament_phase: "group"
+  home_team_name: "DEN"
+  guest_team_name: "BEL"
+  kickoff_at: 2021-06-17 16:00:00
+
+game_27:
+  <<: *DEFAULTS
+  venue: "Copenhagen"
+  tournament_phase: "group"
+  home_team_name: "RUS"
+  guest_team_name: "DEN"
+  kickoff_at: 2021-06-21 19:00:00
+
+game_28:
+  <<: *DEFAULTS
+  venue: "Saint Petersburg"
+  tournament_phase: "group"
+  home_team_name: "FIN"
+  guest_team_name: "BEL"
+  kickoff_at: 2021-06-21 19:00:00
+
+# Group C
+
+game_6:
+  <<: *DEFAULTS
+  venue: "Bucharest"
+  tournament_phase: "group"
+  home_team_name: "AUT"
+  guest_team_name: "MKD"
+  kickoff_at: 2021-06-13 16:00:00
+
+game_5:
+  <<: *DEFAULTS
+  venue: "Amsterdam"
+  tournament_phase: "group"
+  home_team_name: "NED"
+  guest_team_name: "UKR"
+  kickoff_at: 2021-06-13 19:00:00
+
+game_18:
+  <<: *DEFAULTS
+  venue: "Bucharest"
+  tournament_phase: "group"
+  home_team_name: "UKR"
+  guest_team_name: "MKD"
+  kickoff_at: 2021-06-17 13:00:00
+
+game_17:
+  <<: *DEFAULTS
+  venue: "Amsterdam"
+  tournament_phase: "group"
+  home_team_name: "NED"
+  guest_team_name: "AUT"
+  kickoff_at: 2021-06-17 13:00:00
+
+game_29:
+  <<: *DEFAULTS
+  venue: "Amsterdam"
+  tournament_phase: "group"
+  home_team_name: "MKD"
+  guest_team_name: "NED"
+  kickoff_at: 2021-06-21 16:00:00
+
+game_30:
+  <<: *DEFAULTS
+  venue: "Bucharest"
+  tournament_phase: "group"
+  home_team_name: "UKR"
+  guest_team_name: "AUT"
+  kickoff_at: 2021-06-21 16:00:00
+
+# Group D
+
+game_7:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "group"
+  home_team_name: "ENG"
+  guest_team_name: "CRO"
+  kickoff_at: 2021-06-13 13:00:00
+
+game_8:
+  <<: *DEFAULTS
+  venue: "Glasgow"
+  tournament_phase: "group"
+  home_team_name: "SCO"
+  guest_team_name: "CZE"
+  kickoff_at: 2021-06-14 13:00:00
+
+game_19:
+  <<: *DEFAULTS
+  venue: "Glasgow"
+  tournament_phase: "group"
+  home_team_name: "CRO"
+  guest_team_name: "CZE"
+  kickoff_at: 2021-06-18 16:00:00
+
+game_20:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "group"
+  home_team_name: "ENG"
+  guest_team_name: "SCO"
+  kickoff_at: 2021-06-18 19:00:00
+
+game_31:
+  <<: *DEFAULTS
+  venue: "Glasgow"
+  tournament_phase: "group"
+  home_team_name: "CRO"
+  guest_team_name: "SCO"
+  kickoff_at: 2021-06-22 19:00:00
+
+game_32:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "group"
+  home_team_name: "CZE"
+  guest_team_name: "ENG"
+  kickoff_at: 2021-06-22 19:00:00
+
+# Group E
+
+game_10:
+  <<: *DEFAULTS
+  venue: "Dublin"
+  tournament_phase: "group"
+  home_team_name: "POL"
+  guest_team_name: "SVK"
+  kickoff_at: 2021-06-14 16:00:00
+
+game_9:
+  <<: *DEFAULTS
+  venue: "Bilbao"
+  tournament_phase: "group"
+  home_team_name: "ESP"
+  guest_team_name: "SWE"
+  kickoff_at: 2021-06-14 19:00:00
+
+game_21:
+  <<: *DEFAULTS
+  venue: "Dublin"
+  tournament_phase: "group"
+  home_team_name: "SWE"
+  guest_team_name: "SVK"
+  kickoff_at: 2021-06-18 13:00:00
+
+game_22:
+  <<: *DEFAULTS
+  venue: "Bilbao"
+  tournament_phase: "group"
+  home_team_name: "ESP"
+  guest_team_name: "POL"
+  kickoff_at: 2021-06-19 19:00:00
+
+game_33:
+  <<: *DEFAULTS
+  venue: "Bilbao"
+  tournament_phase: "group"
+  home_team_name: "SVK"
+  guest_team_name: "ESP"
+  kickoff_at: 2021-06-23 16:00:00
+
+game_34:
+  <<: *DEFAULTS
+  venue: "Dublin"
+  tournament_phase: "group"
+  home_team_name: "SWE"
+  guest_team_name: "POL"
+  kickoff_at: 2021-06-23 16:00:00
+
+# Group F
+
+game_11:
+  <<: *DEFAULTS
+  venue: "Budapest"
+  tournament_phase: "group"
+  home_team_name: "HUN"
+  guest_team_name: "POR"
+  kickoff_at: 2021-06-15 16:00:00
+
+game_12:
+  <<: *DEFAULTS
+  venue: "Munich"
+  tournament_phase: "group"
+  home_team_name: "FRA"
+  guest_team_name: "GER"
+  kickoff_at: 2021-06-15 19:00:00
+
+game_23:
+  <<: *DEFAULTS
+  venue: "Budapest"
+  tournament_phase: "group"
+  home_team_name: "HUN"
+  guest_team_name: "FRA"
+  kickoff_at: 2021-06-19 13:00:00
+
+game_24:
+  <<: *DEFAULTS
+  venue: "Munich"
+  tournament_phase: "group"
+  home_team_name: "POR"
+  guest_team_name: "GER"
+  kickoff_at: 2021-06-19 16:00:00
+
+game_35:
+  <<: *DEFAULTS
+  venue: "Budapest"
+  tournament_phase: "group"
+  home_team_name: "POR"
+  guest_team_name: "FRA"
+  kickoff_at: 2021-06-23 19:00:00
+
+game_36:
+  <<: *DEFAULTS
+  venue: "Munich"
+  tournament_phase: "group"
+  home_team_name: "GER"
+  guest_team_name: "HUN"
+  kickoff_at: 2021-06-23 19:00:00
+
+# Round of 16
+
+game_38:
+  <<: *DEFAULTS
+  venue: "Amsterdam"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA1"
+  guest_team_name: "NA2"
+  kickoff_at: 2021-06-26 16:00:00
+
+game_37:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA3"
+  guest_team_name: "NA4"
+  kickoff_at: 2021-06-26 19:00:00
+
+game_40:
+  <<: *DEFAULTS
+  venue: "Budapest"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA5"
+  guest_team_name: "NA6"
+  kickoff_at: 2021-06-27 16:00:00
+
+game_39:
+  <<: *DEFAULTS
+  venue: "Bilbao"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA7"
+  guest_team_name: "NA8"
+  kickoff_at: 2021-06-27 19:00:00
+
+game_42:
+  <<: *DEFAULTS
+  venue: "Copenhagen"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA9"
+  guest_team_name: "NA10"
+  kickoff_at: 2021-06-28 16:00:00
+
+game_41:
+  <<: *DEFAULTS
+  venue: "Bucharest"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA11"
+  guest_team_name: "NA12"
+  kickoff_at: 2021-06-28 19:00:00
+
+game_44:
+  <<: *DEFAULTS
+  venue: "Dublin"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA13"
+  guest_team_name: "NA14"
+  kickoff_at: 2021-06-29 16:00:00
+
+game_43:
+  <<: *DEFAULTS
+  venue: "Glasgow"
+  tournament_phase: "round_of_16"
+  home_team_name: "NA15"
+  guest_team_name: "NA16"
+  kickoff_at: 2021-06-29 19:00:00
+
+# Quarter-finals
+
+game_45:
+  <<: *DEFAULTS
+  venue: "Saint Petersburg"
+  tournament_phase: "quarter_finals"
+  home_team_name: "NA17"
+  guest_team_name: "NA18"
+  kickoff_at: 2021-07-02 16:00:00
+
+game_46:
+  <<: *DEFAULTS
+  venue: "Munich"
+  tournament_phase: "quarter_finals"
+  home_team_name: "NA19"
+  guest_team_name: "NA20"
+  kickoff_at: 2021-07-02 19:00:00
+
+game_47:
+  <<: *DEFAULTS
+  venue: "Baku"
+  tournament_phase: "quarter_finals"
+  home_team_name: "NA21"
+  guest_team_name: "NA22"
+  kickoff_at: 2021-07-03 16:00:00
+
+game_48:
+  <<: *DEFAULTS
+  venue: "Rome"
+  tournament_phase: "quarter_finals"
+  home_team_name: "NA23"
+  guest_team_name: "NA24"
+  kickoff_at: 2021-07-03 19:00:00
+
+# Semi-finals
+
+game_49:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "semi_finals"
+  home_team_name: "NA25"
+  guest_team_name: "NA26"
+  kickoff_at: 2021-07-06 19:00:00
+
+game_50:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "semi_finals"
+  home_team_name: "NA27"
+  guest_team_name: "NA28"
+  kickoff_at: 2021-07-07 19:00:00
+
+# Final
+
+game_51:
+  <<: *DEFAULTS
+  venue: "London"
+  tournament_phase: "final"
+  home_team_name: "NA29"
+  guest_team_name: "NA30"
+  kickoff_at: 2021-07-11 19:00:00
 

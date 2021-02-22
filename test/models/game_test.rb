@@ -1,13 +1,12 @@
 require 'test_helper'
 
 class GameTest < ActiveSupport::TestCase
-  test 'valid game' do
-    game = Game.new(venue: 'Copenhagen', tournament_phase: 'group',
-                    home_team_name: 'DEN', guest_team_name: 'FIN',
-                    kickoff_at: '2021-06-12 16:00:00')
-    assert game.save
-
-    assert_equal 0, game.home_team_score
-    assert_equal 0, game.guest_team_score
+  test '51 games' do
+    assert_equal 1, Game.final_phase.count
+    assert_equal 2, Game.semi_finals_phase.count
+    assert_equal 4, Game.quarter_finals_phase.count
+    assert_equal 8, Game.round_of_16_phase.count
+    assert_equal 36, Game.group_phase.count
+    assert_equal 51, Game.count
   end
 end
