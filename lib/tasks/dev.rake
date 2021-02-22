@@ -7,10 +7,10 @@ namespace :dev do
 
     raise 'first_unplayed_game not found' if first_unplayed_game.nil?
 
-    days_between = (first_unplayed_game.kickoff_at.to_date - Date.today).to_i
+    days_between = (first_unplayed_game.kickoff_at.to_date - Time.zone.today).to_i
 
-    Game.update_all(
-      <<~SQL
+    Game.update_all( # rubocop:disable Rails/SkipsModelValidations
+      <<~SQL.squish
         kickoff_at       = kickoff_at       - '#{days_between} days'::INTERVAL,
         final_whistle_at = final_whistle_at - '#{days_between} days'::INTERVAL
       SQL
