@@ -7,5 +7,8 @@ class UserTest < ActiveSupport::TestCase
     assert_difference -> { Prediction.count }, +51 do
       assert user.save!
     end
+
+    assert_match /[[:alnum:]]{5}/, user.tippkick_id
+    assert_match /[[:alnum:]]{5}/, user.nickname
   end
 end

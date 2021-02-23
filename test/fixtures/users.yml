@@ -4,3 +4,5 @@ DEFAULTS: &DEFAULTS
 diego:
   <<: *DEFAULTS
   email: "diego@tippkick.test"
+  tippkick_id: 'tkid'
+  nickname: 'digi'
