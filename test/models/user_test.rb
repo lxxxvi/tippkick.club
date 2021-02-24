@@ -18,4 +18,12 @@ class UserTest < ActiveSupport::TestCase
     assert_includes user.user_groups,
                     user_groups(:campeones)
   end
+
+  test '#membership_for' do
+    user = users(:diego)
+    user_group = user_groups(:campeones)
+    membership = memberships(:diego_campeones)
+
+    assert_equal membership, user.membership_for(user_group)
+  end
 end

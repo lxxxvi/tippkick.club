@@ -12,6 +12,10 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true
   after_save :create_predictions!
 
+  def membership_for(user_group)
+    memberships.find_by(user_group: user_group)
+  end
+
   private
 
   def create_predictions!
