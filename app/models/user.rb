@@ -2,6 +2,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :memberships, dependent: :destroy
+  has_many :user_groups, through: :memberships
+
   before_validation :initialize_nickname
   before_save :set_tippkick_id
 

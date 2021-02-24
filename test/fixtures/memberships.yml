@@ -1,0 +1,4 @@
+diego_campeones:
+  user: diego
+  user_group: campeones
+  admin: true
