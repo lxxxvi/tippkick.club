@@ -11,7 +11,7 @@ class PredictionTest < ActiveSupport::TestCase
   end
 
   test 'validate scores_cannot_change_after_kickoff' do
-    prediction = predictions(:prediction_diego_game_25)
+    prediction = predictions(:diego_game_25)
 
     travel_to prediction.game.kickoff_at - 1.second do
       assert prediction.update(home_team_score: 9, guest_team_score: 9)

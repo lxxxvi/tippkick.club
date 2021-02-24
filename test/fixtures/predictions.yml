@@ -6,28 +6,28 @@ DEFAULTS: &DEFAULTS
 
 # Group A
 
-prediction_diego_game_1:
+diego_game_1:
   <<: *DEFAULTS
   game: game_1
   home_team_score: 0
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_2:
+diego_game_2:
   <<: *DEFAULTS
   game: game_2
   home_team_score: 1
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_13:
+diego_game_13:
   <<: *DEFAULTS
   game: game_13
   home_team_score: 0
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_14:
+diego_game_14:
   <<: *DEFAULTS
   game: game_14
   home_team_score: 1
@@ -35,14 +35,14 @@ prediction_diego_game_14:
   points: 10
 
 # this game is currently running
-prediction_diego_game_25:
+diego_game_25:
   <<: *DEFAULTS
   game: game_25
   home_team_score: 1
   guest_team_score: 2
 
 # this game is currently running
-prediction_diego_game_26:
+diego_game_26:
   <<: *DEFAULTS
   game: game_26
   home_team_score: 0
@@ -50,259 +50,259 @@ prediction_diego_game_26:
 
 # Group B
 
-prediction_diego_game_3:
+diego_game_3:
   <<: *DEFAULTS
   game: game_3
   home_team_score: 2
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_4:
+diego_game_4:
   <<: *DEFAULTS
   game: game_4
   home_team_score: 0
   guest_team_score: 0
   points: 10
 
-prediction_diego_game_15:
+diego_game_15:
   <<: *DEFAULTS
   game: game_15
   home_team_score: 1
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_16:
+diego_game_16:
   <<: *DEFAULTS
   game: game_16
   home_team_score: 1
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_27:
+diego_game_27:
   <<: *DEFAULTS
   game: game_27
 
-prediction_diego_game_28:
+diego_game_28:
   <<: *DEFAULTS
   game: game_28
 
 # Group C
 
-prediction_diego_game_6:
+diego_game_6:
   <<: *DEFAULTS
   game: game_6
   home_team_score: 3
   guest_team_score: 0
   points: 10
 
-prediction_diego_game_5:
+diego_game_5:
   <<: *DEFAULTS
   game: game_5
   home_team_score: 3
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_18:
+diego_game_18:
   <<: *DEFAULTS
   game: game_18
   home_team_score: 2
   guest_team_score: 0
   points: 10
 
-prediction_diego_game_17:
+diego_game_17:
   <<: *DEFAULTS
   game: game_17
   home_team_score: 0
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_29:
+diego_game_29:
   <<: *DEFAULTS
   game: game_29
 
-prediction_diego_game_30:
+diego_game_30:
   <<: *DEFAULTS
   game: game_30
 
 # Group D
 
-prediction_diego_game_7:
+diego_game_7:
   <<: *DEFAULTS
   game: game_7
   home_team_score: 0
   guest_team_score: 0
   points: 10
 
-prediction_diego_game_8:
+diego_game_8:
   <<: *DEFAULTS
   game: game_8
   home_team_score: 2
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_19:
+diego_game_19:
   <<: *DEFAULTS
   game: game_19
   home_team_score: 1
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_20:
+diego_game_20:
   <<: *DEFAULTS
   game: game_20
   home_team_score: 3
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_31:
+diego_game_31:
   <<: *DEFAULTS
   game: game_31
 
-prediction_diego_game_32:
+diego_game_32:
   <<: *DEFAULTS
   game: game_32
 
 # Group E
 
-prediction_diego_game_10:
+diego_game_10:
   <<: *DEFAULTS
   game: game_10
   home_team_score: 1
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_9:
+diego_game_9:
   <<: *DEFAULTS
   game: game_9
   home_team_score: 2
   guest_team_score: 0
   points: 10
 
-prediction_diego_game_21:
+diego_game_21:
   <<: *DEFAULTS
   game: game_21
   home_team_score: 0
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_22:
+diego_game_22:
   <<: *DEFAULTS
   game: game_22
   home_team_score: 1
   guest_team_score: 0
   points: 10
 
-prediction_diego_game_33:
+diego_game_33:
   <<: *DEFAULTS
   game: game_33
 
-prediction_diego_game_34:
+diego_game_34:
   <<: *DEFAULTS
   game: game_34
 
 # Group F
 
-prediction_diego_game_11:
+diego_game_11:
   <<: *DEFAULTS
   game: game_11
   home_team_score: 0
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_12:
+diego_game_12:
   <<: *DEFAULTS
   game: game_12
   home_team_score: 0
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_23:
+diego_game_23:
   <<: *DEFAULTS
   game: game_23
   home_team_score: 1
   guest_team_score: 1
   points: 10
 
-prediction_diego_game_24:
+diego_game_24:
   <<: *DEFAULTS
   game: game_24
   home_team_score: 0
   guest_team_score: 2
   points: 10
 
-prediction_diego_game_35:
+diego_game_35:
   <<: *DEFAULTS
   game: game_35
 
-prediction_diego_game_36:
+diego_game_36:
   <<: *DEFAULTS
   game: game_36
 
 # Round of 16
 
-prediction_diego_game_38:
+diego_game_38:
   <<: *DEFAULTS
   game: game_38
 
-prediction_diego_game_37:
+diego_game_37:
   <<: *DEFAULTS
   game: game_37
 
-prediction_diego_game_40:
+diego_game_40:
   <<: *DEFAULTS
   game: game_40
 
-prediction_diego_game_39:
+diego_game_39:
   <<: *DEFAULTS
   game: game_39
 
-prediction_diego_game_42:
+diego_game_42:
   <<: *DEFAULTS
   game: game_42
 
-prediction_diego_game_41:
+diego_game_41:
   <<: *DEFAULTS
   game: game_41
 
-prediction_diego_game_44:
+diego_game_44:
   <<: *DEFAULTS
   game: game_44
 
-prediction_diego_game_43:
+diego_game_43:
   <<: *DEFAULTS
   game: game_43
 
 # Quarter-finals
 
-prediction_diego_game_45:
+diego_game_45:
   <<: *DEFAULTS
   game: game_45
 
-prediction_diego_game_46:
+diego_game_46:
   <<: *DEFAULTS
   game: game_46
 
-prediction_diego_game_47:
+diego_game_47:
   <<: *DEFAULTS
   game: game_47
 
-prediction_diego_game_48:
+diego_game_48:
   <<: *DEFAULTS
   game: game_48
 
 # Semi-finals
 
-prediction_diego_game_49:
+diego_game_49:
   <<: *DEFAULTS
   game: game_49
 
-prediction_diego_game_50:
+diego_game_50:
   <<: *DEFAULTS
   game: game_50
 
 # Final
 
-prediction_diego_game_51:
+diego_game_51:
   <<: *DEFAULTS
   game: game_51
 

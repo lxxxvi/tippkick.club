@@ -11,4 +11,11 @@ class UserTest < ActiveSupport::TestCase
     assert_match /[[:alnum:]]{5}/, user.tippkick_id
     assert_match /[[:alnum:]]{5}/, user.nickname
   end
+
+  test 'user_group association' do
+    user = users(:diego)
+
+    assert_includes user.user_groups,
+                    user_groups(:campeones)
+  end
 end

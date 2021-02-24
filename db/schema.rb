@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_150925) do
+ActiveRecord::Schema.define(version: 2021_02_24_061247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2021_02_21_150925) do
     t.index ["tournament_phase", "home_team_name", "guest_team_name"], name: "index_phase_home_guest", unique: true
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "user_group_id", null: false
+    t.boolean "admin", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_group_id"], name: "index_memberships_on_user_group_id"
+    t.index ["user_id", "user_group_id"], name: "index_memberships_on_user_id_and_user_group_id", unique: true
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
   create_table "predictions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
@@ -40,6 +51,13 @@ ActiveRecord::Schema.define(version: 2021_02_21_150925) do
     t.index ["game_id"], name: "index_predictions_on_game_id"
     t.index ["user_id", "game_id"], name: "index_predictions_on_user_id_and_game_id", unique: true
     t.index ["user_id"], name: "index_predictions_on_user_id"
+  end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_user_groups_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,4 +76,6 @@ ActiveRecord::Schema.define(version: 2021_02_21_150925) do
     t.index ["tippkick_id"], name: "index_users_on_tippkick_id", unique: true
   end
 
+  add_foreign_key "memberships", "user_groups"
+  add_foreign_key "memberships", "users"
 end
