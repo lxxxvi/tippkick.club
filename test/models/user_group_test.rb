@@ -35,8 +35,11 @@ class UserGroupTest < ActiveSupport::TestCase
 
     user_group.memberships.tap do |memberships|
       assert_equal 1, memberships.count
-      assert_equal user, memberships.first.user
-      assert memberships.first.admin?
+
+      membership = memberships.first
+      assert_equal user, membership.user
+      assert membership.admin?
+      assert membership.accepted?
     end
   end
 end

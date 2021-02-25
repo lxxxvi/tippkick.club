@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test 'valid user' do
-    user = User.new(email: 'pele@tippkick.test', password: 'pele')
+    user = User.new(email: 'zinedine@tippkick.test', password: 'zinedine')
 
     assert_difference -> { Prediction.count }, +51 do
       assert user.save!
@@ -25,5 +25,12 @@ class UserTest < ActiveSupport::TestCase
     membership = memberships(:diego_campeones)
 
     assert_equal membership, user.membership_for(user_group)
+  end
+
+  test '#invitations' do
+    user = users(:pele)
+
+    assert_includes user.invitations,
+                    memberships(:pele_campeones_invited)
   end
 end

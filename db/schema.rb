@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.bigint "user_id", null: false
     t.bigint "user_group_id", null: false
     t.boolean "admin", default: false, null: false
+    t.datetime "accepted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_group_id"], name: "index_memberships_on_user_group_id"
