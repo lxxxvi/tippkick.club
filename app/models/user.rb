@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :memberships, dependent: :destroy
+  has_many :invitations, -> { invited }, class_name: 'Membership', inverse_of: :user
   has_many :user_groups, through: :memberships
 
   before_validation :initialize_nickname

@@ -13,6 +13,7 @@ class UserGroup < ApplicationRecord
     create(name: user_group_name).tap do |user_group|
       membership = user_group.memberships.find_or_initialize_by(user: user)
       membership.admin = true
+      membership.mark_accepted
       user_group.save
     end
   end

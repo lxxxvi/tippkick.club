@@ -1,4 +1,15 @@
+DEFAULTS: &DEFAULTS
+  admin: false
+  accepted_at:
+
 diego_campeones:
+  <<: *DEFAULTS
   user: diego
   user_group: campeones
   admin: true
+  accepted_at: '2021-02-15 15:00:00'
+
+pele_campeones_invited:
+  <<: *DEFAULTS
+  user: pele
+  user_group: campeones
