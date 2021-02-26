@@ -1,0 +1,6 @@
+%h1 Games
+
+.games
+  - @ordered_games.each do |game|
+    .game
+      = render 'form', game: game

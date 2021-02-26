@@ -20,8 +20,14 @@ class Game < ApplicationRecord
     final: 'final'
   }, _suffix: :phase
 
+  scope :ordered_chronologically, -> { order(kickoff_at: :asc) }
+
   def final_whistle
     update(final_whistle_at: Time.zone.now)
+  end
+
+  def live?
+    kickoff_at.past? && final_whistle_at.nil?
   end
 
   private
@@ -34,7 +40,6 @@ class Game < ApplicationRecord
   end
 
   def scores_cannot_change_before_kickoff
-    return unless scores_changed?
     return if kickoff_at.past?
 
     errors.add(:home_team_score, :cannot_be_changed_before_kickoff)

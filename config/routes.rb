@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   devise_for :users
-  resources :tournaments
+
+  resources :games, only: %i[index]
+
   root 'landing_page#index'
 end

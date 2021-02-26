@@ -1,0 +1,27 @@
+.game-card{ id: dom_id(game) }
+  .game-card--kickoff-at= game.kickoff_at
+
+  .game-card--home-team-name= game.home_team_name
+  .game-card--guest-team-name= game.guest_team_name
+  .grid-card--home-team-score--score= game.home_team_score
+  .grid-card--score-colon :
+  .grid-card--guest-team-score--score= game.guest_team_score
+
+  - if game.live?
+    .grid-card--live [LIVE]
+    .grid-card--home-team-score--plus
+      %button{ data: { reflex: 'click->Scores#increment', entity: :game, id: game.id, team_score: :home } } +
+    .grid-card--guest-team-score--plus
+      %button{ data: { reflex: 'click->Scores#increment', entity: :game, id: game.id, team_score: :guest } } +
+    .grid-card--home-team-score--minus
+      %button{ data: { reflex: 'click->Scores#decrement', entity: :game, id: game.id, team_score: :home } } -
+    .grid-card--guest-team-score--minus
+      %button{ data: { reflex: 'click->Scores#decrement', entity: :game, id: game.id, team_score: :guest } } -
+    .grid-card--guest-team-score--final-whistle
+      %button FINAL WHISTLE!
+
+
+
+
+
+

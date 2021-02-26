@@ -9,6 +9,8 @@
     = action_cable_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %nav
+      = link_to t('shared.games'), games_path
     = notice
     = alert
     = yield
