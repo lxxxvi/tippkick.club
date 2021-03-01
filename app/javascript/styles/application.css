@@ -3,14 +3,3 @@
 * {
   font-family: sans-serif;
 }
-
-button {
-  border: none;
-  background-color: black;
-  color: white;
-}
-
-button:hover {
-  background-color: DimGray;
-  cursor: pointer;
-}
