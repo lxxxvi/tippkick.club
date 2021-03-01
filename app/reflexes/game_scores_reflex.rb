@@ -6,6 +6,7 @@ class GameScoresReflex < ApplicationReflex
 
   def decrement
     update_game(-1)
+    morph dom_id(find_game), render(partial: 'games/game_card', locals: { game: find_game.reload })
   end
 
   private
@@ -17,7 +18,7 @@ class GameScoresReflex < ApplicationReflex
   def update_game(delta)
     find_game.tap do |game|
       current_score = game[team_score_attribute]
-      new_score = Hash[team_score_attribute, current_score + delta]
+      new_score = [[team_score_attribute, current_score + delta]].to_h
       game.update(new_score)
     end
   end

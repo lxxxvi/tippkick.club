@@ -1,23 +1,23 @@
-.game-card{ id: dom_id(game) }
+.game-card{ id: dom_id(game), class: ('live-game' if game.live?) }
   .game-card--kickoff-at= game.kickoff_at
 
   .game-card--home-team-name= game.home_team_name
   .game-card--guest-team-name= game.guest_team_name
-  .game-card--home-team-score--score= game.home_team_score
+  .game-card--home-team-score= game.home_team_score
+  .game-card--guest-team-score= game.guest_team_score
   .game-card--score-colon :
-  .game-card--guest-team-score--score= game.guest_team_score
 
   - if game.live?
     .game-card--live [LIVE]
-    .game-card--home-team-score--plus
+    .game-card--score-controls--home-plus
       %button{ data: { reflex: 'click->GameScores#increment', entity: :game, id: game.id, team_score: :home } } +
-    .game-card--guest-team-score--plus
+    .game-card--score-controls--guest-plus
       %button{ data: { reflex: 'click->GameScores#increment', entity: :game, id: game.id, team_score: :guest } } +
-    .game-card--home-team-score--minus
-      %button{ data: { reflex: 'click->GameScores#decrement', entity: :game, id: game.id, team_score: :home } } -
-    .game-card--guest-team-score--minus
-      %button{ data: { reflex: 'click->GameScores#decrement', entity: :game, id: game.id, team_score: :guest } } -
-    .game-card--guest-team-score--final-whistle
+    .game-card--score-controls--home-minus
+      %button{ disabled: game.home_team_score.zero?, data: { reflex: 'click->GameScores#decrement', entity: :game, id: game.id, team_score: :home } } -
+    .game-card--score-controls--guest-minus
+      %button{ disabled: game.guest_team_score.zero?, data: { reflex: 'click->GameScores#decrement', entity: :game, id: game.id, team_score: :guest } } -
+    .game-card--final-whistle
       %button FINAL WHISTLE!
 
 
