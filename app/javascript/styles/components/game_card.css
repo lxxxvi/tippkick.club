@@ -27,40 +27,40 @@
   align-self: center;
 }
 
-.grid-card--live {
+.game-card--live {
   grid-column: 5;
   grid-row: 1;
   align-self: start;
   justify-self: right;
 }
 
-.grid-card--home-team-score--plus {
+.game-card--home-team-score--plus {
   grid-column: 2;
   grid-row: 2;
   align-self: center;
 }
 
-.grid-card--guest-team-score--plus {
+.game-card--guest-team-score--plus {
   grid-column: 4;
   grid-row: 2;
   align-self: center;
 }
 
-.grid-card--home-team-score--score {
+.game-card--home-team-score--score {
   grid-column: 2;
   grid-row: 3;
   font-size: 2rem;
   align-self: center;
 }
 
-.grid-card--guest-team-score--score {
+.game-card--guest-team-score--score {
   grid-column: 4;
   grid-row: 3;
   font-size: 2rem;
   align-self: center;
 }
 
-.grid-card--score-colon {
+.game-card--score-colon {
   margin: 20px 0;
   font-size: 2rem;
   grid-column: 3;
@@ -68,19 +68,19 @@
   align-self: center;
 }
 
-.grid-card--home-team-score--minus {
+.game-card--home-team-score--minus {
   grid-column: 2;
   grid-row: 4;
   align-self: center;
 }
 
-.grid-card--guest-team-score--minus {
+.game-card--guest-team-score--minus {
   grid-column: 4;
   grid-row: 4;
   align-self: center;
 }
 
-.grid-card--guest-team-score--final-whistle {
+.game-card--guest-team-score--final-whistle {
   margin: 10px 0;
   grid-column: 2 / 5;
   grid-row: 5;
