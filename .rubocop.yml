@@ -14,6 +14,9 @@ AllCops:
 Rails:
   Enabled: true
 
+Gemspec/DateAssignment:
+  Enabled: true
+
 Layout/BeginEndAlignment:
   Enabled: true
 
@@ -22,8 +25,8 @@ Layout/EmptyLinesAroundAttributeAccessor:
 
 Layout/LineLength:
   Exclude:
-  - "config/initializers/devise.rb"
-  - "config/initializers/stimulus_reflex.rb"
+  - config/initializers/devise.rb
+  - config/initializers/stimulus_reflex.rb
   Max: 120
 
 Layout/SpaceAroundMethodCallOperator:
@@ -258,6 +261,9 @@ Style/GlobalStdStream:
   Enabled: true
 
 Style/HashAsLastArrayItem:
+  Enabled: true
+
+Style/HashConversion:
   Enabled: true
 
 Style/HashEachMethods:
