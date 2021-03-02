@@ -53,4 +53,30 @@ class GamesTest < ApplicationSystemTestCase
       end
     end
   end
+
+  test 'final whistle' do
+    travel_to '2021-06-20 16:00:01 UTC' do
+      Capybara.using_driver(:selenium_headless) do
+        visit games_path
+
+        within('.game-card.live-game', match: :first) do
+          click_on 'Final Whistle Button'
+
+          assert_selector '.game-card--score-controls--home-plus', count: 0
+          assert_selector '.game-card--score-controls--guest-plus', count: 0
+          assert_selector '.game-card--score-controls--home-minus', count: 0
+          assert_selector '.game-card--score-controls--guest-minus', count: 0
+          assert_selector 'button', text: 'Final Whistle Button', count: 0
+
+          click_on 'Undo Final Whistle'
+
+          assert_selector '.game-card--score-controls--home-plus', count: 1
+          assert_selector '.game-card--score-controls--guest-plus', count: 1
+          assert_selector '.game-card--score-controls--home-minus', count: 1
+          assert_selector '.game-card--score-controls--guest-minus', count: 1
+          assert_selector 'button', text: 'Final Whistle Button', count: 1
+        end
+      end
+    end
+  end
 end
