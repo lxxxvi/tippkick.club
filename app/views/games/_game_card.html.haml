@@ -10,16 +10,22 @@
   - if game.live?
     .game-card--live [LIVE]
     .game-card--score-controls--home-plus
-      %button{ data: { reflex: 'click->GameScores#increment', entity: :game, id: game.id, team_score: :home } } +
+      %button{ data: { reflex: 'click->Game#change_score', id: game.id, team_score: :home, delta: :plus } } +
     .game-card--score-controls--guest-plus
-      %button{ data: { reflex: 'click->GameScores#increment', entity: :game, id: game.id, team_score: :guest } } +
+      %button{ data: { reflex: 'click->Game#change_score', id: game.id, team_score: :guest, delta: :plus } } +
     .game-card--score-controls--home-minus
-      %button{ disabled: game.home_team_score.zero?, data: { reflex: 'click->GameScores#decrement', entity: :game, id: game.id, team_score: :home } } -
+      %button{ disabled: game.home_team_score.zero?, data: { reflex: 'click->Game#change_score', id: game.id, team_score: :home, delta: :minus } } -
     .game-card--score-controls--guest-minus
-      %button{ disabled: game.guest_team_score.zero?, data: { reflex: 'click->GameScores#decrement', entity: :game, id: game.id, team_score: :guest } } -
-    .game-card--final-whistle
-      %button FINAL WHISTLE!
+      %button{ disabled: game.guest_team_score.zero?, data: { reflex: 'click->Game#change_score', id: game.id, team_score: :guest, delta: :minus } } -
+  .game-card--final-whistle
+    - if game.final_whistle?
+      = link_to t('.undo_final_whistle'), '#', data: { reflex: 'click->Game#final_whistle', id: game.id, reset: true }
+    - elsif game.live?
+      %button{ data: { reflex: 'click->Game#final_whistle',id: game.id } }
+        = t('.final_whistle_button')
 
+= game.final_whistle_at
+= game.final_whistle?
 
 
 

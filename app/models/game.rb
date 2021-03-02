@@ -22,8 +22,17 @@ class Game < ApplicationRecord
 
   scope :ordered_chronologically, -> { order(kickoff_at: :asc) }
 
-  def final_whistle
-    update(final_whistle_at: Time.zone.now)
+  def final_whistle(reset: false)
+    if reset
+      self.final_whistle_at = nil
+    else
+      self.final_whistle_at ||= Time.zone.now
+    end
+    save
+  end
+
+  def final_whistle?
+    final_whistle_at&.present?
   end
 
   def live?
