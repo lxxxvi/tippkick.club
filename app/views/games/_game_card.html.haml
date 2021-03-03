@@ -1,0 +1,25 @@
+.game-card{ id: dom_id(game), class: ('live-game' if game.live?) }
+  .game-card--kickoff-at= game.kickoff_at
+
+  .game-card--home-team-name= game.home_team_name
+  .game-card--guest-team-name= game.guest_team_name
+  .game-card--home-team-score= game.home_team_score
+  .game-card--guest-team-score= game.guest_team_score
+  .game-card--score-colon :
+
+  - if game.live?
+    .game-card--live [LIVE]
+    .game-card--score-controls--home-plus
+      %button{ data: { reflex: 'click->Game#change_score', id: game.id, team_score: :home, delta: :plus } } +
+    .game-card--score-controls--guest-plus
+      %button{ data: { reflex: 'click->Game#change_score', id: game.id, team_score: :guest, delta: :plus } } +
+    .game-card--score-controls--home-minus
+      %button{ disabled: game.home_team_score.zero?, data: { reflex: 'click->Game#change_score', id: game.id, team_score: :home, delta: :minus } } -
+    .game-card--score-controls--guest-minus
+      %button{ disabled: game.guest_team_score.zero?, data: { reflex: 'click->Game#change_score', id: game.id, team_score: :guest, delta: :minus } } -
+  .game-card--final-whistle
+    - if game.final_whistle?
+      = link_to t('.undo_final_whistle'), '#', data: { reflex: 'click->Game#final_whistle', id: game.id, reset: true }
+    - elsif game.live?
+      %button{ data: { reflex: 'click->Game#final_whistle',id: game.id } }
+        = t('.final_whistle_button')

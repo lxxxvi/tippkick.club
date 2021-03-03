@@ -90,6 +90,15 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
 
     steps:
       - uses: actions/checkout@v1
@@ -127,6 +136,11 @@ jobs:
       - name: bin/rails test
         run: bin/rails test
 
+        # this rake task only works on RAILS_ENV=test
+      - name: update webdrivers
+        run: bin/rails webdrivers:geckodriver:update
+
       - name: bin/rails test:system
         run: bin/rails test:system
-
+        env:
+          REDIS_PORT: 6379
