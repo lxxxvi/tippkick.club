@@ -136,6 +136,10 @@ jobs:
       - name: bin/rails test
         run: bin/rails test
 
+        # this rake task only works on RAILS_ENV=test
+      - name: update webdrivers
+        run: bin/rails webdrivers:geckodriver:update
+
       - name: bin/rails test:system
         run: bin/rails test:system
         env:
