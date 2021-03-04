@@ -1,0 +1,2 @@
+= link_to_if filter_on_past?, t('.upcoming_only'), games_path
+= link_to_unless filter_on_past?, t('.past_only'), games_path(filter: :past)

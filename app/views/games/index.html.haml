@@ -1,6 +1,8 @@
 %h1 Games
 
+.games-filter-menu
+  = render 'filter_menu'
 .games
-  - @ordered_games.each do |game|
+  - @games.each do |game|
     .game
       = render 'game_card', game: game

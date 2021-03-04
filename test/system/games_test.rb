@@ -1,15 +1,21 @@
 require 'application_system_test_case'
 
 class GamesTest < ApplicationSystemTestCase
-  test 'show games' do
+  test 'show upcaming and past games' do
     visit games_path
     assert_selector 'h1', text: 'Games'
-    assert_selector '.game-card', count: 51
+    assert_selector '.game-card', count: 27
+
+    filter_games 'Past'
+    assert_selector '.game-card', count: 24
+
+    filter_games 'Upcoming'
+    assert_selector '.game-card', count: 27
   end
 
   test 'change games score' do
     travel_to '2021-06-20 16:00:01 UTC' do
-      Capybara.using_driver(:selenium_headless) do
+      using_browser do
         visit games_path
         assert_selector '.game-card.live-game', count: 2
 
@@ -56,27 +62,36 @@ class GamesTest < ApplicationSystemTestCase
 
   test 'final whistle' do
     travel_to '2021-06-20 16:00:01 UTC' do
-      Capybara.using_driver(:selenium_headless) do
+      using_browser do
         visit games_path
 
         within('.game-card.live-game', match: :first) do
+          assert_selector 'button', count: 5
           click_on 'Final Whistle Button'
-
-          assert_selector '.game-card--score-controls--home-plus', count: 0
-          assert_selector '.game-card--score-controls--guest-plus', count: 0
-          assert_selector '.game-card--score-controls--home-minus', count: 0
-          assert_selector '.game-card--score-controls--guest-minus', count: 0
-          assert_selector 'button', text: 'Final Whistle Button', count: 0
-
-          click_on 'Undo Final Whistle'
-
-          assert_selector '.game-card--score-controls--home-plus', count: 1
-          assert_selector '.game-card--score-controls--guest-plus', count: 1
-          assert_selector '.game-card--score-controls--home-minus', count: 1
-          assert_selector '.game-card--score-controls--guest-minus', count: 1
-          assert_selector 'button', text: 'Final Whistle Button', count: 1
+          assert_selector 'button', count: 0
         end
       end
     end
+  end
+
+  test 'undo final whistle' do
+    travel_to '2021-06-20 16:00:01 UTC' do
+      using_browser do
+        visit games_path
+        filter_games 'Past'
+
+        within('.game-card', match: :first) do
+          assert_selector 'button', count: 0
+          click_on 'Undo Final Whistle'
+          assert_selector 'button', count: 5
+        end
+      end
+    end
+  end
+
+  private
+
+  def filter_games(text)
+    within('.games-filter-menu') { click_on text }
   end
 end

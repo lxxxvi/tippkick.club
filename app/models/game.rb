@@ -21,6 +21,8 @@ class Game < ApplicationRecord
   }, _suffix: :phase
 
   scope :ordered_chronologically, -> { order(kickoff_at: :asc) }
+  scope :upcoming, -> { where(final_whistle_at: nil) }
+  scope :past, -> { where.not(final_whistle_at: nil) }
 
   def final_whistle(reset: false)
     if reset
