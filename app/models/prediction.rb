@@ -10,6 +10,10 @@ class Prediction < ApplicationRecord
 
   validate :scores_cannot_change_after_kickoff
 
+  scope :with_game, -> {
+    includes(:game).joins(:game)
+  }
+
   private
 
   def scores_cannot_change_after_kickoff

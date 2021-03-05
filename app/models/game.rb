@@ -1,4 +1,6 @@
 class Game < ApplicationRecord
+  has_many :predictions, dependent: :destroy
+
   validates :venue, :tournament_phase,
             :home_team_name, :guest_team_name,
             :home_team_score, :guest_team_score,

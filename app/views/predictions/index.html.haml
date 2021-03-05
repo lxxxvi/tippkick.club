@@ -1,0 +1,10 @@
+%h1 Predictions
+
+.predictions
+  - @predictions.each do |prediction|
+    .prediction
+      = prediction.game.home_team_name
+      = prediction.game.home_team_score
+      \-
+      = prediction.game.guest_team_score
+      = prediction.game.guest_team_name

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :memberships, dependent: :destroy
   has_many :invitations, -> { invited }, class_name: 'Membership', inverse_of: :user
   has_many :user_groups, through: :memberships
+  has_many :predictions, dependent: :destroy
 
   before_validation :initialize_nickname
   before_save :set_tippkick_id
