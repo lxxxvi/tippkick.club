@@ -1,10 +1,3 @@
-%h1 Predictions
+%h1.uppercase= t('shared.predictions')
 
-.predictions
-  - @predictions.each do |prediction|
-    .prediction
-      = prediction.game.home_team_name
-      = prediction.game.home_team_score
-      \-
-      = prediction.game.guest_team_score
-      = prediction.game.guest_team_name
+.predictions= render @predictions || 'empty_list'

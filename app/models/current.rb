@@ -3,6 +3,6 @@ class Current < ActiveSupport::CurrentAttributes
 
   # TODO: fixme
   def user
-    User.first
+    @user ||= User.find_by(email: 'diego@tippkick.test')
   end
 end

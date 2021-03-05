@@ -9,9 +9,13 @@
     = action_cable_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %nav
-      = link_to_unless_current t('shared.games'), games_path
-      = link_to_unless_current t('shared.predictions'), predictions_path
-    = notice
-    = alert
-    = yield
+    .max-w-screen-sm.mx-auto
+      %nav.m-4
+        = link_to_unless_current t('shared.games'), games_path
+        = link_to_unless_current t('shared.predictions'), predictions_path
+      .m-4
+        = notice
+        = alert
+
+      .m-4
+        = yield

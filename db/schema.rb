@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
+    t.string "uefa_game_id", null: false
     t.string "venue", null: false
     t.string "tournament_phase", null: false
-    t.string "home_team_name", null: false
-    t.string "guest_team_name", null: false
+    t.string "home_team_name"
+    t.string "guest_team_name"
     t.integer "home_team_score", default: 0, null: false
     t.integer "guest_team_score", default: 0, null: false
     t.datetime "kickoff_at", null: false
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tournament_phase", "home_team_name", "guest_team_name"], name: "index_phase_home_guest", unique: true
+    t.index ["uefa_game_id"], name: "index_games_on_uefa_game_id", unique: true
   end
 
   create_table "memberships", force: :cascade do |t|

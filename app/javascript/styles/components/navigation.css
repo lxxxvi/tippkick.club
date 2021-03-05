@@ -1,0 +1,11 @@
+nav {
+  @apply text-pink-600;
+}
+
+nav a {
+  @apply text-pink-300;
+}
+
+nav a:hover {
+  @apply text-pink-600;
+}

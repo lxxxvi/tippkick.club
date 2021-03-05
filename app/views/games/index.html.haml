@@ -1,8 +1,4 @@
-%h1 Games
+%h1= t('shared.games')
 
-.games-filter-menu
-  = render 'filter_menu'
-.games
-  - @games.each do |game|
-    .game
-      = render 'game_card', game: game
+.predictions-with-game
+  = render partial: 'prediction_with_game', collection: @predictions_with_game

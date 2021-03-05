@@ -7,7 +7,8 @@ DEFAULTS: &DEFAULTS
 
 game_1:
   <<: *DEFAULTS
-  venue: "Rome"
+  uefa_game_id: "1"
+  venue: "rome"
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "ITA"
@@ -18,7 +19,8 @@ game_1:
 
 game_2:
   <<: *DEFAULTS
-  venue: "Baku"
+  uefa_game_id: "2"
+  venue: "baku"
   tournament_phase: "group"
   home_team_name: "WAL"
   guest_team_name: "SUI"
@@ -29,7 +31,8 @@ game_2:
 
 game_13:
   <<: *DEFAULTS
-  venue: "Baku"
+  uefa_game_id: "13"
+  venue: "baku"
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "WAL"
@@ -40,7 +43,8 @@ game_13:
 
 game_14:
   <<: *DEFAULTS
-  venue: "Rome"
+  uefa_game_id: "14"
+  venue: "rome"
   tournament_phase: "group"
   home_team_name: "ITA"
   guest_team_name: "SUI"
@@ -52,7 +56,8 @@ game_14:
 # this game is currently running
 game_25:
   <<: *DEFAULTS
-  venue: "Baku"
+  uefa_game_id: "25"
+  venue: "baku"
   tournament_phase: "group"
   home_team_name: "SUI"
   guest_team_name: "TUR"
@@ -64,7 +69,8 @@ game_25:
 # this game is currently running
 game_26:
   <<: *DEFAULTS
-  venue: "Rome"
+  uefa_game_id: "26"
+  venue: "rome"
   tournament_phase: "group"
   home_team_name: "ITA"
   guest_team_name: "WAL"
@@ -77,7 +83,8 @@ game_26:
 
 game_3:
   <<: *DEFAULTS
-  venue: "Copenhagen"
+  uefa_game_id: "3"
+  venue: "copenhagen"
   tournament_phase: "group"
   home_team_name: "DEN"
   guest_team_name: "FIN"
@@ -88,7 +95,8 @@ game_3:
 
 game_4:
   <<: *DEFAULTS
-  venue: "Saint Petersburg"
+  uefa_game_id: "4"
+  venue: "saint_petersburg"
   tournament_phase: "group"
   home_team_name: "BEL"
   guest_team_name: "RUS"
@@ -99,7 +107,8 @@ game_4:
 
 game_15:
   <<: *DEFAULTS
-  venue: "Saint Petersburg"
+  uefa_game_id: "15"
+  venue: "saint_petersburg"
   tournament_phase: "group"
   home_team_name: "FIN"
   guest_team_name: "RUS"
@@ -110,7 +119,8 @@ game_15:
 
 game_16:
   <<: *DEFAULTS
-  venue: "Copenhagen"
+  uefa_game_id: "16"
+  venue: "copenhagen"
   tournament_phase: "group"
   home_team_name: "DEN"
   guest_team_name: "BEL"
@@ -121,7 +131,8 @@ game_16:
 
 game_27:
   <<: *DEFAULTS
-  venue: "Copenhagen"
+  uefa_game_id: "27"
+  venue: "copenhagen"
   tournament_phase: "group"
   home_team_name: "RUS"
   guest_team_name: "DEN"
@@ -129,7 +140,8 @@ game_27:
 
 game_28:
   <<: *DEFAULTS
-  venue: "Saint Petersburg"
+  uefa_game_id: "28"
+  venue: "saint_petersburg"
   tournament_phase: "group"
   home_team_name: "FIN"
   guest_team_name: "BEL"
@@ -139,7 +151,8 @@ game_28:
 
 game_6:
   <<: *DEFAULTS
-  venue: "Bucharest"
+  uefa_game_id: "6"
+  venue: "bucharest"
   tournament_phase: "group"
   home_team_name: "AUT"
   guest_team_name: "MKD"
@@ -150,7 +163,8 @@ game_6:
 
 game_5:
   <<: *DEFAULTS
-  venue: "Amsterdam"
+  uefa_game_id: "5"
+  venue: "amsterdam"
   tournament_phase: "group"
   home_team_name: "NED"
   guest_team_name: "UKR"
@@ -161,7 +175,8 @@ game_5:
 
 game_18:
   <<: *DEFAULTS
-  venue: "Bucharest"
+  uefa_game_id: "18"
+  venue: "bucharest"
   tournament_phase: "group"
   home_team_name: "UKR"
   guest_team_name: "MKD"
@@ -172,7 +187,8 @@ game_18:
 
 game_17:
   <<: *DEFAULTS
-  venue: "Amsterdam"
+  uefa_game_id: "17"
+  venue: "amsterdam"
   tournament_phase: "group"
   home_team_name: "NED"
   guest_team_name: "AUT"
@@ -183,7 +199,8 @@ game_17:
 
 game_29:
   <<: *DEFAULTS
-  venue: "Amsterdam"
+  uefa_game_id: "29"
+  venue: "amsterdam"
   tournament_phase: "group"
   home_team_name: "MKD"
   guest_team_name: "NED"
@@ -191,7 +208,8 @@ game_29:
 
 game_30:
   <<: *DEFAULTS
-  venue: "Bucharest"
+  uefa_game_id: "30"
+  venue: "bucharest"
   tournament_phase: "group"
   home_team_name: "UKR"
   guest_team_name: "AUT"
@@ -201,7 +219,8 @@ game_30:
 
 game_7:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "7"
+  venue: "london"
   tournament_phase: "group"
   home_team_name: "ENG"
   guest_team_name: "CRO"
@@ -212,7 +231,8 @@ game_7:
 
 game_8:
   <<: *DEFAULTS
-  venue: "Glasgow"
+  uefa_game_id: "8"
+  venue: "glasgow"
   tournament_phase: "group"
   home_team_name: "SCO"
   guest_team_name: "CZE"
@@ -223,7 +243,8 @@ game_8:
 
 game_19:
   <<: *DEFAULTS
-  venue: "Glasgow"
+  uefa_game_id: "19"
+  venue: "glasgow"
   tournament_phase: "group"
   home_team_name: "CRO"
   guest_team_name: "CZE"
@@ -234,7 +255,8 @@ game_19:
 
 game_20:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "20"
+  venue: "london"
   tournament_phase: "group"
   home_team_name: "ENG"
   guest_team_name: "SCO"
@@ -245,7 +267,8 @@ game_20:
 
 game_31:
   <<: *DEFAULTS
-  venue: "Glasgow"
+  uefa_game_id: "31"
+  venue: "glasgow"
   tournament_phase: "group"
   home_team_name: "CRO"
   guest_team_name: "SCO"
@@ -253,7 +276,8 @@ game_31:
 
 game_32:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "32"
+  venue: "london"
   tournament_phase: "group"
   home_team_name: "CZE"
   guest_team_name: "ENG"
@@ -263,7 +287,8 @@ game_32:
 
 game_10:
   <<: *DEFAULTS
-  venue: "Dublin"
+  uefa_game_id: "10"
+  venue: "dublin"
   tournament_phase: "group"
   home_team_name: "POL"
   guest_team_name: "SVK"
@@ -274,7 +299,8 @@ game_10:
 
 game_9:
   <<: *DEFAULTS
-  venue: "Bilbao"
+  uefa_game_id: "9"
+  venue: "bilbao"
   tournament_phase: "group"
   home_team_name: "ESP"
   guest_team_name: "SWE"
@@ -285,7 +311,8 @@ game_9:
 
 game_21:
   <<: *DEFAULTS
-  venue: "Dublin"
+  uefa_game_id: "21"
+  venue: "dublin"
   tournament_phase: "group"
   home_team_name: "SWE"
   guest_team_name: "SVK"
@@ -296,7 +323,8 @@ game_21:
 
 game_22:
   <<: *DEFAULTS
-  venue: "Bilbao"
+  uefa_game_id: "22"
+  venue: "bilbao"
   tournament_phase: "group"
   home_team_name: "ESP"
   guest_team_name: "POL"
@@ -307,7 +335,8 @@ game_22:
 
 game_33:
   <<: *DEFAULTS
-  venue: "Bilbao"
+  uefa_game_id: "33"
+  venue: "bilbao"
   tournament_phase: "group"
   home_team_name: "SVK"
   guest_team_name: "ESP"
@@ -315,7 +344,8 @@ game_33:
 
 game_34:
   <<: *DEFAULTS
-  venue: "Dublin"
+  uefa_game_id: "34"
+  venue: "dublin"
   tournament_phase: "group"
   home_team_name: "SWE"
   guest_team_name: "POL"
@@ -325,7 +355,8 @@ game_34:
 
 game_11:
   <<: *DEFAULTS
-  venue: "Budapest"
+  uefa_game_id: "11"
+  venue: "budapest"
   tournament_phase: "group"
   home_team_name: "HUN"
   guest_team_name: "POR"
@@ -336,7 +367,8 @@ game_11:
 
 game_12:
   <<: *DEFAULTS
-  venue: "Munich"
+  uefa_game_id: "12"
+  venue: "munich"
   tournament_phase: "group"
   home_team_name: "FRA"
   guest_team_name: "GER"
@@ -347,7 +379,8 @@ game_12:
 
 game_23:
   <<: *DEFAULTS
-  venue: "Budapest"
+  uefa_game_id: "23"
+  venue: "budapest"
   tournament_phase: "group"
   home_team_name: "HUN"
   guest_team_name: "FRA"
@@ -358,7 +391,8 @@ game_23:
 
 game_24:
   <<: *DEFAULTS
-  venue: "Munich"
+  uefa_game_id: "24"
+  venue: "munich"
   tournament_phase: "group"
   home_team_name: "POR"
   guest_team_name: "GER"
@@ -369,7 +403,8 @@ game_24:
 
 game_35:
   <<: *DEFAULTS
-  venue: "Budapest"
+  uefa_game_id: "35"
+  venue: "budapest"
   tournament_phase: "group"
   home_team_name: "POR"
   guest_team_name: "FRA"
@@ -377,7 +412,8 @@ game_35:
 
 game_36:
   <<: *DEFAULTS
-  venue: "Munich"
+  uefa_game_id: "36"
+  venue: "munich"
   tournament_phase: "group"
   home_team_name: "GER"
   guest_team_name: "HUN"
@@ -387,127 +423,112 @@ game_36:
 
 game_38:
   <<: *DEFAULTS
-  venue: "Amsterdam"
+  uefa_game_id: "38"
+  venue: "amsterdam"
   tournament_phase: "round_of_16"
-  home_team_name: "NA1"
-  guest_team_name: "NA2"
   kickoff_at: 2021-06-26 16:00:00
 
 game_37:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "37"
+  venue: "london"
   tournament_phase: "round_of_16"
-  home_team_name: "NA3"
-  guest_team_name: "NA4"
   kickoff_at: 2021-06-26 19:00:00
 
 game_40:
   <<: *DEFAULTS
-  venue: "Budapest"
+  uefa_game_id: "40"
+  venue: "budapest"
   tournament_phase: "round_of_16"
-  home_team_name: "NA5"
-  guest_team_name: "NA6"
   kickoff_at: 2021-06-27 16:00:00
 
 game_39:
   <<: *DEFAULTS
-  venue: "Bilbao"
+  uefa_game_id: "39"
+  venue: "bilbao"
   tournament_phase: "round_of_16"
-  home_team_name: "NA7"
-  guest_team_name: "NA8"
   kickoff_at: 2021-06-27 19:00:00
 
 game_42:
   <<: *DEFAULTS
-  venue: "Copenhagen"
+  uefa_game_id: "42"
+  venue: "copenhagen"
   tournament_phase: "round_of_16"
-  home_team_name: "NA9"
-  guest_team_name: "NA10"
   kickoff_at: 2021-06-28 16:00:00
 
 game_41:
   <<: *DEFAULTS
-  venue: "Bucharest"
+  uefa_game_id: "41"
+  venue: "bucharest"
   tournament_phase: "round_of_16"
-  home_team_name: "NA11"
-  guest_team_name: "NA12"
   kickoff_at: 2021-06-28 19:00:00
 
 game_44:
   <<: *DEFAULTS
-  venue: "Dublin"
+  uefa_game_id: "44"
+  venue: "dublin"
   tournament_phase: "round_of_16"
-  home_team_name: "NA13"
-  guest_team_name: "NA14"
   kickoff_at: 2021-06-29 16:00:00
 
 game_43:
   <<: *DEFAULTS
-  venue: "Glasgow"
+  uefa_game_id: "43"
+  venue: "glasgow"
   tournament_phase: "round_of_16"
-  home_team_name: "NA15"
-  guest_team_name: "NA16"
   kickoff_at: 2021-06-29 19:00:00
 
 # Quarter-finals
 
 game_45:
   <<: *DEFAULTS
-  venue: "Saint Petersburg"
+  uefa_game_id: "45"
+  venue: "saint_petersburg"
   tournament_phase: "quarter_finals"
-  home_team_name: "NA17"
-  guest_team_name: "NA18"
   kickoff_at: 2021-07-02 16:00:00
 
 game_46:
   <<: *DEFAULTS
-  venue: "Munich"
+  uefa_game_id: "46"
+  venue: "munich"
   tournament_phase: "quarter_finals"
-  home_team_name: "NA19"
-  guest_team_name: "NA20"
   kickoff_at: 2021-07-02 19:00:00
 
 game_47:
   <<: *DEFAULTS
-  venue: "Baku"
+  uefa_game_id: "47"
+  venue: "baku"
   tournament_phase: "quarter_finals"
-  home_team_name: "NA21"
-  guest_team_name: "NA22"
   kickoff_at: 2021-07-03 16:00:00
 
 game_48:
   <<: *DEFAULTS
-  venue: "Rome"
+  uefa_game_id: "48"
+  venue: "rome"
   tournament_phase: "quarter_finals"
-  home_team_name: "NA23"
-  guest_team_name: "NA24"
   kickoff_at: 2021-07-03 19:00:00
 
 # Semi-finals
 
 game_49:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "49"
+  venue: "london"
   tournament_phase: "semi_finals"
-  home_team_name: "NA25"
-  guest_team_name: "NA26"
   kickoff_at: 2021-07-06 19:00:00
 
 game_50:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "50"
+  venue: "london"
   tournament_phase: "semi_finals"
-  home_team_name: "NA27"
-  guest_team_name: "NA28"
   kickoff_at: 2021-07-07 19:00:00
 
 # Final
 
 game_51:
   <<: *DEFAULTS
-  venue: "London"
+  uefa_game_id: "51"
+  venue: "london"
   tournament_phase: "final"
-  home_team_name: "NA29"
-  guest_team_name: "NA30"
   kickoff_at: 2021-07-11 19:00:00
 

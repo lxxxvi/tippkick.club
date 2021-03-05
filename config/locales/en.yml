@@ -4,6 +4,25 @@ en:
       game:
         final_whistle_at: "Final whistle"
         kickoff_at: "Kickoff"
+        tournament_phases:
+          group: "Group phase"
+          round_of_16: "Round Of 16"
+          quarter_finals: "Quarter Finals"
+          semi_finals: "Semi Finals"
+          final: "Final"
+        venues:
+          amsterdam: "Amsterdam"
+          baku: "Baku"
+          bilbao: "Bilbao"
+          bucharest: "Bucharest"
+          budapest: "Budapest"
+          copenhagen: "Copenhagen"
+          dublin: "Dublin"
+          glasgow: "Glasgow"
+          london: "London"
+          munich: "Munich"
+          rome: "Rome"
+          saint_petersburg: "Saint Petersburg"
     errors:
       models:
         game:
@@ -20,7 +39,38 @@ en:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
-  games:
-    filter_menu:
-      upcoming_only: "Upcoming"
-      past_only: "Past"
+  shared:
+    game: "Game"
+    games: "Games"
+    prediction: "Prediction"
+    predictions: "Predictions"
+    upcoming_only: "Upcoming"
+    past_only: "Past"
+    kickoff_in: "Kickoff in"
+    in_venue: "in"
+    uefa_game_id: "Match %{uefa_game_id}"
+    fifa_country_codes:
+      AUT: "Austria"
+      BEL: "Belgium"
+      CRO: "Croatia"
+      CZE: "Czech Republic"
+      DEN: "Denmark"
+      ENG: "England"
+      ESP: "Spain"
+      FIN: "Finland"
+      FRA: "France"
+      GER: "Germany"
+      HUN: "Hungary"
+      ITA: "Italy"
+      MKD: "North Macedonia"
+      NED: "Netherlands"
+      POL: "Poland"
+      POR: "Portugal"
+      RUS: "Russia"
+      SCO: "Scotland"
+      SUI: "Switzerland"
+      SVK: "Slovakia"
+      SWE: "Sweden"
+      TUR: "Turkey"
+      UKR: "Ukraine"
+      WAL: "Wales"
