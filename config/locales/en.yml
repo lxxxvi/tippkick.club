@@ -20,3 +20,7 @@ en:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
+  games:
+    filter_menu:
+      upcoming_only: "Upcoming"
+      past_only: "Past"
