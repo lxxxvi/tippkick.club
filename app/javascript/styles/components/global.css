@@ -1,0 +1,11 @@
+* {
+  @apply font-mono;
+}
+
+h1 {
+  @apply mb-4 uppercase text-blue-500 text-xs tracking-widest;
+}
+
+a {
+  @apply border-b;
+}

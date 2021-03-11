@@ -1,5 +1,10 @@
 class Game < ApplicationRecord
-  validates :venue, :tournament_phase,
+  include TournamentPhases
+  include Venues
+
+  has_many :predictions, dependent: :destroy
+
+  validates :uefa_game_id, :venue, :tournament_phase,
             :home_team_name, :guest_team_name,
             :home_team_score, :guest_team_score,
             :kickoff_at, presence: true
@@ -7,22 +12,10 @@ class Game < ApplicationRecord
   validates :home_team_score, :guest_team_score,
             numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  validates :tournament_phase, uniqueness: { scope: %i[home_team_name guest_team_name] }
+  validates :uefa_game_id, uniqueness: true
 
   validate :final_whistle_is_after_kickoff
   validate :scores_cannot_change_before_kickoff
-
-  enum tournament_phase: {
-    group: 'group',
-    round_of_16: 'round_of_16',
-    quarter_finals: 'quarter_finals',
-    semi_finals: 'semi_finals',
-    final: 'final'
-  }, _suffix: :phase
-
-  scope :ordered_chronologically, -> { order(kickoff_at: :asc) }
-  scope :upcoming, -> { where(final_whistle_at: nil) }
-  scope :past, -> { where.not(final_whistle_at: nil) }
 
   def final_whistle(reset: false)
     if reset
@@ -38,7 +31,19 @@ class Game < ApplicationRecord
   end
 
   def live?
-    kickoff_at.past? && final_whistle_at.nil?
+    kickoff_past? && final_whistle_at.nil?
+  end
+
+  def kickoff_past?
+    kickoff_at.past?
+  end
+
+  def kickoff_future?
+    kickoff_at.future?
+  end
+
+  def decorate
+    @decorate ||= GameDecorator.new(self)
   end
 
   private

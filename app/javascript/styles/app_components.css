@@ -1,0 +1,6 @@
+@import "tailwindcss/components";
+
+@import "components/global.css";
+@import "components/navigation.css";
+@import "components/prediction.css";
+

@@ -40,4 +40,52 @@ class GameTest < ActiveSupport::TestCase
       assert game.update(home_team_score: 9, guest_team_score: 9)
     end
   end
+
+  test '#final_whistle' do
+    game = games(:game_25)
+    travel_to '2021-06-20 17:45:00 UTC' do
+      assert_changes -> { game.reload.final_whistle_at }, from: nil do
+        game.final_whistle
+      end
+
+      assert_changes -> { game.reload.final_whistle_at }, to: nil do
+        game.final_whistle(reset: true)
+      end
+    end
+  end
+
+  test '#live?' do
+    game = games(:game_25)
+    travel_to '2021-06-20 16:00:00 UTC' do
+      assert_not game.live?
+    end
+
+    travel_to '2021-06-20 16:00:01 UTC' do
+      assert game.live?
+      game.final_whistle
+      assert_not game.live?
+    end
+  end
+
+  test '#kickoff_past?' do
+    game = games(:game_25)
+    travel_to '2021-06-20 16:00:00 UTC' do
+      assert_not game.kickoff_past?
+    end
+
+    travel_to '2021-06-20 16:00:01 UTC' do
+      assert game.kickoff_past?
+    end
+  end
+
+  test '#kickoff_future?' do
+    game = games(:game_25)
+    travel_to '2021-06-20 15:59:59 UTC' do
+      assert game.kickoff_future?
+    end
+
+    travel_to '2021-06-20 16:00:00 UTC' do
+      assert_not game.kickoff_future?
+    end
+  end
 end
