@@ -3,7 +3,7 @@ require 'application_system_test_case'
 class GamesTest < ApplicationSystemTestCase
   test 'show upcoming and past games' do
     travel_to '2021-06-20 15:00:00 UTC' do
-      visit games_path
+      sign_in_as :diego
       assert_selector 'h1', text: 'Games'
       assert_selector '.prediction-with-game', count: 24
     end
