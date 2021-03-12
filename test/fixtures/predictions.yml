@@ -1,7 +1,6 @@
 DEFAULTS: &DEFAULTS
   home_team_score: 0
   guest_team_score: 0
-  points: 0
 
 # Diego Group A
 
@@ -9,33 +8,29 @@ diego_game_1:
   <<: *DEFAULTS
   user: diego
   game: game_1
-  home_team_score: 0
-  guest_team_score: 1
-  points: 10
+  home_team_score: 4
+  guest_team_score: 3
 
 diego_game_2:
   <<: *DEFAULTS
   user: diego
   game: game_2
-  home_team_score: 1
-  guest_team_score: 1
-  points: 10
+  home_team_score: 0
+  guest_team_score: 0
 
 diego_game_13:
   <<: *DEFAULTS
   user: diego
   game: game_13
-  home_team_score: 0
-  guest_team_score: 2
-  points: 10
+  home_team_score: 1
+  guest_team_score: 0
 
 diego_game_14:
   <<: *DEFAULTS
   user: diego
   game: game_14
-  home_team_score: 1
+  home_team_score: 0
   guest_team_score: 1
-  points: 10
 
 # this game is currently running
 diego_game_25:
@@ -59,17 +54,15 @@ diego_game_3:
   <<: *DEFAULTS
   user: diego
   game: game_3
-  home_team_score: 2
-  guest_team_score: 1
-  points: 10
+  home_team_score: 0
+  guest_team_score: 2
 
 diego_game_4:
   <<: *DEFAULTS
   user: diego
   game: game_4
-  home_team_score: 0
+  home_team_score: 1
   guest_team_score: 0
-  points: 10
 
 diego_game_15:
   <<: *DEFAULTS
@@ -77,7 +70,6 @@ diego_game_15:
   game: game_15
   home_team_score: 1
   guest_team_score: 2
-  points: 10
 
 diego_game_16:
   <<: *DEFAULTS
@@ -85,7 +77,6 @@ diego_game_16:
   game: game_16
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 diego_game_27:
   <<: *DEFAULTS
@@ -105,7 +96,6 @@ diego_game_6:
   game: game_6
   home_team_score: 3
   guest_team_score: 0
-  points: 10
 
 diego_game_5:
   <<: *DEFAULTS
@@ -113,7 +103,6 @@ diego_game_5:
   game: game_5
   home_team_score: 3
   guest_team_score: 1
-  points: 10
 
 diego_game_18:
   <<: *DEFAULTS
@@ -121,7 +110,6 @@ diego_game_18:
   game: game_18
   home_team_score: 2
   guest_team_score: 0
-  points: 10
 
 diego_game_17:
   <<: *DEFAULTS
@@ -129,7 +117,6 @@ diego_game_17:
   game: game_17
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 diego_game_29:
   <<: *DEFAULTS
@@ -149,7 +136,6 @@ diego_game_7:
   game: game_7
   home_team_score: 0
   guest_team_score: 0
-  points: 10
 
 diego_game_8:
   <<: *DEFAULTS
@@ -157,7 +143,6 @@ diego_game_8:
   game: game_8
   home_team_score: 2
   guest_team_score: 2
-  points: 10
 
 diego_game_19:
   <<: *DEFAULTS
@@ -165,7 +150,6 @@ diego_game_19:
   game: game_19
   home_team_score: 1
   guest_team_score: 2
-  points: 10
 
 diego_game_20:
   <<: *DEFAULTS
@@ -173,7 +157,6 @@ diego_game_20:
   game: game_20
   home_team_score: 3
   guest_team_score: 1
-  points: 10
 
 diego_game_31:
   <<: *DEFAULTS
@@ -193,7 +176,6 @@ diego_game_10:
   game: game_10
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 diego_game_9:
   <<: *DEFAULTS
@@ -201,7 +183,6 @@ diego_game_9:
   game: game_9
   home_team_score: 2
   guest_team_score: 0
-  points: 10
 
 diego_game_21:
   <<: *DEFAULTS
@@ -209,7 +190,6 @@ diego_game_21:
   game: game_21
   home_team_score: 0
   guest_team_score: 1
-  points: 10
 
 diego_game_22:
   <<: *DEFAULTS
@@ -217,7 +197,6 @@ diego_game_22:
   game: game_22
   home_team_score: 1
   guest_team_score: 0
-  points: 10
 
 diego_game_33:
   <<: *DEFAULTS
@@ -237,7 +216,6 @@ diego_game_11:
   game: game_11
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 diego_game_12:
   <<: *DEFAULTS
@@ -245,7 +223,6 @@ diego_game_12:
   game: game_12
   home_team_score: 0
   guest_team_score: 1
-  points: 10
 
 diego_game_23:
   <<: *DEFAULTS
@@ -253,7 +230,6 @@ diego_game_23:
   game: game_23
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 diego_game_24:
   <<: *DEFAULTS
@@ -261,7 +237,6 @@ diego_game_24:
   game: game_24
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 diego_game_35:
   <<: *DEFAULTS
@@ -364,7 +339,6 @@ pele_game_1:
   game: game_1
   home_team_score: 0
   guest_team_score: 1
-  points: 10
 
 pele_game_2:
   <<: *DEFAULTS
@@ -372,7 +346,6 @@ pele_game_2:
   game: game_2
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 pele_game_13:
   <<: *DEFAULTS
@@ -380,7 +353,6 @@ pele_game_13:
   game: game_13
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 pele_game_14:
   <<: *DEFAULTS
@@ -388,7 +360,6 @@ pele_game_14:
   game: game_14
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 # this game is currently running
 pele_game_25:
@@ -414,7 +385,6 @@ pele_game_3:
   game: game_3
   home_team_score: 2
   guest_team_score: 1
-  points: 10
 
 pele_game_4:
   <<: *DEFAULTS
@@ -422,7 +392,6 @@ pele_game_4:
   game: game_4
   home_team_score: 0
   guest_team_score: 0
-  points: 10
 
 pele_game_15:
   <<: *DEFAULTS
@@ -430,7 +399,6 @@ pele_game_15:
   game: game_15
   home_team_score: 1
   guest_team_score: 2
-  points: 10
 
 pele_game_16:
   <<: *DEFAULTS
@@ -438,7 +406,6 @@ pele_game_16:
   game: game_16
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 pele_game_27:
   <<: *DEFAULTS
@@ -458,7 +425,6 @@ pele_game_6:
   game: game_6
   home_team_score: 3
   guest_team_score: 0
-  points: 10
 
 pele_game_5:
   <<: *DEFAULTS
@@ -466,7 +432,6 @@ pele_game_5:
   game: game_5
   home_team_score: 3
   guest_team_score: 1
-  points: 10
 
 pele_game_18:
   <<: *DEFAULTS
@@ -474,7 +439,6 @@ pele_game_18:
   game: game_18
   home_team_score: 2
   guest_team_score: 0
-  points: 10
 
 pele_game_17:
   <<: *DEFAULTS
@@ -482,7 +446,6 @@ pele_game_17:
   game: game_17
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 pele_game_29:
   <<: *DEFAULTS
@@ -502,7 +465,6 @@ pele_game_7:
   game: game_7
   home_team_score: 0
   guest_team_score: 0
-  points: 10
 
 pele_game_8:
   <<: *DEFAULTS
@@ -510,7 +472,6 @@ pele_game_8:
   game: game_8
   home_team_score: 2
   guest_team_score: 2
-  points: 10
 
 pele_game_19:
   <<: *DEFAULTS
@@ -518,7 +479,6 @@ pele_game_19:
   game: game_19
   home_team_score: 1
   guest_team_score: 2
-  points: 10
 
 pele_game_20:
   <<: *DEFAULTS
@@ -526,7 +486,6 @@ pele_game_20:
   game: game_20
   home_team_score: 3
   guest_team_score: 1
-  points: 10
 
 pele_game_31:
   <<: *DEFAULTS
@@ -546,7 +505,6 @@ pele_game_10:
   game: game_10
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 pele_game_9:
   <<: *DEFAULTS
@@ -554,7 +512,6 @@ pele_game_9:
   game: game_9
   home_team_score: 2
   guest_team_score: 0
-  points: 10
 
 pele_game_21:
   <<: *DEFAULTS
@@ -562,7 +519,6 @@ pele_game_21:
   game: game_21
   home_team_score: 0
   guest_team_score: 1
-  points: 10
 
 pele_game_22:
   <<: *DEFAULTS
@@ -570,7 +526,6 @@ pele_game_22:
   game: game_22
   home_team_score: 1
   guest_team_score: 0
-  points: 10
 
 pele_game_33:
   <<: *DEFAULTS
@@ -590,7 +545,6 @@ pele_game_11:
   game: game_11
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 pele_game_12:
   <<: *DEFAULTS
@@ -598,7 +552,6 @@ pele_game_12:
   game: game_12
   home_team_score: 0
   guest_team_score: 1
-  points: 10
 
 pele_game_23:
   <<: *DEFAULTS
@@ -606,7 +559,6 @@ pele_game_23:
   game: game_23
   home_team_score: 1
   guest_team_score: 1
-  points: 10
 
 pele_game_24:
   <<: *DEFAULTS
@@ -614,7 +566,6 @@ pele_game_24:
   game: game_24
   home_team_score: 0
   guest_team_score: 2
-  points: 10
 
 pele_game_35:
   <<: *DEFAULTS
