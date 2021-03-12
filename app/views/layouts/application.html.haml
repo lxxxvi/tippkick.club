@@ -11,9 +11,13 @@
   %body
     .max-w-screen-sm.mx-auto
       %nav.m-4
-        = link_to_unless_current t('shared.games'), games_path
-        = link_to_unless_current t('shared.predictions'), predictions_path
-      .m-4
+        - if signed_in?
+          = link_to_unless_current t('shared.games'), games_path
+          = link_to_unless_current t('shared.predictions'), predictions_path
+          = link_to t('.sign_out'), destroy_user_session_path, method: :delete
+        - else
+          = link_to_unless_current t('.sign_in'), new_user_session_path
+      .m-4.flash-messages
         = notice
         = alert
 

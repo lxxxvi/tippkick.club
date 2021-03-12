@@ -4,11 +4,11 @@ class PredictionsTest < ApplicationSystemTestCase
   include ActionView::RecordIdentifier
 
   test 'index shows upcoming games' do
-    # assuming diego, to be fixed
     prediction = predictions(:diego_game_25)
 
     travel_to '2021-06-20 15:00:00 UTC' do
-      visit predictions_path
+      sign_in_as :diego
+      navigate_to 'Predictions'
       assert_selector 'h1', text: 'Predictions'
       assert_selector '.prediction', count: 27
       assert_selector "##{dom_id(prediction)}"
@@ -16,11 +16,11 @@ class PredictionsTest < ApplicationSystemTestCase
   end
 
   test 'index does not show kicked-off games' do
-    # assuming diego, to be fixed
     prediction = predictions(:diego_game_25)
 
     travel_to '2021-06-20 16:00:00 UTC' do
-      visit predictions_path
+      sign_in_as :diego
+      navigate_to 'Predictions'
       assert_selector 'h1', text: 'Predictions'
       assert_selector '.prediction', count: 25
       assert_selector "##{dom_id(prediction)}", count: 0
@@ -33,7 +33,8 @@ class PredictionsTest < ApplicationSystemTestCase
 
     travel_to '2021-06-20 15:00:00 UTC' do
       using_browser do
-        visit predictions_path
+        sign_in_as :diego
+        navigate_to 'Predictions'
 
         within("##{dom_id(prediction)}") do
           click_on 'Start'

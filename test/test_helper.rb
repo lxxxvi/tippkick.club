@@ -11,3 +11,11 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
+  def sign_in_as(fixture_key)
+    sign_in users(fixture_key)
+  end
+end
