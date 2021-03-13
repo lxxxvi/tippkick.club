@@ -39,7 +39,7 @@ class PredictionPointsServiceTest < ActiveSupport::TestCase
     assert_nil wrong_prediction.result_points
     assert_nil wrong_prediction.perfect_prediction_bonus_points
 
-    PredictionPointsService.call!
+    PredictionPointsService.new.call!
 
     assert_equal 12, perfect_prediction.reload.total_points
     assert_equal 4, perfect_prediction.home_team_score_points
@@ -76,5 +76,7 @@ class PredictionPointsServiceTest < ActiveSupport::TestCase
     assert_equal 0, wrong_prediction.guest_team_score_points
     assert_equal 0, wrong_prediction.result_points
     assert_equal 0, wrong_prediction.perfect_prediction_bonus_points
+
+    assert_equal 152, users(:diego).total_points
   end
 end

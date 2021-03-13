@@ -23,22 +23,6 @@ class Prediction < ApplicationRecord
     home_team_score.present? && guest_team_score.present?
   end
 
-  def points_assigned?
-    home_team_score_points.present? &&
-      guest_team_score_points.present? &&
-      result_points.present? &&
-      perfect_prediction_bonus_points.present?
-  end
-
-  def total_points
-    return unless points_assigned?
-
-    home_team_score_points +
-      guest_team_score_points +
-      result_points +
-      perfect_prediction_bonus_points
-  end
-
   private
 
   def scores_cannot_change_after_kickoff
