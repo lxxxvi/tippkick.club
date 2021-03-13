@@ -48,7 +48,10 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.bigint "game_id", null: false
     t.integer "home_team_score"
     t.integer "guest_team_score"
-    t.integer "points"
+    t.integer "home_team_score_points"
+    t.integer "guest_team_score_points"
+    t.integer "result_points"
+    t.integer "perfect_prediction_bonus_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_predictions_on_game_id"

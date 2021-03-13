@@ -12,8 +12,8 @@ game_1:
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "ITA"
-  home_team_score: 0
-  guest_team_score: 1
+  home_team_score: 4
+  guest_team_score: 3
   kickoff_at: 2021-06-11 19:00:00
   final_whistle_at: 2021-06-11 21:00:00
 
@@ -36,8 +36,8 @@ game_13:
   tournament_phase: "group"
   home_team_name: "TUR"
   guest_team_name: "WAL"
-  home_team_score: 0
-  guest_team_score: 2
+  home_team_score: 2
+  guest_team_score: 0
   kickoff_at: 2021-06-16 16:00:00
   final_whistle_at: 2021-06-16 18:00:00
 
@@ -48,8 +48,8 @@ game_14:
   tournament_phase: "group"
   home_team_name: "ITA"
   guest_team_name: "SUI"
-  home_team_score: 1
-  guest_team_score: 1
+  home_team_score: 0
+  guest_team_score: 2
   kickoff_at: 2021-06-16 19:00:00
   final_whistle_at: 2021-06-16 21:00:00
 
@@ -100,8 +100,8 @@ game_4:
   tournament_phase: "group"
   home_team_name: "BEL"
   guest_team_name: "RUS"
-  home_team_score: 0
-  guest_team_score: 0
+  home_team_score: 1
+  guest_team_score: 2
   kickoff_at: 2021-06-12 19:00:00
   final_whistle_at: 2021-06-12 21:00:00
 

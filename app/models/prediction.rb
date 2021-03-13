@@ -2,7 +2,7 @@ class Prediction < ApplicationRecord
   belongs_to :user
   belongs_to :game
 
-  validates :home_team_score, :guest_team_score, :points,
+  validates :home_team_score, :guest_team_score,
             numericality: { only_integer: true, greater_than_or_equal_to: 0 },
             allow_nil: true
 
@@ -21,6 +21,22 @@ class Prediction < ApplicationRecord
 
   def predicted?
     home_team_score.present? && guest_team_score.present?
+  end
+
+  def points_assigned?
+    home_team_score_points.present? &&
+      guest_team_score_points.present? &&
+      result_points.present? &&
+      perfect_prediction_bonus_points.present?
+  end
+
+  def total_points
+    return unless points_assigned?
+
+    home_team_score_points +
+      guest_team_score_points +
+      result_points +
+      perfect_prediction_bonus_points
   end
 
   private
