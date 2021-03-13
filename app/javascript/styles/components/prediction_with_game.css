@@ -1,0 +1,51 @@
+.prediction-with-game {
+  display: grid;
+  grid-template-columns: 52% 16% 16% 16%;
+}
+
+.prediction-with-game--home-team-name {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+
+.prediction-with-game--guest-team-name {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+}
+
+.prediction-with-game--actual-home-team-score {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.prediction-with-game--predicted-home-team-score {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.prediction-with-game--actual-guest-team-score {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.prediction-with-game--predicted-guest-team-score {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.prediction-with-game--total-points {
+  grid-column: 4;
+  grid-row: 1 / 3;
+  align-self: center;
+  justify-self: center;
+}

@@ -1,5 +1,5 @@
 - if prediction.kickoff_future?
-  .prediction{ id: dom_id(prediction) }
+  .prediction.my-5.py-10.px-4.border.rounded{ id: dom_id(prediction) }
     .prediction--tournament-phase
       = render 'games/tournament_phase_badge', tournament_phase: prediction.game.tournament_phase
     .prediction--uefa-game-id
@@ -10,8 +10,10 @@
       = t('shared.in_venue')
       %b= prediction.game.decorate.display_venue
 
-    .prediction--home-team= prediction.game.decorate.display_home_team_name
-    .prediction--guest-team= prediction.game.decorate.display_guest_team_name
+    .prediction--home-team.text-right.text-sm
+      = prediction.game.decorate.display_home_team_name
+    .prediction--guest-team.text-sm.text-left
+      = prediction.game.decorate.display_guest_team_name
 
     - if prediction.predicted?
       .prediction--home-team-score= prediction.home_team_score
