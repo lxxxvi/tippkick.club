@@ -12,30 +12,17 @@ jobs:
     name: Setup Ruby and bundle install
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
-
-      - name: Cache Ruby gems
-        uses: actions/cache@v2
-        id: bundler-cache
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
-
-      - name: Bundle install
-        if: steps.bundler-cache.outputs.cache-hit != 'true'
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
+          bundler-cache: true
 
   yarn_install:
     name: Setup node and yarn install
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v1
         with:
@@ -47,29 +34,19 @@ jobs:
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-node_modules-${{ hashFiles('./yarn.lock') }}
       - run: yarn install
-
 
   rubocop:
     name: Rubocop
     needs: bundle_install
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
-
-      - name: Restore cache for Ruby gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
-
-      - name: Use gems from vendor/bundle
-        run: bundle config path vendor/bundle
+          bundler-cache: true
 
       - name: Run Rubocop
         run: bundle exec rubocop -p
@@ -101,27 +78,18 @@ jobs:
           - 6379:6379
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
 
       # has to run before Ruby gems, for some reason the hashsum of yarn.lock changes
       - name: Restore cache for npm packages
         uses: actions/cache@v2
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-node_modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Restore cache for Ruby gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile.lock') }}
-
-      - name: Use gems from vendor/bundle
-        run: bundle config path vendor/bundle
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-node_modules-${{ hashFiles('./yarn.lock') }}
 
       - name: Create master.key
         env:
