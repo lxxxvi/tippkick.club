@@ -74,3 +74,6 @@ en:
       TUR: "Turkey"
       UKR: "Ukraine"
       WAL: "Wales"
+  time:
+    formats:
+      day_month: "%d %b"

@@ -40,13 +40,6 @@ class PredictionPointsService
          WHERE final_whistle_at IS NOT NULL
       )
 
-      , predicted_games AS (
-        SELECT *
-          FROM predictions
-         WHERE home_team_score IS NOT NULL
-           AND guest_team_score IS NOT NULL
-      )
-
       , predictions_results AS (
         SELECT id                 AS prediction_id
              , game_id            AS game_id
@@ -57,7 +50,7 @@ class PredictionPointsService
                  WHEN home_team_score < guest_team_score THEN 'GUESTWINS'
                  ELSE 'DRAW'
                END                AS predicted_result
-          FROM predicted_games
+          FROM predictions
       )
 
       , with_points AS (

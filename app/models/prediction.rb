@@ -13,7 +13,7 @@ class Prediction < ApplicationRecord
   scope :of_user, ->(user) { where(user: user) }
   scope :with_game, -> { includes(:game).joins(:game) }
   scope :ordered_chronologically, -> { includes(:game).order('games.kickoff_at ASC, games.uefa_game_id ASC') }
-  scope :ordered_antichronologically, -> { includes(:game).order('games.kickoff_at DESC, games.final_whistle_at DESC') }
+  scope :ordered_antichronologically, -> { includes(:game).order('games.kickoff_at DESC, games.uefa_game_id ASC') }
   scope :kickoff_future, -> { joins(:game).where('games.kickoff_at > :datetime', datetime: Time.zone.now) }
   scope :kickoff_past, -> { joins(:game).where('games.kickoff_at <= :datetime', datetime: Time.zone.now) }
 
