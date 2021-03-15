@@ -67,6 +67,20 @@ class PredictionsTest < ApplicationSystemTestCase
     end
   end
 
+  test 'games not having team names cannot be predicted' do
+    prediction = predictions(:diego_game_37)
+
+    before_tournament do
+      sign_in_as :diego
+
+      navigate_to 'Predictions'
+
+      within("##{dom_id(prediction)}") do
+        assert_selector 'button, a, submit', count: 0
+      end
+    end
+  end
+
   private
 
   def increase_home_score

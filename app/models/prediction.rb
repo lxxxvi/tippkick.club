@@ -17,7 +17,7 @@ class Prediction < ApplicationRecord
   scope :kickoff_future, -> { joins(:game).where('games.kickoff_at > :datetime', datetime: Time.zone.now) }
   scope :kickoff_past, -> { joins(:game).where('games.kickoff_at <= :datetime', datetime: Time.zone.now) }
 
-  delegate :kickoff_future?, to: :game
+  delegate :kickoff_future?, :predictable?, to: :game
 
   def predicted?
     home_team_score.present? && guest_team_score.present?
