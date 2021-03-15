@@ -14,7 +14,6 @@
         - if signed_in?
           = link_to_unless_current t('shared.games'), games_path
           = link_to_unless_current t('shared.predictions'), predictions_path
-          = link_to t('.sign_out'), destroy_user_session_path, method: :delete
         - else
           = link_to_unless_current t('.sign_in'), new_user_session_path
       .m-4.flash-messages
@@ -23,3 +22,6 @@
 
       .m-4
         = yield
+
+      %footer.mx-4.my-20.text-right
+        = link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'text-gray-300 hover:text-gray-700 text-xs'
