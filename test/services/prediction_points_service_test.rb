@@ -79,4 +79,12 @@ class PredictionPointsServiceTest < ActiveSupport::TestCase
 
     assert_equal 152, users(:diego).total_points
   end
+
+  test '0 points for no predicted games' do
+    new_user = User.create!(email: 'zinedine@tippkick.test', password: 'frappe')
+
+    assert_changes -> { new_user.reload.total_points }, to: 0 do
+      PredictionPointsService.new.call!
+    end
+  end
 end

@@ -41,15 +41,16 @@ class PredictionPointsService
       )
 
       , predictions_results AS (
-        SELECT id                 AS prediction_id
-             , game_id            AS game_id
-             , home_team_score    AS predicted_home_team_score
-             , guest_team_score   AS predicted_guest_team_score
+        SELECT id                               AS prediction_id
+             , game_id                          AS game_id
+             , COALESCE(home_team_score, -1)    AS predicted_home_team_score
+             , COALESCE(guest_team_score, -1)   AS predicted_guest_team_score
              , CASE
+                 WHEN home_team_score IS NULL AND guest_team_score IS NULL THEN 'NOT-PREDICTED'
                  WHEN home_team_score > guest_team_score THEN 'HOMEWINS'
                  WHEN home_team_score < guest_team_score THEN 'GUESTWINS'
                  ELSE 'DRAW'
-               END                AS predicted_result
+               END                              AS predicted_result
           FROM predictions
       )
 
