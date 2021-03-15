@@ -6,7 +6,7 @@ class PredictionsTest < ApplicationSystemTestCase
   test 'index shows upcoming games' do
     prediction = predictions(:diego_game_25)
 
-    travel_to '2021-06-20 15:00:00 UTC' do
+    before_game_25 do
       sign_in_as :diego
       navigate_to 'Predictions'
       assert_selector 'h1', text: 'Predictions'
@@ -18,7 +18,7 @@ class PredictionsTest < ApplicationSystemTestCase
   test 'index does not show kicked-off games' do
     prediction = predictions(:diego_game_25)
 
-    travel_to '2021-06-20 16:00:00 UTC' do
+    at_kickoff_of_game_25 do
       sign_in_as :diego
       navigate_to 'Predictions'
       assert_selector 'h1', text: 'Predictions'
@@ -29,9 +29,9 @@ class PredictionsTest < ApplicationSystemTestCase
 
   test 'predict game' do
     prediction = predictions(:diego_game_25)
-    prediction.update(home_team_score: nil, guest_team_score: nil)
+    reset_prediction(prediction)
 
-    travel_to '2021-06-20 15:00:00 UTC' do
+    before_game_25 do
       using_browser do
         sign_in_as :diego
         navigate_to 'Predictions'

@@ -13,13 +13,13 @@ class GameTest < ActiveSupport::TestCase
   test 'validate final_whistle_is_after_kickoff' do
     game = games(:game_25)
 
-    travel_to game.kickoff_at do
+    at_kickoff_of_game_25 do
       assert_not game.final_whistle
 
       assert_includes game.errors[:final_whistle_at], 'cannot be before kickoff'
     end
 
-    travel_to game.kickoff_at + 1.second do
+    in_game_25 do
       assert_changes -> { game.reload.final_whistle_at }, from: nil do
         assert game.final_whistle
       end
@@ -29,21 +29,21 @@ class GameTest < ActiveSupport::TestCase
   test 'validate scores_cannot_change_before_kickoff' do
     game = games(:game_25)
 
-    travel_to game.kickoff_at do
+    at_kickoff_of_game_25 do
       assert_not game.update(home_team_score: 9, guest_team_score: 9)
 
       assert_includes game.errors[:home_team_score], 'cannot be changed before kickoff'
       assert_includes game.errors[:guest_team_score], 'cannot be changed before kickoff'
     end
 
-    travel_to game.kickoff_at + 1.second do
+    in_game_25 do
       assert game.update(home_team_score: 9, guest_team_score: 9)
     end
   end
 
   test '#final_whistle' do
     game = games(:game_25)
-    travel_to '2021-06-20 17:45:00 UTC' do
+    after_game_25 do
       assert_changes -> { game.reload.final_whistle_at }, from: nil do
         game.final_whistle
       end
@@ -56,11 +56,11 @@ class GameTest < ActiveSupport::TestCase
 
   test '#live?' do
     game = games(:game_25)
-    travel_to '2021-06-20 16:00:00 UTC' do
+    at_kickoff_of_game_25 do
       assert_not game.live?
     end
 
-    travel_to '2021-06-20 16:00:01 UTC' do
+    in_game_25 do
       assert game.live?
       game.final_whistle
       assert_not game.live?
@@ -69,22 +69,22 @@ class GameTest < ActiveSupport::TestCase
 
   test '#kickoff_past?' do
     game = games(:game_25)
-    travel_to '2021-06-20 16:00:00 UTC' do
+    at_kickoff_of_game_25 do
       assert_not game.kickoff_past?
     end
 
-    travel_to '2021-06-20 16:00:01 UTC' do
+    in_game_25 do
       assert game.kickoff_past?
     end
   end
 
   test '#kickoff_future?' do
     game = games(:game_25)
-    travel_to '2021-06-20 15:59:59 UTC' do
+    before_game_25 do
       assert game.kickoff_future?
     end
 
-    travel_to '2021-06-20 16:00:00 UTC' do
+    at_kickoff_of_game_25 do
       assert_not game.kickoff_future?
     end
   end

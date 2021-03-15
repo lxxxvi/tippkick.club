@@ -13,11 +13,11 @@ class PredictionTest < ActiveSupport::TestCase
   test 'validate scores_cannot_change_after_kickoff' do
     prediction = predictions(:diego_game_25)
 
-    travel_to prediction.game.kickoff_at - 1.second do
+    before_game_25 do
       assert prediction.update(home_team_score: 9, guest_team_score: 9)
     end
 
-    travel_to prediction.game.kickoff_at do
+    at_kickoff_of_game_25 do
       assert_not prediction.update(home_team_score: 8, guest_team_score: 8)
 
       assert_includes prediction.errors[:home_team_score], 'cannot be changed after kickoff'
@@ -28,19 +28,19 @@ class PredictionTest < ActiveSupport::TestCase
   test '#predicted?' do
     prediction = predictions(:diego_game_1)
 
-    assert_changes -> { prediction.predicted? }, from: true do
-      prediction.update(home_team_score: nil, guest_team_score: nil)
+    assert_changes -> { prediction.reload.predicted? }, from: true do
+      reset_prediction(prediction)
     end
   end
 
   test '#kickoff_future?' do
     prediction = predictions(:diego_game_25)
 
-    travel_to '2021-06-20 15:59:59 UTC' do
+    before_game_25 do
       assert prediction.kickoff_future?
     end
 
-    travel_to '2021-06-20 16:00:00 UTC' do
+    at_kickoff_of_game_25 do
       assert_not prediction.kickoff_future?
     end
   end

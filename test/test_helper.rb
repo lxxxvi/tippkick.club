@@ -1,15 +1,21 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'time_travelers'
 
 class ActiveSupport::TestCase
+  include TimeTravelers
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  # rubocop:disable Rails/SkipsModelValidations
+  def reset_prediction(prediction)
+    prediction.update_columns(home_team_score: nil, guest_team_score: nil)
+  end
+  # rubocop:enable Rails/SkipsModelValidations
 end
 
 class ActionDispatch::IntegrationTest
