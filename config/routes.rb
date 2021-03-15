@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :games, only: %i[index]
   resources :predictions, only: %i[index]
 
+  resource :dashboard, only: %i[show]
+
   root 'landing_page#index'
 end

@@ -11,11 +11,9 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # rubocop:disable Rails/SkipsModelValidations
   def reset_prediction(prediction)
     prediction.update_columns(home_team_score: nil, guest_team_score: nil)
   end
-  # rubocop:enable Rails/SkipsModelValidations
 end
 
 class ActionDispatch::IntegrationTest

@@ -1,0 +1,14 @@
+.stats {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.stats--total-points {
+  justify-self: center;
+  align-self: center;
+}
+
+.stats--global-ranking-position {
+  justify-self: center;
+  align-self: center;
+}
