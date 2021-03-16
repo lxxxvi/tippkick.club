@@ -10,6 +10,7 @@ class CreateGames < ActiveRecord::Migration[6.1]
       t.integer :guest_team_score, null: false, default: 0
       t.datetime :kickoff_at, null: false
       t.datetime :final_whistle_at, null: true
+      t.integer :max_total_points, null: true
 
       t.index %i[tournament_phase home_team_name guest_team_name],
               unique: true,
