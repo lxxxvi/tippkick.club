@@ -39,6 +39,11 @@ en:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
+  dashboards:
+    show:
+      ready_to_be_predicted:
+        one: "There is at least 1 game ready to be predicted"
+        other: "There are at least %{count} games ready to be predicted"
   shared:
     game: "Game"
     games: "Games"
@@ -74,6 +79,9 @@ en:
       TUR: "Turkey"
       UKR: "Ukraine"
       WAL: "Wales"
+    points:
+      one: "Point"
+      other: "Points"
   time:
     formats:
       day_month: "%d %b"

@@ -11,13 +11,20 @@ class Prediction < ApplicationRecord
   validate :scores_cannot_change_after_kickoff
 
   scope :of_user, ->(user) { where(user: user) }
+  scope :unpredicted, -> { where(home_team_score: nil, guest_team_score: nil) }
   scope :with_game, -> { includes(:game).joins(:game) }
   scope :ordered_chronologically, -> { includes(:game).order('games.kickoff_at ASC, games.uefa_game_id ASC') }
   scope :ordered_antichronologically, -> { includes(:game).order('games.kickoff_at DESC, games.uefa_game_id ASC') }
   scope :kickoff_future, -> { joins(:game).where('games.kickoff_at > :datetime', datetime: Time.zone.now) }
   scope :kickoff_past, -> { joins(:game).where('games.kickoff_at <= :datetime', datetime: Time.zone.now) }
+  scope :predictable, -> do
+    joins(:game).where('games.kickoff_at > :time', time: Time.zone.now)
+                .where('games.home_team_name IS NOT NULL AND games.guest_team_name IS NOT NULL')
+  end
 
-  delegate :kickoff_future?, to: :game
+  scope :unpredicted_predictable, -> { unpredicted.predictable }
+
+  delegate :kickoff_future?, :predictable?, to: :game
 
   def predicted?
     home_team_score.present? && guest_team_score.present?

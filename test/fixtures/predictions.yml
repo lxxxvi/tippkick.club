@@ -1,6 +1,6 @@
 DEFAULTS: &DEFAULTS
-  home_team_score: 0
-  guest_team_score: 0
+  home_team_score:
+  guest_team_score:
 
 # Diego Group A
 

@@ -2,8 +2,9 @@ require 'application_system_test_case'
 
 class GamesTest < ApplicationSystemTestCase
   test 'show upcoming and past games' do
-    travel_to '2021-06-20 15:00:00 UTC' do
+    before_game_25 do
       sign_in_as :diego
+      navigate_to 'Games'
       assert_selector 'h1', text: 'Games'
       assert_selector '.prediction-with-game', count: 24
     end
@@ -12,7 +13,7 @@ class GamesTest < ApplicationSystemTestCase
   test 'final whistle' do
     skip
 
-    travel_to '2021-06-20 16:00:01 UTC' do
+    in_game_25 do
       using_browser do
         visit games_path
 
@@ -28,7 +29,7 @@ class GamesTest < ApplicationSystemTestCase
   test 'undo final whistle' do
     skip
 
-    travel_to '2021-06-20 16:00:01 UTC' do
+    in_game_25 do
       using_browser do
         visit games_path
         filter_games 'Past'

@@ -15,19 +15,23 @@
     .prediction--guest-team.text-sm.text-left
       = prediction.game.decorate.display_guest_team_name
 
-    - if prediction.predicted?
-      .prediction--home-team-score= prediction.home_team_score
-      .prediction--guest-team-score= prediction.guest_team_score
-      .prediction--score-colon :
+    - if prediction.predictable?
+      - if prediction.predicted?
+        .prediction--home-team-score= prediction.home_team_score
+        .prediction--guest-team-score= prediction.guest_team_score
+        .prediction--score-colon :
 
-      .prediction--score-controls--home-plus
-        %button{ data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :home, delta: :plus } } +
-      .prediction--score-controls--guest-plus
-        %button{ data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :guest, delta: :plus } } +
-      .prediction--score-controls--home-minus
-        %button{ disabled: prediction.home_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :home, delta: :minus } } -
-      .prediction--score-controls--guest-minus
-        %button{ disabled: prediction.guest_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :guest, delta: :minus } } -
+        .prediction--score-controls--home-plus
+          %button{ data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :home, delta: :plus } } +
+        .prediction--score-controls--guest-plus
+          %button{ data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :guest, delta: :plus } } +
+        .prediction--score-controls--home-minus
+          %button{ disabled: prediction.home_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :home, delta: :minus } } -
+        .prediction--score-controls--guest-minus
+          %button{ disabled: prediction.guest_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: prediction.id, team_score: :guest, delta: :minus } } -
+      - else
+        .prediction--start-predicting
+          %button{ data: { reflex: 'click->Prediction#start', id: prediction.id } }= t('shared.start')
     - else
-      .prediction--start-predicting
-        %button{ data: { reflex: 'click->Prediction#start', id: prediction.id } } Start
+      .prediction--not-yet-predictable
+        = t('.not_yet_predictable')

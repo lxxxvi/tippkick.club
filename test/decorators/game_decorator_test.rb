@@ -11,8 +11,8 @@ class GameDecoratorTest < ActiveSupport::TestCase
   end
 
   test '#display_kickoff_at_from_now' do
-    travel_to '2021-06-20 15:12:00 UTC' do
-      assert_equal 'about 1 hour', games(:game_25).decorate.display_kickoff_at_from_now
+    before_game_25 do
+      assert_equal '5 minutes', games(:game_25).decorate.display_kickoff_at_from_now
     end
   end
 

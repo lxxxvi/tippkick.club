@@ -46,6 +46,14 @@ class Game < ApplicationRecord
     @decorate ||= GameDecorator.new(self)
   end
 
+  def predictable?
+    kickoff_future? && teams_defined?
+  end
+
+  def teams_defined?
+    home_team_name.present? && guest_team_name.present?
+  end
+
   private
 
   def final_whistle_is_after_kickoff
