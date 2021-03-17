@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PredictionPointsServiceTest < ActiveSupport::TestCase
-  test '.call!' do
+  test '.call! focus on Prediction' do
     perfect_prediction = predictions(:diego_game_1) # P 4:3 | A 4:3
     draw_prediction = predictions(:diego_game_2) # P 0:0 | A 1:1
     home_wins_prediction = predictions(:diego_game_13) # P 1:0 | A 2:0
@@ -76,8 +76,24 @@ class PredictionPointsServiceTest < ActiveSupport::TestCase
     assert_equal 0, wrong_prediction.guest_team_score_points
     assert_equal 0, wrong_prediction.result_points
     assert_equal 0, wrong_prediction.perfect_prediction_bonus_points
+  end
 
-    assert_equal 152, users(:diego).total_points
+  test '.call! focus on User.total_points' do
+    user = users(:diego)
+    user.update_column(:total_points, nil)
+
+    assert_changes -> { user.reload.total_points }, to: 152 do
+      PredictionPointsService.new.call!
+    end
+  end
+
+  test '.call! focus on Game.max_total_points' do
+    game = games(:game_1)
+    game.update_column(:max_total_points, nil)
+
+    assert_changes -> { game.reload.max_total_points }, to: 12 do
+      PredictionPointsService.new.call!
+    end
   end
 
   test '0 points for no predicted games' do

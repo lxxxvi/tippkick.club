@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.integer "guest_team_score", default: 0, null: false
     t.datetime "kickoff_at", null: false
     t.datetime "final_whistle_at"
+    t.integer "max_total_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tournament_phase", "home_team_name", "guest_team_name"], name: "index_phase_home_guest", unique: true
