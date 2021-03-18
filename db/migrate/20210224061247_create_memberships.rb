@@ -5,6 +5,7 @@ class CreateMemberships < ActiveRecord::Migration[6.1]
       t.references :user_group, null: false, foreign_key: true
       t.boolean :admin, null: false, default: false
       t.datetime :accepted_at, null: true
+      t.integer :ranking_position, null: true
 
       t.index %i[user_id user_group_id], unique: true
       t.timestamps
