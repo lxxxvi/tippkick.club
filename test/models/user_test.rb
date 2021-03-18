@@ -12,19 +12,19 @@ class UserTest < ActiveSupport::TestCase
     assert_match /[[:alnum:]]{5}/, user.nickname
   end
 
-  test 'user_group association' do
+  test 'team association' do
     user = users(:diego)
 
-    assert_includes user.user_groups,
-                    user_groups(:campeones)
+    assert_includes user.teams,
+                    teams(:campeones)
   end
 
   test '#membership_for' do
     user = users(:diego)
-    user_group = user_groups(:campeones)
+    team = teams(:campeones)
     membership = memberships(:diego_campeones)
 
-    assert_equal membership, user.membership_for(user_group)
+    assert_equal membership, user.membership_for(team)
   end
 
   test '#invitations' do

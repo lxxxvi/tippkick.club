@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
   has_many :invitations, -> { invited }, class_name: 'Membership', inverse_of: :user
-  has_many :user_groups, through: :memberships
+  has_many :teams, through: :memberships
   has_many :predictions, dependent: :destroy
 
   before_validation :initialize_nickname
@@ -14,8 +14,8 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true
   after_save :create_predictions!
 
-  def membership_for(user_group)
-    memberships.find_by(user_group: user_group)
+  def membership_for(team)
+    memberships.find_by(team: team)
   end
 
   private

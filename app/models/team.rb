@@ -1,4 +1,4 @@
-class UserGroup < ApplicationRecord
+class Team < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
@@ -9,12 +9,12 @@ class UserGroup < ApplicationRecord
     memberships.find_by(user: user)
   end
 
-  def self.create_with_user(user, user_group_name)
-    create(name: user_group_name).tap do |user_group|
-      membership = user_group.memberships.find_or_initialize_by(user: user)
+  def self.create_with_user(user, team_name)
+    create(name: team_name).tap do |team|
+      membership = team.memberships.find_or_initialize_by(user: user)
       membership.admin = true
       membership.mark_accepted
-      user_group.save
+      team.save
     end
   end
 end

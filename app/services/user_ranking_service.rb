@@ -47,8 +47,8 @@ class UserRankingService
         SELECT m.id                                           AS membership_id
              , u.id                                           AS user_id
              , u.total_points                                 AS user_total_points
-             , m.user_group_id                                AS user_group_id
-             , RANK() OVER (PARTITION BY m.user_group_id
+             , m.team_id                                AS team_id
+             , RANK() OVER (PARTITION BY m.team_id
                                 ORDER BY u.total_points DESC) AS ranking_position
           FROM memberships m
           INNER JOIN users u ON u.id = m.user_id

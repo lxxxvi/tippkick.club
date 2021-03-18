@@ -42,7 +42,7 @@ class DashboardTest < ApplicationSystemTestCase
     end
   end
 
-  test 'displays groups' do
+  test 'displays teams' do
     skip 'TODO'
   end
 end

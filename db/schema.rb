@@ -34,14 +34,14 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
 
   create_table "memberships", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "user_group_id", null: false
+    t.bigint "team_id", null: false
     t.boolean "admin", default: false, null: false
     t.datetime "accepted_at"
     t.integer "ranking_position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_group_id"], name: "index_memberships_on_user_group_id"
-    t.index ["user_id", "user_group_id"], name: "index_memberships_on_user_id_and_user_group_id", unique: true
+    t.index ["team_id"], name: "index_memberships_on_team_id"
+    t.index ["user_id", "team_id"], name: "index_memberships_on_user_id_and_team_id", unique: true
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
@@ -62,11 +62,11 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
-  create_table "user_groups", force: :cascade do |t|
+  create_table "teams", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_user_groups_on_name", unique: true
+    t.index ["name"], name: "index_teams_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,6 +87,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.index ["tippkick_id"], name: "index_users_on_tippkick_id", unique: true
   end
 
-  add_foreign_key "memberships", "user_groups"
+  add_foreign_key "memberships", "teams"
   add_foreign_key "memberships", "users"
 end

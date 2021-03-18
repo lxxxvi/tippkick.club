@@ -1,8 +1,8 @@
 class Membership < ApplicationRecord
   belongs_to :user
-  belongs_to :user_group
+  belongs_to :team
 
-  validates :user_id, uniqueness: { scope: :user_group_id }
+  validates :user_id, uniqueness: { scope: :team_id }
 
   scope :invited, -> { where(accepted_at: nil) }
   scope :accepted, -> { where.not(accepted_at: nil) }

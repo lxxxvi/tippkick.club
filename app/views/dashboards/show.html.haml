@@ -25,3 +25,7 @@
         = t('.ready_to_be_predicted', count: @dashboard.unpredicted_predictable_games.count)
       .mt-5
         = link_to t('.show'), predictions_path, class: 'px-10 py-1 border-2 border-pink-200 rounded text-pink-900'
+
+  %section#teams.mt-12
+    %h2.text-right.text-xs.uppercase.tracking-wider.text-gray-400.mb-1
+      = t('shared.teams')
