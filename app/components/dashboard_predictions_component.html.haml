@@ -1,0 +1,6 @@
+%section#unpredicted-predictable-games.mt-12
+  .section.unpredicted-predictable-games.text-center.rounded-lg.px-4.py-3.bg-gradient-to-br.from-yellow-100.to-yellow-200.shadow-lg
+    .text-black
+      = t('.there_is', count: @dashboard.unpredicted_predictable_games.count)
+      = link_to t('.number_of_games', count: @dashboard.unpredicted_predictable_games.count), predictions_path
+      = t('.ready_to_be_predicted')

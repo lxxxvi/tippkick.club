@@ -3,11 +3,11 @@ class GameDecorator < SimpleDelegator
 
   def self.tournament_phase_colors
     {
-      group: 'bg-blue-200 text-blue-800',
-      round_of_16: 'bg-yellow-200 text-yellow-900',
-      quarter_finals: 'bg-purple-200 text-purple-800',
-      semi_finals: 'bg-pink-200 text-pink-800',
-      final: 'bg-green-200 text-green-800'
+      group: 'bg-gradient-to-r from-blue-100 to-blue-300 text-blue-900',
+      round_of_16: 'bg-gradient-to-r from-yellow-100 to-yellow-300 text-yellow-900',
+      quarter_finals: 'bg-gradient-to-r from-purple-100 to-purple-300 text-purple-900',
+      semi_finals: 'bg-gradient-to-r from-pink-100 to-pink-300 text-pink-900',
+      final: 'bg-gradient-to-r from-green-100 to-green-300 text-green-900'
     }
   end
 

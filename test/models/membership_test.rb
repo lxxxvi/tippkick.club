@@ -13,11 +13,9 @@ class MembershipTest < ActiveSupport::TestCase
   test '#mark_accepted' do
     membership = memberships(:pele_campeones_invited)
 
-
     assert_changes -> { membership.accepted? }, to: true do
       membership.mark_accepted
     end
-
 
     assert membership.changes.any?
   end
@@ -40,14 +38,24 @@ class MembershipTest < ActiveSupport::TestCase
     end
   end
 
-  test '#leave' do
+  test '#leave without accept' do
     membership = memberships(:pele_campeones_invited)
 
+    assert_no_difference -> { membership.team.reload.active_members } do
+      membership.leave
+    end
+
+    assert_raises(ActiveRecord::RecordNotFound) do
+      membership.reload
+    end
+  end
+
+  test '#leave after accept' do
+    membership = memberships(:pele_campeones_invited)
+    membership.accept
+
     assert_difference -> { membership.team.reload.active_members }, -1 do
-      assert_raises(ActiveRecord::RecordNotFound) do
-        membership.leave
-        membership.reload
-      end
+      membership.leave
     end
   end
 end

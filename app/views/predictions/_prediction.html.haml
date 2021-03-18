@@ -1,5 +1,5 @@
 - if prediction.kickoff_future?
-  .prediction.my-5.py-10.px-4.border.rounded{ id: dom_id(prediction) }
+  .prediction.my-5.py-10.px-4.shadow-lg.rounded-lg.bg-gradient-to-br.from-gray-100.to-gray-200{ id: dom_id(prediction) }
     .prediction--tournament-phase
       = render 'games/tournament_phase_badge', tournament_phase: prediction.game.tournament_phase
     .prediction--uefa-game-id
@@ -33,5 +33,5 @@
         .prediction--start-predicting
           %button{ data: { reflex: 'click->Prediction#start', id: prediction.id } }= t('shared.start')
     - else
-      .prediction--not-yet-predictable
+      .prediction--not-yet-predictable.text-center.text-gray-500.text-sm
         = t('.not_yet_predictable')

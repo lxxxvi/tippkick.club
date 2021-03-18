@@ -17,6 +17,7 @@ gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'stimulus_reflex'
 gem 'turbolinks'
+gem 'view_component', require: 'view_component/engine'
 gem 'webpacker'
 
 group :development, :test do

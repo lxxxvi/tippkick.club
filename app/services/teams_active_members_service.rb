@@ -12,7 +12,7 @@ class TeamsActiveMembersService
   end
 
   def update_teams_active_members_sql
-    <<~SQL
+    <<~SQL.squish
       WITH with_active_members AS (
         SELECT t.id         AS team_id
              , count(m.*)   AS active_members

@@ -34,8 +34,8 @@ class DashboardTest < ApplicationSystemTestCase
       visit dashboard_path
 
       within 'section#unpredicted-predictable-games' do
-        assert_text 'There are at least 10 games ready to be predicted'
-        click_on 'Show'
+        assert_text 'There are 10 games ready to be predicted'
+        click_on '10 games'
       end
 
       assert_selector 'h1', text: 'Predictions'
@@ -43,6 +43,15 @@ class DashboardTest < ApplicationSystemTestCase
   end
 
   test 'displays teams' do
-    skip 'TODO'
+    before_tournament do
+      sign_in_as :diego
+
+      visit dashboard_path
+
+      within 'section#teams' do
+        assert_selector '.team', text: 'Campeones'
+        assert_selector '.create-team', text: 'Create Team'
+      end
+    end
   end
 end
