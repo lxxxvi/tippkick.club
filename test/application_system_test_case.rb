@@ -1,7 +1,10 @@
 require 'test_helper'
 require 'capybara/rails'
+require 'stimulus_reflex_helper'
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
+  include StimulusReflexHelper
+
   driven_by :rack_test
 
   def using_browser(&block)
