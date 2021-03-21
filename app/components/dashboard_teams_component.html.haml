@@ -1,0 +1,7 @@
+%section#teams.mt-12
+  %h2.text-right.text-xs.uppercase.tracking-wider.text-gray-400.mb-1
+    = t('shared.teams')
+  .section.teams
+    = render(MembershipWithTeamComponent.with_collection(@dashboard.memberships_with_teams))
+    .create-team.text-center.my-8.px-4.py-8.rounded.border-2.border-dashed.text-gray-500
+      = t('.create_team')

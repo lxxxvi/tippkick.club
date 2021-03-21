@@ -23,7 +23,7 @@ namespace :dev do
     raise 'tournament has no games' if Game.count.zero?
 
     emails = Array.new(50).map { "user_#{SecureRandom.alphanumeric(6)}@tippkick.random" }
-    group_names = Array.new(10).map { "group_#{SecureRandom.alphanumeric(6)}" }
+    team_names = Array.new(10).map { "group_#{SecureRandom.alphanumeric(6)}" }
 
     puts 'Users'
     users = emails.map do |email|
@@ -45,10 +45,10 @@ namespace :dev do
     )
 
     puts
-    puts 'Groups'
-    group_names.each do |group_name|
-      puts "  #{group_name}"
-      group = UserGroup.create!(name: group_name)
+    puts 'Teams'
+    team_names.each do |team_name|
+      puts "  #{team_name}"
+      group = Team.create!(name: team_name)
       member_count = SecureRandom.random_number(5..30)
       members = member_count.times.map { users.sample }.uniq
 

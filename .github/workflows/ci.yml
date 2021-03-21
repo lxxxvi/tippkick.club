@@ -1,6 +1,6 @@
 env:
   RUBY_VERSION: 3.0
-  NODE_VERSION: 14
+  NODE_VERSION: '14'
   RAILS_ENV: test
   POSTGRES_PASSWORD: "postgres"
 

@@ -1,22 +1,25 @@
 %h1= t('shared.dashboard')
 
-- if @dashboard.stats_ready?
-  %section#stats.section.stats.mt-10
-    .stats--total-points.text-center
-      .stats--value.text-2xl
-        = @dashboard.total_points
-      .stats--description.text-2xs.text-gray-500
-        = t('shared.points', count: @dashboard.total_points)
+= render(DashboardPredictionsComponent.new(dashboard: @dashboard))
 
-    .stats--global-ranking-position.text-center
-      .stats--value.text-2xl
-        = @dashboard.global_ranking_position
-      .stats--description.text-2xs.text-gray-500
-        = t('shared.rank')
+%section#stats.mt-10
+  %h2.text-right.text-xs.uppercase.tracking-wider.text-gray-400.mb-1
+    = t('shared.stats')
+  .section.px-4.py-10.bg-gradient-to-br.from-pink-100.to-pink-300.rounded-xl.shadow-lg
+    - if @dashboard.stats_ready?
+      .stats
+        .stats--total-points.text-center
+          .stats--value.text-4xl
+            = @dashboard.total_points
+          .stats--description.text-2xs.text-pink-800
+            = t('shared.points', count: @dashboard.total_points)
+        .stats--global-ranking-position.text-center
+          .stats--value.text-4xl
+            = @dashboard.global_ranking_position
+          .stats--description.text-2xs.text-pink-800
+            = t('shared.global_rank')
+    - else
+      .text-center.text-gray-400
+        = t('.no_stats_available_yet')
 
-- if @dashboard.unpredicted_predictable_games.any?
-  %section#unpredicted-predictable-games.section.mt-12.unpredicted-predictable-games.text-center
-    .text-pink-700
-      = t('.ready_to_be_predicted', count: @dashboard.unpredicted_predictable_games.count)
-    .mt-5
-      = link_to t('.show'), predictions_path, class: 'px-10 py-1 border-2 border-pink-200 rounded text-pink-900'
+= render(DashboardTeamsComponent.new(dashboard: @dashboard))

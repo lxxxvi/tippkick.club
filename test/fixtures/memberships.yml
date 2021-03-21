@@ -5,11 +5,12 @@ DEFAULTS: &DEFAULTS
 diego_campeones:
   <<: *DEFAULTS
   user: diego
-  user_group: campeones
+  team: campeones
   admin: true
   accepted_at: '2021-02-15 15:00:00'
+  ranking_position: 1
 
 pele_campeones_invited:
   <<: *DEFAULTS
   user: pele
-  user_group: campeones
+  team: campeones
