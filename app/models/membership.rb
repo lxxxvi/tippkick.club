@@ -7,6 +7,8 @@ class Membership < ApplicationRecord
   scope :invited, -> { where(accepted_at: nil) }
   scope :accepted, -> { where.not(accepted_at: nil) }
 
+  after_save :update_active_members
+
   def accepted?
     accepted_at.present?
   end
@@ -25,5 +27,11 @@ class Membership < ApplicationRecord
 
   def leave
     destroy
+  end
+
+  private
+
+  def update_active_members
+    TeamsActiveMembersService.new.call!
   end
 end
