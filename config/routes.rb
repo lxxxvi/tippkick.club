@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :games, only: %i[index]
   resources :predictions, only: %i[index]
+  resources :teams
 
   resource :dashboard, only: %i[show]
 

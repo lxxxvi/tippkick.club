@@ -39,6 +39,8 @@ en:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
+  dashboard_teams_component:
+    create_new_team: "Create new team"
   dashboard_predictions_component:
     there_is:
       one: "There is"

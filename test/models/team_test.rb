@@ -16,6 +16,12 @@ class TeamTest < ActiveSupport::TestCase
                     users(:diego)
   end
 
+  test 'save' do
+    team = Team.new(name: 'Argentinos')
+    assert team.save
+    assert_match /[[:alnum:]]{5}/, team.tippkick_id
+  end
+
   test '#membership_for' do
     user = users(:diego)
     team = teams(:campeones)
@@ -35,14 +41,11 @@ class TeamTest < ActiveSupport::TestCase
     end
   end
 
-  test '.create_with_user' do
+  test '.new_with_user' do
     user = users(:diego)
 
-    assert_difference -> { user.memberships.count }, +1 do
-      Team.create_with_user(user, 'Argentinos')
-    end
-
-    team = Team.find_by(name: 'Argentinos')
+    team = Team.new_with_user(user, name: 'Argentinos')
+    team.save!
 
     team.memberships.tap do |memberships|
       assert_equal 1, memberships.count

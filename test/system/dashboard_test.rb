@@ -50,7 +50,7 @@ class DashboardTest < ApplicationSystemTestCase
 
       within 'section#teams' do
         assert_selector '.team', text: 'Campeones'
-        assert_selector '.create-team', text: 'Create Team'
+        assert_selector '.create-team', text: 'Create new team'
       end
     end
   end
