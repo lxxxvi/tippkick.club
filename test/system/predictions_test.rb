@@ -34,34 +34,35 @@ class PredictionsTest < ApplicationSystemTestCase
     before_game_25 do
       using_browser do
         sign_in_as :diego
+
+        listen_to_stimulus_reflex
         navigate_to 'Predictions'
+        wait_for_stimulus_reflex
 
         within("##{dom_id(prediction)}") do
-          Capybara.using_wait_time(5) do
-            click_on 'Start'
-            assert_scores(0, 0)
+          click_on 'Start'
+          assert_scores(0, 0)
 
-            increase_home_score
-            assert_scores(1, 0)
+          increase_home_score
+          assert_scores(1, 0)
 
-            decrease_home_score
-            assert_scores(0, 0)
+          decrease_home_score
+          assert_scores(0, 0)
 
-            within('.prediction--score-controls--home-minus') do
-              find_button('-', disabled: true)
-            end
-
-            within('.prediction--score-controls--guest-minus') do
-              find_button('-', disabled: true)
-            end
-
-            increase_guest_score
-            increase_guest_score
-            assert_scores(0, 2)
-
-            decrease_guest_score
-            assert_scores(0, 1)
+          within('.prediction--score-controls--home-minus') do
+            find_button('-', disabled: true)
           end
+
+          within('.prediction--score-controls--guest-minus') do
+            find_button('-', disabled: true)
+          end
+
+          increase_guest_score
+          increase_guest_score
+          assert_scores(0, 2)
+
+          decrease_guest_score
+          assert_scores(0, 1)
         end
       end
     end
