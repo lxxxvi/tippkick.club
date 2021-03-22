@@ -101,9 +101,6 @@ jobs:
           cp ./.github/workflows/templates/database.yml.github-actions config/database.yml
           bin/rails db:test:prepare
 
-      - name: bin/webpack
-        run: bin/webpack
-
       - name: bin/rails test
         run: bin/rails test
 

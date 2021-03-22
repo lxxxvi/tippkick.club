@@ -3,5 +3,5 @@
     = t('shared.teams')
   .section.teams
     = render(MembershipWithTeamComponent.with_collection(@dashboard.memberships_with_teams))
-    .create-team.text-center.my-8.px-4.py-8.rounded.border-2.border-dashed.text-gray-500
-      = t('.create_team')
+    .create-team
+      = link_to t('.create_new_team'), new_team_path, class: 'block w-full text-center my-8 px-4 py-8 rounded border-2 border-dashed text-gray-500'
