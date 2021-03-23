@@ -49,7 +49,16 @@ en:
       one: "1 game"
       other: "%{count} games"
     ready_to_be_predicted: "ready to be predicted"
+  teams:
+    create:
+      success: "Team created successfully."
+      failure: "Could not create team."
+    destroy:
+      success: "Team deleted successfully."
   shared:
+    actions:
+      delete: "Delete"
+    are_you_sure: "Are you sure?"
     game: "Game"
     games: "Games"
     prediction: "Prediction"

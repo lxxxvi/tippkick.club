@@ -26,6 +26,10 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
         }
       end
     end
+
+    follow_redirect!
+    assert_response :success
+    assert_equal 'Team created successfully.', flash[:notice]
   end
 
   test 'should not post create' do
@@ -39,6 +43,36 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
           }
         }
       end
+    end
+
+    assert_response :success
+    assert_equal 'Could not create team.', flash[:alert]
+  end
+
+  test 'should get delete, if admin' do
+    team = teams(:campeones)
+    sign_in_as :diego
+
+    assert_difference -> { Team.count }, -1 do
+      delete team_path(team)
+    end
+
+    follow_redirect!
+    assert_response :success
+
+    assert_equal 'Team deleted successfully.', flash[:notice]
+  end
+
+  test 'should NOT get delete, if NOT admin' do
+    team = teams(:campeones)
+    membership = memberships(:pele_campeones_invited)
+    membership.accept
+    assert_not membership.admin?, 'Should not be admin'
+
+    sign_in_as :pele
+
+    assert_raises(ActionPolicy::Unauthorized) do
+      delete team_path(team)
     end
   end
 end
