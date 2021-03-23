@@ -75,4 +75,31 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
       delete team_path(team)
     end
   end
+
+  test 'should put update, if admin' do
+    team = teams(:campeones)
+    sign_in_as :diego
+
+    assert_changes -> { team.reload.name }, to: 'The Champions' do
+      put team_path(team), params: {
+        team: {
+          name: 'The Champions'
+        }
+      }
+    end
+
+    follow_redirect!
+    assert_response :success
+
+    assert_equal 'Team updated successfully.', flash[:notice]
+  end
+
+  test 'should NOT put update, if NOT admin' do
+    team = teams(:campeones)
+    sign_in_as :pele
+
+    assert_raises(ActionPolicy::Unauthorized) do
+      put team_path(team), params: {}
+    end
+  end
 end

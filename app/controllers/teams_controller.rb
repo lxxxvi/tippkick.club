@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[show destroy]
+  before_action :set_team, only: %i[show edit update destroy]
 
   def show; end
 
@@ -16,6 +16,20 @@ class TeamsController < ApplicationController
     else
       flash[:alert] = t('.failure')
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    authorize! @team
+
+    if @team.update(team_params)
+      flash[:notice] = t('.success')
+      redirect_to @team
+    else
+      flash[:alert] = t('.failure')
+      render :edit
     end
   end
 

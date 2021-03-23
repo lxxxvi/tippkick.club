@@ -40,7 +40,6 @@ en:
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
   dashboard_teams_component:
-    create_new_team: "Create new team"
   dashboard_predictions_component:
     there_is:
       one: "There is"
@@ -50,9 +49,15 @@ en:
       other: "%{count} games"
     ready_to_be_predicted: "ready to be predicted"
   teams:
+    actions:
+      new: "Create new team"
+      edit: "Update team"
     create:
       success: "Team created successfully."
       failure: "Could not create team."
+    update:
+      success: "Team updated successfully."
+      failure: "Could not update team."
     destroy:
       success: "Team deleted successfully."
   shared:
