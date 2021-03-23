@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class TeamPolicyTest < ActiveSupport::TestCase
-  test 'admin' do
+  test 'coach' do
     team = teams(:campeones)
-    team_admin = users(:diego)
+    team_coach = users(:diego)
 
-    TeamPolicy.new(team, user: team_admin).tap do |policy|
+    TeamPolicy.new(team, user: team_coach).tap do |policy|
       assert policy.show?
       assert policy.create?
       assert policy.destroy?
@@ -13,11 +13,11 @@ class TeamPolicyTest < ActiveSupport::TestCase
     end
   end
 
-  test 'non-admin' do
+  test 'non-coach' do
     team = teams(:campeones)
-    team_admin = users(:pele)
+    team_coach = users(:pele)
 
-    TeamPolicy.new(team, user: team_admin).tap do |policy|
+    TeamPolicy.new(team, user: team_coach).tap do |policy|
       assert policy.show?
       assert policy.create?
       assert_not policy.destroy?

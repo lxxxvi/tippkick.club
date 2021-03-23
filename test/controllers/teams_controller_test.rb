@@ -49,7 +49,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'Could not create team.', flash[:alert]
   end
 
-  test 'should get delete, if admin' do
+  test 'should get delete, if coach' do
     team = teams(:campeones)
     sign_in_as :diego
 
@@ -63,11 +63,11 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'Team deleted successfully.', flash[:notice]
   end
 
-  test 'should NOT get delete, if NOT admin' do
+  test 'should NOT get delete, if NOT coach' do
     team = teams(:campeones)
     membership = memberships(:pele_campeones_invited)
     membership.accept
-    assert_not membership.admin?, 'Should not be admin'
+    assert_not membership.coach?, 'Should not be coach'
 
     sign_in_as :pele
 
@@ -76,7 +76,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'should put update, if admin' do
+  test 'should put update, if coach' do
     team = teams(:campeones)
     sign_in_as :diego
 
@@ -94,7 +94,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'Team updated successfully.', flash[:notice]
   end
 
-  test 'should NOT put update, if NOT admin' do
+  test 'should NOT put update, if NOT coach' do
     team = teams(:campeones)
     sign_in_as :pele
 

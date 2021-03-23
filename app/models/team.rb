@@ -18,7 +18,7 @@ class Team < ApplicationRecord
   def self.new_with_user(user, params)
     new(params).tap do |team|
       membership = team.memberships.new(user: user)
-      membership.admin = true
+      membership.coach = true
       membership.mark_accepted
     end
   end

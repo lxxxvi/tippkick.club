@@ -1,12 +1,12 @@
 DEFAULTS: &DEFAULTS
-  admin: false
+  coach: false
   accepted_at:
 
 diego_campeones:
   <<: *DEFAULTS
   user: diego
   team: campeones
-  admin: true
+  coach: true
   accepted_at: '2021-02-15 15:00:00'
   ranking_position: 1
 

@@ -18,7 +18,7 @@ class TeamsTest < ApplicationSystemTestCase
     end
   end
 
-  test 'admin deletes team' do
+  test 'coach deletes team' do
     before_tournament do
       sign_in_as :diego
 
@@ -32,7 +32,7 @@ class TeamsTest < ApplicationSystemTestCase
     end
   end
 
-  test 'non-admin cannot delete team' do
+  test 'non-coach cannot delete team' do
     before_tournament do
       memberships(:pele_campeones_invited).accept
       sign_in_as :pele
@@ -45,7 +45,7 @@ class TeamsTest < ApplicationSystemTestCase
     end
   end
 
-  test 'admin edits team' do
+  test 'coach edits team' do
     before_tournament do
       sign_in_as :diego
 
@@ -62,7 +62,7 @@ class TeamsTest < ApplicationSystemTestCase
     end
   end
 
-  test 'non-admin cannot edit team' do
+  test 'non-coach cannot edit team' do
     before_tournament do
       memberships(:pele_campeones_invited).accept
       sign_in_as :pele

@@ -52,7 +52,7 @@ class TeamTest < ActiveSupport::TestCase
 
       membership = memberships.first
       assert_equal user, membership.user
-      assert membership.admin?
+      assert membership.coach?
       assert membership.accepted?
     end
   end

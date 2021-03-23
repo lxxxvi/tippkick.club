@@ -3,7 +3,7 @@ class CreateMemberships < ActiveRecord::Migration[6.1]
     create_table :memberships do |t|
       t.references :user, null: false, foreign_key: true
       t.references :team, null: false, foreign_key: true
-      t.boolean :admin, null: false, default: false
+      t.boolean :coach, null: false, default: false
       t.datetime :accepted_at, null: true
       t.integer :ranking_position, null: true
 
