@@ -14,7 +14,7 @@ class TeamsTest < ApplicationSystemTestCase
 
       assert_selector '.flash-messages', text: 'Team created successfully.'
       assert_selector 'h1', text: 'Argentinos'
-      assert_selector '.stats--active-members', text: '1'
+      assert_selector '.stats--members-count', text: '1'
     end
   end
 
@@ -49,7 +49,6 @@ class TeamsTest < ApplicationSystemTestCase
 
   test 'non-coach cannot delete team' do
     before_tournament do
-      memberships(:pele_campeones_invited).accept
       sign_in_as :pele
 
       within 'section#teams' do
@@ -79,7 +78,6 @@ class TeamsTest < ApplicationSystemTestCase
 
   test 'non-coach cannot edit team' do
     before_tournament do
-      memberships(:pele_campeones_invited).accept
       sign_in_as :pele
 
       within 'section#teams' do

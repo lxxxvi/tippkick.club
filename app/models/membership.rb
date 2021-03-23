@@ -4,30 +4,12 @@ class Membership < ApplicationRecord
 
   validates :user_id, uniqueness: { scope: :team_id }
 
-  scope :invited, -> { where(accepted_at: nil) }
-  scope :accepted, -> { where.not(accepted_at: nil) }
   scope :with_teams, -> { includes(:team).joins(:team) }
   scope :with_users, -> { includes(:user).joins(:user) }
   scope :ordered_by_ranking_position, -> { order(ranking_position: :asc) }
 
-  after_destroy :update_active_members
-  after_save :update_active_members
-
-  def accepted?
-    accepted_at.present?
-  end
-
-  def invited?
-    !accepted?
-  end
-
-  def mark_accepted
-    self.accepted_at ||= Time.zone.now
-  end
-
-  def accept
-    mark_accepted && save
-  end
+  after_destroy :update_members_count
+  after_save :update_members_count
 
   def leave
     destroy
@@ -35,7 +17,7 @@ class Membership < ApplicationRecord
 
   private
 
-  def update_active_members
-    TeamsActiveMembersService.new.call!
+  def update_members_count
+    TeamsActiveMembersService.new(team_ids: team_id).call!
   end
 end

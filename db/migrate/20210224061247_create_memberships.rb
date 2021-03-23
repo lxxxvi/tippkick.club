@@ -4,7 +4,6 @@ class CreateMemberships < ActiveRecord::Migration[6.1]
       t.references :user, null: false, foreign_key: true
       t.references :team, null: false, foreign_key: true
       t.boolean :coach, null: false, default: false
-      t.datetime :accepted_at, null: true
       t.integer :ranking_position, null: true
 
       t.index %i[user_id team_id], unique: true

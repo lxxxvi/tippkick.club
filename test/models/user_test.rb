@@ -26,11 +26,4 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal membership, user.membership_for(team)
   end
-
-  test '#invitations' do
-    user = users(:pele)
-
-    assert_includes user.invitations,
-                    memberships(:pele_campeones_invited)
-  end
 end
