@@ -65,8 +65,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should NOT get delete, if NOT coach' do
     team = teams(:campeones)
-    membership = memberships(:pele_campeones_invited)
-    membership.accept
+    membership = memberships(:pele_campeones)
     assert_not membership.coach?, 'Should not be coach'
 
     sign_in_as :pele

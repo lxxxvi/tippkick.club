@@ -55,9 +55,8 @@ namespace :dev do
       coach = true
 
       members.each do |member|
-        membership = group.memberships.new(user: member, coach: coach)
+        group.memberships.create(user: member, coach: coach)
         coach = false
-        membership.accept
       end
     end
   end

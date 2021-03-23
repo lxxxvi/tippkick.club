@@ -1,6 +1,6 @@
 class RankingPositionComponent < ViewComponent::Base
-  def initialize(ranking_position:, active_members:)
+  def initialize(ranking_position:, members_count:)
     @ranking_position = ranking_position
-    @active_members = active_members
+    @members_count = members_count
   end
 end

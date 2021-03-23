@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.bigint "user_id", null: false
     t.bigint "team_id", null: false
     t.boolean "coach", default: false, null: false
-    t.datetime "accepted_at"
     t.integer "ranking_position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -65,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
   create_table "teams", force: :cascade do |t|
     t.string "name", null: false
     t.string "tippkick_id", null: false
-    t.integer "active_members", default: 1, null: false
+    t.integer "members_count", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_teams_on_name", unique: true

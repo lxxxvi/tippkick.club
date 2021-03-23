@@ -7,9 +7,9 @@
 
 %section#stats.px-4.py-5.bg-gradient-to-br.from-pink-100.to-pink-300.rounded-xl.shadow-lg
   .stats
-    .stats--active-members.text-center
+    .stats--members-count.text-center
       .stats--value.text-4xl
-        = @team.active_members
+        = @team.members_count
       .stats--description.text-2xs.text-pink-800
         = t('teams.members')
 

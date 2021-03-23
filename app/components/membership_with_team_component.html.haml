@@ -2,4 +2,4 @@
   .team--name.w-full
     = link_to @membership_with_team.team.name, team_path(@membership_with_team.team)
   .team--ranking-position.w-full.text-right
-    = render(RankingPositionComponent.new(ranking_position: @membership_with_team.ranking_position, active_members: @membership_with_team.team.active_members))
+    = render(RankingPositionComponent.new(ranking_position: @membership_with_team.ranking_position, members_count: @membership_with_team.team.members_count))

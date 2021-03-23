@@ -43,19 +43,14 @@ class UserRankingService
 
   def update_memberships_ranking_positions_sql
     <<~SQL.squish
-      WITH accepted_memberships AS (
-        SELECT *
-          FROM memberships
-         WHERE accepted_at IS NOT NULL
-      ),
-      with_memberships_ranking_position AS (
+      WITH with_memberships_ranking_position AS (
         SELECT m.id                                           AS membership_id
              , u.id                                           AS user_id
              , u.total_points                                 AS user_total_points
              , m.team_id                                      AS team_id
              , RANK() OVER (PARTITION BY m.team_id
                                 ORDER BY u.total_points DESC) AS ranking_position
-          FROM accepted_memberships m
+          FROM memberships m
          INNER JOIN users u ON u.id = m.user_id
       )
       UPDATE memberships

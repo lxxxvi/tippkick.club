@@ -11,15 +11,9 @@ class Team < ApplicationRecord
     memberships.find_by(user: user)
   end
 
-  def invite(user)
-    memberships.find_or_create_by(user: user)
-  end
-
   def self.new_with_user(user, params)
     new(params).tap do |team|
-      membership = team.memberships.new(user: user)
-      membership.coach = true
-      membership.mark_accepted
+      team.memberships.new(user: user, coach: true)
     end
   end
 
