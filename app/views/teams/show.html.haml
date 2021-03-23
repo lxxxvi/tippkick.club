@@ -1,7 +1,7 @@
 %h1= @team.name
 
 - if allowed_to?(:update?, @team)
-  .actions
+  .coach-actions
     = link_to t('shared.actions.edit'), edit_team_path(@team)
     = link_to t('shared.actions.delete'), team_path(@team), method: :delete, data: { confirm: t('shared.are_you_sure') }
 
@@ -16,3 +16,7 @@
 %section#memberships.mt-10
   %h2.uppercase.text-xs.text-gray-500.text-right= t('team_memberships.members')
   = render TeamMembershipComponent.with_collection(@team.memberships.with_users.ordered_by_ranking_position)
+
+- if allowed_to?(:leave?, @team)
+  .member-actions.mt-10
+    = link_to t('teams.actions.leave'), leave_team_path(@team), class: 'p-4 text-center text-red-600 border-2 border-red-400 hover:bg-red-500 rounded-lg hover:text-white transition block',data: { confirm: t('shared.are_you_sure') }

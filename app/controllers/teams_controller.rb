@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[show edit update destroy]
+  before_action :set_team, only: %i[show edit update destroy leave]
 
   def show; end
 
@@ -37,6 +37,14 @@ class TeamsController < ApplicationController
     authorize! @team
 
     @team.destroy
+    flash[:notice] = t('.success')
+    redirect_to dashboard_path
+  end
+
+  def leave
+    authorize! @team
+
+    @team.membership_for(current_user).leave
     flash[:notice] = t('.success')
     redirect_to dashboard_path
   end

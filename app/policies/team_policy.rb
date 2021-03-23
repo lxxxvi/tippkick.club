@@ -8,10 +8,20 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def update?
-    record.membership_for(user).coach?
+    membership.coach?
   end
 
   def destroy?
     update?
+  end
+
+  def leave?
+    membership.present? && !update?
+  end
+
+  private
+
+  def membership
+    @membership ||= record.membership_for(user)
   end
 end

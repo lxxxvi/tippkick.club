@@ -52,6 +52,7 @@ en:
     actions:
       new: "Create new team"
       edit: "Update team"
+      leave: "Leave team"
     create:
       success: "Team created successfully."
       failure: "Could not create team."
@@ -60,6 +61,8 @@ en:
       failure: "Could not update team."
     destroy:
       success: "Team deleted successfully."
+    leave:
+      success: "You left the team."
   shared:
     actions:
       delete: "Delete"
