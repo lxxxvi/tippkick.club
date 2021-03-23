@@ -8,7 +8,7 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def update?
-    record.membership_for(user).admin?
+    record.membership_for(user).coach?
   end
 
   def destroy?

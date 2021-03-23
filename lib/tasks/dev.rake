@@ -52,11 +52,11 @@ namespace :dev do
       member_count = SecureRandom.random_number(5..30)
       members = member_count.times.map { users.sample }.uniq
 
-      admin = true
+      coach = true
 
       members.each do |member|
-        membership = group.memberships.new(user: member, admin: admin)
-        admin = false
+        membership = group.memberships.new(user: member, coach: coach)
+        coach = false
         membership.accept
       end
     end
