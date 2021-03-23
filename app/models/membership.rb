@@ -7,6 +7,8 @@ class Membership < ApplicationRecord
   scope :invited, -> { where(accepted_at: nil) }
   scope :accepted, -> { where.not(accepted_at: nil) }
   scope :with_teams, -> { includes(:team).joins(:team) }
+  scope :with_users, -> { includes(:user).joins(:user) }
+  scope :ordered_by_ranking_position, -> { order(ranking_position: :asc) }
 
   after_destroy :update_active_members
   after_save :update_active_members

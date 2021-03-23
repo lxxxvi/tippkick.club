@@ -1,10 +1,18 @@
 %h1= @team.name
 
-.active-members
-  = @team.active_members
-
 - if allowed_to?(:update?, @team)
-  = link_to t('shared.actions.edit'), edit_team_path(@team)
+  .actions
+    = link_to t('shared.actions.edit'), edit_team_path(@team)
+    = link_to t('shared.actions.delete'), team_path(@team), method: :delete, data: { confirm: t('shared.are_you_sure') }
 
-- if allowed_to?(:destroy?, @team)
-  = link_to t('shared.actions.delete'), team_path(@team), method: :delete, data: { confirm: t('shared.are_you_sure') }
+%section#stats.px-4.py-5.bg-gradient-to-br.from-pink-100.to-pink-300.rounded-xl.shadow-lg
+  .stats
+    .stats--active-members.text-center
+      .stats--value.text-4xl
+        = @team.active_members
+      .stats--description.text-2xs.text-pink-800
+        = t('teams.members')
+
+%section#memberships.mt-10
+  %h2.uppercase.text-xs.text-gray-500.text-right= t('team_memberships.members')
+  = render TeamMembershipComponent.with_collection(@team.memberships.with_users.ordered_by_ranking_position)
