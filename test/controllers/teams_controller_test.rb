@@ -102,4 +102,26 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
       put team_path(team), params: {}
     end
   end
+
+  test 'member should get leave' do
+    team = teams(:campeones)
+    sign_in_as :pele
+
+    assert_difference -> { Membership.count }, -1 do
+      get leave_team_path(team)
+    end
+
+    follow_redirect!
+    assert_response :success
+    assert_equal 'You left the team.', flash[:notice]
+  end
+
+  test 'coach should not get leave' do
+    team = teams(:campeones)
+    sign_in_as :diego
+
+    assert_raises(ActionPolicy::Unauthorized) do
+      get leave_team_path(team)
+    end
+  end
 end

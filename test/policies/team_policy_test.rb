@@ -10,6 +10,7 @@ class TeamPolicyTest < ActiveSupport::TestCase
       assert policy.create?
       assert policy.destroy?
       assert policy.update?
+      assert_not policy.leave?
     end
   end
 
@@ -22,6 +23,7 @@ class TeamPolicyTest < ActiveSupport::TestCase
       assert policy.create?
       assert_not policy.destroy?
       assert_not policy.update?
+      assert policy.leave?
     end
   end
 end
