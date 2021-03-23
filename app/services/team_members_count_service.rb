@@ -1,4 +1,4 @@
-class TeamsActiveMembersService
+class TeamMembersCountService
   def initialize(team_ids: nil)
     @team_ids = Array(team_ids).map(&:to_i)
   end

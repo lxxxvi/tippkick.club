@@ -127,11 +127,16 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
   test 'guest should get join, right token' do
     memberships(:pele_campeones).destroy
     team = teams(:campeones)
+    user = users(:pele)
 
     sign_in_as :pele
 
     assert_difference -> { Membership.count }, +1 do
       get join_team_url(team, 'campeones_token')
+    end
+
+    team.membership_for(user).tap do |membership|
+      assert_equal 2, membership.ranking_position
     end
 
     follow_redirect!

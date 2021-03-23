@@ -18,6 +18,7 @@ class Membership < ApplicationRecord
   private
 
   def update_members_count
-    TeamsActiveMembersService.new(team_ids: team_id).call!
+    TeamRankingService.new(team_ids: team_id).call!
+    TeamMembersCountService.new(team_ids: team_id).call!
   end
 end
