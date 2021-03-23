@@ -3,27 +3,29 @@ require 'test_helper'
 class TeamPolicyTest < ActiveSupport::TestCase
   test 'coach' do
     team = teams(:campeones)
-    team_coach = users(:diego)
+    user = users(:diego)
 
-    TeamPolicy.new(team, user: team_coach).tap do |policy|
+    TeamPolicy.new(team, user: user).tap do |policy|
       assert policy.show?
       assert policy.create?
       assert policy.destroy?
       assert policy.update?
       assert_not policy.leave?
+      assert policy.invite?
     end
   end
 
-  test 'non-coach' do
+  test 'non-coach, member' do
     team = teams(:campeones)
-    team_coach = users(:pele)
+    user = users(:pele)
 
-    TeamPolicy.new(team, user: team_coach).tap do |policy|
+    TeamPolicy.new(team, user: user).tap do |policy|
       assert policy.show?
       assert policy.create?
       assert_not policy.destroy?
       assert_not policy.update?
       assert policy.leave?
+      assert_not policy.invite?
     end
   end
 end

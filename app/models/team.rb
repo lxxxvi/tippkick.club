@@ -1,11 +1,12 @@
 class Team < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :invitation_token, presence: true
   validates :name, uniqueness: true
 
   has_many :memberships, dependent: :destroy
   has_many :users, through: :memberships
 
-  before_save :set_tippkick_id
+  before_validation :initialize_invitation_token
+  before_create :set_tippkick_id
 
   def membership_for(user)
     memberships.find_by(user: user)
@@ -21,9 +22,17 @@ class Team < ApplicationRecord
     tippkick_id
   end
 
+  def decorate
+    @decorate ||= TeamDecorator.new(self)
+  end
+
   private
 
   def set_tippkick_id
     self.tippkick_id = generate_id
+  end
+
+  def initialize_invitation_token
+    self.invitation_token ||= generate_id(10)
   end
 end

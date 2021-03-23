@@ -8,7 +8,7 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def update?
-    membership.coach?
+    membership&.coach?
   end
 
   def destroy?
@@ -17,6 +17,10 @@ class TeamPolicy < ApplicationPolicy
 
   def leave?
     membership.present? && !update?
+  end
+
+  def invite?
+    update?
   end
 
   private

@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[show edit update destroy leave]
+  before_action :set_team, only: %i[show edit update destroy leave join]
 
   def show; end
 
@@ -47,6 +47,17 @@ class TeamsController < ApplicationController
     @team.membership_for(current_user).leave
     flash[:notice] = t('.success')
     redirect_to dashboard_path
+  end
+
+  def join
+    if params[:token] == @team.invitation_token
+      membership = @team.memberships.find_or_create_by(user: current_user)
+      flash[:notice] = t('.success') if membership.previously_new_record?
+    else
+      flash[:alert] = t('.invalid_token')
+    end
+
+    redirect_to @team
   end
 
   private

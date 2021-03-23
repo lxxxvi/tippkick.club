@@ -19,7 +19,9 @@ class TeamTest < ActiveSupport::TestCase
   test 'save' do
     team = Team.new(name: 'Argentinos')
     assert team.save
+
     assert_match /[[:alnum:]]{5}/, team.tippkick_id
+    assert_match /[[:alnum:]]{10}/, team.invitation_token
   end
 
   test '#membership_for' do

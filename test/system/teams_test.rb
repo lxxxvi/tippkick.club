@@ -12,6 +12,7 @@ class TeamsTest < ApplicationSystemTestCase
       fill_in 'Name', with: 'Argentinos'
       click_on 'Create Team'
 
+      assert_selector 'input[name=invitation_link]'
       assert_selector '.flash-messages', text: 'Team created successfully.'
       assert_selector 'h1', text: 'Argentinos'
       assert_selector '.stats--members-count', text: '1'
