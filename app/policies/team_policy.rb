@@ -7,11 +7,11 @@ class TeamPolicy < ApplicationPolicy
     show?
   end
 
-  def edit?
+  def update?
     record.membership_for(user).admin?
   end
 
   def destroy?
-    edit?
+    update?
   end
 end

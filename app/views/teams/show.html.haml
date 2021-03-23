@@ -3,5 +3,8 @@
 .active-members
   = @team.active_members
 
+- if allowed_to?(:update?, @team)
+  = link_to t('shared.actions.edit'), edit_team_path(@team)
+
 - if allowed_to?(:destroy?, @team)
   = link_to t('shared.actions.delete'), team_path(@team), method: :delete, data: { confirm: t('shared.are_you_sure') }
