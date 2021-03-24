@@ -123,4 +123,56 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
       get leave_team_path(team)
     end
   end
+
+  test 'guest should get join, right token' do
+    memberships(:pele_campeones).destroy
+    team = teams(:campeones)
+    user = users(:pele)
+
+    sign_in_as :pele
+
+    assert_difference -> { Membership.count }, +1 do
+      get join_team_url(team, 'campeones_token')
+    end
+
+    team.membership_for(user).tap do |membership|
+      assert_equal 2, membership.ranking_position
+    end
+
+    follow_redirect!
+    assert_response :success
+
+    assert_equal 'Joined team successfully.', flash[:notice]
+  end
+
+  test 'guest should NOT get join, wrong token' do
+    memberships(:pele_campeones).destroy
+    team = teams(:campeones)
+
+    sign_in_as :pele
+
+    assert_no_difference -> { Membership.count } do
+      get join_team_url(team, 'wrong_token')
+    end
+
+    follow_redirect!
+    assert_response :success
+
+    assert_equal 'Could not join team, invalid token.', flash[:alert]
+  end
+
+  test 'member get join, nothing happens' do
+    team = teams(:campeones)
+
+    sign_in_as :pele
+
+    assert_no_difference -> { Membership.count } do
+      get join_team_url(team, 'campeones_token')
+    end
+
+    follow_redirect!
+    assert_response :success
+
+    assert_empty flash
+  end
 end

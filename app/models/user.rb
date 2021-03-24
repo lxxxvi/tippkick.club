@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
-  after_save :create_predictions!
+  after_create :create_predictions!
 
   def membership_for(team)
     memberships.find_by(team: team)

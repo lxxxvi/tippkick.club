@@ -1,3 +1,4 @@
 campeones:
   name: "Campeones"
   tippkick_id: "tkid_campeones"
+  invitation_token: "campeones_token"

@@ -60,4 +60,12 @@ namespace :dev do
       end
     end
   end
+
+  desc 'Setup'
+  task setup: :environment do
+    Rake::Task['db:fixtures:load'].execute
+    Rake::Task['dev:shift_tournament'].execute
+    Rake::Task['dev:create_random_data'].execute
+    FinalWhistleService.new.call!
+  end
 end

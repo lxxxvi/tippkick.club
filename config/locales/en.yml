@@ -63,6 +63,9 @@ en:
       success: "Team deleted successfully."
     leave:
       success: "You left the team."
+    join:
+      success: "Joined team successfully."
+      invalid_token: "Could not join team, invalid token."
   shared:
     actions:
       delete: "Delete"
