@@ -1,0 +1,26 @@
+.invitation-link--label {
+  @apply ml-2 block text-xs text-gray-400 border border-transparent;
+}
+
+.invitation-link--input-field {
+  @apply flex-1 min-w-0 block w-full px-3 py-2 border-gray-300 rounded-none rounded-l-md focus:ring-pink-500 focus:border-pink-500 sm:text-sm;
+}
+
+.invitation-link--button {
+  @apply inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 sm:text-sm hover:bg-gray-100 transition;
+}
+
+.invitation-link--copied {
+  @apply ml-2 mt-2 text-xs text-green-500;
+}
+
+@keyframes fade-out {
+  from { opacity: 100%; }
+  to { opacity: 0%; }
+}
+
+.fade-out {
+  animation: fade-out ease 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}

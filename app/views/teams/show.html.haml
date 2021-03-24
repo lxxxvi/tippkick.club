@@ -15,11 +15,7 @@
 
 - if allowed_to?(:invite?, @team)
   .my-10
-    = label_tag :invitation_link, t('.invitation_link'), class: 'text-xs block text-sm text-gray-400'
-    .mt-1.flex.rounded-md.shadow-sm
-      = text_field_tag :invitation_link, @team.decorate.invitation_link, class: 'flex-1 min-w-0 block w-full px-3 py-2 border-gray-300 rounded-none rounded-l-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'
-      %button{ class: 'inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm' }
-        = t('.copy')
+    = render InvitationLinkComponent.new(invitation_link: @team.decorate.invitation_link)
 
 %section#memberships.mt-10
   %h2.uppercase.text-xs.text-gray-500.text-right= t('team_memberships.members')
