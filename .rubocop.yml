@@ -14,10 +14,6 @@ AllCops:
 Rails:
   Enabled: true
 
-Rails/SkipsModelValidations:
-  Exclude:
-  - "test/**/*"
-
 Gemspec/DateAssignment:
   Enabled: true
 
@@ -92,7 +88,7 @@ Lint/LambdaWithoutLiteralBlock:
 
 Lint/MissingSuper:
   Exclude:
-    - 'app/components/**'
+  - app/components/**
   Enabled: true
 
 Lint/MixedRegexpCaptureTypes:
@@ -209,6 +205,10 @@ Rails/RenderPlainText:
 
 Rails/ShortI18n:
   Enabled: true
+
+Rails/SkipsModelValidations:
+  Exclude:
+  - test/**/*
 
 Rails/SquishedSQLHeredocs:
   Enabled: true
@@ -338,6 +338,9 @@ Style/SlicingWithRange:
   Enabled: true
 
 Style/SoleNestedConditional:
+  Enabled: true
+
+Style/StringChars:
   Enabled: true
 
 Style/StringConcatenation:
