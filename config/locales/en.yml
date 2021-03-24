@@ -39,7 +39,6 @@ en:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
-  dashboard_teams_component:
   dashboard_predictions_component:
     there_is:
       one: "There is"
@@ -68,7 +67,9 @@ en:
       invalid_token: "Could not join team, invalid token."
   shared:
     actions:
+      cancel: "Cancel"
       delete: "Delete"
+      save: "Save"
     are_you_sure: "Are you sure?"
     game: "Game"
     games: "Games"

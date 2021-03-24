@@ -1,5 +1,7 @@
 %h1= t('shared.dashboard')
 
+= render(NicknameComponent.new(user: current_user))
+
 = render(DashboardPredictionsComponent.new(dashboard: @dashboard))
 
 %section#stats.mt-10

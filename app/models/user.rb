@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
   def initialize_nickname
-    self.nickname = generate_id
+    self.nickname ||= generate_id
   end
 
   def set_tippkick_id
