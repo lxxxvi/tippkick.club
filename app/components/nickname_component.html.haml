@@ -1,0 +1,22 @@
+#nickname-component
+  %div{ data: { controller: 'nickname' } }
+    .text-xl.py-1
+      = t('.hi')
+    %div
+      - if show_form?
+        .nickname--form
+          = text_field_tag :nickname, nickname, class: 'nickname--input', data: { 'nickname-target': 'nicknameInput', action: 'keydown->nickname#handleKeyboardInput' }
+          .errors.my-2
+            .ml-2.text-2xs.text-red-500
+              = errors.join(', ')
+          .actions.mt-2
+            %button.nickname--save-button.hover:bg-pink-200.transition{ data: { action: 'click->nickname#update'} }
+              = t('shared.actions.save')
+            %button.ml-1.py-1.px-2.text-gray-400.hover:text-gray-700.transition{ data: { reflex: 'click->Nickname#close_form' } }
+              = t('shared.actions.cancel')
+      - else
+        .nickname--nickname
+          %span.text-2xl
+            = nickname
+          %button.text-gray-400.text-xs.hover:text-gray-700.transition{ data: { reflex: 'click->Nickname#open_form' } }
+            = t('.change_nickname')

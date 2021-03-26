@@ -35,11 +35,10 @@ class PredictionsTest < ApplicationSystemTestCase
       using_browser do
         sign_in_as :diego
 
-        listen_to_stimulus_reflex
         navigate_to 'Predictions'
-        wait_for_stimulus_reflex
 
         within("##{dom_id(prediction)}") do
+          sleep 0.2
           click_on 'Start'
           assert_scores(0, 0)
 

@@ -1,0 +1,7 @@
+.nickname--input {
+  @apply text-2xl border-2 border-pink-400 focus:border-pink-400 rounded-lg py-1 px-3 w-full focus:ring-0;
+}
+
+.nickname--save-button {
+  @apply rounded-lg mx-2 py-1 px-10 bg-pink-100 hover:bg-pink-200 transition;
+}
