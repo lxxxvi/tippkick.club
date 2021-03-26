@@ -18,12 +18,20 @@ class Team < ApplicationRecord
     end
   end
 
+  def find_or_create_member(user)
+    memberships.find_or_create_by(user: user)
+  end
+
   def to_param
     tippkick_id
   end
 
   def decorate
     @decorate ||= TeamDecorator.new(self)
+  end
+
+  def self.global
+    Team.find_by!(tippkick_id: :global)
   end
 
   private

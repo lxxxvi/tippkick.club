@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
   after_create :create_predictions!
+  after_create :add_to_global_team!
 
   def membership_for(team)
     memberships.find_by(team: team)
@@ -22,6 +23,10 @@ class User < ApplicationRecord
 
   def create_predictions!
     CreatePredictionsService.new(self).call!
+  end
+
+  def add_to_global_team!
+    Team.global.find_or_create_member(self)
   end
 
   def initialize_nickname

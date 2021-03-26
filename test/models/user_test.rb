@@ -10,6 +10,9 @@ class UserTest < ActiveSupport::TestCase
 
     assert_match /[[:alnum:]]{5}/, user.tippkick_id
     assert_match /[[:alnum:]]{5}/, user.nickname
+
+    assert_equal 1, user.teams.count
+    assert_equal teams(:global), user.teams.first
   end
 
   test 'team association' do
