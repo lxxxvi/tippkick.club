@@ -21,9 +21,7 @@ class User < ApplicationRecord
   private
 
   def create_predictions!
-    Game.find_each do |game|
-      Prediction.find_or_create_by(game: game, user: self)
-    end
+    CreatePredictionsService.new(self).call!
   end
 
   def initialize_nickname
