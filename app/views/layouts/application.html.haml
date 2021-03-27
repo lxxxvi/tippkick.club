@@ -9,19 +9,14 @@
     = action_cable_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .max-w-screen-sm.mx-auto
-      %nav.m-4
-        - if signed_in?
-          = link_to_unless_current t('shared.dashboard'), dashboard_path
-          = link_to_unless_current t('shared.predictions'), predictions_path
-          = link_to_unless_current t('shared.games'), games_path
-        - else
-          = link_to_unless_current t('.sign_in'), new_user_session_path
-      .m-4.flash-messages
+    = render NavigationComponent.new(signed_in: signed_in?)
+
+    .max-w-7xl.mx-auto.lg:p-8.sm:p-6
+      .flash-messages
         = notice
         = alert
 
-      .m-4
+      .block
         = yield
 
       %footer.mx-4.my-20.text-right
