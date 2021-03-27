@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test 'valid user' do
-    user = User.new(email: 'zinedine@tippkick.test', password: 'zinedine')
+    user = User.new(email: 'messi@tippkick.test', password: 'messi')
 
     assert_difference -> { Prediction.count }, +51 do
       assert user.save!

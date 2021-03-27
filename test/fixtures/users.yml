@@ -17,3 +17,9 @@ pele:
   total_points: 34
   global_ranking_position: 18
 
+zinedine:
+  <<: *DEFAULTS
+  email: "zinedine@tippkick.test"
+  tippkick_id: 'tkid_zinedine'
+  nickname: 'zinedine'
+  total_points: 67
