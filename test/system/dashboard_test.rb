@@ -11,7 +11,6 @@ class DashboardTest < ApplicationSystemTestCase
 
       within 'section#stats' do
         assert_selector '.stats--total-points', text: '152'
-        assert_selector '.stats--global-ranking-position', text: '9'
       end
     end
   end

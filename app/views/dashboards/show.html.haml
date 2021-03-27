@@ -15,11 +15,6 @@
             = @dashboard.total_points
           .stats--description.text-2xs.text-pink-800
             = t('shared.points', count: @dashboard.total_points)
-        .stats--global-ranking-position.text-center
-          .stats--value.text-4xl
-            = @dashboard.global_ranking_position
-          .stats--description.text-2xs.text-pink-800
-            = t('shared.global_rank')
     - else
       .text-center.text-gray-400
         = t('.no_stats_available_yet')

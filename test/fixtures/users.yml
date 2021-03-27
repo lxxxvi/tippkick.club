@@ -7,7 +7,6 @@ diego:
   tippkick_id: 'tkid_diego'
   nickname: 'digi'
   total_points: 152
-  global_ranking_position: 9
 
 pele:
   <<: *DEFAULTS
@@ -15,7 +14,6 @@ pele:
   tippkick_id: 'tkid_pele'
   nickname: 'pele'
   total_points: 34
-  global_ranking_position: 18
 
 zinedine:
   <<: *DEFAULTS

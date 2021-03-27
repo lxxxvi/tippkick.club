@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.integer "members_count", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["invitation_token"], name: "index_teams_on_invitation_token", unique: true
     t.index ["name"], name: "index_teams_on_name", unique: true
     t.index ["tippkick_id"], name: "index_teams_on_tippkick_id", unique: true
   end
@@ -82,7 +81,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.string "tippkick_id", null: false
     t.string "nickname", null: false
     t.integer "total_points"
-    t.integer "global_ranking_position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
