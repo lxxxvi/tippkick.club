@@ -10,6 +10,7 @@ gem 'action_policy'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'haml-rails'
+gem 'pagy'
 gem 'pg'
 gem 'puma'
 gem 'rails'

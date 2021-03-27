@@ -131,6 +131,7 @@ GEM
     nokogiri (1.11.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (3.10.0)
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
@@ -267,6 +268,7 @@ DEPENDENCIES
   devise
   haml-rails
   listen
+  pagy
   pg
   puma
   rails
