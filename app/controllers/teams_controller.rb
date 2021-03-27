@@ -51,7 +51,7 @@ class TeamsController < ApplicationController
 
   def join
     if params[:token] == @team.invitation_token
-      membership = @team.memberships.find_or_create_by(user: current_user)
+      membership = @team.find_or_create_member(current_user)
       flash[:notice] = t('.success') if membership.previously_new_record?
     else
       flash[:alert] = t('.invalid_token')

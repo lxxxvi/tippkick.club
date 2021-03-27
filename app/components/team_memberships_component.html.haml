@@ -1,0 +1,5 @@
+- if display_pagination?
+  = raw pagy_nav(@pagy)
+
+.team-memberships
+  = render TeamMembershipComponent.with_collection(@records)

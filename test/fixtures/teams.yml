@@ -1,3 +1,8 @@
+global:
+  name: "Global"
+  tippkick_id: "global"
+  invitation_token: "REMOVEME"
+
 campeones:
   name: "Campeones"
   tippkick_id: "tkid_campeones"

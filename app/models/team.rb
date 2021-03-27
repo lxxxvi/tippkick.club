@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  GLOBAL_ID = 'global'.freeze
+
   validates :name, :invitation_token, presence: true
   validates :name, uniqueness: true
 
@@ -18,12 +20,24 @@ class Team < ApplicationRecord
     end
   end
 
+  def find_or_create_member(user)
+    memberships.find_or_create_by(user: user)
+  end
+
   def to_param
     tippkick_id
   end
 
   def decorate
     @decorate ||= TeamDecorator.new(self)
+  end
+
+  def self.global
+    Team.find_by!(tippkick_id: GLOBAL_ID)
+  end
+
+  def global?
+    tippkick_id == GLOBAL_ID
   end
 
   private

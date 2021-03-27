@@ -115,6 +115,15 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 'You left the team.', flash[:notice]
   end
 
+  test 'member cannot leave global team' do
+    team = teams(:global)
+    sign_in_as :diego
+
+    assert_raises(ActionPolicy::Unauthorized) do
+      get leave_team_path(team)
+    end
+  end
+
   test 'coach should not get leave' do
     team = teams(:campeones)
     sign_in_as :diego

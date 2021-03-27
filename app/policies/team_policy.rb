@@ -8,22 +8,34 @@ class TeamPolicy < ApplicationPolicy
   end
 
   def update?
-    membership&.coach?
+    coach?
   end
 
   def destroy?
-    update?
+    coach?
   end
 
   def leave?
-    membership.present? && !update?
+    just_member? && not_global_team?
   end
 
   def invite?
-    update?
+    coach?
   end
 
   private
+
+  def not_global_team?
+    !record.global?
+  end
+
+  def coach?
+    membership&.coach?
+  end
+
+  def just_member?
+    membership.present? && !coach?
+  end
 
   def membership
     @membership ||= record.membership_for(user)

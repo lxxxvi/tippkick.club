@@ -19,7 +19,7 @@
 
 %section#memberships.mt-10
   %h2.uppercase.text-xs.text-gray-500.text-right= t('team_memberships.members')
-  = render TeamMembershipComponent.with_collection(@team.memberships.with_users.ordered_by_ranking_position)
+  = render TeamMembershipsComponent.new(team: @team, params: params)
 
 - if allowed_to?(:leave?, @team)
   .member-actions.mt-10
