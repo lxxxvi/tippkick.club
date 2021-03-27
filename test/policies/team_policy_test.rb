@@ -28,4 +28,18 @@ class TeamPolicyTest < ActiveSupport::TestCase
       assert_not policy.invite?
     end
   end
+
+  test 'cannot leave global team' do
+    team = teams(:global)
+    user = users(:diego)
+
+    TeamPolicy.new(team, user: user).tap do |policy|
+      assert policy.show?
+      assert policy.create?
+      assert_not policy.destroy?
+      assert_not policy.update?
+      assert_not policy.leave?
+      assert_not policy.invite?
+    end
+  end
 end

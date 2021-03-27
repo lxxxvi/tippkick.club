@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  GLOBAL_ID = 'global'.freeze
+
   validates :name, :invitation_token, presence: true
   validates :name, uniqueness: true
 
@@ -31,7 +33,11 @@ class Team < ApplicationRecord
   end
 
   def self.global
-    Team.find_by!(tippkick_id: :global)
+    Team.find_by!(tippkick_id: GLOBAL_ID)
+  end
+
+  def global?
+    tippkick_id == GLOBAL_ID
   end
 
   private
