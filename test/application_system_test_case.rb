@@ -22,7 +22,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   def navigate_to(page_name)
     within('nav') do
-      click_on page_name
+      click_on page_name, match: :first
     end
   end
 end
