@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class MembershipWithTeamComponentTest < ViewComponent::TestCase
+class MembershipOfUserComponentTest < ViewComponent::TestCase
   test '.render' do
-    component = MembershipWithTeamComponent.new(
-      membership_with_team: users(:diego).memberships_with_teams.first
+    component = MembershipOfUserComponent.new(
+      membership_of_user: memberships(:diego_campeones)
     )
 
     render_inline(component).tap do

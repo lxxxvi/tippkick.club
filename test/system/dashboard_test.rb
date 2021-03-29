@@ -40,17 +40,4 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector 'h1', text: 'Predictions'
     end
   end
-
-  test 'displays teams' do
-    before_tournament do
-      sign_in_as :diego
-
-      visit dashboard_path
-
-      within 'section#teams' do
-        assert_selector '.team', text: 'Campeones'
-        assert_selector '.create-team', text: 'Create new team'
-      end
-    end
-  end
 end
