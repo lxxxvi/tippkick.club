@@ -52,6 +52,11 @@ en:
       one: "You are in 1 team"
       other: "You are in %{count} teams"
     you_are_at_position_x_in_global_ranking: "You are at position %{x} in the global ranking"
+
+  profiles:
+    update:
+      success: "Profile updated successfully."
+      failure: "Could not update profile."
   teams:
     actions:
       new: "Create new team"
