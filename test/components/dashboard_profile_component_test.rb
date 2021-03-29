@@ -1,10 +1,12 @@
-require "test_helper"
+require 'test_helper'
 
 class DashboardProfileComponentTest < ViewComponent::TestCase
-  def test_component_renders_something_useful
-    # assert_equal(
-    #   %(<span>Hello, components!</span>),
-    #   render_inline(DashboardProfileComponent.new(message: "Hello, components!")).css("span").to_html
-    # )
+  test '.render' do
+    skip
+    component = DashboardProfileComponent.new
+    render_inline(component)
+
+    assert_text 'Change Your Profile'
+    assert_link 'Profile', href: '/profile'
   end
 end

@@ -4,16 +4,10 @@ class DashboardPredictionsComponent < ViewComponent::Base
   end
 
   def all_set?
-    unpredicted_predictable_games_count == 0
+    unpredicted_predictable_games_count.zero?
   end
 
   def unpredicted_predictable_games_count
-    @unpredicted_predictable_games_count ||= unpredicted_predictable_games.count
-  end
-
-  private
-
-  def unpredicted_predictable_games
-    @unpredicted_predictable_games ||= @user.predictions.unpredicted_predictable
+    @unpredicted_predictable_games_count ||= @user.predictions.unpredicted_predictable.count
   end
 end

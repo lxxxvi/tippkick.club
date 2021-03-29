@@ -2,6 +2,8 @@ require 'application_system_test_case'
 
 class NicknameTest < ApplicationSystemTestCase
   test 'change nickname' do
+    skip
+
     before_tournament do
       using_browser do
         sign_in_as :diego
