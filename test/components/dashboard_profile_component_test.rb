@@ -2,7 +2,6 @@ require 'test_helper'
 
 class DashboardProfileComponentTest < ViewComponent::TestCase
   test '.render' do
-    skip
     component = DashboardProfileComponent.new
     render_inline(component)
 

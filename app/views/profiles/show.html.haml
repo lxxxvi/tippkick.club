@@ -1,0 +1,11 @@
+%h1= t('shared.profile')
+
+= form_with model: @form do |f|
+  = f.label :nickname, class: 'block'
+  = f.text_field :nickname
+  - if @form.errors.key?(:nickname)
+    .errors.text-xs.text-red-400
+      = @form.errors.full_messages_for(:nickname).join(', ')
+
+  .actions
+    = f.submit t('shared.actions.save')

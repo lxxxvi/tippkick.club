@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resource :dashboard, only: %i[show]
+  resource :profile, only: %i[show update]
 
   root 'landing_page#index'
 end
