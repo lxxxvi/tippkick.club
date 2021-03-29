@@ -1,4 +1,4 @@
-class DashboardService
+class DashboardTeamsComponent < ViewComponent::Base
   def initialize(user)
     @user = user
   end
@@ -9,9 +9,5 @@ class DashboardService
 
   def total_points
     @total_points ||= @user.total_points
-  end
-
-  def unpredicted_predictable_games
-    @unpredicted_predictable_games ||= @user.predictions.unpredicted_predictable
   end
 end
