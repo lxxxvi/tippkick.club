@@ -1,9 +1,13 @@
 class DashboardPredictionsComponent < ViewComponent::Base
-  def initialize(dashboard:)
-    @dashboard = dashboard
+  def initialize(user)
+    @user = user
   end
 
-  def render?
-    @dashboard.unpredicted_predictable_games.any?
+  def all_set?
+    unpredicted_predictable_games_count.zero?
+  end
+
+  def unpredicted_predictable_games_count
+    @unpredicted_predictable_games_count ||= @user.predictions.unpredicted_predictable.count
   end
 end

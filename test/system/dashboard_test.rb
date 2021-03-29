@@ -1,17 +1,16 @@
 require 'application_system_test_case'
 
 class DashboardTest < ApplicationSystemTestCase
-  test 'displays stats' do
+  test 'dashbor' do
     PredictionPointsService.new.call!
 
     before_game_25 do
       sign_in_as :diego
 
       assert_selector 'h1', text: 'Dashboard'
-
-      within 'section#stats' do
-        assert_selector '.stats--total-points', text: '152'
-      end
+      assert_text 'There are 10 games ready to be predicted'
+      assert_text 'You are at position 1 in the global ranking'
+      assert_text 'Change Your Profile'
     end
   end
 
@@ -21,23 +20,7 @@ class DashboardTest < ApplicationSystemTestCase
 
     before_game_25 do
       sign_in_as :diego
-      visit dashboard_path
-      assert_selector 'section#unpredicted-predictable-games', count: 0
-    end
-  end
-
-  test 'displays notification about unpredicted predictable games' do
-    before_game_25 do
-      sign_in_as :diego
-
-      visit dashboard_path
-
-      within 'section#unpredicted-predictable-games' do
-        assert_text 'There are 10 games ready to be predicted'
-        click_on '10 games'
-      end
-
-      assert_selector 'h1', text: 'Predictions'
+      assert_text 'Youre All Set'
     end
   end
 end
