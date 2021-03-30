@@ -26,6 +26,9 @@ en:
       membership:
         ranking_position: "Ranking Position"
         ranking_position_short: "#"
+      team:
+        members_count: "Members count"
+        members_count_short: "Members"
       user:
         nickname: "Nickname"
         total_points: "Total Points"
@@ -126,6 +129,7 @@ en:
     points:
       one: "Point"
       other: "Points"
+    your_rank: "Your rank"
   time:
     formats:
       day_month: "%d %b"
