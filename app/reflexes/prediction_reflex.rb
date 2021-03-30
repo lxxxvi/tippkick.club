@@ -15,7 +15,7 @@ class PredictionReflex < ApplicationReflex
 
   def update_prediction_card
     morph dom_id(find_prediction),
-          render(partial: 'predictions/prediction', locals: { prediction: find_prediction.reload })
+          render(PredictionComponent.new(prediction: find_prediction), layout: false)
   end
 
   def find_prediction

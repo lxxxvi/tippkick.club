@@ -1,0 +1,42 @@
+.prediction{ id: dom_id(@prediction) }
+  .border-2.rounded-lg.border-pink-100.mb-10.overflow-hidden.shadow-lg
+    .px-4.py-3.sm:px-6.bg-gradient-to-r.from-red-100.to-pink-200.border-b-2.border-pink-100
+      .inline-grid.w-full.grid-cols-2
+        .text-gray-800.text-xs
+          = Game.human_enum_name(:tournament_phase, @prediction.game.tournament_phase)
+        .text-gray-700.text-xs.text-right
+          = @prediction.game.decorate.display_uefa_game_id
+    .px-4.pt-4
+      .grid.grid-cols-2.gap-4
+        .self-center.justify-self-center.text-pink-500.text-xs
+          = @prediction.game.decorate.display_home_team_name
+        .self-center.justify-self-center.text-pink-500.text-xs
+          = @prediction.game.decorate.display_guest_team_name
+    .p-4
+      - if @prediction.predictable?
+        - if @prediction.predicted?
+          .grid.grid-cols-2.gap-4
+            .self-center.justify-self-center.text-4xl.my-4.prediction--home-team-score
+              = @prediction.home_team_score
+            .self-center.justify-self-center.text-4xl.my-4.prediction--guest-team-score
+              = @prediction.guest_team_score
+            .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.prediction--score-controls--home-team
+              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @prediction.home_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :home, delta: :minus } }
+                \-
+              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :home, delta: :plus } }
+                \+
+            .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.prediction--score-controls--guest-team
+              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @prediction.guest_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :guest, delta: :minus } }
+                \-
+              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :guest, delta: :plus } }
+                \+
+        - else
+          .text-center
+            %button.bg-pink-200.py-2.px-5.rounded-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Prediction#start', id: @prediction.id } }= t('shared.start')
+      - else
+        .text-center.text-gray-500.text-sm
+          = t('.not_yet_predictable')
+    .px-4.py-4.sm:px-6.border-t.border-pink-50
+      .text-2xs.text-gray-400
+        = t('shared.kickoff_in')
+        = @prediction.game.decorate.display_kickoff_at_from_now

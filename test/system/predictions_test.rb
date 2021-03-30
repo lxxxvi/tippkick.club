@@ -48,11 +48,11 @@ class PredictionsTest < ApplicationSystemTestCase
           decrease_home_score
           assert_scores(0, 0)
 
-          within('.prediction--score-controls--home-minus') do
+          within('.prediction--score-controls--home-team') do
             find_button('-', disabled: true)
           end
 
-          within('.prediction--score-controls--guest-minus') do
+          within('.prediction--score-controls--guest-team') do
             find_button('-', disabled: true)
           end
 
@@ -84,19 +84,19 @@ class PredictionsTest < ApplicationSystemTestCase
   private
 
   def increase_home_score
-    within('.prediction--score-controls--home-plus') { click_on '+' }
+    within('.prediction--score-controls--home-team') { click_on '+' }
   end
 
   def decrease_home_score
-    within('.prediction--score-controls--home-minus') { click_on '-' }
+    within('.prediction--score-controls--home-team') { click_on '-' }
   end
 
   def increase_guest_score
-    within('.prediction--score-controls--guest-plus') { click_on '+' }
+    within('.prediction--score-controls--guest-team') { click_on '+' }
   end
 
   def decrease_guest_score
-    within('.prediction--score-controls--guest-minus') { click_on '-' }
+    within('.prediction--score-controls--guest-team') { click_on '-' }
   end
 
   def assert_scores(expected_home_team_score, expected_guest_team_score)
