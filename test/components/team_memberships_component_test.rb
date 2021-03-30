@@ -5,7 +5,7 @@ class TeamMembershipsComponentTest < ViewComponent::TestCase
     component = TeamMembershipsComponent.new(team: teams(:global), params: {})
     render_inline(component)
     assert_selector 'nav.pagination', count: 0
-    assert_selector '.team-memberships'
+    assert_selector 'table.team-memberships'
   end
 
   test '.render with pagination' do

@@ -27,7 +27,6 @@ class TeamsTest < ApplicationSystemTestCase
       assert_selector 'input[name=invitation_link]'
       assert_selector '.flash-messages', text: 'Team created successfully.'
       assert_selector 'h1', text: 'Argentinos'
-      assert_selector '.stats--members-count', text: '1'
     end
   end
 
@@ -38,9 +37,9 @@ class TeamsTest < ApplicationSystemTestCase
       navigate_to 'Teams'
       click_on 'Campeones'
 
-      within 'section#memberships' do
-        assert_selector '.team-membership--user--nickname', text: 'digi'
-        assert_selector '.team-membership--user--nickname', text: 'pele'
+      within 'table.team-memberships' do
+        assert_selector 'td', text: 'digi'
+        assert_selector 'td', text: 'pele'
       end
     end
   end
