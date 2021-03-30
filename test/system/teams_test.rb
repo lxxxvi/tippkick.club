@@ -7,9 +7,10 @@ class TeamsTest < ApplicationSystemTestCase
 
       navigate_to 'Teams'
 
-      assert_selector '.team', count: 2
-      assert_selector '.team', text: 'Campeones'
-      assert_selector '.team', text: 'Global'
+      within('table') do
+        assert_selector 'td', text: 'Campeones'
+        assert_selector 'td', text: 'Global'
+      end
 
       assert_selector '.create-team', text: 'Create new team'
     end

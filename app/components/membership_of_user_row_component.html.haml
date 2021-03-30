@@ -1,0 +1,7 @@
+%tr
+  %td.px-6.py-2.whitespace-nowrap.text-gray-900.text-left
+    = link_to @membership_of_user_row.team.name, team_path(@membership_of_user_row.team)
+  %td.px-6.py-2.whitespace-nowrap.text-gray-900.text-right
+    = @membership_of_user_row.ranking_position
+  %td.px-6.py-2.whitespace-nowrap.text-gray-900.text-right
+    = @membership_of_user_row.team.members_count
