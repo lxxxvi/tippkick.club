@@ -1,5 +1,20 @@
 - if display_pagination?
-  = raw pagy_nav(@pagy)
+  .text-right
+    = raw pagy_nav(@pagy)
 
-.team-memberships
-  = render TeamMembershipComponent.with_collection(@records)
+.flex.flex-col
+  .-my-2.overflow-x-auto.sm:-mx-6.lg:-mx-8
+    .py-2.align-middle.inline-block.min-w-full.sm:px-6.lg:px-8
+      .overflow-hidden.border.border-pink-100.sm:rounded-lg
+        %table.min-w-full.divide-y.divide-pink-100.team-memberships
+          %thead.bg-pink-50
+            %tr.border-0.border-b-1
+              %th.px-6.py-3.text-center.text-xs.font-medium.text-pink-700.uppercase.tracking-wider{ scope: 'col', class: 'w-1/12' }
+                = t('activerecord.attributes.membership.ranking_position_short')
+              %th.px-6.py-3.text-center.text-xs.font-medium.text-pink-700.uppercase.tracking-wider{ scope: 'col', class: 'w-1/12' }
+                = t('activerecord.attributes.user.total_points_short')
+              %th.px-6.py-3.text-left.text-xs.font-medium.text-pink-700.uppercase.tracking-wider{ scope: 'col', class: 'w-10/12' }
+                = t('activerecord.attributes.user.nickname')
+
+          %tbody.bg-white.divide-y.divide-pink-100
+            = render TeamMembershipRowComponent.with_collection(@records)

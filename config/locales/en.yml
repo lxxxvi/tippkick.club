@@ -23,6 +23,13 @@ en:
           munich: "Munich"
           rome: "Rome"
           saint_petersburg: "Saint Petersburg"
+      membership:
+        ranking_position: "Ranking Position"
+        ranking_position_short: "#"
+      user:
+        nickname: "Nickname"
+        total_points: "Total Points"
+        total_points_short: "Pts"
     errors:
       models:
         game:
