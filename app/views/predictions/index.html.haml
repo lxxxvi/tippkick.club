@@ -1,3 +1,4 @@
-%h1.uppercase= t('shared.predictions')
+%h1= t('shared.predictions')
 
-.predictions= render @predictions || 'empty_list'
+.grid.grid-cols-1.gap-4
+  = render PredictionComponent.with_collection(@predictions)
