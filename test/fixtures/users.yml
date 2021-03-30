@@ -6,6 +6,7 @@ diego:
   email: "diego@tippkick.test"
   tippkick_id: 'tkid_diego'
   nickname: 'digi'
+  rooting_for_team: 'ESP'
   total_points: 152
 
 pele:
@@ -13,6 +14,7 @@ pele:
   email: "pele@tippkick.test"
   tippkick_id: 'tkid_pele'
   nickname: 'pele'
+  rooting_for_team: 'POR'
   total_points: 34
 
 zinedine:

@@ -7,6 +7,13 @@ class DashboardTest < ApplicationSystemTestCase
     before_game_25 do
       sign_in_as :diego
 
+      within('nav') do
+        assert_link 'Predictions', href: '/predictions', count: 2
+        assert_link 'Games', href: '/games', count: 2
+        assert_link 'Teams', href: '/teams', count: 2
+        assert_link 'Profile', href: '/profile', count: 2
+      end
+
       assert_selector 'h1', text: 'Dashboard'
       assert_text 'There are 10 games ready to be predicted'
       assert_text 'You are at position 1 in the global ranking'

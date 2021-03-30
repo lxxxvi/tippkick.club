@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   test 'valid user' do
-    user = User.new(email: 'messi@tippkick.test', password: 'messi')
+    user = User.new(email: 'messi@tippkick.test', password: 'messi', rooting_for_team: 'ESP')
 
     assert_difference -> { Prediction.count }, +51 do
       assert user.save!
@@ -20,6 +20,15 @@ class UserTest < ActiveSupport::TestCase
 
     assert_includes user.teams,
                     teams(:campeones)
+  end
+
+  test 'validates rooting_for_team' do
+    user = users(:diego)
+
+    assert_not user.update(rooting_for_team: 'ARG')
+    assert_includes user.errors[:rooting_for_team], 'is not included in the list'
+
+    assert user.update(rooting_for_team: '')
   end
 
   test '#membership_for' do

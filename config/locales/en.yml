@@ -88,6 +88,7 @@ en:
     upcoming_only: "Upcoming"
     past_only: "Past"
     kickoff_in: "Kickoff in"
+    no_one_with_brackets: '(no one)'
     in_venue: "in"
     uefa_game_id: "Match %{uefa_game_id}"
     fifa_country_codes:

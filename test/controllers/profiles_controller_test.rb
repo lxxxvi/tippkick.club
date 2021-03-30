@@ -15,7 +15,8 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
     assert_changes -> { user.reload.nickname }, to: 'Maradona' do
       put profile_path, params: {
         profile: {
-          nickname: 'Maradona'
+          nickname: 'Maradona',
+          rooting_for_team: 'ITA'
         }
       }
     end
