@@ -3,12 +3,13 @@ require 'test_helper'
 class ProfileFormTest < ActiveSupport::TestCase
   test '.save' do
     user = users(:diego)
-    form = ProfileForm.new(user, { nickname: 'Maradona' })
+    form = ProfileForm.new(user, { nickname: 'Maradona', rooting_for_team: 'AUT' })
 
     assert form.save
     user.reload
 
     assert_equal 'Maradona', user.nickname
+    assert_equal 'AUT', user.rooting_for_team
   end
 
   test '.save, errors' do

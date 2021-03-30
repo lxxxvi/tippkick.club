@@ -11,6 +11,8 @@ class ProfileTest < ApplicationSystemTestCase
 
       assert_field 'Nickname', with: 'digi'
       fill_in 'Nickname', with: 'Diego'
+
+      select 'France', from: 'Rooting for team'
       click_on 'Save'
       assert_field 'Nickname', with: 'Diego'
     end

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  FIFA_COUNTRY_CODES = I18n.t('shared.fifa_country_codes').keys.map(&:to_s).freeze
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -11,6 +13,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
+  validates :rooting_for_team, inclusion: { in: FIFA_COUNTRY_CODES, allow_blank: true }
   after_create :create_predictions!
   after_create :add_to_global_team!
 

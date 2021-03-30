@@ -1,0 +1,15 @@
+= form_with model: @form do |f|
+  .mb-5
+    = f.label :nickname, class: 'block text-xs text-gray-500'
+    = f.text_field :nickname, class: 'w-full sm:w-1/2 border border-gray-300 rounded-lg'
+    - if @form.errors.key?(:nickname)
+      .errors.text-xs.text-red-400
+        = @form.errors.full_messages_for(:nickname).join(', ')
+
+  .mb-5
+    = f.label :rooting_for_team, class: 'block text-xs text-gray-500'
+    = f.select :rooting_for_team, @form.rooting_for_team_collection, { include_blank: t('shared.no_one_with_brackets') }, { class: 'w-full sm:w-1/2 border border-gray-300 rounded-lg' }
+
+  .actions.mt-4
+    = f.submit t('shared.actions.save'), class: 'bg-pink-200 py-2 px-5 rounded-lg hover:bg-pink-300 cursor-pointer transition'
+    = link_to t('shared.actions.cancel'), profile_path, class: 'text-gray-400 hover:text-gray-700 transition ml-4'

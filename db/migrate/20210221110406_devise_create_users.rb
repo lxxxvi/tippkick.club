@@ -14,6 +14,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :nickname, null: false
       t.integer :total_points, null: true
 
+      t.string :rooting_for_team, null: true
+
       t.timestamps null: false
       t.index :email, unique: true
       t.index :reset_password_token, unique: true
