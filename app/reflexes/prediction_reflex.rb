@@ -19,7 +19,7 @@ class PredictionReflex < ApplicationReflex
   end
 
   def find_prediction
-    @find_prediction ||= Prediction.find(element.dataset[:id])
+    @find_prediction ||= current_user.predictions.find(element.dataset[:id])
   end
 
   def update_scores
