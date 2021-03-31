@@ -1,0 +1,25 @@
+nav.tournament-navigation a,
+nav.tournament-navigation span {
+  @apply w-full border-2 text-center py-2 border-collapse border-pink-300;
+}
+
+nav.tournament-navigation a {
+  @apply bg-pink-100 hover:bg-pink-200 transition;
+}
+
+nav.tournament-navigation span {
+  @apply bg-pink-300;
+}
+
+nav.tournament-navigation .left {
+  @apply rounded-l-lg border-r-0;
+}
+
+nav.tournament-navigation .right {
+  @apply rounded-r-lg border-l-0;
+}
+
+
+
+
+

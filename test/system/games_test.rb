@@ -4,8 +4,7 @@ class GamesTest < ApplicationSystemTestCase
   test 'show upcoming and past games' do
     before_game_25 do
       sign_in_as :diego
-      navigate_to 'Games'
-      assert_selector 'h1', text: 'Games'
+      navigate_to 'Tournament'
       assert_selector '.prediction-with-game', count: 24
     end
   end

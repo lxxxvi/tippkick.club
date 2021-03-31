@@ -18,4 +18,8 @@ module TimeTravelers
   def after_game_25(&block)
     travel_to('2021-06-20 17:45:00 UTC', &block)
   end
+
+  def after_tournament(&block)
+    travel_to('2021-07-11 20:00:00 UTC', &block)
+  end
 end
