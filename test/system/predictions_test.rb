@@ -8,8 +8,8 @@ class PredictionsTest < ApplicationSystemTestCase
 
     before_game_25 do
       sign_in_as :diego
-      navigate_to 'Predictions'
-      assert_selector 'h1', text: 'Predictions'
+      navigate_to 'Tournament'
+      within('nav.tournament-navigation') { click_on 'Predictions' }
       assert_selector '.prediction', count: 27
       assert_selector "##{dom_id(prediction)}"
     end
@@ -20,8 +20,8 @@ class PredictionsTest < ApplicationSystemTestCase
 
     at_kickoff_of_game_25 do
       sign_in_as :diego
-      navigate_to 'Predictions'
-      assert_selector 'h1', text: 'Predictions'
+      navigate_to 'Tournament'
+      within('nav.tournament-navigation') { click_on 'Predictions' }
       assert_selector '.prediction', count: 25
       assert_selector "##{dom_id(prediction)}", count: 0
     end
@@ -35,7 +35,8 @@ class PredictionsTest < ApplicationSystemTestCase
       using_browser do
         sign_in_as :diego
 
-        navigate_to 'Predictions'
+        navigate_to 'Tournament'
+        within('nav.tournament-navigation') { click_on 'Predictions' }
 
         within("##{dom_id(prediction)}") do
           sleep 0.2
@@ -73,7 +74,7 @@ class PredictionsTest < ApplicationSystemTestCase
     before_tournament do
       sign_in_as :diego
 
-      navigate_to 'Predictions'
+      navigate_to 'Tournament'
 
       within("##{dom_id(prediction)}") do
         assert_selector 'button, a, submit', count: 0

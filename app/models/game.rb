@@ -17,6 +17,9 @@ class Game < ApplicationRecord
   validate :final_whistle_is_after_kickoff
   validate :scores_cannot_change_before_kickoff
 
+  scope :ordered_chronologically, -> { order('kickoff_at ASC, uefa_game_id ASC') }
+  scope :ordered_antichronologically, -> { order('kickoff_at DESC, uefa_game_id ASC') }
+
   def final_whistle(reset: false)
     if reset
       self.final_whistle_at = nil

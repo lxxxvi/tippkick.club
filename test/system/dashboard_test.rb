@@ -8,8 +8,7 @@ class DashboardTest < ApplicationSystemTestCase
       sign_in_as :diego
 
       within('nav') do
-        assert_link 'Predictions', href: '/predictions', count: 2
-        assert_link 'Games', href: '/games', count: 2
+        assert_link 'Tournament', href: '/tournament/games', count: 2
         assert_link 'Teams', href: '/teams', count: 2
         assert_link 'Profile', href: '/profile', count: 2
       end
