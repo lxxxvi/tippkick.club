@@ -49,6 +49,9 @@ en:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
             home_team_score:
               cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
+    models:
+      user: "User"
+      team: "Team"
   dashboard_predictions_component:
     there_is:
       one: "There is"
@@ -62,7 +65,15 @@ en:
       one: "You are in 1 team"
       other: "You are in %{count} teams"
     you_are_at_position_x_in_global_ranking: "You are at position %{x} in the global ranking"
-
+  devise:
+    passwords:
+      new:
+        reset_my_password: "Reset my password"
+    registrations:
+      new:
+        characters_minimum:
+          one: "1 character minimum"
+          other: "%{count} characters minimum"
   profiles:
     update:
       success: "Profile updated successfully."
@@ -72,6 +83,8 @@ en:
       new: "Create new team"
       edit: "Update team"
       leave: "Leave team"
+    new:
+      create_team: "Create team"
     create:
       success: "Team created successfully."
       failure: "Could not create team."
@@ -129,6 +142,9 @@ en:
     points:
       one: "Point"
       other: "Points"
+    sign_in: "Sign in"
+    sign_up: "Sign up"
+    forgot_your_password: "Forgot your password?"
     your_rank: "Your rank"
   time:
     formats:

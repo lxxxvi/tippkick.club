@@ -16,7 +16,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: password
-    click_on 'Log in'
+    click_on 'Sign in'
     assert_selector '.flash-messages', text: 'Signed in successfully.'
   end
 

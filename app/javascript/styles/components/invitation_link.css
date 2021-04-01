@@ -1,13 +1,13 @@
 .invitation-link--label {
-  @apply ml-2 block text-xs text-gray-400 border border-transparent;
+  @apply block text-xs text-gray-600 tracking-wide mb-1;
 }
 
 .invitation-link--input-field {
-  @apply flex-1 min-w-0 block w-full px-3 py-2 border-gray-300 rounded-none rounded-l-md focus:ring-pink-500 focus:border-pink-500 sm:text-sm;
+  @apply flex-1 min-w-0 block w-full px-3 py-2 border-2 border-pink-200 rounded-none rounded-l-md focus:ring-pink-200 focus:border-pink-200 sm:text-sm;
 }
 
 .invitation-link--button {
-  @apply inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 sm:text-sm hover:bg-gray-100 transition;
+  @apply inline-flex items-center px-3 rounded-r-md border-2 border-l-0 border-pink-200 sm:text-sm bg-pink-100 hover:bg-pink-300 hover:border-pink-300 transition;
 }
 
 .invitation-link--copied {

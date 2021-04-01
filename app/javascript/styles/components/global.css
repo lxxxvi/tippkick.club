@@ -2,7 +2,18 @@
   @apply font-mono;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
   @apply mb-4 uppercase text-pink-500 text-xs tracking-widest;
 }
 
+.button {
+  @apply text-center border-2 border-pink-200 bg-pink-200 py-2 px-5 rounded-lg hover:bg-pink-300 hover:border-pink-300 cursor-pointer transition;
+}
+
+.hollow-button {
+  @apply text-center border-2 border-pink-200 py-2 px-5 rounded-lg hover:bg-pink-300 hover:border-pink-300 cursor-pointer transition;
+}
+
+.dangerous-button {
+  @apply text-center text-red-400 py-2 px-5 border-2 border-red-400 hover:bg-red-400 rounded-lg hover:text-white transition block;
+}

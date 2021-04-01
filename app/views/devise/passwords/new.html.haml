@@ -1,0 +1,11 @@
+%h2= t('shared.forgot_your_password')
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'tippkick-form' }) do |f|
+  .field.my-4
+    = f.label :email, class: 'label'
+    = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'w-full input'
+    - if resource.errors.key?(:email)
+      .errors
+        = resource.errors.full_messages_for(:email).join(', ')
+  .actions.mt-6.grid.grid-cols-1.gap-4
+    = f.submit t('.reset_my_password'), class: 'button w-full'
+    = link_to t('shared.sign_in'), new_session_path(resource_name), class: 'shy-link text-center mt-2'
