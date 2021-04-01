@@ -9,7 +9,8 @@
     = action_cable_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render NavigationComponent.new(signed_in: signed_in?)
+    .sticky.top-0
+      = render NavigationComponent.new(signed_in: signed_in?)
 
     .max-w-7xl.mx-auto.p-4.lg:p-8.sm:p-6
       .flash-messages
