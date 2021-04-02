@@ -4,7 +4,7 @@ class NavigationComponentTest < ViewComponent::TestCase
   test '.render, not signed_in' do
     component = NavigationComponent.new(signed_in: false)
     render_inline component
-    assert_link 'Sign In'
+    assert_link 'Sign in'
     assert_no_link 'Dashboard'
     assert_no_link 'Tournament'
     assert_no_link 'Profile'
