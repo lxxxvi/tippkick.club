@@ -1,7 +1,7 @@
 require 'application_system_test_case'
 
 class DashboardTest < ApplicationSystemTestCase
-  test 'dashbor' do
+  test 'dashboard' do
     PredictionPointsService.new.call!
 
     before_game_25 do
@@ -10,7 +10,6 @@ class DashboardTest < ApplicationSystemTestCase
       within('nav') do
         assert_link 'Tournament', href: '/tournament/games', count: 2
         assert_link 'Teams', href: '/teams', count: 2
-        assert_link 'Profile', href: '/profile', count: 2
       end
 
       assert_selector 'h1', text: 'Dashboard'

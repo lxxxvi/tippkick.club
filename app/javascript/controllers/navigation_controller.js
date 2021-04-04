@@ -1,14 +1,22 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ["mobileMenu", "mobileMenuToggler", "mobileMenuIconClosed", "mobileMenuIconOpened"];
+  static targets = [
+    "mobileMenu",
+    "mobileMenuToggler",
+    "mobileMenuIconClosed",
+    "mobileMenuIconOpened",
+    "profileMenu",
+    "profileMenuToggler"
+  ];
 
   connect() {
     this.renderMobileMenu();
+    this.renderProfileMenu();
   }
 
   renderMobileMenu() {
-    if (this.displayMenu()) {
+    if (this.displayMobileMenu()) {
       this.mobileMenuTarget.classList.remove('hidden');
       this.mobileMenuIconClosedTarget.classList.add('hidden');
       this.mobileMenuIconOpenedTarget.classList.remove('hidden');
@@ -19,24 +27,55 @@ export default class extends Controller {
     }
   }
 
-  toggleMenu() {
-    this.switchAriaExpanded();
+  renderProfileMenu() {
+    if(this.hasProfileMenuTarget) {
+      if (this.displayProfileMenu()) {
+        this.profileMenuTarget.classList.remove('hidden');
+      } else {
+        this.profileMenuTarget.classList.add('hidden');
+      }
+    }
+  }
+
+  toggleMobileMenu() {
+    this.switchMobileMenuAriaExpanded();
     this.renderMobileMenu();
   }
 
-  switchAriaExpanded() {
-    this.setAriaExpanded(!this.displayMenu());
-  };
-
-  displayMenu() {
-    return (this.getAriaExpanded() === 'true');
+  toggleProfileMenu() {
+    this.switchProfileMenuAriaExpanded();
+    this.renderProfileMenu();
   }
 
-  setAriaExpanded(boolean) {
+  switchMobileMenuAriaExpanded() {
+    this.setMobileMenuAriaExpanded(!this.displayMobileMenu());
+  };
+
+  switchProfileMenuAriaExpanded() {
+    this.setProfileMenuAriaExpanded(!this.displayProfileMenu());
+  };
+
+  displayMobileMenu() {
+    return (this.getMobileMenuAriaExpanded() === 'true');
+  }
+
+  displayProfileMenu() {
+    return (this.getProfileMenuAriaExpanded() === 'true');
+  }
+
+  setMobileMenuAriaExpanded(boolean) {
     this.mobileMenuTogglerTarget.setAttribute('aria-expanded', String(boolean));
   }
 
-  getAriaExpanded() {
+  setProfileMenuAriaExpanded(boolean) {
+    this.profileMenuTogglerTarget.setAttribute('aria-expanded', String(boolean));
+  }
+
+  getMobileMenuAriaExpanded() {
     return this.mobileMenuTogglerTarget.getAttribute('aria-expanded');
+  }
+
+  getProfileMenuAriaExpanded() {
+    return this.profileMenuTogglerTarget.getAttribute('aria-expanded');
   }
 }
