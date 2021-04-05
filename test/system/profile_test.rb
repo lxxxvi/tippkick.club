@@ -14,7 +14,8 @@ class ProfileTest < ApplicationSystemTestCase
 
       select 'France', from: 'Rooting for team'
       click_on 'Save'
-      assert_field 'Nickname', with: 'Diego'
+
+      assert_selector '.flash-messages', text: 'Profile updated successfully.'
     end
   end
 

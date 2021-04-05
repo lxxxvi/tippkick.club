@@ -3,8 +3,9 @@ class ProfileForm
 
   delegate :persisted?, :to_param, to: :@object
 
-  def initialize(object, params = {})
+  def initialize(object, redirect_to_path = nil, params = {})
     @object = object
+    @redirect_to_path = redirect_to_path
     @params = params
   end
 
@@ -14,6 +15,10 @@ class ProfileForm
 
   def rooting_for_team
     @params[:rooting_for_team] || @object.rooting_for_team
+  end
+
+  def redirect_to_path
+    @redirect_to_path.presence
   end
 
   def save
