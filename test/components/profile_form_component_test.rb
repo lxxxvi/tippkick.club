@@ -12,7 +12,7 @@ class ProfileFormComponentTest < ViewComponent::TestCase
   end
 
   test '.render, form errors' do
-    form = ProfileForm.new(users(:diego), { nickname: '' })
+    form = ProfileForm.new(users(:diego), nil, { nickname: '' })
     form.save
     component = ProfileFormComponent.new(form)
 
