@@ -1,9 +1,10 @@
-= render DashboardCardComponent.new do |c|
-  = c.icon do
-    %svg.w-16.text-blue-400.mx-auto{fill: "none", stroke: "currentColor", viewbox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg"}
-      %path{d: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap": "round", "stroke-linejoin": "round", "stroke-width": "2"}
-
-  = c.description do
-    = t('.you_are_at_position_x_in_global_ranking', x: global_ranking_position)
-
-  = c.link(name: t('shared.global_ranking'), path: team_path(:global))
+.border-2.border-blue-300.rounded-xl.overflow-auto.shadow-xl
+  .grid.grid-cols-2.justify-items-center
+    .bg-blue-300.border.border-blue-300.py-4.w-full.text-center.text-sm
+      = t('shared.points')
+    .bg-blue-300.py-4.w-full.text-center.text-sm
+      = t('shared.global_ranking')
+    .points.text-3xl.py-8= total_points
+    .global-ranking.text-3xl.py-8= global_ranking_position
+    .col-span-full.text-center.mt-2.mb-4
+      = link_to t('shared.global_ranking'), team_path(:global), class: 'inline-flex items-center justify-center px-6 py-2 border border-transparent font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-sm'

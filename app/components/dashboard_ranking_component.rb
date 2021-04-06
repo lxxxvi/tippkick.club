@@ -4,7 +4,11 @@ class DashboardRankingComponent < ViewComponent::Base
   end
 
   def render?
-    @user.total_points.present?
+    total_points.present?
+  end
+
+  def total_points
+    @total_points ||= @user.total_points
   end
 
   def global_ranking_position

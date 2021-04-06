@@ -60,8 +60,6 @@ en:
       one: "1 game"
       other: "%{count} games"
     ready_to_be_predicted: "ready to be predicted"
-  dashboard_ranking_component:
-    you_are_at_position_x_in_global_ranking: "You are at position %{x} in the global ranking"
   dashboard_teams_component:
     you_are_in_count_teams:
       one: "You are in 1 team"
@@ -140,9 +138,6 @@ en:
       TUR: "Turkey"
       UKR: "Ukraine"
       WAL: "Wales"
-    points:
-      one: "Point"
-      other: "Points"
     sign_in: "Sign in"
     sign_up: "Sign up"
     forgot_your_password: "Forgot your password?"

@@ -13,7 +13,9 @@ class DashboardRankingComponentTest < ViewComponent::TestCase
       component = DashboardRankingComponent.new(users(:diego))
 
       render_inline(component)
-      assert_text 'You are at position 1 in the global ranking'
+      assert_selector '.points', text: '152'
+      assert_selector '.global-ranking', text: '1', exact_text: true
+
       assert_link 'Global Ranking', href: '/teams/global'
     end
   end
