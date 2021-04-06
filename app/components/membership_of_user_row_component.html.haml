@@ -1,7 +1,7 @@
-%tr
-  %td.px-6.py-2.whitespace-nowrap.text-gray-900.text-left
+%tr.hover:bg-pink-50.cursor-pointer{ onclick: "Turbolinks.visit('#{team_path(@membership_of_user_row.team)}')" }
+  %td.px-3.py-4.whitespace-nowrap.text-gray-900.text-left.align-bottom.text-sm
     = link_to @membership_of_user_row.team.name, team_path(@membership_of_user_row.team)
-  %td.px-6.py-2.whitespace-nowrap.text-gray-900.text-right
+  %td.px-3.py-4.whitespace-nowrap.text-gray-900.text-right.align-bottom.text-sm
     = @membership_of_user_row.ranking_position
-  %td.px-6.py-2.whitespace-nowrap.text-gray-900.text-right
+  %td.px-3.py-4.whitespace-nowrap.text-gray-900.text-right.align-bottom.text-sm
     = @membership_of_user_row.team.members_count
