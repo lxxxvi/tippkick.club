@@ -7,7 +7,7 @@
 }
 
 .invitation-link--button {
-  @apply inline-flex items-center px-3 rounded-r-md border-2 border-l-0 border-pink-200 sm:text-sm bg-pink-100 hover:bg-pink-300 hover:border-pink-300 transition;
+  @apply inline-flex items-center px-3 rounded-r-md border-2 border-l-0 border-pink-200 text-sm bg-pink-100 hover:bg-pink-300 hover:border-pink-300 transition;
 }
 
 .invitation-link--copied {
