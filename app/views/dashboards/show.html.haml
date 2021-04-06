@@ -2,7 +2,7 @@
 
 .grid.grid-cols-1.gap-10.sm:grid-cols-2
   %section#teams
-    = render DashboardTeamsComponent.new(current_user)
+    = render DashboardRankingComponent.new(current_user)
   %section#predictions
     = render DashboardPredictionsComponent.new(current_user)
   %section#profile
