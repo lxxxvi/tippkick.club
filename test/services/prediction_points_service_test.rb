@@ -80,7 +80,7 @@ class PredictionPointsServiceTest < ActiveSupport::TestCase
 
   test '.call! focus on User.total_points' do
     user = users(:diego)
-    user.update_column(:total_points, nil)
+    user.update_column(:total_points, 0)
 
     assert_changes -> { user.reload.total_points }, to: 152 do
       PredictionPointsService.new.call!
@@ -99,8 +99,7 @@ class PredictionPointsServiceTest < ActiveSupport::TestCase
   test '0 points for no predicted games' do
     new_user = User.create!(email: 'messi@tippkick.test', password: 'messi')
 
-    assert_changes -> { new_user.reload.total_points }, to: 0 do
-      PredictionPointsService.new.call!
-    end
+    PredictionPointsService.new.call!
+    assert_equal 0, new_user.reload.total_points
   end
 end

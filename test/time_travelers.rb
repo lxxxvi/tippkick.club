@@ -3,6 +3,10 @@ module TimeTravelers
     travel_to('2021-06-11 18:55:00 UTC', &block)
   end
 
+  def in_game_1(&block)
+    travel_to('2021-06-11 19:30:00 UTC', &block)
+  end
+
   def before_game_25(&block)
     travel_to('2021-06-20 15:55:00 UTC', &block)
   end

@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.datetime "remember_created_at"
     t.string "tippkick_id", null: false
     t.string "nickname", null: false
-    t.integer "total_points"
+    t.integer "total_points", default: 0, null: false
     t.string "rooting_for_team"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

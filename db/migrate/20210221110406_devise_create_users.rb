@@ -12,7 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
       t.string :tippkick_id, null: false
       t.string :nickname, null: false
-      t.integer :total_points, null: true
+      t.integer :total_points, null: false, default: 0
 
       t.string :rooting_for_team, null: true
 
