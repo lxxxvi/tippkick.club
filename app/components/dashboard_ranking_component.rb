@@ -3,12 +3,8 @@ class DashboardRankingComponent < ViewComponent::Base
     @user = user
   end
 
-  def stats_ready?
+  def render?
     @user.total_points.present?
-  end
-
-  def number_of_teams
-    @number_of_teams ||= @user.teams.count
   end
 
   def global_ranking_position
