@@ -64,7 +64,6 @@ en:
     you_are_in_count_teams:
       one: "You are in 1 team"
       other: "You are in %{count} teams"
-    you_are_at_position_x_in_global_ranking: "You are at position %{x} in the global ranking"
   devise:
     passwords:
       new:
@@ -139,9 +138,6 @@ en:
       TUR: "Turkey"
       UKR: "Ukraine"
       WAL: "Wales"
-    points:
-      one: "Point"
-      other: "Points"
     sign_in: "Sign in"
     sign_up: "Sign up"
     forgot_your_password: "Forgot your password?"

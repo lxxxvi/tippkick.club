@@ -14,7 +14,7 @@ class DashboardTest < ApplicationSystemTestCase
 
       assert_selector 'h1', text: 'Dashboard'
       assert_text 'There are 10 games ready to be predicted'
-      assert_text 'You are at position 1 in the global ranking'
+      assert_text 'You are in 2 teams'
       assert_text 'Change Your Profile'
     end
   end
