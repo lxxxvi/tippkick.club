@@ -1,4 +1,4 @@
-class DashboardTeamsComponent < ViewComponent::Base
+class DashboardRankingComponent < ViewComponent::Base
   def initialize(user)
     @user = user
   end

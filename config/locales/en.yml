@@ -60,7 +60,7 @@ en:
       one: "1 game"
       other: "%{count} games"
     ready_to_be_predicted: "ready to be predicted"
-  dashboard_teams_component:
+  dashboard_ranking_component:
     you_are_in_count_teams:
       one: "You are in 1 team"
       other: "You are in %{count} teams"

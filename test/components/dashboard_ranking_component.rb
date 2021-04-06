@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class DashboardTeamsComponentTest < ViewComponent::TestCase
+class DashboardRankingComponentTest < ViewComponent::TestCase
   test '.render, before tournament' do
     user = users(:diego)
     user.update_column(:total_points, nil)
     before_tournament do
-      component = DashboardTeamsComponent.new(users(:diego))
+      component = DashboardRankingComponent.new(users(:diego))
 
       render_inline(component)
       assert_text 'You are in 2 teams'
@@ -15,7 +15,7 @@ class DashboardTeamsComponentTest < ViewComponent::TestCase
 
   test '.render, during tournament' do
     before_game_25 do
-      component = DashboardTeamsComponent.new(users(:diego))
+      component = DashboardRankingComponent.new(users(:diego))
 
       render_inline(component)
       assert_text 'You are at position 1 in the global ranking'
