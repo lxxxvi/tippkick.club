@@ -8,9 +8,13 @@ class TeamMembershipRowComponent < ViewComponent::Base
     return 'bg-blue-300' if team_membership_of_user?
   end
 
+  def team_membership_user
+    @team_membership_user ||= @team_membership_row.user
+  end
+
   private
 
   def team_membership_of_user?
-    @team_membership_row.user == @user
+    team_membership_user == @user
   end
 end

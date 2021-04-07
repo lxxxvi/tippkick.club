@@ -21,6 +21,10 @@ class User < ApplicationRecord
     memberships.find_by(team: team)
   end
 
+  def decorate
+    @decorate ||= UserDecorator.new(self)
+  end
+
   private
 
   def create_predictions!

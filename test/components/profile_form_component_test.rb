@@ -8,7 +8,7 @@ class ProfileFormComponentTest < ViewComponent::TestCase
     render_inline component
 
     assert_field 'Nickname', with: 'digi'
-    assert_select 'Rooting for team', selected: 'Spain'
+    assert_select 'Rooting for team', selected: 'Spain 🇪🇸'
   end
 
   test '.render, form errors' do
