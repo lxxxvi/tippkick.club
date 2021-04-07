@@ -52,6 +52,9 @@ en:
     models:
       user: "User"
       team: "Team"
+  dashboard_component:
+    hey_nickname: "Hey %{nickname}"
+    this_is_your_dashboard: "this is your dashboard"
   dashboard_predictions_component:
     there_is:
       one: "There is"

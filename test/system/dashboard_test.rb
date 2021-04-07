@@ -12,7 +12,7 @@ class DashboardTest < ApplicationSystemTestCase
         assert_link 'Teams', href: '/teams', count: 2
       end
 
-      assert_selector 'h1', text: 'Dashboard'
+      assert_selector 'h1', text: 'Hey digi, this is your dashboard'
       assert_text 'There are 10 games ready to be predicted'
       assert_text 'You are in 2 teams'
       assert_text 'Change Your Profile'
