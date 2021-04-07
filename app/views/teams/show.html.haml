@@ -1,3 +1,6 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.teams'), path: teams_path)
+
 %h1= @team.name
 
 .mb-10.mt-8
