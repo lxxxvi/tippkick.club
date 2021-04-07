@@ -1,16 +1,6 @@
 class GameDecorator < SimpleDelegator
   include ActionView::Helpers::DateHelper
 
-  def self.tournament_phase_colors
-    {
-      group: 'bg-gradient-to-r from-blue-100 to-blue-300 text-blue-900',
-      round_of_16: 'bg-gradient-to-r from-yellow-100 to-yellow-300 text-yellow-900',
-      quarter_finals: 'bg-gradient-to-r from-purple-100 to-purple-300 text-purple-900',
-      semi_finals: 'bg-gradient-to-r from-pink-100 to-pink-300 text-pink-900',
-      final: 'bg-gradient-to-r from-green-100 to-green-300 text-green-900'
-    }
-  end
-
   def self.flag_path(team_name)
     "/images/flags/#{team_name&.downcase}.svg"
   end
