@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5 {
   @apply mb-4 uppercase text-pink-500 text-xs tracking-widest;
 }
 
+h1 {
+  @apply mb-8;
+}
+
 .button {
   @apply text-center border-2 border-pink-200 bg-pink-200 py-2 px-5 rounded-lg hover:bg-pink-300 hover:border-pink-300 cursor-pointer transition;
 }

@@ -38,6 +38,10 @@ class TeamsTest < ApplicationSystemTestCase
       navigate_to 'Teams'
       click_on 'Campeones'
 
+      assert_selector 'h2', text: 'Your Ranking In This Team'
+      assert_selector 'h2', text: 'Members'
+      assert_selector 'h2', text: 'Admin'
+
       within 'table.team-memberships' do
         assert_selector 'td', text: 'digi'
         assert_selector 'td', text: 'pele'

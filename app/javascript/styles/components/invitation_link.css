@@ -3,7 +3,7 @@
 }
 
 .invitation-link--input-field {
-  @apply flex-1 min-w-0 block w-full px-3 py-2 border-2 border-pink-200 rounded-none rounded-l-md focus:ring-pink-200 focus:border-pink-200 sm:text-sm;
+  @apply flex-1 min-w-0 block w-full px-3 py-2 border-2 border-pink-200 rounded-none rounded-l-md focus:ring-pink-200 focus:border-pink-200 text-sm;
 }
 
 .invitation-link--button {
