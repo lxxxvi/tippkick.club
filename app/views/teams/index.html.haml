@@ -1,3 +1,6 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.dashboard'), path: dashboard_path)
+
 %h1= t('shared.teams')
 
 = render MembershipsOfUserComponent.new(memberships_of_user: @memberships_of_user)

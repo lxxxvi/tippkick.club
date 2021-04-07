@@ -7,6 +7,8 @@ class TeamsTest < ApplicationSystemTestCase
 
       navigate_to 'Teams'
 
+      assert_link 'Dashboard', href: '/dashboard'
+
       within('table') do
         assert_selector 'td', text: 'Campeones'
         assert_selector 'td', text: 'Global'
@@ -37,6 +39,8 @@ class TeamsTest < ApplicationSystemTestCase
 
       navigate_to 'Teams'
       click_on 'Campeones'
+
+      assert_link 'Teams', href: '/teams'
 
       assert_selector 'h2', text: 'Your Ranking In This Team'
       assert_selector 'h2', text: 'Members'

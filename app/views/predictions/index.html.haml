@@ -1,3 +1,6 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.dashboard'), path: dashboard_path)
+
 = render TournamentNavigationComponent.new
 
 .grid.grid-cols-1.gap-4

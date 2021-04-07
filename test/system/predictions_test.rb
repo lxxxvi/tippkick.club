@@ -9,6 +9,7 @@ class PredictionsTest < ApplicationSystemTestCase
     before_game_25 do
       sign_in_as :diego
       navigate_to 'Tournament'
+      assert_link 'Dashboard', href: '/dashboard'
       within('nav.tournament-navigation') { click_on 'Predictions' }
       assert_selector '.prediction', count: 27
       assert_selector "##{dom_id(prediction)}"
@@ -21,6 +22,7 @@ class PredictionsTest < ApplicationSystemTestCase
     at_kickoff_of_game_25 do
       sign_in_as :diego
       navigate_to 'Tournament'
+      assert_link 'Dashboard', href: '/dashboard'
       within('nav.tournament-navigation') { click_on 'Predictions' }
       assert_selector '.prediction', count: 25
       assert_selector "##{dom_id(prediction)}", count: 0

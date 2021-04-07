@@ -29,6 +29,7 @@ class ProfileTest < ApplicationSystemTestCase
       end
 
       assert_selector 'h1', text: 'PROFILE'
+      assert_link 'Dashboard', href: '/dashboard'
     end
   end
 end
