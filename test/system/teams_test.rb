@@ -38,6 +38,10 @@ class TeamsTest < ApplicationSystemTestCase
       navigate_to 'Teams'
       click_on 'Campeones'
 
+      assert_selector 'h2', text: 'Your Ranking In This Team'
+      assert_selector 'h2', text: 'Members'
+      assert_selector 'h2', text: 'Admin'
+
       within 'table.team-memberships' do
         assert_selector 'td', text: 'digi'
         assert_selector 'td', text: 'pele'
@@ -54,7 +58,7 @@ class TeamsTest < ApplicationSystemTestCase
       click_on 'Delete'
 
       assert_selector '.flash-messages', text: 'Team deleted successfully.'
-      assert_selector 'h1', text: 'Dashboard'
+      assert_selector 'h1', text: 'your dashboard'
     end
   end
 
@@ -126,7 +130,7 @@ class TeamsTest < ApplicationSystemTestCase
       click_on 'Leave team'
 
       assert_selector '.flash-messages', text: 'You left the team.'
-      assert_selector 'h1', text: 'Dashboard'
+      assert_selector 'h1', text: 'your dashboard'
     end
   end
 end

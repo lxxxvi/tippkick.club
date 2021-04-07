@@ -1,12 +1,9 @@
 %h1= @team.name
 
-- if allowed_to?(:invite?, @team)
-  .my-5
-    = render InvitationLinkComponent.new(invitation_link: @team.decorate.invitation_link)
-
-%section#memberships.mt-5
-  %h2= t('shared.ranking')
-  = render TeamMembershipsComponent.new(team: @team, params: params)
+.mb-10.mt-8
+  = render MembershipRankingComponent.new(team: @team, user: current_user)
+.my-10
+  = render TeamMembershipsComponent.new(team: @team, params: params, user: current_user)
 
 - if allowed_to?(:leave?, @team)
   .member-actions.mt-10
@@ -15,6 +12,9 @@
 - if allowed_to?(:update?, @team)
   .mt-16
     %h2= t('shared.admin')
+
+    .mt-5
+      = render InvitationLinkComponent.new(invitation_link: @team.decorate.invitation_link)
     .coach-actions.grid.grid-cols-1.gap-4
       = link_to t('.edit_team'), edit_team_path(@team), class: 'hollow-button'
       = link_to t('.delete_team'), team_path(@team), method: :delete, class: 'dangerous-button', data: { confirm: t('shared.are_you_sure') }
