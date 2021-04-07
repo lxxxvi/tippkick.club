@@ -36,7 +36,7 @@ class PredictionPointsService
 
   def reset_user_total_points_sql
     <<~SQL.squish
-      UPDATE users SET total_points = NULL
+      UPDATE users SET total_points = 0
     SQL
   end
 
@@ -137,7 +137,7 @@ class PredictionPointsService
          GROUP BY user_id
       )
       UPDATE users
-         SET total_points = user_total_points.total_points
+         SET total_points = COALESCE(user_total_points.total_points, 0)
         FROM user_total_points
        WHERE user_total_points.user_id = users.id
     SQL

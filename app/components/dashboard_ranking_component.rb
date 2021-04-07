@@ -4,7 +4,7 @@ class DashboardRankingComponent < ViewComponent::Base
   end
 
   def render?
-    total_points.present?
+    Tournament.after_first_kickoff?
   end
 
   def total_points

@@ -9,8 +9,8 @@ class Membership < ApplicationRecord
   scope :ordered_by_ranking_position, -> { order(ranking_position: :asc) }
   scope :ordered_by_team_name, -> { with_teams.order('teams.name ASC') }
 
-  after_destroy :update_members_count
-  after_save :update_members_count
+  after_destroy :update_stats
+  after_save :update_stats
 
   def leave
     destroy
@@ -18,7 +18,7 @@ class Membership < ApplicationRecord
 
   private
 
-  def update_members_count
+  def update_stats
     TeamRankingService.new(team_ids: team_id).call!
     TeamMembersCountService.new(team_ids: team_id).call!
   end
