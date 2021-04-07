@@ -1,10 +1,6 @@
 class GameDecorator < SimpleDelegator
   include ActionView::Helpers::DateHelper
 
-  def self.flag_path(team_name)
-    "/images/flags/#{team_name&.downcase}.svg"
-  end
-
   def display_uefa_game_id
     I18n.t('shared.uefa_game_id', uefa_game_id: uefa_game_id)
   end

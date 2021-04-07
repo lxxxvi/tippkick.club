@@ -1,11 +1,6 @@
 require 'test_helper'
 
 class GameDecoratorTest < ActiveSupport::TestCase
-  test '.flag_path' do
-    game = games(:game_25)
-    assert_equal '/images/flags/sui.svg', GameDecorator.flag_path(game.home_team_name)
-  end
-
   test '#display_uefa_game_id' do
     assert_equal 'Match 25', games(:game_25).decorate.display_uefa_game_id
   end
