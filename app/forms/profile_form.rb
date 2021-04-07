@@ -41,10 +41,16 @@ class ProfileForm
   end
 
   def fifa_country_codes_as_options
-    I18n.t('shared.fifa_country_codes').map(&:reverse)
+    I18n.t('shared.fifa_country_codes').map(&method(:to_option))
   end
 
   private
+
+  def to_option(fifa_country_code_pair)
+    fifa_country_code, name = fifa_country_code_pair
+    emoji = FlagService.emoji(fifa_country_code)
+    ["#{name} #{emoji}", fifa_country_code]
+  end
 
   def copy_errors_and_false
     errors.copy!(@object.errors) && false
