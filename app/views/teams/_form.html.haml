@@ -6,5 +6,6 @@
       .errors
         = @team.errors.full_messages_for(:name).join(', ')
   .actions.mt-6.grid.grid-cols-1.gap-4
-    = f.submit nil, class: 'button w-full'
+    - button_text = @team.new_record? ? t('teams.actions.create') : t('teams.actions.update')
+    = f.submit button_text, class: 'button w-full'
     = link_to t('shared.actions.cancel'), @team, class: 'shy-link text-center'

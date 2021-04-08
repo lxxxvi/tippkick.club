@@ -25,7 +25,7 @@ class TeamsTest < ApplicationSystemTestCase
       navigate_to 'Teams'
       click_on 'Create new team'
       fill_in 'Name', with: 'Argentinos'
-      click_on 'Create Team'
+      click_on 'Create team'
 
       assert_selector 'input[name=invitation_link]'
       assert_selector '.flash-messages', text: 'Team created successfully.'
@@ -85,7 +85,7 @@ class TeamsTest < ApplicationSystemTestCase
       click_on 'Campeones'
       click_on 'Edit'
       fill_in 'Name', with: 'The Champions'
-      click_on 'Update Team'
+      click_on 'Update team'
 
       assert_selector '.flash-messages', text: 'Team updated successfully.'
       assert_selector 'h1', text: 'The Champions'

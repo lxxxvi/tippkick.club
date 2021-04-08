@@ -15,4 +15,4 @@
           %tbody.bg-white.divide-y-2.divide-pink-100
             = render MembershipOfUserRowComponent.with_collection(@memberships_of_user)
   .create-team.mt-5
-    = link_to t('teams.actions.new'), new_team_path, class: 'button w-full block text-pink-900'
+    = link_to t('teams.actions.create_new'), new_team_path, class: 'button w-full block text-pink-900'

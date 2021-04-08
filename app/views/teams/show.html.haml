@@ -19,5 +19,5 @@
     .my-4
       = render InvitationLinkComponent.new(team: @team, user: current_user)
     .coach-actions.grid.grid-cols-1.gap-4
-      = link_to t('.edit_team'), edit_team_path(@team), class: 'hollow-button'
-      = link_to t('.delete_team'), team_path(@team), method: :delete, class: 'dangerous-button', data: { confirm: t('shared.are_you_sure') }
+      = link_to t('teams.actions.edit'), edit_team_path(@team), class: 'hollow-button'
+      = link_to t('teams.actions.delete'), team_path(@team), method: :delete, class: 'dangerous-button', data: { confirm: t('shared.are_you_sure') }
