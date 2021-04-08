@@ -7,7 +7,7 @@ class MembershipRankingComponentTest < ViewComponent::TestCase
     component = MembershipRankingComponent.new(team: team, user: user)
 
     render_inline(component)
-    assert_selector 'h2', text: 'Your Ranking In This Team'
+    assert_selector 'h2', text: 'Your ranking in this team'
     assert_selector '.points', text: '152', exact_text: true
     assert_selector '.ranking-position', text: '1', exact_text: true
   end

@@ -42,7 +42,7 @@ class TeamsTest < ApplicationSystemTestCase
 
       assert_link 'Teams', href: '/teams'
 
-      assert_selector 'h2', text: 'Your Ranking In This Team'
+      assert_selector 'h2', text: 'Your ranking in this team'
       assert_selector 'h2', text: 'Members'
       assert_selector 'h2', text: 'Admin'
 
@@ -147,8 +147,8 @@ class TeamsTest < ApplicationSystemTestCase
         click_on 'Campeones'
 
         within('section#admin') do
-          assert_changes -> { find_field('Invitation Link').value } do
-            click_on 'Refresh Invitation Link'
+          assert_changes -> { find_field('Invitation link').value } do
+            click_on 'Refresh invitation link'
           end
         end
       end

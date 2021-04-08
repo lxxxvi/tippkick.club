@@ -5,7 +5,7 @@ class DashboardProfileComponentTest < ViewComponent::TestCase
     component = DashboardProfileComponent.new
     render_inline(component)
 
-    assert_text 'Change Your Profile'
+    assert_text 'Change your profile'
     assert_link 'Profile', href: '/profile'
   end
 end

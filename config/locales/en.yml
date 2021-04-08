@@ -1,151 +1,169 @@
+---
 en:
   activerecord:
     attributes:
       game:
-        final_whistle_at: "Final whistle"
-        kickoff_at: "Kickoff"
         tournament_phases:
-          group: "Group phase"
-          round_of_16: "Round Of 16"
-          quarter_finals: "Quarter Finals"
-          semi_finals: "Semi Finals"
-          final: "Final"
+          final: Final
+          group: Group phase
+          quarter_finals: Quarter Finals
+          round_of_16: Round Of 16
+          semi_finals: Semi Finals
         venues:
-          amsterdam: "Amsterdam"
-          baku: "Baku"
-          bilbao: "Bilbao"
-          bucharest: "Bucharest"
-          budapest: "Budapest"
-          copenhagen: "Copenhagen"
-          dublin: "Dublin"
-          glasgow: "Glasgow"
-          london: "London"
-          munich: "Munich"
-          rome: "Rome"
-          saint_petersburg: "Saint Petersburg"
+          amsterdam: Amsterdam
+          baku: Baku
+          bilbao: Bilbao
+          bucharest: Bucharest
+          budapest: Budapest
+          copenhagen: Copenhagen
+          dublin: Dublin
+          glasgow: Glasgow
+          london: London
+          munich: Munich
+          rome: Rome
+          saint_petersburg: Saint Petersburg
       membership:
-        ranking_position: "Ranking Position"
         ranking_position_short: "#"
       team:
-        members_count: "Members count"
-        members_count_short: "Members"
+        members_count_short: Members
+        name: Name
       user:
-        nickname: "Nickname"
-        total_points: "Total Points"
-        total_points_short: "Pts"
+        nickname: Nickname
+        total_points_short: Pts
     errors:
       models:
         game:
           attributes:
             final_whistle_at:
-              cannot_be_before_kickoff: "cannot be before kickoff"
+              cannot_be_before_kickoff: cannot be before kickoff
             guest_team_score:
-              cannot_be_changed_before_kickoff: "cannot be changed before kickoff"
+              cannot_be_changed_before_kickoff: cannot be changed before kickoff
             home_team_score:
-              cannot_be_changed_before_kickoff: "cannot be changed before kickoff"
+              cannot_be_changed_before_kickoff: cannot be changed before kickoff
         prediction:
           attributes:
             guest_team_score:
-              cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
+              cannot_be_changed_after_kickoff: cannot be changed after kickoff
             home_team_score:
-              cannot_be_changed_after_kickoff: "cannot be changed after kickoff"
-    models:
-      user: "User"
-      team: "Team"
+              cannot_be_changed_after_kickoff: cannot be changed after kickoff
   dashboard_component:
-    hey_nickname: "Hey %{nickname}"
-    this_is_your_dashboard: "this is your dashboard"
+    hey_nickname: Hey %{nickname}
+    this_is_your_dashboard: this is your dashboard
   dashboard_predictions_component:
-    there_is:
-      one: "There is"
-      other: "There are"
     number_of_games:
-      one: "1 game"
+      one: 1 game
       other: "%{count} games"
-    ready_to_be_predicted: "ready to be predicted"
+    ready_to_be_predicted: ready to be predicted
+    there_is:
+      one: There is
+      other: There are
+    you_are_all_set: You are all set
+  dashboard_profile_component:
+    change_your_profile: Change your profile
   dashboard_teams_component:
     you_are_in_count_teams:
-      one: "You are in 1 team"
-      other: "You are in %{count} teams"
+      one: You are in 1 team
+      other: You are in %{count} teams
   devise:
     passwords:
       new:
-        reset_my_password: "Reset my password"
+        reset_my_password: Reset my password
     registrations:
       new:
         characters_minimum:
-          one: "1 character minimum"
+          one: 1 character minimum
           other: "%{count} characters minimum"
+  games:
+    edit:
+      final_whistle_button: Final whistle
+      undo_final_whistle: Undo final whistle
+  invitation_link_component:
+    copied: Copied
+    copy: Copy
+    invitation_link: Invitation link
+    link_refreshed: Link refreshed
+    refresh_invitation_link: Refresh invitation link
+  landing_page:
+    index:
+      welcome: Welcome
+  navigation_component:
+    open_main_menu: Open main menu
+    open_profile_menu: Open profile menu
+  prediction_component:
+    not_yet_predictable: Not yet predictable
+    start_predicting: Start predicting
   profiles:
     update:
-      success: "Profile updated successfully."
-      failure: "Could not update profile."
-  teams:
-    actions:
-      new: "Create new team"
-      edit: "Update team"
-      leave: "Leave team"
-    new:
-      create_team: "Create team"
-    create:
-      success: "Team created successfully."
-      failure: "Could not create team."
-    update:
-      success: "Team updated successfully."
-      failure: "Could not update team."
-    destroy:
-      success: "Team deleted successfully."
-    leave:
-      success: "You left the team."
-    join:
-      success: "Joined team successfully."
-      invalid_token: "Could not join team, invalid token."
+      failure: Could not update profile.
+      success: Profile updated successfully.
   shared:
     actions:
-      cancel: "Cancel"
-      delete: "Delete"
-      save: "Save"
-    are_you_sure: "Are you sure?"
-    game: "Game"
-    games: "Games"
-    prediction: "Prediction"
-    predictions: "Predictions"
-    upcoming_only: "Upcoming"
-    past_only: "Past"
-    kickoff_in: "Kickoff in"
-    no_one_with_brackets: '(no one)'
-    in_venue: "in"
-    uefa_game_id: "Match %{uefa_game_id}"
+      cancel: Cancel
+      save: Save
+    admin: Admin
+    are_you_sure: Are you sure?
+    dashboard: Dashboard
     fifa_country_codes:
-      AUT: "Austria"
-      BEL: "Belgium"
-      CRO: "Croatia"
-      CZE: "Czech Republic"
-      DEN: "Denmark"
-      ENG: "England"
-      ESP: "Spain"
-      FIN: "Finland"
-      FRA: "France"
-      GER: "Germany"
-      HUN: "Hungary"
-      ITA: "Italy"
-      MKD: "North Macedonia"
-      NED: "Netherlands"
-      POL: "Poland"
-      POR: "Portugal"
-      RUS: "Russia"
-      SCO: "Scotland"
-      SUI: "Switzerland"
-      SVK: "Slovakia"
-      SWE: "Sweden"
-      TUR: "Turkey"
-      UKR: "Ukraine"
-      WAL: "Wales"
-    sign_in: "Sign in"
-    sign_up: "Sign up"
-    teams: "Teams"
-    forgot_your_password: "Forgot your password?"
-    your_rank: "Your rank"
-  time:
-    formats:
-      day_month: "%d %b"
+      AUT: Austria
+      BEL: Belgium
+      CRO: Croatia
+      CZE: Czech Republic
+      DEN: Denmark
+      ENG: England
+      ESP: Spain
+      FIN: Finland
+      FRA: France
+      GER: Germany
+      HUN: Hungary
+      ITA: Italy
+      MKD: North Macedonia
+      NED: Netherlands
+      POL: Poland
+      POR: Portugal
+      RUS: Russia
+      SCO: Scotland
+      SUI: Switzerland
+      SVK: Slovakia
+      SWE: Sweden
+      TUR: Turkey
+      UKR: Ukraine
+      WAL: Wales
+    forgot_your_password: Forgot your password?
+    games: Games
+    global_ranking: Global ranking
+    kickoff_in: Kickoff in
+    members: Members
+    no_one_with_brackets: "(no one)"
+    points: Points
+    predictions: Predictions
+    profile: Profile
+    ranking: Ranking
+    sign_in: Sign in
+    sign_out: Sign out
+    sign_up: Sign up
+    teams: Teams
+    tournament: Tournament
+    uefa_game_id: Match %{uefa_game_id}
+    your_rank: Your rank
+    your_ranking_in_this_team: Your ranking in this team
+  teams:
+    actions:
+      edit: Update team
+      leave: Leave team
+      new: Create new team
+    create:
+      failure: Could not create team.
+      success: Team created successfully.
+    destroy:
+      success: Team deleted successfully.
+    join:
+      invalid_token: Could not join team, invalid token.
+      success: Joined team successfully.
+    leave:
+      success: You left the team.
+    show:
+      delete_team: Delete team
+      edit_team: Edit team
+    update:
+      failure: Could not update team.
+      success: Team updated successfully.

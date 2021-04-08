@@ -15,7 +15,7 @@ class DashboardTest < ApplicationSystemTestCase
       assert_selector 'h1', text: 'Hey digi, this is your dashboard'
       assert_text 'There are 10 games ready to be predicted'
       assert_text 'You are in 2 teams'
-      assert_text 'Change Your Profile'
+      assert_text 'Change your profile'
     end
   end
 
@@ -25,7 +25,7 @@ class DashboardTest < ApplicationSystemTestCase
 
     before_game_25 do
       sign_in_as :diego
-      assert_text 'Youre All Set'
+      assert_text 'You are all set'
     end
   end
 end

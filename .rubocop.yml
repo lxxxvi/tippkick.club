@@ -10,6 +10,7 @@ AllCops:
   - node_modules/**/*
   - tmp/**/*
   - vendor/**/*
+  - 'lib/i18n-tasks/scan_active_record_errors.rb'
 
 Rails:
   Enabled: true
