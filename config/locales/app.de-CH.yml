@@ -1,0 +1,116 @@
+---
+de-CH:
+  dashboard_component:
+    hey_nickname: Hey %{nickname}
+    this_is_your_dashboard: dies ist dein Dashboard
+  dashboard_predictions_component:
+    number_of_games:
+      one: 1 Spiel
+      other: "%{count} Spiele"
+    ready_to_be_predicted: zum tippen bereit.
+    there_is:
+      one: Es stehen
+      other: Es stehen
+    you_are_all_set: Du bist bereit
+  dashboard_profile_component:
+    change_your_profile: Dein Profil ändern
+  dashboard_teams_component:
+    you_are_in_count_teams:
+      one: Du bist in einem Team
+      other: Du bist in %{count} Teams
+  games:
+    edit:
+      final_whistle_button: Schlusspfiff
+      undo_final_whistle: Schlusspfiff zurücknehmen
+  invitation_link_component:
+    copied: Kopiert
+    copy: Kopieren
+    invitation_link: Einladungslink
+    link_refreshed: Link erneuert
+    refresh_invitation_link: Einladungslink erneuern
+  landing_page:
+    index:
+      welcome: Willkommen
+  navigation_component:
+    open_main_menu: Hauptmenu öffnen
+    open_profile_menu: Profilmenu öffnen
+  prediction_component:
+    not_yet_predictable: Noch nicht tippbar
+    start_predicting: Start Tipp
+  profiles:
+    update:
+      failure: Profil konnte nicht geändert werden.
+      success: Profile wurde geändert.
+  shared:
+    actions:
+      cancel: Abbrechen
+      save: Speichern
+    admin: Admin
+    are_you_sure: Bist du sicher?
+    dashboard: Dashboard
+    fifa_country_codes:
+      AUT: Österreich
+      BEL: Belgien
+      CRO: Kroatien
+      CZE: Tschechien
+      DEN: Dänemark
+      ENG: England
+      ESP: Spanien
+      FIN: Finnland
+      FRA: Frankreich
+      GER: Deutschland
+      HUN: Ungarn
+      ITA: Italien
+      MKD: Nordmazedonien
+      NED: Niederlande
+      POL: Polen
+      POR: Portugal
+      RUS: Russland
+      SCO: Schottland
+      SUI: Schweiz
+      SVK: Slowakei
+      SWE: Schweden
+      TUR: Türkei
+      UKR: Ukraine
+      WAL: Wales
+    forgot_your_password: Passwort vergessen?
+    games: Spiele
+    global_ranking: Globale Rangliste
+    kickoff_in: Anpfiff in
+    members: Mitglieder
+    no_one_with_brackets: "(niemanden)"
+    points: Punkte
+    predictions: Tipps
+    profile: Profil
+    ranking: Rangliste
+    reset_my_password: Passwort zurücksetzen
+    sign_in: Einloggen
+    sign_out: Ausloggen
+    sign_up: Registrieren
+    teams: Mannschaften
+    tournament: Turnier
+    uefa_game_id: Spiel %{uefa_game_id}
+    your_rank: Dein Rang
+    your_ranking_in_this_team: Dein Rang in diesem Team
+  teams:
+    actions:
+      create: Team erstellen
+      create_new: Neues Team erstellen
+      delete: Team löschen
+      edit: Team editieren
+      leave: Team verlassen
+      new: Neues Team
+      update: Team updaten
+    create:
+      failure: Konnte Team nicht erstellen.
+      success: Team erfolgreich erstellt.
+    destroy:
+      success: Team erfolgreich gelöscht.
+    join:
+      invalid_token: Konnte Team nicht beitreten, falscher Token.
+      success: Team erfolgreich beigetreten.
+    leave:
+      success: Team erfolreich verlassen.
+    update:
+      failure: Team konnte nicht geändert werden.
+      success: Team erfolgreich geändert.

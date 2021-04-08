@@ -20,6 +20,8 @@ class I18nTest < ActiveSupport::TestCase
   end
 
   def test_files_are_normalized
+    skip if ENV['CI'].present? # skipped due different behaviour of libyaml
+
     non_normalized = @i18n.non_normalized_paths
     error_message = "The following files need to be normalized:\n" \
                     "#{non_normalized.map { |path| "  #{path}" }.join("\n")}\n" \

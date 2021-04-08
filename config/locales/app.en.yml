@@ -1,51 +1,5 @@
 ---
 en:
-  activerecord:
-    attributes:
-      game:
-        tournament_phases:
-          final: Final
-          group: Group phase
-          quarter_finals: Quarter Finals
-          round_of_16: Round Of 16
-          semi_finals: Semi Finals
-        venues:
-          amsterdam: Amsterdam
-          baku: Baku
-          bilbao: Bilbao
-          bucharest: Bucharest
-          budapest: Budapest
-          copenhagen: Copenhagen
-          dublin: Dublin
-          glasgow: Glasgow
-          london: London
-          munich: Munich
-          rome: Rome
-          saint_petersburg: Saint Petersburg
-      membership:
-        ranking_position_short: "#"
-      team:
-        members_count_short: Members
-        name: Name
-      user:
-        nickname: Nickname
-        total_points_short: Pts
-    errors:
-      models:
-        game:
-          attributes:
-            final_whistle_at:
-              cannot_be_before_kickoff: cannot be before kickoff
-            guest_team_score:
-              cannot_be_changed_before_kickoff: cannot be changed before kickoff
-            home_team_score:
-              cannot_be_changed_before_kickoff: cannot be changed before kickoff
-        prediction:
-          attributes:
-            guest_team_score:
-              cannot_be_changed_after_kickoff: cannot be changed after kickoff
-            home_team_score:
-              cannot_be_changed_after_kickoff: cannot be changed after kickoff
   dashboard_component:
     hey_nickname: Hey %{nickname}
     this_is_your_dashboard: this is your dashboard
@@ -64,15 +18,6 @@ en:
     you_are_in_count_teams:
       one: You are in 1 team
       other: You are in %{count} teams
-  devise:
-    passwords:
-      new:
-        reset_my_password: Reset my password
-    registrations:
-      new:
-        characters_minimum:
-          one: 1 character minimum
-          other: "%{count} characters minimum"
   games:
     edit:
       final_whistle_button: Final whistle
@@ -138,6 +83,7 @@ en:
     predictions: Predictions
     profile: Profile
     ranking: Ranking
+    reset_my_password: Reset my password
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
@@ -148,9 +94,13 @@ en:
     your_ranking_in_this_team: Your ranking in this team
   teams:
     actions:
-      edit: Update team
+      create: Create team
+      create_new: Create new team
+      delete: Delete team
+      edit: Edit team
       leave: Leave team
-      new: Create new team
+      new: New team
+      update: Update team
     create:
       failure: Could not create team.
       success: Team created successfully.
@@ -161,9 +111,6 @@ en:
       success: Joined team successfully.
     leave:
       success: You left the team.
-    show:
-      delete_team: Delete team
-      edit_team: Edit team
     update:
       failure: Could not update team.
       success: Team updated successfully.
