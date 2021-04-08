@@ -3,7 +3,7 @@ module TournamentPhases
 
   included do
     validates :tournament_phase, presence: true
-    validates :tournament_phase, uniqueness: { scope: %i[home_team_name guest_team_name] }
+    validates :tournament_phase, uniqueness: { scope: %i[home_team_name guest_team_name] }, if: :teams_present?
 
     enum tournament_phase: {
       group: 'group',
@@ -12,5 +12,9 @@ module TournamentPhases
       semi_finals: 'semi_finals',
       final: 'final'
     }, _suffix: :phase
+
+    def teams_present?
+      home_team_name.present? && guest_team_name.present?
+    end
   end
 end

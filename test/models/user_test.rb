@@ -13,6 +13,7 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal 1, user.teams.count
     assert_equal teams(:global), user.teams.first
+    assert_not user.admin?
   end
 
   test 'team association' do

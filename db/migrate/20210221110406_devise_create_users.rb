@@ -17,6 +17,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :rooting_for_team, null: true
       t.string :locale, null: false, default: 'en'
 
+      t.boolean :admin, null: false, default: false
+
       t.timestamps null: false
       t.index :email, unique: true
       t.index :reset_password_token, unique: true

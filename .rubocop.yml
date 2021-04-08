@@ -10,7 +10,7 @@ AllCops:
   - node_modules/**/*
   - tmp/**/*
   - vendor/**/*
-  - 'lib/i18n-tasks/scan_active_record_errors.rb'
+  - lib/i18n-tasks/scan_active_record_errors.rb
 
 Rails:
   Enabled: true
@@ -148,6 +148,10 @@ Lint/UselessMethodDefinition:
 
 Lint/UselessTimes:
   Enabled: true
+
+Metrics/AbcSize:
+  Exclude:
+  - db/migrate/*
 
 Metrics/BlockLength:
   Exclude:
