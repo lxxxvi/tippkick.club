@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.string "nickname", null: false
     t.integer "total_points", default: 0, null: false
     t.string "rooting_for_team"
+    t.string "locale", default: "en", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

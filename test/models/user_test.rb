@@ -31,6 +31,15 @@ class UserTest < ActiveSupport::TestCase
     assert user.update(rooting_for_team: '')
   end
 
+  test 'validates locale' do
+    user = users(:diego)
+
+    assert_not user.update(locale: 'xy')
+    assert_includes user.errors[:locale], 'is not included in the list'
+
+    assert user.update(locale: 'en')
+  end
+
   test '#membership_for' do
     user = users(:diego)
     team = teams(:campeones)

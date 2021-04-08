@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     @form = ProfileForm.new(current_user, redirect_to_path, profile_params)
 
     if @form.save
-      flash[:notice] = t('.success')
+      flash[:notice] = t('.success', locale: @form.locale)
       redirect_to(@form.redirect_to_path || dashboard_path)
     else
       flash[:alert] = t('.failure')
@@ -22,6 +22,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:nickname, :rooting_for_team, :redirect_to_path)
+    params.require(:profile).permit(:nickname, :rooting_for_team, :redirect_to_path, :locale)
   end
 end

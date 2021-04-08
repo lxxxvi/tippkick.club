@@ -49,7 +49,7 @@ class Team < ApplicationRecord
   private
 
   def set_tippkick_id
-    self.tippkick_id = generate_id
+    self.tippkick_id ||= generate_id
   end
 
   def initialize_invitation_token

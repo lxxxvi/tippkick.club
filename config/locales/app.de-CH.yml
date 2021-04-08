@@ -40,7 +40,7 @@ de-CH:
   profiles:
     update:
       failure: Profil konnte nicht geändert werden.
-      success: Profile wurde geändert.
+      success: Profil erfolgreich gespeichert.
   shared:
     actions:
       cancel: Abbrechen
@@ -77,6 +77,7 @@ de-CH:
     games: Spiele
     global_ranking: Globale Rangliste
     kickoff_in: Anpfiff in
+    language: Sprache
     members: Mitglieder
     no_one_with_brackets: "(niemanden)"
     points: Punkte

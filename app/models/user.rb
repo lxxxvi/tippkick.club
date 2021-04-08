@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
   validates :rooting_for_team, inclusion: { in: FIFA_COUNTRY_CODES, allow_blank: true }
+  validates :locale, inclusion: { in: Rails.configuration.i18n.available_locales.map(&:to_s) }
   after_create :create_predictions!
   after_create :add_to_global_team!
 
