@@ -12,18 +12,21 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
     user = users(:diego)
     sign_in_as :diego
 
-    assert_changes -> { user.reload.nickname }, to: 'Maradona' do
-      put profile_path, params: {
-        profile: {
-          nickname: 'Maradona',
-          rooting_for_team: 'ITA'
-        }
+    put profile_path, params: {
+      profile: {
+        nickname: 'Maradona',
+        rooting_for_team: 'ITA',
+        locale: 'de-CH'
       }
-    end
+    }
+
+    assert_equal 'Maradona', user.nickname
+    assert_equal 'ITA', user.rooting_for_team
+    assert_equal 'de-CH', user.locale
 
     follow_redirect!
     assert_response :success
-    assert_equal 'Profile updated successfully.', flash[:notice]
+    assert_equal 'Profil erfolgreich gespeichert.', flash[:notice]
   end
 
   test 'put update, errors' do

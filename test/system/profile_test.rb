@@ -32,4 +32,20 @@ class ProfileTest < ApplicationSystemTestCase
       assert_link 'Dashboard', href: '/dashboard'
     end
   end
+
+  test 'changes profile langauge' do
+    before_tournament do
+      sign_in_as :zinedine
+
+      within('section#profile') do
+        click_on 'Profile'
+      end
+
+      select 'German (Switzerland)', from: 'Language'
+      click_on 'Save'
+
+      assert_selector '.flash-messages', text: 'Profil erfolgreich gespeichert.'
+      navigate_to 'Turnier'
+    end
+  end
 end

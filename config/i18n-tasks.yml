@@ -109,6 +109,7 @@ ignore_unused:
   - "devise.*"
   - "errors.*"
   - "helpers.*"
+  - "locales.*"
   - "number.*"
   - "shared.fifa_country_codes.*"
   - "support.*"

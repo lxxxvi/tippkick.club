@@ -10,6 +10,10 @@
     = f.label :rooting_for_team, class: 'label'
     = f.select :rooting_for_team, @form.rooting_for_team_collection, { include_blank: t('shared.no_one_with_brackets') }, { class: 'w-full input' }
 
+  .mb-5
+    = f.label :locale, t('shared.language'), class: 'label'
+    = f.select :locale, @form.locales_collection, {}, class: 'w-full input'
+
   .actions.mt-6.grid.grid-cols-1.gap-4
     = f.hidden_field :redirect_to_path
     = f.submit t('shared.actions.save'), class: 'button w-full'

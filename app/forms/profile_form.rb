@@ -17,6 +17,10 @@ class ProfileForm
     @params[:rooting_for_team] || @object.rooting_for_team
   end
 
+  def locale
+    @params[:locale] || @object.locale
+  end
+
   def redirect_to_path
     @redirect_to_path.presence
   end
@@ -32,7 +36,8 @@ class ProfileForm
   def sanitized_params
     {
       nickname: nickname,
-      rooting_for_team: rooting_for_team
+      rooting_for_team: rooting_for_team,
+      locale: locale
     }
   end
 
@@ -40,13 +45,17 @@ class ProfileForm
     fifa_country_codes_as_options
   end
 
+  def locales_collection
+    I18n.t('locales').map(&:reverse)
+  end
+
   def fifa_country_codes_as_options
-    I18n.t('shared.fifa_country_codes').map(&method(:to_option))
+    I18n.t('shared.fifa_country_codes').map(&method(:to_rooting_for_team_option))
   end
 
   private
 
-  def to_option(fifa_country_code_pair)
+  def to_rooting_for_team_option(fifa_country_code_pair)
     fifa_country_code, name = fifa_country_code_pair
     emoji = FlagService.emoji(fifa_country_code)
     ["#{name} #{emoji}", fifa_country_code]
