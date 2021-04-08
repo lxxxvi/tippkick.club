@@ -1,8 +1,15 @@
-.invitation-link{ data: { controller: 'invitation-link' } }
-  = label_tag :invitation_link, t('.invitation_link'), class: 'invitation-link--label'
-  .mt-1.flex.rounded-md.shadow-sm
-    = text_field_tag :invitation_link, @invitation_link, class: 'invitation-link--input-field', data: { 'invitation-link-target': 'linkInput' }
-    %button.invitation-link--button{ data: { action: 'click->invitation-link#copyToClipboard', 'invitation-link-target': 'button' } }
-      = t('.copy')
-  .invitation-link--copied.invisible{ data: { 'invitation-link-target': 'copied' } }
-    = t('.copied')
+.invitation-link{ data: { controller: 'invitation-link', 'team-tippkick-id': @team.tippkick_id } }
+  #invitation-link
+    = label_tag :invitation_link, t('.invitation_link'), class: 'invitation-link--label'
+    .invitation-link--flashes
+      .inline.hidden{ data: { 'invitation-link-target': 'copied' } }
+        = t('.copied')
+      .inline.hidden{ data: { 'invitation-link-target': 'linkRefreshed' } }
+        = t('.link_refreshed')
+    .mt-1.flex.rounded-md.shadow-sm
+      = text_field_tag :invitation_link, invitation_link, class: 'invitation-link--input-field', data: { 'invitation-link-target': 'linkInput' }
+      %button.invitation-link--button{ data: { action: 'click->invitation-link#copyToClipboard', 'invitation-link-target': 'button' } }
+        = t('.copy')
+    .mt-2
+      %button{ class: 'text-sm hollow-button w-full', data: { action: 'click->invitation-link#refresh' } }
+        = t('.refresh_invitation_link')

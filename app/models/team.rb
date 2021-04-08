@@ -40,6 +40,12 @@ class Team < ApplicationRecord
     tippkick_id == GLOBAL_ID
   end
 
+  def refresh_invitation_token!
+    self.invitation_token = nil
+    initialize_invitation_token
+    save!
+  end
+
   private
 
   def set_tippkick_id

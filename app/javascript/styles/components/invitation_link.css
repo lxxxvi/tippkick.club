@@ -1,5 +1,5 @@
 .invitation-link--label {
-  @apply block text-xs text-gray-600 tracking-wide mb-1;
+  @apply inline text-xs text-gray-600 tracking-wide mb-1;
 }
 
 .invitation-link--input-field {
@@ -10,8 +10,8 @@
   @apply inline-flex items-center px-3 rounded-r-md border-2 border-l-0 border-pink-200 text-sm bg-pink-100 hover:bg-pink-300 hover:border-pink-300 transition;
 }
 
-.invitation-link--copied {
-  @apply ml-2 mt-2 text-xs text-green-500;
+.invitation-link--flashes {
+  @apply inline ml-2 mt-2 text-xs text-green-500;
 }
 
 @keyframes fade-out {

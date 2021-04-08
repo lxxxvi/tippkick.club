@@ -13,11 +13,11 @@
     = link_to t('teams.actions.leave'), leave_team_path(@team), class: 'dangerous-button',data: { confirm: t('shared.are_you_sure') }
 
 - if allowed_to?(:update?, @team)
-  .mt-16
+  %section#admin.mt-16
     %h2= t('shared.admin')
 
-    .mt-5
-      = render InvitationLinkComponent.new(invitation_link: @team.decorate.invitation_link)
+    .my-4
+      = render InvitationLinkComponent.new(team: @team, user: current_user)
     .coach-actions.grid.grid-cols-1.gap-4
       = link_to t('.edit_team'), edit_team_path(@team), class: 'hollow-button'
       = link_to t('.delete_team'), team_path(@team), method: :delete, class: 'dangerous-button', data: { confirm: t('shared.are_you_sure') }
