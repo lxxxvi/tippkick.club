@@ -137,4 +137,21 @@ class TeamsTest < ApplicationSystemTestCase
       assert_selector 'h1', text: 'your dashboard'
     end
   end
+
+  test 'refresh invitation token' do
+    before_tournament do
+      using_browser do
+        sign_in_as :diego
+
+        navigate_to 'Teams'
+        click_on 'Campeones'
+
+        within('section#admin') do
+          assert_changes -> { find_field('Invitation Link').value } do
+            click_on 'Refresh Invitation Link'
+          end
+        end
+      end
+    end
+  end
 end

@@ -5,15 +5,13 @@ class TeamTest < ActiveSupport::TestCase
     team = Team.new(name: 'Campeones')
 
     assert_not team.valid?
-    assert_includes team.errors[:name],
-                    'has already been taken'
+    assert_includes team.errors[:name], 'has already been taken'
   end
 
   test 'users association' do
     team = teams(:campeones)
 
-    assert_includes team.users,
-                    users(:diego)
+    assert_includes team.users, users(:diego)
   end
 
   test 'save' do
@@ -44,6 +42,13 @@ class TeamTest < ActiveSupport::TestCase
       membership = memberships.first
       assert_equal user, membership.user
       assert membership.coach?
+    end
+  end
+
+  test '#refresh_invitation_token!' do
+    team = teams(:campeones)
+    assert_changes -> { team.reload.invitation_token } do
+      team.refresh_invitation_token!
     end
   end
 end
