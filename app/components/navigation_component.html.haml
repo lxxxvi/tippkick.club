@@ -4,7 +4,7 @@
       .absolute.inset-y-0.left-0.flex.items-center.sm:hidden
         / Mobile menu button
         %button.inline-flex.items-center.justify-center.p-2.rounded-md.text-pink-600.hover:bg-pink-100.focus:outline-none.focus:ring-2.focus:ring-inset.focus:ring-pink-400{'aria-controls': 'mobile-menu', 'aria-expanded': 'false', type: 'button', data: { action: 'click->navigation#toggleMobileMenu', 'navigation-target': 'mobileMenuToggler' } }
-          %span.sr-only Open main menu
+          %span.sr-only= t('.open_main_menu')
           %svg.block.h-6.w-6{'aria-hidden': 'true', fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg', data: { 'navigation-target': 'mobileMenuIconClosed' } }
             %path{d: 'M4 6h16M4 12h16M4 18h16', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2' }
           %svg.hidden.h-6.w-6{'aria-hidden': 'true', fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg', data: { 'navigation-target': 'mobileMenuIconOpened' } }
@@ -29,7 +29,7 @@
           .ml-3.relative
             %div
               %button#user-menu.bg-white.rounded-full.flex.text-sm.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-pink-500{'aria-expanded': 'false', 'aria-haspopup': 'true', type: 'button', data: { action: 'click->navigation#toggleProfileMenu', 'navigation-target': 'profileMenuToggler' }}
-                %span.sr-only Open user menu
+                %span.sr-only= t('.open_profile_menu')
                 %svg.w-8.h-8.text-pink-700.hover:text-pink-500.transition{fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg'}
                   %path{d: 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'stroke-linecap' => 'round', 'stroke-linejoin' => 'round', 'stroke-width' => '2'}
             .hidden.origin-top-right.absolute.right-0.mt-2.w-48.rounded-md.shadow-lg.py-1.bg-white.ring-1.ring-black.ring-opacity-5.focus:outline-none{'aria-labelledby': 'user-menu', 'aria-orientation': 'vertical', role: 'menu', data: { 'navigation-target': 'profileMenu' } }

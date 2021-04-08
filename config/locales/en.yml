@@ -83,6 +83,12 @@ en:
     invitation_link: Invitation link
     link_refreshed: Link refreshed
     refresh_invitation_link: Refresh invitation link
+  landing_page:
+    index:
+      welcome: Welcome
+  navigation_component:
+    open_main_menu: Open main menu
+    open_profile_menu: Open profile menu
   prediction_component:
     not_yet_predictable: Not yet predictable
     start_predicting: Start predicting
