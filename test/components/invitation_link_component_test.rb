@@ -8,9 +8,9 @@ class InvitationLinkComponentTest < ViewComponent::TestCase
     )
 
     render_inline(component)
-    assert_selector 'label', text: 'Invitation Link'
+    assert_selector 'label', text: 'Invitation link'
     assert_selector 'button', text: 'Copy'
-    assert_field 'Invitation Link',
+    assert_field 'Invitation link',
                  with: 'http://tippkick.test/teams/tkid_campeones/join/campeones_token'
   end
 

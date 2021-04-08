@@ -29,7 +29,7 @@ class DashboardRankingComponentTest < ViewComponent::TestCase
       assert_selector '.points', text: '152'
       assert_selector '.global-ranking', text: '1', exact_text: true
 
-      assert_link 'Global Ranking', href: '/teams/global'
+      assert_link 'Global ranking', href: '/teams/global'
     end
   end
 end

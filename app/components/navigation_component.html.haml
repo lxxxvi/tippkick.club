@@ -34,7 +34,7 @@
                   %path{d: 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'stroke-linecap' => 'round', 'stroke-linejoin' => 'round', 'stroke-width' => '2'}
             .hidden.origin-top-right.absolute.right-0.mt-2.w-48.rounded-md.shadow-lg.py-1.bg-white.ring-1.ring-black.ring-opacity-5.focus:outline-none{'aria-labelledby': 'user-menu', 'aria-orientation': 'vertical', role: 'menu', data: { 'navigation-target': 'profileMenu' } }
               = link_to t('shared.profile'), profile_path, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', role: 'menuitem'
-              = link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', role: 'menuitem'
+              = link_to t('shared.sign_out'), destroy_user_session_path, method: :delete, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', role: 'menuitem'
 
 
   #mobile-menu.sm:hidden{ data: { 'navigation-target': 'mobileMenu' } }

@@ -24,6 +24,7 @@ gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'i18n-tasks'
 end
 
 group :development do
