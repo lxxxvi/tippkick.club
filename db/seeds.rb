@@ -1,6 +1,9 @@
-Team.find_or_create_by(tippkick_id: :global).tap do |team|
-  team.name = 'Global'
-  team.invitation_token ||= SecureRandom.alphanumeric(32)
-  team.members_count ||= 0
-  team.save!
+def load_seeds(seed_name)
+  file_name = "./seeds/#{seed_name}.rb"
+  Rails.logger.info "Loading #{file_name}"
+  require_relative file_name
 end
+
+load_seeds 'teams'
+load_seeds 'users'
+load_seeds 'games'

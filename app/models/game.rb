@@ -5,7 +5,6 @@ class Game < ApplicationRecord
   has_many :predictions, dependent: :destroy
 
   validates :uefa_game_id, :venue, :tournament_phase,
-            :home_team_name, :guest_team_name,
             :home_team_score, :guest_team_score,
             :kickoff_at, presence: true
 
@@ -68,6 +67,7 @@ class Game < ApplicationRecord
 
   def scores_cannot_change_before_kickoff
     return if kickoff_at.past?
+    return unless scores_changed?
 
     errors.add(:home_team_score, :cannot_be_changed_before_kickoff)
     errors.add(:guest_team_score, :cannot_be_changed_before_kickoff)
