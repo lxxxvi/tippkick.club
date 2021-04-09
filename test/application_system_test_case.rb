@@ -20,6 +20,12 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     assert_selector '.flash-messages', text: 'Signed in successfully.'
   end
 
+  def sign_in_as_admin(fixture_key, password = :abc)
+    user = users(fixture_key)
+    user.update(admin: true)
+    sign_in_as(fixture_key, password)
+  end
+
   def navigate_to(page_name)
     within('nav') do
       click_on page_name, match: :first

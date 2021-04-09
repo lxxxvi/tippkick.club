@@ -1,6 +1,9 @@
 class NavigationComponent < ViewComponent::Base
-  def initialize(signed_in:)
+  delegate :admin?, to: :@user
+
+  def initialize(signed_in:, user: nil)
     @signed_in = signed_in
+    @user = user || User.new
   end
 
   def signed_in?

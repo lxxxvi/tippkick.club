@@ -103,6 +103,7 @@ search:
 
 ## Consider these keys used:
 ignore_unused:
+  - "activerecord.attributes.*.*"
   - "activerecord.errors.messages.*"
   - "date.*"
   - "datetime.*"

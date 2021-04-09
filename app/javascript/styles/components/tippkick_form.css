@@ -11,7 +11,7 @@
 }
 
 .tippkick-form .checkbox {
-  @apply border border-pink-200 rounded checked:bg-pink-200 p-2 checked:border-transparent focus:ring-transparent;
+  @apply border border-pink-200 rounded-lg checked:bg-pink-200 checked:border-transparent focus:ring-transparent;
 }
 
 .tippkick-form .shy-link {
@@ -20,4 +20,8 @@
 
 .tippkick-form .errors {
   @apply text-xs text-red-400;
+}
+
+.tippkick-form [disabled] {
+  @apply bg-gray-100 border-gray-200 text-gray-500 text-xs;
 }

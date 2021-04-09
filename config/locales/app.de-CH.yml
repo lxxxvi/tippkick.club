@@ -1,5 +1,12 @@
 ---
 de-CH:
+  admin:
+    games:
+      actions:
+        edit: Spiel editieren
+      update:
+        failure: Spiel konnte nicht gespeichert werden.
+        success: Spiel erfolgreich gespeichert.
   dashboard_component:
     hey_nickname: Hey %{nickname}
     this_is_your_dashboard: dies ist dein Dashboard
@@ -18,10 +25,6 @@ de-CH:
     you_are_in_count_teams:
       one: Du bist in einem Team
       other: Du bist in %{count} Teams
-  games:
-    edit:
-      final_whistle_button: Schlusspfiff
-      undo_final_whistle: Schlusspfiff zurücknehmen
   invitation_link_component:
     copied: Kopiert
     copy: Kopieren
@@ -36,7 +39,7 @@ de-CH:
     open_profile_menu: Profilmenu öffnen
   prediction_component:
     not_yet_predictable: Noch nicht tippbar
-    start_predicting: Start Tipp
+    start_predicting: Tippen
   profiles:
     update:
       failure: Profil konnte nicht geändert werden.
@@ -78,6 +81,7 @@ de-CH:
     global_ranking: Globale Rangliste
     kickoff_in: Anpfiff in
     language: Sprache
+    live: Live
     members: Mitglieder
     no_one_with_brackets: "(niemanden)"
     points: Punkte
@@ -88,6 +92,7 @@ de-CH:
     sign_in: Einloggen
     sign_out: Ausloggen
     sign_up: Registrieren
+    tbd: noch offen
     teams: Mannschaften
     tournament: Turnier
     uefa_game_id: Spiel %{uefa_game_id}

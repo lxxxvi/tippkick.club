@@ -88,4 +88,67 @@ class GameTest < ActiveSupport::TestCase
       assert_not game.kickoff_future?
     end
   end
+
+  test '#predictable?' do
+    game = games(:game_25)
+
+    before_game_25 do
+      assert game.predictable?
+
+      game.home_team_name = nil
+      assert_not game.predictable?
+    end
+
+    game.reload
+
+    in_game_25 do
+      assert_not game.predictable?
+    end
+  end
+
+  test '#teams_present?' do
+    game = games(:game_25)
+
+    game.home_team_name = nil
+    assert_not game.teams_present?
+
+    game.guest_team_name = nil
+    assert_not game.teams_present?
+
+    game.home_team_name = 'SUI'
+    assert_not game.teams_present?
+
+    game.guest_team_name = 'TUR'
+    assert game.teams_present?
+  end
+
+  test '#calls_final_whistle_service after scores changes' do
+    game = games(:game_25)
+    user = users(:diego)
+
+    user.update_column(:total_points, 0)
+
+    in_game_25 do
+      assert_changes -> { user.reload.total_points } do
+        game.update(home_team_score: 9)
+      end
+    end
+  end
+
+  test '#calls_final_whistle_service after final_whistle_at changes' do
+    game = games(:game_25)
+    user = users(:diego)
+
+    in_game_25 do
+      user.update_column(:total_points, 0)
+      assert_changes -> { user.reload.total_points } do
+        game.final_whistle
+      end
+
+      user.update_column(:total_points, 0)
+      assert_changes -> { user.reload.total_points } do
+        game.final_whistle(reset: true)
+      end
+    end
+  end
 end

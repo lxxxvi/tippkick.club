@@ -10,7 +10,7 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .sticky.top-0
-      = render NavigationComponent.new(signed_in: signed_in?)
+      = render NavigationComponent.new(signed_in: signed_in?, user: current_user)
 
     .max-w-7xl.mx-auto.p-4.lg:p-8.sm:p-6
       = yield :backlink

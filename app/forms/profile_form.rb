@@ -42,21 +42,17 @@ class ProfileForm
   end
 
   def rooting_for_team_collection
-    fifa_country_codes_as_options
+    GameDecorator.fifa_country_codes_as_options.map(&method(:to_rooting_for_team_option))
   end
 
   def locales_collection
     I18n.t('locales').map(&:reverse)
   end
 
-  def fifa_country_codes_as_options
-    I18n.t('shared.fifa_country_codes').map(&method(:to_rooting_for_team_option))
-  end
-
   private
 
   def to_rooting_for_team_option(fifa_country_code_pair)
-    fifa_country_code, name = fifa_country_code_pair
+    name, fifa_country_code = fifa_country_code_pair
     emoji = FlagService.emoji(fifa_country_code)
     ["#{name} #{emoji}", fifa_country_code]
   end

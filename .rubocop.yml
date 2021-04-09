@@ -161,6 +161,7 @@ Metrics/BlockLength:
 
 Metrics/ClassLength:
   Exclude:
+  - test/models/game_test.rb
   - test/system/**/*
   - test/controllers/**/*
 

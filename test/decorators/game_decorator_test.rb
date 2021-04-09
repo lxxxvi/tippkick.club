@@ -19,4 +19,21 @@ class GameDecoratorTest < ActiveSupport::TestCase
     assert_equal 'Switzerland', games(:game_25).decorate.display_home_team_name
     assert_equal 'Turkey', games(:game_25).decorate.display_guest_team_name
   end
+
+  test '#display_tournament_phase' do
+    assert_equal 'Group phase', games(:game_25).decorate.display_tournament_phase
+  end
+
+  test '#display_teams_short' do
+    assert_equal 'SUI - TUR', games(:game_25).decorate.display_teams_short
+  end
+
+  test '#display_scores_short' do
+    assert_equal '1:2', games(:game_25).decorate.display_scores_short
+  end
+
+  test '.fifa_country_codes_as_options' do
+    assert_equal ['Austria', :AUT], GameDecorator.fifa_country_codes_as_options.first
+    assert_equal ['Wales', :WAL], GameDecorator.fifa_country_codes_as_options.last
+  end
 end

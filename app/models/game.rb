@@ -19,6 +19,8 @@ class Game < ApplicationRecord
   scope :ordered_chronologically, -> { order('kickoff_at ASC, uefa_game_id ASC') }
   scope :ordered_antichronologically, -> { order('kickoff_at DESC, uefa_game_id ASC') }
 
+  after_save :call_final_whistle_service!, if: :scores_or_final_whistle_previously_changed?
+
   def final_whistle(reset: false)
     if reset
       self.final_whistle_at = nil
@@ -49,10 +51,10 @@ class Game < ApplicationRecord
   end
 
   def predictable?
-    kickoff_future? && teams_defined?
+    kickoff_future? && teams_present?
   end
 
-  def teams_defined?
+  def teams_present?
     home_team_name.present? && guest_team_name.present?
   end
 
@@ -75,5 +77,17 @@ class Game < ApplicationRecord
 
   def scores_changed?
     home_team_score_changed? || guest_team_score_changed?
+  end
+
+  def scores_previously_changed?
+    home_team_score_previously_changed? || guest_team_score_previously_changed?
+  end
+
+  def scores_or_final_whistle_previously_changed?
+    scores_previously_changed? || final_whistle_at_previously_changed?
+  end
+
+  def call_final_whistle_service!
+    FinalWhistleService.new.call!
   end
 end
