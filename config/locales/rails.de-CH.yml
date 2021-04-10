@@ -3,12 +3,22 @@ de-CH:
   activerecord:
     attributes:
       game:
+        final_whistle_at: Schlusspfiff am
+        final_whistle_at_short: Schlusspfiff
+        guest_team_name: Gästeteam
+        guest_team_score: Gästeteam Treffer
+        home_team_name: Heimteam
+        home_team_score: Heimteam Treffer
+        kickoff_at: Anpfiff am
+        kickoff_at_short: Anpfiff
         tournament_phases:
           final: Final
           group: Gruppenphase
           quarter_finals: Viertelfinal
           round_of_16: Achtelfinal
           semi_finals: Halbfinal
+        uefa_game_id: UEFA Spiel ID
+        uefa_game_id_short: "#"
         venues:
           amsterdam: Amsterdam
           baku: Baku

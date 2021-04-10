@@ -1,5 +1,12 @@
 ---
 en:
+  admin:
+    games:
+      actions:
+        edit: Edit game
+      update:
+        failure: Could not update game.
+        success: Game successfully updated.
   dashboard_component:
     hey_nickname: Hey %{nickname}
     this_is_your_dashboard: this is your dashboard
@@ -18,10 +25,6 @@ en:
     you_are_in_count_teams:
       one: You are in 1 team
       other: You are in %{count} teams
-  games:
-    edit:
-      final_whistle_button: Final whistle
-      undo_final_whistle: Undo final whistle
   invitation_link_component:
     copied: Copied
     copy: Copy
@@ -78,6 +81,7 @@ en:
     global_ranking: Global ranking
     kickoff_in: Kickoff in
     language: Language
+    live: Live
     members: Members
     no_one_with_brackets: "(no one)"
     points: Points
@@ -88,6 +92,7 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
+    tbd: to be defined
     teams: Teams
     tournament: Tournament
     uefa_game_id: Match %{uefa_game_id}

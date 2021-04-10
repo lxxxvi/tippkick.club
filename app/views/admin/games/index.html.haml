@@ -1,0 +1,35 @@
+%h1= t('shared.games')
+
+.bg-white.shadow.overflow-hidden.rounded-xl.border-pink-300.border-2
+  %ul.divide-y.divide-pink-300
+    - @games.each do |game|
+      %li{ id: dom_id(game) }
+        = link_to edit_admin_game_path(game), class: 'block hover:bg-pink-50 transition' do
+          .flex.items-center.px-4.py-4.sm:px-6
+            .min-w-0.flex-1.flex.items-center
+              .flex-shrink-0
+                - text_color = game.final_whistle? ? 'text-gray-900' : 'text-pink-900'
+                - background_color = game.final_whistle? ? 'bg-gray-300' : 'bg-pink-300'
+                %span.inline-flex.items-center.justify-center.h-12.w-12.rounded-full{ class: background_color }
+                  %span.text-lg.font-medium.leading-none{ class: text_color }
+                    = game.uefa_game_id
+
+              .min-w-0.flex-1.px-4.md:grid.md:grid-cols-2.md:gap-4
+                %div
+                  = time_tag game.kickoff_at do
+                    .text-xs
+                      %span.text-purple-500 02 April
+                      19:00 UTC
+                  .mt-2.flex.items-center.text-lg
+                    - if game.teams_present?
+                      = game.decorate.display_teams_short
+                      - if game.live?
+                        %span.live.ml-2.text-xs.text-red-400= t('shared.live')
+                      - elsif game.final_whistle?
+                        %span.final-score.ml-2.text-xs.text-blue-600= "(#{game.decorate.display_scores_short})"
+                    - else
+                      .text-gray-500= t('shared.tbd')
+
+            %div
+              %svg.h-5.w-5.text-gray-400{"aria-hidden": "true", fill: "currentColor", viewbox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg"}
+                %path{"clip-rule": "evenodd", d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z", "fill-rule": "evenodd"}

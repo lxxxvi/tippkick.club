@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :games, except: %i[new create destroy]
+  end
+
   resource :dashboard, only: %i[show]
   resource :profile, only: %i[show update]
 

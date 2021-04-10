@@ -22,4 +22,10 @@ class ActionDispatch::IntegrationTest
   def sign_in_as(fixture_key)
     sign_in users(fixture_key)
   end
+
+  def sign_in_as_admin(fixture_key)
+    user = users(fixture_key)
+    user.update(admin: true)
+    sign_in_as(fixture_key)
+  end
 end

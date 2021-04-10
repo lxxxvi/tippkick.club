@@ -4,7 +4,7 @@
     = c.header do
       .inline-grid.w-full.grid-cols-2
         .text-gray-800.text-xs
-          = Game.human_enum_name(:tournament_phase, @prediction.game.tournament_phase)
+          = @prediction.game.decorate.display_tournament_phase
         .text-gray-700.text-xs.text-right
           = @prediction.game.decorate.display_uefa_game_id
 
@@ -40,5 +40,6 @@
 
     = c.footer do
       .text-2xs.text-gray-400
-        = t('shared.kickoff_in')
-        = @prediction.game.decorate.display_kickoff_at_from_now
+        = time_tag @prediction.game.kickoff_at do
+          = t('shared.kickoff_in')
+          = @prediction.game.decorate.display_kickoff_at_from_now

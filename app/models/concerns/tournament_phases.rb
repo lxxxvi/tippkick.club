@@ -12,9 +12,5 @@ module TournamentPhases
       semi_finals: 'semi_finals',
       final: 'final'
     }, _suffix: :phase
-
-    def teams_present?
-      home_team_name.present? && guest_team_name.present?
-    end
   end
 end
