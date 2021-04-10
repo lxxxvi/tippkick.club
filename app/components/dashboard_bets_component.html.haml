@@ -1,4 +1,4 @@
-%section#predictions
+%section#bets
   = render DashboardCardComponent.new do |c|
     = c.icon do
       - if all_set?
@@ -14,8 +14,8 @@
       - if all_set?
         = t('.you_are_all_set')
       - else
-        = t('.there_is', count: unpredicted_predictable_games_count)
-        = t('.number_of_games', count: unpredicted_predictable_games_count)
-        = t('.ready_to_be_predicted')
+        = t('.there_is', count: bet_pending_and_ready_games_count)
+        = t('.number_of_games', count: bet_pending_and_ready_games_count)
+        = t('.ready_to_bet')
 
-    = c.link(name: t('shared.predictions'), path: predictions_path)
+    = c.link(name: t('shared.bets'), path: bets_path)

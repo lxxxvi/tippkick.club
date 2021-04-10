@@ -7,7 +7,7 @@ class TournamentsTest < ApplicationSystemTestCase
       navigate_to 'Tournament'
 
       assert_selector tournament_navigation_selector, count: 0
-      assert_selector '.prediction'
+      assert_selector '.bet'
     end
   end
 
@@ -18,13 +18,13 @@ class TournamentsTest < ApplicationSystemTestCase
 
       within(tournament_navigation_selector) do
         assert_selector 'span', text: 'Games'
-        assert_link 'Predictions', href: '/tournament/predictions'
-        click_on 'Predictions'
+        assert_link 'Bets', href: '/tournament/bets'
+        click_on 'Bets'
       end
 
       within(tournament_navigation_selector) do
         assert_link 'Games', href: '/tournament/games'
-        assert_selector 'span', text: 'Predictions'
+        assert_selector 'span', text: 'Bets'
         click_on 'Games'
       end
     end
@@ -36,7 +36,7 @@ class TournamentsTest < ApplicationSystemTestCase
       navigate_to 'Tournament'
 
       assert_selector tournament_navigation_selector, count: 0
-      assert_selector '.prediction-with-game'
+      assert_selector '.bet-with-game'
     end
   end
 

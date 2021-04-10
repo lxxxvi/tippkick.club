@@ -7,18 +7,21 @@ de-CH:
       update:
         failure: Spiel konnte nicht gespeichert werden.
         success: Spiel erfolgreich gespeichert.
-  dashboard_component:
-    hey_nickname: Hey %{nickname}
-    this_is_your_dashboard: dies ist dein Dashboard
-  dashboard_predictions_component:
+  bet_component:
+    bet_now: Tippen
+    not_ready_to_bet: Noch nicht tippbar
+  dashboard_bets_component:
     number_of_games:
       one: 1 Spiel
       other: "%{count} Spiele"
-    ready_to_be_predicted: zum tippen bereit.
+    ready_to_bet: zum tippen bereit.
     there_is:
       one: Es stehen
       other: Es stehen
     you_are_all_set: Du bist bereit
+  dashboard_component:
+    hey_nickname: Hey %{nickname}
+    this_is_your_dashboard: dies ist dein Dashboard
   dashboard_profile_component:
     change_your_profile: Dein Profil ändern
   dashboard_teams_component:
@@ -37,9 +40,6 @@ de-CH:
   navigation_component:
     open_main_menu: Hauptmenu öffnen
     open_profile_menu: Profilmenu öffnen
-  prediction_component:
-    not_yet_predictable: Noch nicht tippbar
-    start_predicting: Tippen
   profiles:
     update:
       failure: Profil konnte nicht geändert werden.
@@ -50,6 +50,7 @@ de-CH:
       save: Speichern
     admin: Admin
     are_you_sure: Bist du sicher?
+    bets: Tipps
     dashboard: Dashboard
     fifa_country_codes:
       AUT: Österreich
@@ -85,7 +86,6 @@ de-CH:
     members: Mitglieder
     no_one_with_brackets: "(niemanden)"
     points: Punkte
-    predictions: Tipps
     profile: Profil
     ranking: Rangliste
     reset_my_password: Passwort zurücksetzen

@@ -1,8 +1,8 @@
 class GamesController < ApplicationController
   def index
-    @predictions_with_game = current_user.predictions
-                                         .with_game
-                                         .kickoff_past
-                                         .ordered_antichronologically
+    @bets_with_game = current_user.bets
+                                  .with_game
+                                  .kickoff_past
+                                  .ordered_antichronologically
   end
 end

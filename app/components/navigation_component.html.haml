@@ -19,7 +19,7 @@
         .hidden.sm:ml-6.sm:flex.sm:space-x-8
           - if signed_in?
             = render NavigationLinkComponent.new(t('shared.dashboard'), dashboard_path)
-            = render NavigationLinkComponent.new(t('shared.tournament'), predictions_or_games_path)
+            = render NavigationLinkComponent.new(t('shared.tournament'), bets_or_games_path)
             = render NavigationLinkComponent.new(t('shared.teams'), teams_path)
             - if admin?
               = render NavigationLinkComponent.new(t('shared.admin'), admin_games_path)
@@ -43,7 +43,7 @@
     .pt-2.pb-4.space-y-1
       - if signed_in?
         = render NavigationMobileLinkComponent.new(t('shared.dashboard'), dashboard_path)
-        = render NavigationMobileLinkComponent.new(t('shared.tournament'), predictions_or_games_path)
+        = render NavigationMobileLinkComponent.new(t('shared.tournament'), bets_or_games_path)
         = render NavigationMobileLinkComponent.new(t('shared.teams'), teams_path)
         - if admin?
           = render NavigationMobileLinkComponent.new(t('shared.admin'), admin_games_path)

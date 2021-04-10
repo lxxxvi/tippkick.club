@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
   test 'valid user' do
     user = User.new(email: 'messi@tippkick.test', password: 'messi', rooting_for_team: 'ESP')
 
-    assert_difference -> { Prediction.count }, +51 do
+    assert_difference -> { Bet.count }, +51 do
       assert user.save!
     end
 

@@ -1,32 +1,32 @@
-class PredictionReflex < ApplicationReflex
+class BetReflex < ApplicationReflex
   def change_score
     update_scores
-    update_prediction_card
+    update_bet_card
   end
 
   def start
-    find_prediction.home_team_score ||= 0
-    find_prediction.guest_team_score ||= 0
-    find_prediction.save
-    update_prediction_card
+    find_bet.home_team_score ||= 0
+    find_bet.guest_team_score ||= 0
+    find_bet.save
+    update_bet_card
   end
 
   private
 
-  def update_prediction_card
-    morph dom_id(find_prediction),
-          render(PredictionComponent.new(prediction: find_prediction), layout: false)
+  def update_bet_card
+    morph dom_id(find_bet),
+          render(BetComponent.new(bet: find_bet), layout: false)
   end
 
-  def find_prediction
-    @find_prediction ||= current_user.predictions.find(element.dataset[:id])
+  def find_bet
+    @find_bet ||= current_user.bets.find(element.dataset[:id])
   end
 
   def update_scores
-    find_prediction.tap do |prediction|
-      current_score = prediction[team_score_attribute]
-      prediction[team_score_attribute] = current_score + score_delta
-      prediction.save
+    find_bet.tap do |bet|
+      current_score = bet[team_score_attribute]
+      bet[team_score_attribute] = current_score + score_delta
+      bet.save
     end
   end
 

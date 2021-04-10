@@ -1,45 +1,45 @@
-.prediction{ id: dom_id(@prediction) }
-  = render PredictionCardComponent.new(border_color_class: border_color_class, bg_color_class:bg_color_class) do |c|
+.bet{ id: dom_id(@bet) }
+  = render BetCardComponent.new(border_color_class: border_color_class, bg_color_class:bg_color_class) do |c|
 
     = c.header do
       .inline-grid.w-full.grid-cols-2
         .text-gray-800.text-xs
-          = @prediction.game.decorate.display_tournament_phase
+          = @bet.game.decorate.display_tournament_phase
         .text-gray-700.text-xs.text-right
-          = @prediction.game.decorate.display_uefa_game_id
+          = @bet.game.decorate.display_uefa_game_id
 
     = c.body do
-      - if @prediction.predictable?
-        - if @prediction.predicted?
+      - if @bet.bet_ready?
+        - if @bet.bet_complete?
           .grid.grid-cols-2.gap-4
             .self-center.justify-self-center.text-pink-500.text-xs
-              = @prediction.game.decorate.display_home_team_name
+              = @bet.game.decorate.display_home_team_name
             .self-center.justify-self-center.text-pink-500.text-xs
-              = @prediction.game.decorate.display_guest_team_name
-            .self-center.justify-self-center.text-4xl.my-4.prediction--home-team-score
-              = @prediction.home_team_score
-            .self-center.justify-self-center.text-4xl.my-4.prediction--guest-team-score
-              = @prediction.guest_team_score
-            .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.prediction--score-controls--home-team
-              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @prediction.home_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :home, delta: :minus } }
+              = @bet.game.decorate.display_guest_team_name
+            .self-center.justify-self-center.text-4xl.my-4.bet--home-team-score
+              = @bet.home_team_score
+            .self-center.justify-self-center.text-4xl.my-4.bet--guest-team-score
+              = @bet.guest_team_score
+            .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.bet--score-controls--home-team
+              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @bet.home_team_score&.zero?, data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :home, delta: :minus } }
                 \-
-              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :home, delta: :plus } }
+              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :home, delta: :plus } }
                 \+
-            .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.prediction--score-controls--guest-team
-              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @prediction.guest_team_score&.zero?, data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :guest, delta: :minus } }
+            .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.bet--score-controls--guest-team
+              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @bet.guest_team_score&.zero?, data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :minus } }
                 \-
-              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Prediction#change_score', id: @prediction.id, team_score: :guest, delta: :plus } }
+              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :plus } }
                 \+
         - else
           .text-center
-            %button.bg-pink-200.py-2.px-5.rounded-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Prediction#start', id: @prediction.id } }
-              = t('.start_predicting')
+            %button.bg-pink-200.py-2.px-5.rounded-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#start', id: @bet.id } }
+              = t('.bet_now')
       - else
         .text-center.text-gray-500.text-sm
-          = t('.not_yet_predictable')
+          = t('.not_ready_to_bet')
 
     = c.footer do
       .text-2xs.text-gray-400
-        = time_tag @prediction.game.kickoff_at do
+        = time_tag @bet.game.kickoff_at do
           = t('shared.kickoff_in')
-          = @prediction.game.decorate.display_kickoff_at_from_now
+          = @bet.game.decorate.display_kickoff_at_from_now

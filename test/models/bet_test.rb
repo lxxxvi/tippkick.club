@@ -1,47 +1,47 @@
 require 'test_helper'
 
-class PredictionTest < ActiveSupport::TestCase
+class BetTest < ActiveSupport::TestCase
   test 'validates uniqueness of game and user' do
-    prediction = Prediction.new(user: users(:diego),
-                                game: games(:game_1))
+    bet = Bet.new(user: users(:diego),
+                  game: games(:game_1))
 
-    assert_not prediction.save
+    assert_not bet.save
 
-    assert_includes prediction.errors[:game_id], 'has already been taken'
+    assert_includes bet.errors[:game_id], 'has already been taken'
   end
 
   test 'validate scores_cannot_change_after_kickoff' do
-    prediction = predictions(:diego_game_25)
+    bet = bets(:diego_game_25)
 
     before_game_25 do
-      assert prediction.update(home_team_score: 9, guest_team_score: 9)
+      assert bet.update(home_team_score: 9, guest_team_score: 9)
     end
 
     at_kickoff_of_game_25 do
-      assert_not prediction.update(home_team_score: 8, guest_team_score: 8)
+      assert_not bet.update(home_team_score: 8, guest_team_score: 8)
 
-      assert_includes prediction.errors[:home_team_score], 'cannot be changed after kickoff'
-      assert_includes prediction.errors[:guest_team_score], 'cannot be changed after kickoff'
+      assert_includes bet.errors[:home_team_score], 'cannot be changed after kickoff'
+      assert_includes bet.errors[:guest_team_score], 'cannot be changed after kickoff'
     end
   end
 
-  test '#predicted?' do
-    prediction = predictions(:diego_game_1)
+  test '#bet_complete?' do
+    bet = bets(:diego_game_1)
 
-    assert_changes -> { prediction.reload.predicted? }, from: true do
-      reset_prediction(prediction)
+    assert_changes -> { bet.reload.bet_complete? }, from: true do
+      reset_bet(bet)
     end
   end
 
   test '#kickoff_future?' do
-    prediction = predictions(:diego_game_25)
+    bet = bets(:diego_game_25)
 
     before_game_25 do
-      assert prediction.kickoff_future?
+      assert bet.kickoff_future?
     end
 
     at_kickoff_of_game_25 do
-      assert_not prediction.kickoff_future?
+      assert_not bet.kickoff_future?
     end
   end
 end

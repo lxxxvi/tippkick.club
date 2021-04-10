@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: :registrations }
 
   scope :tournament do
-    resources :predictions, only: %i[index]
+    resources :bets, only: %i[index]
     resources :games, only: %i[index]
   end
 

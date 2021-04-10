@@ -22,7 +22,7 @@ class NavigationComponentTest < ViewComponent::TestCase
   test '.render, signed_in before tournament' do
     before_tournament do
       render_inline NavigationComponent.new(signed_in: true)
-      assert_link 'Tournament', href: '/tournament/predictions'
+      assert_link 'Tournament', href: '/tournament/bets'
     end
   end
 

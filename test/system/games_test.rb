@@ -6,7 +6,7 @@ class GamesTest < ApplicationSystemTestCase
       sign_in_as :diego
       navigate_to 'Tournament'
       assert_link 'Dashboard', href: '/dashboard'
-      assert_selector '.prediction-with-game', count: 24
+      assert_selector '.bet-with-game', count: 24
     end
   end
 end

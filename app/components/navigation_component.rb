@@ -10,8 +10,8 @@ class NavigationComponent < ViewComponent::Base
     @signed_in
   end
 
-  def predictions_or_games_path
-    return predictions_path if Tournament.before_first_kickoff?
+  def bets_or_games_path
+    return bets_path if Tournament.before_first_kickoff?
 
     games_path
   end

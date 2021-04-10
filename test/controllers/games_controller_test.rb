@@ -6,7 +6,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
       sign_in_as :diego
       get games_path
       assert_response :success
-      assert_select '.prediction-with-game', count: 24
+      assert_select '.bet-with-game', count: 24
     end
   end
 end

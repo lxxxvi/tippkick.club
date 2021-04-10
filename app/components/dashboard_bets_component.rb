@@ -1,13 +1,13 @@
-class DashboardPredictionsComponent < ViewComponent::Base
+class DashboardBetsComponent < ViewComponent::Base
   def initialize(user)
     @user = user
   end
 
   def all_set?
-    unpredicted_predictable_games_count.zero?
+    bet_pending_and_ready_games_count.zero?
   end
 
-  def unpredicted_predictable_games_count
-    @unpredicted_predictable_games_count ||= @user.predictions.unpredicted_predictable.count
+  def bet_pending_and_ready_games_count
+    @bet_pending_and_ready_games_count ||= @user.bets.bet_pending_and_ready.count
   end
 end

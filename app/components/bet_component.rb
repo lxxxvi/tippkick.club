@@ -1,20 +1,20 @@
-class PredictionComponent < ViewComponent::Base
-  def initialize(prediction:)
-    @prediction = prediction
+class BetComponent < ViewComponent::Base
+  def initialize(bet:)
+    @bet = bet
   end
 
   def render?
-    @prediction.kickoff_future?
+    @bet.kickoff_future?
   end
 
   def border_color_class
-    return 'border-pink-200' if @prediction.predictable?
+    return 'border-pink-200' if @bet.bet_ready?
 
     'border-gray-200'
   end
 
   def bg_color_class
-    return 'bg-pink-200' if @prediction.predictable?
+    return 'bg-pink-200' if @bet.bet_ready?
 
     'bg-gray-200'
   end
