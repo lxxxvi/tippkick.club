@@ -1,7 +1,7 @@
 class FinalWhistleService
   def call!
     Game.transaction do
-      PredictionPointsService.new.call!
+      BetPointsService.new.call!
       TeamRankingService.new.call!
       TeamMembersCountService.new.call!
     end

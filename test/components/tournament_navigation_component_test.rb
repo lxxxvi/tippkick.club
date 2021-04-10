@@ -9,7 +9,7 @@ class TournamentNavigationComponentTest < ViewComponent::TestCase
 
       # We cannot test/simulate scenarios for `link_to_unless_current`,
       # since we use a controller that is scoped.
-      assert_link 'Predictions', href: '/tournament/predictions'
+      assert_link 'Bets', href: '/tournament/bets'
       assert_link 'Games', href: '/tournament/games'
     end
   end

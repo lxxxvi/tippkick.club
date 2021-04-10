@@ -15,6 +15,23 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bets", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.integer "home_team_score"
+    t.integer "guest_team_score"
+    t.integer "home_team_score_points"
+    t.integer "guest_team_score_points"
+    t.integer "result_points"
+    t.integer "perfect_bet_bonus_points"
+    t.integer "total_points"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_bets_on_game_id"
+    t.index ["user_id", "game_id"], name: "index_bets_on_user_id_and_game_id", unique: true
+    t.index ["user_id"], name: "index_bets_on_user_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "uefa_game_id", null: false
     t.string "venue", null: false
@@ -42,23 +59,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_061247) do
     t.index ["team_id"], name: "index_memberships_on_team_id"
     t.index ["user_id", "team_id"], name: "index_memberships_on_user_id_and_team_id", unique: true
     t.index ["user_id"], name: "index_memberships_on_user_id"
-  end
-
-  create_table "predictions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "game_id", null: false
-    t.integer "home_team_score"
-    t.integer "guest_team_score"
-    t.integer "home_team_score_points"
-    t.integer "guest_team_score_points"
-    t.integer "result_points"
-    t.integer "perfect_prediction_bonus_points"
-    t.integer "total_points"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_predictions_on_game_id"
-    t.index ["user_id", "game_id"], name: "index_predictions_on_user_id_and_game_id", unique: true
-    t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|

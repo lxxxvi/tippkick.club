@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class PredictionCardComponentTest < ViewComponent::TestCase
+class BetCardComponentTest < ViewComponent::TestCase
   test '.render' do
     render_inline(
-      PredictionCardComponent.new(
+      BetCardComponent.new(
         border_color_class: 'border-kolor',
         bg_color_class: 'bg-kolor'
       )

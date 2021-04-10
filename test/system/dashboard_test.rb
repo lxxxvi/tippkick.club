@@ -2,7 +2,7 @@ require 'application_system_test_case'
 
 class DashboardTest < ApplicationSystemTestCase
   test 'dashboard' do
-    PredictionPointsService.new.call!
+    BetPointsService.new.call!
 
     before_game_25 do
       sign_in_as :diego
@@ -13,15 +13,15 @@ class DashboardTest < ApplicationSystemTestCase
       end
 
       assert_selector 'h1', text: 'Hey digi, this is your dashboard'
-      assert_text 'There are 10 games ready to be predicted'
+      assert_text 'There are 10 games ready to bet'
       assert_text 'You are in 2 teams'
       assert_text 'Change your profile'
     end
   end
 
-  test 'displays no notification about unpredicted games' do
-    Prediction.unpredicted_predictable
-              .update_all(home_team_score: 8, guest_team_score: 9)
+  test 'displays no notification about bet_pending games' do
+    Bet.bet_pending_and_ready
+       .update_all(home_team_score: 8, guest_team_score: 9)
 
     before_game_25 do
       sign_in_as :diego

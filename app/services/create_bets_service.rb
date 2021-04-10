@@ -1,10 +1,10 @@
-class CreatePredictionsService
+class CreateBetsService
   def initialize(user)
     @user = user
   end
 
   def call!
-    execute create_predictions_sql
+    execute create_bets_sql
   end
 
   private
@@ -13,9 +13,9 @@ class CreatePredictionsService
     ApplicationRecord.connection.execute(statement)
   end
 
-  def create_predictions_sql
+  def create_bets_sql
     <<~SQL.squish
-      INSERT INTO predictions (user_id, game_id, created_at, updated_at)
+      INSERT INTO bets (user_id, game_id, created_at, updated_at)
       SELECT u.id
            , g.id
            , NOW()

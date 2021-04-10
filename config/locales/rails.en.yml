@@ -47,6 +47,12 @@ en:
           has_many: Cannot delete record because dependent %{record} exist
           has_one: Cannot delete record because a dependent %{record} exists
       models:
+        bet:
+          attributes:
+            guest_team_score:
+              cannot_be_changed_after_kickoff: cannot be changed after kickoff
+            home_team_score:
+              cannot_be_changed_after_kickoff: cannot be changed after kickoff
         game:
           attributes:
             final_whistle_at:
@@ -55,12 +61,6 @@ en:
               cannot_be_changed_before_kickoff: cannot be changed before kickoff
             home_team_score:
               cannot_be_changed_before_kickoff: cannot be changed before kickoff
-        prediction:
-          attributes:
-            guest_team_score:
-              cannot_be_changed_after_kickoff: cannot be changed after kickoff
-            home_team_score:
-              cannot_be_changed_after_kickoff: cannot be changed after kickoff
   date:
     abbr_day_names:
     - Sun

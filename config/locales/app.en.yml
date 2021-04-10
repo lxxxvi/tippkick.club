@@ -7,18 +7,21 @@ en:
       update:
         failure: Could not update game.
         success: Game successfully updated.
-  dashboard_component:
-    hey_nickname: Hey %{nickname}
-    this_is_your_dashboard: this is your dashboard
-  dashboard_predictions_component:
+  bet_component:
+    bet_now: Bet now
+    not_ready_to_bet: Not ready to bet
+  dashboard_bets_component:
     number_of_games:
       one: 1 game
       other: "%{count} games"
-    ready_to_be_predicted: ready to be predicted
+    ready_to_bet: ready to bet
     there_is:
       one: There is
       other: There are
     you_are_all_set: You are all set
+  dashboard_component:
+    hey_nickname: Hey %{nickname}
+    this_is_your_dashboard: this is your dashboard
   dashboard_profile_component:
     change_your_profile: Change your profile
   dashboard_teams_component:
@@ -37,9 +40,6 @@ en:
   navigation_component:
     open_main_menu: Open main menu
     open_profile_menu: Open profile menu
-  prediction_component:
-    not_yet_predictable: Not yet predictable
-    start_predicting: Start predicting
   profiles:
     update:
       failure: Could not update profile.
@@ -50,6 +50,7 @@ en:
       save: Save
     admin: Admin
     are_you_sure: Are you sure?
+    bets: Bets
     dashboard: Dashboard
     fifa_country_codes:
       AUT: Austria
@@ -85,7 +86,6 @@ en:
     members: Members
     no_one_with_brackets: "(no one)"
     points: Points
-    predictions: Predictions
     profile: Profile
     ranking: Ranking
     reset_my_password: Reset my password

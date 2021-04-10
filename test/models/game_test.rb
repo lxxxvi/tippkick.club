@@ -89,20 +89,20 @@ class GameTest < ActiveSupport::TestCase
     end
   end
 
-  test '#predictable?' do
+  test '#bet_ready?' do
     game = games(:game_25)
 
     before_game_25 do
-      assert game.predictable?
+      assert game.bet_ready?
 
       game.home_team_name = nil
-      assert_not game.predictable?
+      assert_not game.bet_ready?
     end
 
     game.reload
 
     in_game_25 do
-      assert_not game.predictable?
+      assert_not game.bet_ready?
     end
   end
 

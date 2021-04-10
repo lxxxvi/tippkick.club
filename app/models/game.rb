@@ -2,7 +2,7 @@ class Game < ApplicationRecord
   include TournamentPhases
   include Venues
 
-  has_many :predictions, dependent: :destroy
+  has_many :bets, dependent: :destroy
 
   validates :uefa_game_id, :venue, :tournament_phase,
             :home_team_score, :guest_team_score,
@@ -50,7 +50,7 @@ class Game < ApplicationRecord
     @decorate ||= GameDecorator.new(self)
   end
 
-  def predictable?
+  def bet_ready?
     kickoff_future? && teams_present?
   end
 

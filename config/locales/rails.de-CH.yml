@@ -47,6 +47,12 @@ de-CH:
           has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.
           has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz existiert.
       models:
+        bet:
+          attributes:
+            guest_team_score:
+              cannot_be_changed_after_kickoff: darf nicht nach dem Anpfiff geändert werden
+            home_team_score:
+              cannot_be_changed_after_kickoff: darf nicht nach dem Anpfiff geändert werden
         game:
           attributes:
             final_whistle_at:
@@ -55,12 +61,6 @@ de-CH:
               cannot_be_changed_before_kickoff: darf nicht vor dem Anpfiff geändert werden
             home_team_score:
               cannot_be_changed_before_kickoff: darf nicht vor dem Anpfiff geändert werden
-        prediction:
-          attributes:
-            guest_team_score:
-              cannot_be_changed_after_kickoff: darf nicht nach dem Anpfiff geändert werden
-            home_team_score:
-              cannot_be_changed_after_kickoff: darf nicht nach dem Anpfiff geändert werden
   date:
     abbr_day_names:
     - So

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
   has_many :teams, through: :memberships
-  has_many :predictions, dependent: :destroy
+  has_many :bets, dependent: :destroy
 
   before_validation :initialize_nickname
   before_save :set_tippkick_id
@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true
   validates :rooting_for_team, inclusion: { in: FIFA_COUNTRY_CODES, allow_blank: true }
   validates :locale, inclusion: { in: Rails.configuration.i18n.available_locales.map(&:to_s) }
-  after_create :create_predictions!
+  after_create :create_bets!
   after_create :add_to_global_team!
 
   def membership_for(team)
@@ -28,8 +28,8 @@ class User < ApplicationRecord
 
   private
 
-  def create_predictions!
-    CreatePredictionsService.new(self).call!
+  def create_bets!
+    CreateBetsService.new(self).call!
   end
 
   def add_to_global_team!

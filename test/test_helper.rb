@@ -11,8 +11,8 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  def reset_prediction(prediction)
-    prediction.update_columns(home_team_score: nil, guest_team_score: nil)
+  def reset_bet(bet)
+    bet.update_columns(home_team_score: nil, guest_team_score: nil)
   end
 end
 

@@ -35,7 +35,7 @@ namespace :dev do
     puts 'Predict games'
     ActiveRecord::Base.connection.execute(
       <<~SQL.squish
-        UPDATE predictions
+        UPDATE bets
            SET home_team_score = floor(random() * 5)
              , guest_team_score = floor(random() * 5)
          WHERE user_id IN (SELECT id
