@@ -8,6 +8,7 @@ ruby '3.0.1'
 # gem 'redis', '~> 4.0'
 gem 'action_policy'
 gem 'bootsnap', require: false
+gem 'bugsnag'
 gem 'devise'
 gem 'haml-rails'
 gem 'pagy'
