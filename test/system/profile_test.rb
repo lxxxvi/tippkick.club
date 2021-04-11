@@ -41,7 +41,7 @@ class ProfileTest < ApplicationSystemTestCase
         click_on 'Profile'
       end
 
-      select 'German (Switzerland)', from: 'Language'
+      select 'German', from: 'Language'
       click_on 'Save'
 
       assert_selector '.flash-messages', text: 'Profil erfolgreich gespeichert.'

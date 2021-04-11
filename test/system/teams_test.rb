@@ -154,4 +154,27 @@ class TeamsTest < ApplicationSystemTestCase
       end
     end
   end
+
+  test 'refresh invitation token reflex keeps language' do
+    user = users(:diego)
+
+    before_tournament do
+      using_browser do
+        sign_in_as :diego
+
+        user.update(locale: 'de-CH')
+
+        navigate_to 'Teams'
+        click_on 'Campeones'
+
+        within('section#admin') do
+          assert_changes -> { find_field('Einladungslink').value } do
+            click_on 'Einladungslink erneuern'
+          end
+
+          assert_selector '.invitation-link--flashes', text: 'Link erneuert'
+        end
+      end
+    end
+  end
 end
