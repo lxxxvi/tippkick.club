@@ -51,6 +51,8 @@ en:
     admin: Admin
     are_you_sure: Are you sure?
     bets: Bets
+    change_my_password: Change my password
+    change_your_password: Change your password
     dashboard: Dashboard
     fifa_country_codes:
       AUT: Austria
@@ -84,6 +86,7 @@ en:
     language: Language
     live: Live
     members: Members
+    new_password: New password
     no_one_with_brackets: "(no one)"
     points: Points
     profile: Profile
@@ -92,6 +95,7 @@ en:
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up
+    start: Start
     tbd: to be defined
     teams: Teams
     tournament: Tournament
