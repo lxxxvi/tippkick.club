@@ -1,13 +1,11 @@
-# frozen_string_literal: true
-
 class ApplicationReflex < StimulusReflex::Reflex
   delegate :current_user, to: :connection
-  # Put application-wide Reflex behavior and callbacks in this file.
-  #
-  # Example:
-  #
-  #   # If your ActionCable connection is: `identified_by :current_user`
-  #   delegate :current_user, to: :connection
-  #
-  # Learn more at: https://docs.stimulusreflex.com/reflexes#reflex-classes
+  around_reflex :switch_locale
+
+  private
+
+  def switch_locale(&action)
+    locale = current_user.try(:locale) || I18n.default_locale
+    I18n.with_locale(locale, &action)
+  end
 end
