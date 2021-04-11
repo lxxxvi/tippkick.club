@@ -8,6 +8,7 @@
     = csp_meta_tag
     = action_cable_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload', media: 'all'
   %body
     .sticky.top-0
       = render NavigationComponent.new(signed_in: signed_in?, user: current_user)

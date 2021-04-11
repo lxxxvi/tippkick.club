@@ -7,7 +7,7 @@
 }
 
 .tippkick-form .input {
-  @apply rounded-lg border-2 border-pink-200 focus:ring-pink-200;
+  @apply rounded-lg border-2 border-pink-200 focus:ring-pink-200 p-2;
 }
 
 .tippkick-form .checkbox {

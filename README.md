@@ -1,24 +1,14 @@
-# README
+# tippkick.club
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Heroku Setup
 
-Things you may want to cover:
+Node
 
-* Ruby version
+```
+heroku buildpacks:add heroku/nodejs
+heroku buildpacks:add heroku/ruby
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+heroku addons:create heroku-redis:hobby-dev
+```
