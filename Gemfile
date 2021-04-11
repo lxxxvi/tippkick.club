@@ -11,6 +11,7 @@ gem 'bootsnap', require: false
 gem 'bugsnag'
 gem 'devise'
 gem 'haml-rails'
+gem 'mailgun-ruby'
 gem 'pagy'
 gem 'pg'
 gem 'puma'
