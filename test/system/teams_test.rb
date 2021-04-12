@@ -42,13 +42,34 @@ class TeamsTest < ApplicationSystemTestCase
 
       assert_link 'Teams', href: '/teams'
 
-      assert_selector 'h2', text: 'Your ranking in this team'
+      assert_selector 'h2', text: 'Your ranking in this team', count: 0
       assert_selector 'h2', text: 'Members'
       assert_selector 'h2', text: 'Admin'
 
       within 'table.team-memberships' do
-        assert_selector 'td', text: 'digi'
-        assert_selector 'td', text: 'pele'
+        assert_selector 'td.ranking-position', count: 0
+        assert_selector 'td.total-points', count: 0
+        assert_selector 'td.nickname-with-emoji', text: 'digi'
+        assert_selector 'td.nickname-with-emoji', text: 'pele'
+      end
+    end
+  end
+
+  test 'shows ranking after first kickoff' do
+    in_game_1 do
+      sign_in_as :diego
+
+      navigate_to 'Teams'
+      click_on 'Campeones'
+
+      assert_link 'Teams', href: '/teams'
+
+      assert_selector 'h2', text: 'Your ranking in this team'
+
+      within 'table.team-memberships' do
+        assert_selector 'td.ranking-position', text: '1'
+        assert_selector 'td.total-points', text: '152'
+        assert_selector 'td.nickname-with-emoji', text: 'digi'
       end
     end
   end

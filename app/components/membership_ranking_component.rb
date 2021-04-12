@@ -5,7 +5,7 @@ class MembershipRankingComponent < ViewComponent::Base
   end
 
   def render?
-    ranked?
+    ranked? && Tournament.after_first_kickoff?
   end
 
   def team_membership

@@ -1,8 +1,9 @@
 %tr.text-sm{ class: bg_color_class }
-  %td.px-3.py-4.whitespace-nowrap.text-gray-900.text-center
-    = @team_membership_row.ranking_position
-  %td.px-3.py-4.whitespace-nowrap.text-gray-900.text-center
-    .inline-flex.items-center.px-2.5.py-0.5.rounded-full.font-medium.bg-pink-100.text-pink-800
-      = team_membership_user.total_points
-  %td.px-3.py-4.whitespace-nowrap.text-gray-900
+  - if render_ranking_and_points?
+    %td.ranking-position.px-3.py-4.whitespace-nowrap.text-gray-900.text-center
+      = @team_membership_row.ranking_position
+    %td.total-points.px-3.py-4.whitespace-nowrap.text-gray-900.text-center
+      .inline-flex.items-center.px-2.5.py-0.5.rounded-full.font-medium.bg-pink-100.text-pink-800
+        = team_membership_user.total_points
+  %td.nickname-with-emoji.px-3.py-4.whitespace-nowrap.text-gray-900
     = team_membership_user.decorate.nickname_with_team_emoji
