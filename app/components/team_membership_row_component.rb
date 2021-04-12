@@ -12,6 +12,10 @@ class TeamMembershipRowComponent < ViewComponent::Base
     @team_membership_user ||= @team_membership_row.user
   end
 
+  def render_ranking_and_points?
+    Tournament.after_first_kickoff?
+  end
+
   private
 
   def team_membership_of_user?

@@ -14,4 +14,8 @@ class TeamMembershipsComponent < ViewComponent::Base
   def display_pagination?
     @pagy.pages > 1
   end
+
+  def render_ranking_and_points?
+    Tournament.after_first_kickoff?
+  end
 end

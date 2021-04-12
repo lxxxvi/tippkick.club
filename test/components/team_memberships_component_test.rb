@@ -17,4 +17,20 @@ class TeamMembershipsComponentTest < ViewComponent::TestCase
   ensure
     Pagy::VARS[:items] = default_items
   end
+
+  test '.render, columns before tournament' do
+    before_tournament do
+      component = TeamMembershipsComponent.new(team: teams(:global), params: {}, user: users(:diego))
+      render_inline(component)
+      assert_selector 'th', count: 1
+    end
+  end
+
+  test '.render, in game 1' do
+    in_game_1 do
+      component = TeamMembershipsComponent.new(team: teams(:global), params: {}, user: users(:diego))
+      render_inline(component)
+      assert_selector 'th', count: 3
+    end
+  end
 end
