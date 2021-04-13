@@ -299,9 +299,6 @@ en:
     invitation_link: Invitation link
     link_refreshed: Link refreshed
     refresh_invitation_link: Refresh invitation link
-  landing_page:
-    index:
-      welcome: Welcome
   locales:
     de-CH: German
     en: English
