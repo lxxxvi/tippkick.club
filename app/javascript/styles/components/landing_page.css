@@ -1,0 +1,44 @@
+.landing-page {
+  @apply md:w-1/2 mx-auto;
+}
+
+.landing-page h1 {
+  @apply text-6xl font-bold tracking-normal bg-gradient-to-br from-pink-300 via-purple-500 to-pink-200 bg-clip-text text-transparent inline;
+
+  background-size: 400% 400%;
+}
+
+.moving {
+  -webkit-animation: BackgroundAnimation 15s linear infinite;
+  -moz-animation: BackgroundAnimation 15s linear infinite;
+  animation: BackgroundAnimation 15s linear infinite;
+}
+
+@-webkit-keyframes BackgroundAnimation {
+    0%{background-position:0% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:0% 0%}
+}
+@-moz-keyframes BackgroundAnimation {
+    0%{background-position:0% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:0% 0%}
+}
+@keyframes BackgroundAnimation {
+    0%{background-position:0% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:0% 0%}
+}
+
+.strike {
+  @apply inline-block relative;
+}
+
+.strike::before {
+  content: '';
+  @apply border-b-4 border-red-500 transform -skew-y-6;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}

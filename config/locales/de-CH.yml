@@ -299,9 +299,6 @@ de-CH:
     invitation_link: Einladungslink
     link_refreshed: Link erneuert
     refresh_invitation_link: Einladungslink erneuern
-  landing_page:
-    index:
-      welcome: Willkommen
   locales:
     de-CH: Deutsch (Schweiz)
     en: Englisch

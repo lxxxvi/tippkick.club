@@ -1,3 +1,6 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.start'), path: root_path)
+
 %h2= t('shared.forgot_your_password')
 
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'tippkick-form' }) do |f|

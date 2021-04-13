@@ -1,3 +1,6 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.start'), path: root_path)
+
 %h2= t('shared.sign_in')
 
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'tippkick-form'}) do |f|
