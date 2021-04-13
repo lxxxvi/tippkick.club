@@ -48,4 +48,10 @@ class UserTest < ActiveSupport::TestCase
 
     assert_equal membership, user.membership_for(team)
   end
+
+  test 'validates #titles' do
+    user = User.new(titles: -1)
+    assert_not user.valid?
+    assert_includes user.errors[:titles], 'must be greater than or equal to 0'
+  end
 end
