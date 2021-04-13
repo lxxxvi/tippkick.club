@@ -54,4 +54,9 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
     assert_includes user.errors[:titles], 'must be greater than or equal to 0'
   end
+
+  test '#titles?' do
+    assert_not User.new(titles: 0).titles?
+    assert User.new(titles: 1).titles?
+  end
 end

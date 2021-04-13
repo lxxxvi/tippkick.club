@@ -8,9 +8,8 @@ class TeamMembershipRowComponentTest < ViewComponent::TestCase
 
       render_inline(component)
 
-      page.all('td').tap do |td|
-        assert_equal 'digi 🇪🇸', td[0].text.strip
-      end
+      assert_selector '.nickname', text: 'digi'
+      assert_selector '.rooting-for-team', text: '🇪🇸'
     end
   end
 
@@ -24,7 +23,7 @@ class TeamMembershipRowComponentTest < ViewComponent::TestCase
       page.all('td').tap do |td|
         assert_equal '1', td[0].text.strip
         assert_equal '152', td[1].text.strip
-        assert_equal 'digi 🇪🇸', td[2].text.strip
+        assert_selector '.nickname', text: 'digi'
       end
     end
   end

@@ -27,6 +27,10 @@ class User < ApplicationRecord
     @decorate ||= UserDecorator.new(self)
   end
 
+  def titles?
+    titles.positive?
+  end
+
   private
 
   def create_bets!
