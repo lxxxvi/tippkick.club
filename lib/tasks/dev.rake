@@ -28,7 +28,7 @@ namespace :dev do
     puts 'Users'
     users = emails.map do |email|
       puts "  #{email}"
-      User.create!(email: email, password: email)
+      User.create!(email: email, password: email, rooting_for_team: User::FIFA_COUNTRY_CODES.sample)
     end
 
     puts

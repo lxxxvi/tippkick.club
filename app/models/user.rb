@@ -15,6 +15,7 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true
   validates :rooting_for_team, inclusion: { in: FIFA_COUNTRY_CODES, allow_blank: true }
   validates :locale, inclusion: { in: Rails.configuration.i18n.available_locales.map(&:to_s) }
+  validates :titles, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   after_create :create_bets!
   after_create :add_to_global_team!
 
@@ -24,6 +25,10 @@ class User < ApplicationRecord
 
   def decorate
     @decorate ||= UserDecorator.new(self)
+  end
+
+  def titles?
+    titles.positive?
   end
 
   private
