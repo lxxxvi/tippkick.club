@@ -3,7 +3,7 @@
 }
 
 .landing-page h1 {
-  @apply text-6xl font-bold tracking-normal bg-gradient-to-br from-pink-300 via-purple-500 to-pink-200 bg-clip-text text-transparent inline;
+  @apply text-6xl font-bold tracking-normal bg-gradient-to-br from-pink-300 via-purple-500 to-pink-200 bg-clip-text text-transparent inline-block;
 
   background-size: 400% 400%;
 }
@@ -30,11 +30,11 @@
     100%{background-position:0% 0%}
 }
 
-.strike {
-  @apply inline-block relative;
+del {
+  @apply inline-block relative no-underline;
 }
 
-.strike::before {
+del::before {
   content: '';
   @apply border-b-4 border-red-500 transform -skew-y-6;
   width: 100%;

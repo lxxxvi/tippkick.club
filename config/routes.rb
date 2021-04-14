@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resource :dashboard, only: %i[show]
   resource :profile, only: %i[show update]
 
+  get '/about', to: 'about#show'
   root 'landing_page#index'
 end

@@ -1,0 +1,29 @@
+.about .link {
+  @apply text-pink-400 hover:text-pink-600 transition;
+}
+
+.about p {
+  @apply text-justify;
+}
+
+.about ul li {
+  @apply py-1;
+}
+
+.about ul li::marker {
+  @apply text-pink-400;
+}
+
+.about ul.open-source-credits {
+  @apply list-outside ml-4;
+}
+
+.about ul.open-source-credits li {
+  @apply pl-4;
+}
+
+.about ul.open-source-credits li::marker {
+  content: '❤️';
+  @apply text-xs;
+}
+

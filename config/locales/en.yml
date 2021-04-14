@@ -360,6 +360,7 @@ en:
       failure: Could not update profile.
       success: Profile updated successfully.
   shared:
+    about: About
     actions:
       cancel: Cancel
       save: Save
