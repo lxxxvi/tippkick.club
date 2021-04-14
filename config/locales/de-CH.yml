@@ -368,6 +368,7 @@ de-CH:
       failure: Profil konnte nicht geändert werden.
       success: Profil erfolgreich gespeichert.
   shared:
+    about: Über
     actions:
       cancel: Abbrechen
       save: Speichern

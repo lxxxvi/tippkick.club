@@ -1,0 +1,71 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.start'), path: root_path)
+
+.about
+  %h1.text-3xl About
+
+  %p
+    tippkick.club is not a commercial project. The main purpose for the creators is to "learn by doing", and the result is a
+    %em.inline free
+    online betting game that may or may not be perfect.
+
+  %section#about-free.my-10
+    %h2 What does free mean?
+    %ul.list-disc.list-outside.my-3.ml-4
+      %li Joining the game is free.
+      %li User data is NOT sold or given away.
+      %li There are NO ads, NO trackers or whatsoever.
+    %p.mt-3 Free means free.
+
+  %section#about-privacy.my-10
+    %h2 What about privacy?
+
+    %ul.list-disc.list-outside.my-3.ml-4
+      %li As mentioned, we do not share your data (i.e. your email address) with anyone.
+      %li We won't be using it for future activities either.
+      %li We are going to destroy all data 1 month after the end of the tournament, thus on August 11th, 2021.
+      %li We don't keep any backups either.
+
+  %section#about-learn-by-doing.my-10
+    %h2 What about "learn by doing"?
+
+    %p.pb-5
+      The creators main interest is to learn web technologies, tools that allows us to create awesome web applications like this.
+
+    %p.pb-5
+      The project's code is open sourced on
+      = succeed "," do
+        = link_to 'GitHub', 'https://github.com/lxxxvi/tippkick.club)', class: 'link'
+      hosted on
+      = link_to 'Heroku', 'https://www.heroku.com/', class: 'link'
+      on a server in Dublin, Ireland.
+
+    %p.pb-3
+      Speaking of Open source software... the internets wouldn't be the same without it! Most of the time we take this for granted, we expect that software just works. We've become spoiled.
+
+    %p.pb-5
+      That's where we'd like to send some love to all contributors of Open source software:
+
+    %ul.open-source-credits.pb-5
+      - open_source_credits_list_items.each do |list_item|
+        %li= raw list_item
+
+    %p
+      Sure, there's a LOT more, but the listed projects were mainly used for this web application.
+
+  %section#about-learn-by-doing.my-10
+    %h2 Who are "the creators"?
+
+    %ul.list-disc.list-outside.my-3.ml-4
+      %li Switzerland based
+      %li Web technology enthusiasts
+      %li Code monkeys
+
+  %section#about-contact.my-10
+    %h2 Get in touch
+
+    %p.my-5
+      Got questions, comments, bug reports?
+
+    .mt-5
+      = mail_to 'tippkick@schuettel.dev', 'Tell us!', subject: 'About tippkick...', class: 'p-3 bg-pink-300 w-full block text-pink-900 rounded-xl text-center text-xl hover:bg-pink-600 hover:text-pink-100 transition shadow-xl'

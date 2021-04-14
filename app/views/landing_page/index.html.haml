@@ -8,9 +8,10 @@
     Tippkick is back for
     %br
     UEFA Euro
-    .strike
+    %del
       2020
-    2021.
+    = succeed '.' do
+      %ins 2021
 
   .my-16
     = link_to 'Sign up now!', new_user_registration_path, class: 'text-xl p-4 bg-pink-300 rounded-xl text-pink-900 shadow-xl hover:bg-pink-400 hover:text-pink-100 transition block'
@@ -42,3 +43,5 @@
           %li.py-3 We care about privacy!
           %li.py-3 The app's code is Open Source!
           %li.py-3 We delete all data 1 month after the tournament. Promised.
+          %li.py-3
+            = link_to 'Read more', about_path, class: 'text-pink-400 hover:text-pink-500 transition'
