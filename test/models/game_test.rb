@@ -151,4 +151,14 @@ class GameTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test 'empty string for team_names are sanitized to NULL' do
+    before_tournament do
+      game = games(:game_1)
+      assert game.update(home_team_name: '', guest_team_name: '')
+      game.reload
+      assert_nil game.home_team_name
+      assert_nil game.guest_team_name
+    end
+  end
 end
