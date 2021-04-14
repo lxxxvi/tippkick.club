@@ -19,6 +19,7 @@ class Game < ApplicationRecord
   scope :ordered_chronologically, -> { order('kickoff_at ASC, uefa_game_id ASC') }
   scope :ordered_antichronologically, -> { order('kickoff_at DESC, uefa_game_id ASC') }
 
+  before_save :sanitize_team_names
   after_save :call_final_whistle_service!, if: :scores_or_final_whistle_previously_changed?
 
   def final_whistle(reset: false)
@@ -89,5 +90,15 @@ class Game < ApplicationRecord
 
   def call_final_whistle_service!
     FinalWhistleService.new.call!
+  end
+
+  def sanitize_team_names
+    empty_to_nil(:home_team_name, :guest_team_name)
+  end
+
+  def empty_to_nil(*column_names)
+    column_names.each do |column_name|
+      self[column_name] = self[column_name].presence
+    end
   end
 end
