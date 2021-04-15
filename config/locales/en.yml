@@ -10,7 +10,7 @@ en:
       and_the_result_is_a: and the result is a
       free: free
       learning_by_doing_comma: The main purpose for the creators is to "learn by doing",
-      not_a_commercial_project: tippkick.club is not a commercial project.
+      not_a_commercial_project: Tippkick is not a commercial project.
       online_betting_game: online betting game that may or may not be perfect.
     what_about_learning_by_doing:
       code_is_open_source_on: The project's code is open sourced on
@@ -355,12 +355,12 @@ en:
         title: It's free!
       it_is_fun:
         argue_with_more_points: Argue with friends who have more points than you.
-        compare_points: Compare points among each other.
+        compare_points: Compare your points against your friends'.
         invite_friends_to_teams: Invite friends to your own teams.
         make_fun_if_global_leader: Make fun of everyone if you are the GLOBAL LEADER!
         make_fun_of_less_points: Make fun of friends who have less points than you.
         title: It's fun!
-    why_join_question: Why join?
+      title: Why join?
   locales:
     de-CH: German
     en: English
