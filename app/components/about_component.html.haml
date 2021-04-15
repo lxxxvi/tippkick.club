@@ -2,70 +2,65 @@
   = render BacklinkComponent.new(name: t('shared.start'), path: root_path)
 
 .about
-  %h1.text-3xl About
+  %h1.text-3xl= t('shared.about')
 
   %p
-    tippkick.club is not a commercial project. The main purpose for the creators is to "learn by doing", and the result is a
-    %em.inline free
-    online betting game that may or may not be perfect.
+    = t('.intro.not_a_commercial_project')
+    = t('.intro.learning_by_doing_comma')
+    = t('.intro.and_the_result_is_a')
+    %em.inline= t('.intro.free')
+    = t('.intro.online_betting_game')
 
   %section#about-free.my-10
-    %h2 What does free mean?
+    %h2= t('.what_does_free_mean.title')
     %ul.list-disc.list-outside.my-3.ml-4
-      %li Joining the game is free.
-      %li User data is NOT sold or given away.
-      %li There are NO ads, NO trackers or whatsoever.
-    %p.mt-3 Free means free.
+      %li= t('.what_does_free_mean.joining_is_free')
+      %li= t('.what_does_free_mean.data_is_not_given_away')
+      %li= t('.what_does_free_mean.no_ads_no_trackers')
+    %p.mt-3= t('.what_does_free_mean.free_means_free')
 
   %section#about-privacy.my-10
-    %h2 What about privacy?
+    %h2= t('.what_about_privacy.title')
 
     %ul.list-disc.list-outside.my-3.ml-4
-      %li As mentioned, we do not share your data (i.e. your email address) with anyone.
-      %li We won't be using it for future activities either.
-      %li We are going to destroy all data 1 month after the end of the tournament, thus on August 11th, 2021.
-      %li We don't keep any backups either.
+      %li= t('.what_about_privacy.not_share_data')
+      %li= t('.what_about_privacy.not_using_in_future')
+      %li= t('.what_about_privacy.delete_data_after_1_month')
+      %li= t('.what_about_privacy.no_backups')
 
   %section#about-learn-by-doing.my-10
-    %h2 What about "learn by doing"?
+    %h2= t('.what_about_learning_by_doing.title')
+
+    %p.pb-5= t('.what_about_learning_by_doing.main_interest')
 
     %p.pb-5
-      The creators' main interest is to learn web technologies, tools that allows us to create awesome web applications like this.
-
-    %p.pb-5
-      The project's code is open sourced on
+      = t('.what_about_learning_by_doing.code_is_open_source_on')
       = succeed "," do
         = link_to 'GitHub', 'https://github.com/lxxxvi/tippkick.club)', class: 'link'
-      hosted on
+      = t('.what_about_learning_by_doing.hosted_on')
       = link_to 'Heroku', 'https://www.heroku.com/', class: 'link'
-      on a server in Dublin, Ireland.
+      = t('.what_about_learning_by_doing.on_a_server_at_location')
 
-    %p.pb-3
-      Speaking of Open source software... the internets wouldn't be the same without it! Most of the time we take this for granted, we expect that software just works. We've become spoiled.
-
-    %p.pb-5
-      That's where we'd like to send some love to all contributors of Open source software:
+    %p.pb-3= t('.what_about_learning_by_doing.speaking_of_open_source')
+    %p.pb-5= t('.what_about_learning_by_doing.send_love')
 
     %ul.open-source-credits.pb-5
       - open_source_credits_list_items.each do |list_item|
         %li= raw list_item
 
-    %p
-      Sure, there's a LOT more, but the listed projects were mainly used for this web application.
+    %p= t('.what_about_learning_by_doing.there_is_more_open_source_but')
 
   %section#about-learn-by-doing.my-10
-    %h2 Who are "the creators"?
+    %h2= t('.who_are_the_creators.title')
 
     %ul.list-disc.list-outside.my-3.ml-4
-      %li Switzerland based
-      %li Web technology enthusiasts
-      %li Code monkeys
+      %li= t('.who_are_the_creators.switzerland_based')
+      %li= t('.who_are_the_creators.web_techies')
+      %li= t('.who_are_the_creators.code_monkeys')
 
   %section#about-contact.my-10
-    %h2 Get in touch
+    %h2= t('.get_in_touch.title')
 
-    %p.my-5
-      Got questions, comments, bug reports?
-
+    %p.my-5= t('.get_in_touch.questions_comments_bug_reports')
     .mt-5
-      = mail_to 'tippkick@schuettel.dev', 'Tell us!', subject: 'About tippkick...', class: 'p-3 bg-pink-300 w-full block text-pink-900 rounded-xl text-center text-xl hover:bg-pink-600 hover:text-pink-100 transition shadow-xl'
+      = mail_to 'tippkick@schuettel.dev', t('.get_in_touch.tell_us'), subject: t('.get_in_touch.mail_subject_template'), class: 'p-3 bg-pink-300 w-full block text-pink-900 rounded-xl text-center text-xl hover:bg-pink-600 hover:text-pink-100 transition shadow-xl'

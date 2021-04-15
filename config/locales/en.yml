@@ -452,3 +452,65 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  about_component:
+    intro:
+      not_a_commercial_project: tippkick.club is not a commercial project.
+      learning_by_doing_comma: The main purpose for the creators is to "learn by doing",
+      and_the_result_is_a: and the result is a
+      free: free
+      online_betting_game: online betting game that may or may not be perfect.
+    what_does_free_mean:
+      title: What does free mean?
+      joining_is_free: Joining the game is free.
+      data_is_not_given_away: User data is NOT sold or given away.
+      no_ads_no_trackers: There are NO ads, NO trackers or whatsoever.
+      free_means_free: Free means free.
+    what_about_privacy:
+      title: What about privacy?
+      not_share_data: As mentioned, we do not share your data (i.e. your email address) with anyone.
+      not_using_in_future: We won't be using it for future activities either.
+      delete_data_after_1_month: We are going to destroy all data 1 month after the end of the tournament, thus on August 11th, 2021.
+      no_backups: We don't keep any backups either.
+    what_about_learning_by_doing:
+      title: What about "learn by doing"?
+      main_interest: The creators' main interest is to learn web technologies, tools that allows us to create awesome web applications like this.
+      code_is_open_source_on: The project's code is open sourced on
+      hosted_on: hosted on
+      on_a_server_at_location: on a server in Dublin, Ireland.
+      speaking_of_open_source: Speaking of Open source software... the internets wouldn't be the same without it! Most of the time we take this for granted, we expect that software just works. We've become spoiled.
+      send_love: "That's where we'd like to send some love to all contributors of Open source software:"
+      there_is_more_open_source_but: Sure, there's a LOT more, but the listed projects were mainly used for this web application.
+    who_are_the_creators:
+      title: Who are "the creators"?
+      switzerland_based: Switzerland based
+      web_techies: Web technology enthusiasts
+      code_monkeys: Code monkeys
+    get_in_touch:
+      title: Get in touch
+      questions_comments_bug_reports: Got questions, comments, bug reports?
+      tell_us: Tell us!
+      mail_subject_template: About tippkick...
+  landing_page_component:
+    we_are_back: We are back!
+    was_about_time_comment: "(Was about time.)"
+    the_best_online_betting_game_is_back_for: The best online betting game is back for
+    sign_up_now: Sign up now!
+    if_you_already_have_an_account: if you already have an account.
+    why_join_question: Why join?
+    why_join:
+      it_is_fun:
+        title: It's fun!
+        invite_friends_to_teams: Invite friends to your own teams.
+        compare_points: Compare points among each other.
+        make_fun_of_less_points: Make fun of friends who have less points than you.
+        argue_with_more_points: Argue with friends who have more points than you.
+        make_fun_if_global_leader: Make fun of everyone if you are the GLOBAL LEADER!
+      it_is_free:
+        title: It's free!
+        for_real: For real! We don't sell or give away your data either.
+      it_is_fair:
+        title: It's fair!
+        we_care_about_privacy: We care about privacy!
+        code_is_open_source: The app's code is Open Source!
+        delete_data_after: We delete all data 1 month after the tournament. Promised.
+        read_more: Read more
