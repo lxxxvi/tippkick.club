@@ -18,8 +18,8 @@
                 %div
                   = time_tag game.kickoff_at do
                     .text-xs
-                      %span.text-purple-500 02 April
-                      19:00 UTC
+                      %span.text-purple-500= game.kickoff_at.strftime('%d %b')
+                      = game.kickoff_at.strftime('%H:%M UTC')
                   .mt-2.flex.items-center.text-lg
                     - if game.teams_present?
                       = game.decorate.display_teams_short
