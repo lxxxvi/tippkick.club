@@ -1,0 +1,45 @@
+.landing-page.text-center
+  %h1.moving= t('.we_are_back')
+
+  %p.-mt-2.text-gray-400.text-sm= t('.was_about_time_comment')
+
+  .mt-16.text-2xl
+    = t('.the_best_online_betting_game_is_back_for')
+    UEFA Euro
+    %del
+      2020
+    = succeed '.' do
+      %ins 2021
+
+  .my-16
+    = link_to t('.sign_up_now'), new_user_registration_path, class: 'text-xl p-4 bg-pink-300 rounded-xl text-pink-900 shadow-xl hover:bg-pink-400 hover:text-pink-100 transition block'
+    .mt-5.text-sm.text-gray-600
+      = link_to t('shared.sign_in'), new_user_session_path, class: 'text-pink-400 hover:text-pink-400 transition'
+      = t('.if_you_already_have_an_account')
+
+  %h2.mt-16.text-3xl= t('.why_join.title')
+
+  %section#why-join.py-5
+    %ul.divide-y.divide-pink-50
+      %li.pb-8
+        .font-bold= t('.why_join.it_is_fun.title')
+        %ul
+          %li.py-3= t('.why_join.it_is_fun.invite_friends_to_teams')
+          %li.py-3= t('.why_join.it_is_fun.compare_points')
+          %li.py-3= t('.why_join.it_is_fun.make_fun_of_less_points')
+          %li.py-3= t('.why_join.it_is_fun.argue_with_more_points')
+          %li.py-3= t('.why_join.it_is_fun.make_fun_if_global_leader')
+
+      %li.py-8
+        .font-bold= t('.why_join.it_is_free.title')
+        %ul
+          %li.py-3= t('.why_join.it_is_free.for_real')
+
+      %li.pt-8
+        .font-bold= t('.why_join.it_is_fair.title')
+        %ul
+          %li.py-3= t('.why_join.it_is_fair.we_care_about_privacy')
+          %li.py-3= t('.why_join.it_is_fair.code_is_open_source')
+          %li.py-3= t('.why_join.it_is_fair.delete_data_after')
+          %li.py-3
+            = link_to t('.why_join.it_is_fair.read_more'), about_path, class: 'text-pink-400 hover:text-pink-500 transition'

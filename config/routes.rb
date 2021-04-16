@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   resource :profile, only: %i[show update]
 
   get '/about', to: 'about#show'
-  root 'landing_page#index'
+  root 'landing_page#show'
 end
