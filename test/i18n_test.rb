@@ -35,4 +35,24 @@ class I18nTest < ActiveSupport::TestCase
                     "Please run `i18n-tasks check-consistent-interpolations' to show them"
     assert_empty inconsistent_interpolations, error_message
   end
+
+  test '.available_locales_abbrevations' do
+    I18n.with_locale :en do
+      assert_equal({ 'de-CH': 'DE', en: 'EN' }, I18n.available_locales_abbrevations)
+    end
+
+    I18n.with_locale :'de-CH' do
+      assert_equal({ 'de-CH': 'DE', en: 'EN' }, I18n.available_locales_abbrevations)
+    end
+  end
+
+  test '.available_locales_fulls' do
+    I18n.with_locale :en do
+      assert_equal({ 'de-CH': 'German', en: 'English' }, I18n.available_locales_fulls)
+    end
+
+    I18n.with_locale :'de-CH' do
+      assert_equal({ 'de-CH': 'Deutsch', en: 'Englisch' }, I18n.available_locales_fulls)
+    end
+  end
 end

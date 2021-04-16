@@ -1,10 +1,8 @@
-require "test_helper"
+require 'test_helper'
 
 class LandingPageComponentTest < ViewComponent::TestCase
-  def test_component_renders_something_useful
-    # assert_equal(
-    #   %(<span>Hello, components!</span>),
-    #   render_inline(LandingPageComponent.new(message: "Hello, components!")).css("span").to_html
-    # )
+  test '#render' do
+    render_inline LandingPageComponent.new
+    assert_selector 'h1', text: 'We are back!'
   end
 end

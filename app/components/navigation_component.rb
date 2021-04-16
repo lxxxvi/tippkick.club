@@ -15,4 +15,18 @@ class NavigationComponent < ViewComponent::Base
 
     games_path
   end
+
+  def other_locale_key
+    other_locale.keys.first
+  end
+
+  def other_locale_abbreviation
+    other_locale.values.first
+  end
+
+  private
+
+  def other_locale
+    @other_locale ||= I18n.available_locales_abbrevations.except(I18n.locale)
+  end
 end

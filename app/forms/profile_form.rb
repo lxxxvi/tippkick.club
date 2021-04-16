@@ -46,7 +46,7 @@ class ProfileForm
   end
 
   def locales_collection
-    I18n.t('locales').map(&:reverse)
+    I18n.available_locales_fulls.map(&:reverse)
   end
 
   private

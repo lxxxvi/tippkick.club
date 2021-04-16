@@ -341,7 +341,7 @@ de-CH:
     if_you_already_have_an_account: falls du bereits einen Account hast.
     sign_up_now: Jetzt registrieren!
     the_best_online_betting_game_is_back_for: Das beste online Tippspiel ist zurück für die
-    was_about_time_comment: "(War langsam Zeit.)"
+    was_about_time_comment: "(War auch langsam Zeit.)"
     we_are_back: Wir sind zurück!
     why_join:
       it_is_fair:
@@ -362,8 +362,12 @@ de-CH:
         title: Es macht spass!
       title: Warum teilnehmen?
   locales:
-    de-CH: Deutsch (Schweiz)
-    en: Englisch
+    de-CH:
+      abbreviation: DE
+      full: Deutsch
+    en:
+      abbreviation: EN
+      full: Englisch
   navigation_component:
     open_main_menu: Hauptmenu öffnen
     open_profile_menu: Profilmenu öffnen

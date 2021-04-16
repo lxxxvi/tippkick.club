@@ -11,12 +11,15 @@ class LandingPageGamesTest < ApplicationSystemTestCase
   test 'changes the language on the landing page' do
     visit root_path
 
-    click_on 'Deutsch'
+    within('nav') do
+      click_on 'DE'
+    end
+
     assert_selector 'h1', text: 'Wir sind zurück!'
     assert_link 'Jetzt registrieren!', href: '/users/sign_up'
-    assert_selector 'h2', text: 'Warum mitmachen?'
+    assert_selector 'h2', text: 'Warum teilnehmen?'
 
-    click_on 'Mehr dazu'
+    click_on 'Mehr darüber'
 
     assert_selector 'h1', text: 'Über'
   end

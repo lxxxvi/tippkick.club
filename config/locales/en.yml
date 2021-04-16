@@ -362,8 +362,12 @@ en:
         title: It's fun!
       title: Why join?
   locales:
-    de-CH: German
-    en: English
+    de-CH:
+      abbreviation: DE
+      full: German
+    en:
+      abbreviation: EN
+      full: English
   navigation_component:
     open_main_menu: Open main menu
     open_profile_menu: Open profile menu
