@@ -7,7 +7,7 @@
             .flex-1
               .flex.flex-wrap.sm:flex-no-wrap
                 .w-full.sm:flex-1.text-sm
-                  = membership_of_user_row.team.name
+                  = render TeamNameComponent.new(team: membership_of_user_row.team)
 
                 - if show_ranking?
                   .ranking.w-full.sm:flex-shrink-0.pt-1
