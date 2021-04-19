@@ -22,7 +22,7 @@ namespace :dev do
     raise 'can only run in development' unless Rails.env.development?
     raise 'tournament has no games' if Game.count.zero?
 
-    emails = Array.new(50).map { "user_#{SecureRandom.alphanumeric(6)}@tippkick.random" }
+    emails = Array.new(50).map { "user_#{SecureRandom.alphanumeric(6).downcase}@tippkick.random" }
     team_names = Array.new(10).map { "group_#{SecureRandom.alphanumeric(6)}" }
 
     puts 'Users'
