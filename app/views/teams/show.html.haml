@@ -1,7 +1,7 @@
 - content_for :backlink do
   = render BacklinkComponent.new(name: t('shared.teams'), path: teams_path)
 
-%h1= @team.name
+%h1= render TeamNameComponent.new(team: @team)
 
 .mb-10.mt-8
   = render MembershipRankingComponent.new(team: @team, user: current_user)
