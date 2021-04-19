@@ -9,9 +9,9 @@ class TeamsTest < ApplicationSystemTestCase
 
       assert_link 'Dashboard', href: '/dashboard'
 
-      within('table') do
-        assert_selector 'td', text: 'Campeones'
-        assert_selector 'td', text: 'Global'
+      within('ul') do
+        assert_selector 'li', text: 'Campeones'
+        assert_selector 'li', text: 'Global'
       end
 
       assert_selector '.create-team', text: 'Create new team'
