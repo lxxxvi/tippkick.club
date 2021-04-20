@@ -43,3 +43,8 @@
           %li.py-3= t('.why_join.it_is_fair.delete_data_after')
           %li.py-3
             = link_to t('.why_join.it_is_fair.read_more'), about_path, class: 'text-pink-400 hover:text-pink-500 transition'
+
+  %h2.mt-10.text-3xl= t('shared.rules')
+
+  %section#rules.py-5
+    = render RulesComponent.new
