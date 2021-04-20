@@ -91,11 +91,6 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-node_modules-${{ hashFiles('./yarn.lock') }}
 
-      - name: Create master.key
-        env:
-          RAILS_MASTER_KEY_FOR_TEST: ${{ secrets.RAILS_MASTER_KEY_FOR_TEST }}
-        run: echo "${RAILS_MASTER_KEY_FOR_TEST}" > ./config/master.key
-
       - name: Setup database
         run: |
           cp ./.github/workflows/templates/database.yml.github-actions config/database.yml
