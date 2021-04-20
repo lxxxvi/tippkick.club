@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   before_action :set_team, only: %i[show edit update destroy leave join]
 
   def index
-    @memberships_of_user = current_user.memberships.with_teams.ordered_by_team_name
+    @memberships_of_user = current_user.memberships.with_teams.ordered_by_global_and_team_name
   end
 
   def show; end
