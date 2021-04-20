@@ -6,6 +6,7 @@ class DashboardComponentTest < ViewComponent::TestCase
     render_inline(component)
 
     assert_selector 'h1', text: 'Hey pele, this is your dashboard'
+    assert_selector 'h2', text: 'Rules'
     assert_selector 'section', minimum: 1
   end
 

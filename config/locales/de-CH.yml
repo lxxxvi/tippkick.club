@@ -433,6 +433,26 @@ de-CH:
     update:
       failure: Profil konnte nicht geändert werden.
       success: Profil erfolgreich gespeichert.
+  rules_component:
+    award_for_points:
+      points_for_each_score: Es gibt 1 Punkt für jedes richtig getippte Tor beim Endstand.
+      three_for_correct_outcome: Es gibt 3 Punkte für den richtig getippten Spielausgang, also Sieger bzw. Unentschieden.
+      title: Punkteverteilung
+      two_for_perfection: Es gibt 2 Bonus Punkte wenn das Resultat komplett korrekt getippt wurde.
+    betting_rules:
+      the_score_after_playtime_counts: Der Spielstand nach 90 bzw. 120 Minuten ist entscheidend, ohne Penaltyschiessen.
+      the_score_after_playtime_counts_addition: Es kann in der Knockoutphase Unentschieden geben.
+      title: Tippregeln
+      you_can_place_and_change_bets: Man kann bis zum Anpfiff jedes einzelnen Spieles tippen.
+      you_can_place_and_change_bets_addition: Man muss also nicht alles im Vorhinein tippen.
+    example:
+      maximum_total_points: Die Maximalpunktezahl liegt jedoch bei 9.
+      maximum_total_points_details: 3 für den richtigen Sieger, 4 für alle Richtigen Tore, 2 Bonus wenn alles stimmt.
+      one_for_correct_score: Du kriegst 1 Punkt für den richtigen Torendstand des Gästeteams.
+      three_for_correct_outcome: Du kriegst 3 Punke für den richtig getippten Sieger (Heimteam).
+      title: Beispiel
+      your_bet_was: Dein Tipp war 2:1, das Spiel endete effektiv 3:1.
+      your_total: Dein Total ist 4 Punkte.
   shared:
     about: Über
     actions:
@@ -482,6 +502,7 @@ de-CH:
     profile: Profil
     ranking: Rangliste
     reset_my_password: Passwort zurücksetzen
+    rules: Regeln
     sign_in: Anmelden
     sign_out: Abmelden
     sign_up: Registrieren

@@ -425,6 +425,26 @@ en:
     update:
       failure: Could not update profile.
       success: Profile updated successfully.
+  rules_component:
+    award_for_points:
+      points_for_each_score: You get 1 point for each correctly bet score.
+      three_for_correct_outcome: You get 3 points for correctly betting the winning team, or a draw.
+      title: Award for points
+      two_for_perfection: You get 2 bonus points if your bet matches exactly the final score.
+    betting_rules:
+      the_score_after_playtime_counts: The score after 90 or 120 minutes counts, without penalty shootout.
+      the_score_after_playtime_counts_addition: There can be draws in the knockout phase.
+      title: Betting rules
+      you_can_place_and_change_bets: You can place and change bets until a match begins.
+      you_can_place_and_change_bets_addition: You don't have to bet all games in advance.
+    example:
+      maximum_total_points: The maximum total points for this match would be 9 though.
+      maximum_total_points_details: 3 for correct winning team, 4 for all correct scores, 2 bonus for perfection.
+      one_for_correct_score: You get 1 point for the correct score of the guest team.
+      three_for_correct_outcome: You get 3 points for correctly betting the winning team (home team).
+      title: Example
+      your_bet_was: Your bet was 2:1, the final score was 3:1.
+      your_total: Your total is 4 points.
   shared:
     about: About
     actions:
@@ -474,6 +494,7 @@ en:
     profile: Profile
     ranking: Ranking
     reset_my_password: Reset my password
+    rules: Rules
     sign_in: Sign in
     sign_out: Sign out
     sign_up: Sign up

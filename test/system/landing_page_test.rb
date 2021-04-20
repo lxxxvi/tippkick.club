@@ -6,6 +6,7 @@ class LandingPageGamesTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'We are back!'
     assert_link 'Sign up now!', href: '/users/sign_up'
     assert_selector 'h2', text: 'Why join?'
+    assert_selector 'h2', text: 'Rules'
   end
 
   test 'changes the language on the landing page' do
@@ -18,6 +19,7 @@ class LandingPageGamesTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Wir sind zurück!'
     assert_link 'Jetzt registrieren!', href: '/users/sign_up'
     assert_selector 'h2', text: 'Warum teilnehmen?'
+    assert_selector 'h2', text: 'Regeln'
 
     click_on 'Mehr darüber'
 
