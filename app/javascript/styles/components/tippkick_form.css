@@ -19,5 +19,5 @@
 }
 
 .tippkick-form [disabled] {
-  @apply bg-gray-100 border-gray-200 text-gray-500 text-xs;
+  @apply bg-gray-100 border-gray-200 text-gray-500;
 }

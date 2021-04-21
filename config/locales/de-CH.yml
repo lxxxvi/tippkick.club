@@ -71,6 +71,7 @@ de-CH:
         name: Name
       user:
         nickname: Nickname
+        rooting_for_team: Meine Mannschaft
         total_points_short: Pkt
     errors:
       messages:
