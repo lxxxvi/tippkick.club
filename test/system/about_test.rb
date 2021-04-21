@@ -16,9 +16,9 @@ class AboutGamesTest < ApplicationSystemTestCase
     assert_link 'Start', href: '/'
 
     assert_selector 'h2', text: 'What does free mean?'
-    assert_selector 'h2', text: 'What about privacy?'
-    assert_selector 'h2', text: 'What about "learn by doing"?'
-    assert_selector 'h2', text: 'Who are "the creators"?'
+    assert_selector 'h2', text: 'What happens to my data?'
+    assert_selector 'h2', text: 'Web technologies?'
+    assert_selector 'h2', text: 'Who are we?'
     assert_selector 'h2', text: 'Get in touch'
 
     assert_link 'Tell us!'

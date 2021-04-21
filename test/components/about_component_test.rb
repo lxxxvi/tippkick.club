@@ -12,8 +12,6 @@ class AboutComponentTest < ViewComponent::TestCase
   # rubocop:disable Layout/LineLength
   def expected_open_source_credits_list_items
     [
-      '<a class="link" href="https://www.linux.org/">Linux</a>',
-      '<a class="link" href="https://git-scm.com/">Git</a>',
       '<a class="link" href="https://www.postgresql.org/">Postgres</a>',
       '<a class="link" href="https://www.ruby-lang.org/">Ruby</a>',
       '<a class="link" href="https://rubyonrails.org/">Rails</a>, <a class="link" href="https://puma.io/">Puma</a>, <a class="link" href="https://github.com/heartcombo/devise">Devise</a>, <a class="link" href="https://stimulus.hotwire.dev/">Stimulus</a>, <a class="link" href="https://docs.stimulusreflex.com/">StimulusReflex</a> and <a class="link" href="https://github.com/lxxxvi/tippkick.club/blob/main/Gemfile">the rest of the gang</a>',

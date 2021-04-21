@@ -5,11 +5,9 @@
   %h1.text-3xl= t('shared.about')
 
   %p
-    = t('.intro.not_a_commercial_project')
-    = t('.intro.learning_by_doing_comma')
-    = t('.intro.and_the_result_is_a')
-    %em.inline= t('.intro.free')
-    = t('.intro.online_betting_game')
+    = t('.intro.what_is_tippkick')
+  %p.mt-6
+    = t('.intro.free')
 
   %section#about-free.my-10
     %h2= t('.what_does_free_mean.title')
@@ -25,38 +23,32 @@
     %ul.list-disc.list-outside.my-3.ml-4
       %li= t('.what_about_privacy.not_share_data')
       %li= t('.what_about_privacy.not_using_in_future')
+      %li= t('.what_about_privacy.passwords_are_encrypted')
+      %li= t('.what_about_privacy.your_data_are_in_location')
       %li= t('.what_about_privacy.delete_data_after_1_month')
       %li= t('.what_about_privacy.no_backups')
 
   %section#about-learn-by-doing.my-10
-    %h2= t('.what_about_learning_by_doing.title')
+    %h2= t('.what_about_web_technologies.title')
 
-    %p.pb-5= t('.what_about_learning_by_doing.main_interest')
-
-    %p.pb-5
-      = t('.what_about_learning_by_doing.code_is_open_source_on')
-      = succeed "," do
-        = link_to 'GitHub', 'https://github.com/lxxxvi/tippkick.club', class: 'link'
-      = t('.what_about_learning_by_doing.hosted_on')
-      = link_to 'Heroku', 'https://www.heroku.com/', class: 'link'
-      = t('.what_about_learning_by_doing.on_a_server_at_location')
-
-    %p.pb-3= t('.what_about_learning_by_doing.speaking_of_open_source')
-    %p.pb-5= t('.what_about_learning_by_doing.send_love')
+    %p.pb-3= t('.what_about_web_technologies.used_technologies')
 
     %ul.open-source-credits.pb-5
       - open_source_credits_list_items.each do |list_item|
         %li= raw list_item
 
-    %p= t('.what_about_learning_by_doing.there_is_more_open_source_but')
+    %p.pb-3
+      = t('.what_about_web_technologies.code_is_open_sourced_on')
+      = succeed "." do
+        = link_to 'GitHub', 'https://github.com/lxxxvi/tippkick.club', class: 'link'
 
   %section#about-learn-by-doing.my-10
-    %h2= t('.who_are_the_creators.title')
+    %h2= t('.about_us.title')
 
     %ul.list-disc.list-outside.my-3.ml-4
-      %li= t('.who_are_the_creators.switzerland_based')
-      %li= t('.who_are_the_creators.web_techies')
-      %li= t('.who_are_the_creators.code_monkeys')
+      %li= t('.about_us.switzerland_based')
+      %li= t('.about_us.web_techies')
+      %li= t('.about_us.code_monkeys')
 
   %section#about-contact.my-10
     %h2= t('.get_in_touch.title')

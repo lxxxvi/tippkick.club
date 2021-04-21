@@ -1,43 +1,37 @@
 ---
 de-CH:
   about_component:
+    about_us:
+      code_monkeys: Code monkeys
+      switzerland_based: In der Schweiz zuhause
+      title: Wer sind wir?
+      web_techies: Webtechnologieliebhaber*innen
     get_in_touch:
       mail_subject_template: Über tippkick...
       questions_comments_bug_reports: Hast du Fragen, Kommentare oder möchtest ein Problem melden?
       tell_us: Erzähl es uns!
       title: Kontakt
     intro:
-      and_the_result_is_a: und das Resultat ist ein
-      free: gratis
-      learning_by_doing_comma: Das Hauptziel der Erschöpfer*innen war "learn by doing"
-      not_a_commercial_project: Tippkick ist kein kommerzielles Produkt.
-      online_betting_game: online Tippspiel welches vielleicht oder vielleicht nicht perfekt ist.
-    what_about_learning_by_doing:
-      code_is_open_source_on: Der Code ist Open Source auf
-      hosted_on: gehosted bei
-      main_interest: Die Erschöpfer*innen wollen primär Webtechnologien kennenlernen, also Tools, die man zur Erstellung fantastischer Webapplikationen wie diese benutzen kann.
-      on_a_server_at_location: auf einem Server in Dublin, Irland.
-      send_love: 'An dieser Stelle möchten wir mal allen Mitwirkenden von Open Source Software Danke sagen:'
-      speaking_of_open_source: Apropos Open Source Software... das Internet wäre nicht das Gleiche ohne Open Source! Für uns ist das selbstverständlich geworden und wir erwarten, dass Software einfach funktioniert. Wir werden verwöhnt.
-      there_is_more_open_source_but: Natürlich gibt es noch VIEL mehr, aber die aufgelisteten Projekte wurden hauptsächlich in dieser Webapplikation verwendet.
-      title: Was bedeutet "learn by doing"?
+      free: Deshalb ist das Spiel gratis, die Benutzerdaten werden nicht weitergegeben und nicht aufbewahrt.
+      what_is_tippkick: Bei tippkick.club handelt sich um ein privates Projekt, bei welchem das Lernen diverser Web Technologien im Vordergrund steht.
     what_about_privacy:
       delete_data_after_1_month: Wir werden sämtliche Daten 1 Monat nach Turnierende löschen, also am 11. August 2021.
       no_backups: Wir behalten auch keine Backups.
-      not_share_data: Wie erwähnt, teilen wir deine Daten (z.B. deine Emailadresse) mit Niemanden.
+      not_share_data: Wir teilen deine Daten mit Niemanden.
       not_using_in_future: Wir werden die Daten auch nicht für künftige Aktionen benutzen.
-      title: Was bedeutet Datenschutz?
+      passwords_are_encrypted: Passwörter werden verschlüsselt gespeichert.
+      title: Was passiert mit meinen Daten?
+      your_data_are_in_location: Die Daten werden bis zur Löschung auf einem Server in Dublin (Irland) gespeichert.
+    what_about_web_technologies:
+      code_is_open_sourced_on: Der Code zu diesem Projekt ist Open Sourced auf
+      title: Web Technologien?
+      used_technologies: 'Dieses Projekt unter anderem wurde mit folgenden Technologien und Tools realisiert:'
     what_does_free_mean:
       data_is_not_given_away: Benutzerdaten werden nicht verkauft oder weitergegeben.
       free_means_free: Gratis bedeutet Gratis.
       joining_is_free: Teilnehmen ist gratis.
-      no_ads_no_trackers: Es gibt keine Werbung und keine Tracker oder ähnliches.
+      no_ads_no_trackers: Es gibt keine Werbung, keine Tracker oder ähnliches.
       title: Was bedeutet Gratis?
-    who_are_the_creators:
-      code_monkeys: Code monkeys
-      switzerland_based: In der Schweiz zuhause
-      title: Wer sind die "Erschöpfer*innen"?
-      web_techies: Webtechnologieliebhaber*innen
   activerecord:
     attributes:
       game:
@@ -339,19 +333,14 @@ de-CH:
     refresh_invitation_link: Einladungslink erneuern
   landing_page_component:
     if_you_already_have_an_account: falls du bereits einen Account hast.
-    sign_up_now: Jetzt registrieren!
+    sign_up_now: Gratis registrieren!
     the_best_online_betting_game_is_back_for: Das beste online Tippspiel ist zurück für die
     was_about_time_comment: "(War auch langsam Zeit.)"
     we_are_back: Wir sind zurück!
     why_join:
-      it_is_fair:
-        code_is_open_source: Der Code ist Open Source!
-        delete_data_after: Wir löschen alle Daten 1 Monat nach dem Turnier. Versprochen.
-        read_more: Mehr darüber
-        title: Es ist fair!
-        we_care_about_privacy: Wir nehmen Datenschutz ernst!
       it_is_free:
-        for_real: Jawohl. Wir verkaufen oder vergeben deine Daten auch nicht weiter.
+        for_real: Jawohl. Wir verkaufen oder geben deine Daten auch nicht weiter.
+        no_money_involved: 'Es wird nicht um Geld gewettet. Es geht um viel mehr: Ruhm und Ehre.'
         title: Es ist gratis!
       it_is_fun:
         argue_with_more_points: Streite mit Freunden, die mehr Punkte haben als du.
@@ -360,6 +349,7 @@ de-CH:
         make_fun_if_global_leader: Mach dich über alle anderen lustig wenn du der GLOBAL LEADER bist!
         make_fun_of_less_points: Mach dich über Freunde lustig, die weniger Punkte haben als du.
         title: Es macht spass!
+      read_more: Mehr darüber
       title: Warum teilnehmen?
   locales:
     de-CH:
