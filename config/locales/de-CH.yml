@@ -333,19 +333,14 @@ de-CH:
     refresh_invitation_link: Einladungslink erneuern
   landing_page_component:
     if_you_already_have_an_account: falls du bereits einen Account hast.
-    sign_up_now: Jetzt registrieren!
+    sign_up_now: Gratis registrieren!
     the_best_online_betting_game_is_back_for: Das beste online Tippspiel ist zurück für die
     was_about_time_comment: "(War auch langsam Zeit.)"
     we_are_back: Wir sind zurück!
     why_join:
-      it_is_fair:
-        code_is_open_source: Der Code ist Open Source!
-        delete_data_after: Wir löschen alle Daten 1 Monat nach dem Turnier. Versprochen.
-        read_more: Mehr darüber
-        title: Es ist fair!
-        we_care_about_privacy: Wir nehmen Datenschutz ernst!
       it_is_free:
-        for_real: Jawohl. Wir verkaufen oder vergeben deine Daten auch nicht weiter.
+        for_real: Jawohl. Wir verkaufen oder geben deine Daten auch nicht weiter.
+        no_money_involved: 'Es wird nicht um Geld gewettet. Es geht um viel mehr: Ruhm und Ehre.'
         title: Es ist gratis!
       it_is_fun:
         argue_with_more_points: Streite mit Freunden, die mehr Punkte haben als du.
@@ -354,6 +349,7 @@ de-CH:
         make_fun_if_global_leader: Mach dich über alle anderen lustig wenn du der GLOBAL LEADER bist!
         make_fun_of_less_points: Mach dich über Freunde lustig, die weniger Punkte haben als du.
         title: Es macht spass!
+      read_more: Mehr darüber
       title: Warum teilnehmen?
   locales:
     de-CH:

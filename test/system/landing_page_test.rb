@@ -4,7 +4,7 @@ class LandingPageGamesTest < ApplicationSystemTestCase
   test 'visit landig page' do
     visit root_path
     assert_selector 'h1', text: 'We are back!'
-    assert_link 'Sign up now!', href: '/users/sign_up'
+    assert_link 'Sign up for free!', href: '/users/sign_up'
     assert_selector 'h2', text: 'Why join?'
     assert_selector 'h2', text: 'Rules'
   end
@@ -17,7 +17,7 @@ class LandingPageGamesTest < ApplicationSystemTestCase
     end
 
     assert_selector 'h1', text: 'Wir sind zurück!'
-    assert_link 'Jetzt registrieren!', href: '/users/sign_up'
+    assert_link 'Gratis registrieren!', href: '/users/sign_up'
     assert_selector 'h2', text: 'Warum teilnehmen?'
     assert_selector 'h2', text: 'Regeln'
 

@@ -333,19 +333,14 @@ en:
     refresh_invitation_link: Refresh invitation link
   landing_page_component:
     if_you_already_have_an_account: if you already have an account.
-    sign_up_now: Sign up now!
+    sign_up_now: Sign up for free!
     the_best_online_betting_game_is_back_for: The best online betting game is back for
     was_about_time_comment: "(Was about time.)"
     we_are_back: We are back!
     why_join:
-      it_is_fair:
-        code_is_open_source: The app's code is Open Source!
-        delete_data_after: We delete all data 1 month after the tournament. Promised.
-        read_more: Read more
-        title: It's fair!
-        we_care_about_privacy: We care about privacy!
       it_is_free:
         for_real: For real! We don't sell or give away your data either.
+        no_money_involved: 'You are not betting for money. It''s about more than that: Fame and Honour.'
         title: It's free!
       it_is_fun:
         argue_with_more_points: Argue with friends who have more points than you.
@@ -354,6 +349,7 @@ en:
         make_fun_if_global_leader: Make fun of everyone if you are the GLOBAL LEADER!
         make_fun_of_less_points: Make fun of friends who have less points than you.
         title: It's fun!
+      read_more: Read more
       title: Why join?
   locales:
     de-CH:
