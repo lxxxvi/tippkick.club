@@ -1,7 +1,3 @@
-.about .link {
-  @apply text-pink-400 hover:text-pink-600 transition;
-}
-
 .about p {
   @apply text-justify;
 }
