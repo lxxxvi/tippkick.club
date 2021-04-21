@@ -9,6 +9,10 @@ class ProfileForm
     @params = params
   end
 
+  def email
+    @object.email
+  end
+
   def nickname
     @params[:nickname] || @object.nickname
   end

@@ -71,6 +71,7 @@ en:
         name: Name
       user:
         nickname: Nickname
+        rooting_for_team: Rooting for team
         total_points_short: Pts
     errors:
       messages:

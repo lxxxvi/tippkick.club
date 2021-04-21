@@ -7,8 +7,10 @@ class ProfileFormComponentTest < ViewComponent::TestCase
 
     render_inline component
 
+    assert_field 'Email', with: 'diego@tippkick.test', disabled: true
     assert_field 'Nickname', with: 'digi'
     assert_select 'Rooting for team', selected: 'Spain 🇪🇸'
+    assert_select 'Language', selected: 'English'
   end
 
   test '.render, form errors' do
