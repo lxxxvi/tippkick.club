@@ -55,4 +55,14 @@ class I18nTest < ActiveSupport::TestCase
       assert_equal({ 'de-CH': 'Deutsch', en: 'Englisch' }, I18n.available_locales_fulls)
     end
   end
+
+  test '.root_locale' do
+    I18n.with_locale :en do
+      assert_equal 'en', I18n.root_locale
+    end
+
+    I18n.with_locale :'de-CH' do
+      assert_equal 'de', I18n.root_locale
+    end
+  end
 end
