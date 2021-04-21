@@ -12,4 +12,4 @@
         = resource.errors.full_messages_for(:email).join(', ')
   .actions.mt-6.grid.grid-cols-1.gap-4
     = f.submit t('shared.reset_my_password'), class: 'button w-full'
-    = link_to t('shared.sign_in'), new_session_path(resource_name), class: 'shy-link text-center mt-2'
+    = link_to t('shared.sign_in'), new_session_path(resource_name), class: 'shy-link text-center text-sm mt-2'

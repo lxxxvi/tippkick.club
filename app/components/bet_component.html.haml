@@ -39,7 +39,7 @@
           = t('.not_ready_to_bet')
 
     = c.footer do
-      .text-2xs.text-gray-400
+      .text-2xs.text-gray-500
         = time_tag @bet.game.kickoff_at do
           = t('shared.kickoff_in')
           = @bet.game.decorate.display_kickoff_at_from_now

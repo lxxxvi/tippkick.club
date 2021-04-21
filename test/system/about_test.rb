@@ -8,9 +8,7 @@ class AboutGamesTest < ApplicationSystemTestCase
       assert_link 'About', href: '/about'
     end
 
-    assert_link 'Read more', href: '/about'
-
-    click_on 'Read more'
+    click_on 'More about the app'
 
     assert_selector 'h1', text: 'About'
     assert_link 'Start', href: '/'

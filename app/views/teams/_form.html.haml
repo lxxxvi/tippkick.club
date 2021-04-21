@@ -8,4 +8,4 @@
   .actions.mt-6.grid.grid-cols-1.gap-4
     - button_text = @team.new_record? ? t('teams.actions.create') : t('teams.actions.update')
     = f.submit button_text, class: 'button w-full'
-    = link_to t('shared.actions.cancel'), @team, class: 'shy-link text-center'
+    = link_to t('shared.actions.cancel'), @team, class: 'shy-link text-center text-center'

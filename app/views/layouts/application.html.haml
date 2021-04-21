@@ -1,9 +1,10 @@
 !!!
-%html
+%html{ lang: I18n.root_locale }
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title tippkick.club
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    %meta{ name: :description, content: t('shared.meta_description') }/
     = csrf_meta_tags
     = csp_meta_tag
     = action_cable_meta_tag

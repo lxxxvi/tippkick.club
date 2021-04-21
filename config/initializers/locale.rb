@@ -5,6 +5,10 @@
 # I18n.default_locale = :de
 
 module I18n
+  def self.root_locale
+    I18n.locale.to_s.split('-').first
+  end
+
   def self.available_locales_abbrevations
     available_locales_for(:abbreviation)
   end
