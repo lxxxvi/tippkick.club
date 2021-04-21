@@ -1,43 +1,37 @@
 ---
 en:
   about_component:
+    about_us:
+      code_monkeys: Code monkeys
+      switzerland_based: Switzerland based
+      title: Who are we?
+      web_techies: Web technology enthusiasts
     get_in_touch:
       mail_subject_template: About tippkick...
       questions_comments_bug_reports: Got questions, comments, bug reports?
       tell_us: Tell us!
       title: Get in touch
     intro:
-      and_the_result_is_a: and the result is a
-      free: free
-      learning_by_doing_comma: The main purpose for the creators is to "learn by doing",
-      not_a_commercial_project: Tippkick is not a commercial project.
-      online_betting_game: online betting game that may or may not be perfect.
-    what_about_learning_by_doing:
-      code_is_open_source_on: The project's code is open sourced on
-      hosted_on: hosted on
-      main_interest: The creators' main interest is to learn web technologies, tools that allows us to create awesome web applications like this.
-      on_a_server_at_location: on a server in Dublin, Ireland.
-      send_love: 'That''s where we''d like to send some love to all contributors of Open source software:'
-      speaking_of_open_source: Speaking of Open source software... the internets wouldn't be the same without it! Most of the time we take this for granted, we expect that software just works. We've become spoiled.
-      there_is_more_open_source_but: Sure, there's a LOT more, but the listed projects were mainly used for this web application.
-      title: What about "learn by doing"?
+      free: That's why the game is free and your data are kept private at all times.
+      what_is_tippkick: tippkick.club is a private project, where the learning of web technologies is in the focus.
     what_about_privacy:
       delete_data_after_1_month: We are going to destroy all data 1 month after the end of the tournament, thus on August 11th, 2021.
       no_backups: We don't keep any backups either.
-      not_share_data: As mentioned, we do not share your data (i.e. your email address) with anyone.
+      not_share_data: We do not share your data with anyone.
       not_using_in_future: We won't be using it for future activities either.
-      title: What about privacy?
+      passwords_are_encrypted: Passwords are stored encrypted.
+      title: What happens to my data?
+      your_data_are_in_location: Your data are stored on a server in Dublin, Ireland, until they get deleted.
+    what_about_web_technologies:
+      code_is_open_sourced_on: The code is open sourced on
+      title: Web technologies?
+      used_technologies: 'This project has been developed using following technologies (among others):'
     what_does_free_mean:
-      data_is_not_given_away: User data is NOT sold or given away.
+      data_is_not_given_away: User data are not sold or given away.
       free_means_free: Free means free.
-      joining_is_free: Joining the game is free.
-      no_ads_no_trackers: There are NO ads, NO trackers or whatsoever.
+      joining_is_free: Joining is free.
+      no_ads_no_trackers: There are no ads, no trackers or whatsoever.
       title: What does free mean?
-    who_are_the_creators:
-      code_monkeys: Code monkeys
-      switzerland_based: Switzerland based
-      title: Who are "the creators"?
-      web_techies: Web technology enthusiasts
   activerecord:
     attributes:
       game:

@@ -1,8 +1,6 @@
 class AboutComponent < ViewComponent::Base
   def open_source_credits_list_items
     [
-      os_credits,
-      vcs_credits,
       rdbms_credits,
       language_credits,
       application_credits,
@@ -17,14 +15,6 @@ class AboutComponent < ViewComponent::Base
   def to_link(row)
     name, path = row
     link_to name, path, class: 'link'
-  end
-
-  def os_credits
-    [['Linux', 'https://www.linux.org/']]
-  end
-
-  def vcs_credits
-    [['Git', 'https://git-scm.com/']]
   end
 
   def rdbms_credits
