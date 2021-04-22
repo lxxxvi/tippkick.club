@@ -44,4 +44,21 @@ class ProfilesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal 'Could not update profile.', flash[:alert]
   end
+
+  test 'get delete' do
+    user = users(:diego)
+    sign_in_as :diego
+
+    assert_difference -> { User.count }, -1 do
+      delete profile_path
+    end
+
+    follow_redirect!
+    assert_response :success
+    assert_equal 'Account deleted successfully.', flash[:notice]
+
+    assert_raises ActiveRecord::RecordNotFound do
+      user.reload
+    end
+  end
 end
