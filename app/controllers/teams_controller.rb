@@ -71,6 +71,10 @@ class TeamsController < ApplicationController
   end
 
   def set_team
-    @team = Team.find_by!(tippkick_id: params[:id])
+    @team = Team.find_by!(tippkick_id: decoded_params_id)
+  end
+
+  def decoded_params_id
+    params[:id].split('-').first
   end
 end

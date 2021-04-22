@@ -141,7 +141,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
     sign_in_as :pele
 
     assert_difference -> { Membership.count }, +1 do
-      get join_team_url(team, 'campeones_token')
+      get join_team_url(id: 'tkid_campeones-campeones', token: 'campeones_token')
     end
 
     team.membership_for(user).tap do |membership|
@@ -171,12 +171,10 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'member get join, nothing happens' do
-    team = teams(:campeones)
-
     sign_in_as :pele
 
     assert_no_difference -> { Membership.count } do
-      get join_team_url(team, 'campeones_token')
+      get join_team_url(id: 'tkid_campeones-campeones', token: 'campeones_token')
     end
 
     follow_redirect!
