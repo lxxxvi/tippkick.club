@@ -420,7 +420,13 @@ de-CH:
     precision:
       format:
         delimiter: ''
+  profile_form_component:
+    cannot_be_undone_comment: "(Dies kann nicht Rückgängig gemacht werden.)"
+    confirm_deletion: Löschen bestätigen
+    delete_account: Mein Konto löschen
   profiles:
+    destroy:
+      success: Konto wurde gelöscht.
     update:
       failure: Profil konnte nicht geändert werden.
       success: Profil erfolgreich gespeichert.

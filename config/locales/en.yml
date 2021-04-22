@@ -412,7 +412,13 @@ en:
     precision:
       format:
         delimiter: ''
+  profile_form_component:
+    cannot_be_undone_comment: "(This cannot be undone.)"
+    confirm_deletion: Confirm deletion
+    delete_account: Delete my account
   profiles:
+    destroy:
+      success: Account deleted successfully.
     update:
       failure: Could not update profile.
       success: Profile updated successfully.

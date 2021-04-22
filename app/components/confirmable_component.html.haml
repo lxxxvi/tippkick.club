@@ -1,0 +1,11 @@
+.confirmable.mt-6{ data: { controller: 'confirmable', 'confirmable-confirmation-opened-value': false } }
+  .flex.flex-wrap.w-full
+    .confirmable--pre.w-full{ data: { 'confirmable-target': 'pre' } }
+      %button.dangerous-button.w-full{ data: { action: 'confirmable#openConfirmation' } }
+        = pre
+    .confirmable--confirm.w-full{ data: { 'confirmable-target': 'confirm' } }
+      .confirmable--confirm--cancel
+        %button.shy-link.w-full.py-2.border-transparent.border-y-2.mb-4{ data: { action: 'confirmable#closeConfirmation' } }
+          = cancel
+      .confirmable--confirm--proceed
+        = proceed

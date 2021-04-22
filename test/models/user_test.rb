@@ -59,4 +59,13 @@ class UserTest < ActiveSupport::TestCase
     assert_not User.new(titles: 0).titles?
     assert User.new(titles: 1).titles?
   end
+
+  test '#destroy' do
+    user = users(:diego)
+    assert_changes -> { Bet.where(user: user).count } do
+      assert_changes -> { Membership.where(user: user).count } do
+        assert user.destroy
+      end
+    end
+  end
 end

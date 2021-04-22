@@ -22,3 +22,15 @@
     = f.hidden_field :redirect_to_path
     = f.submit t('shared.actions.save'), class: 'button w-full'
     = link_to t('shared.actions.cancel'), dashboard_path, class: 'text-center text-sm shy-link'
+
+.actions
+  = render ConfirmableComponent.new do |c|
+    = c.pre do
+      = t('.delete_account')
+
+    = c.cancel do
+      = t('shared.actions.cancel')
+
+    = c.proceed do
+      = link_to t('.confirm_deletion'), profile_path, method: :delete, class: 'really-dangerous-button w-full'
+      .text-gray-500.mt-2.text-xs.text-center= t('.cannot_be_undone_comment')
