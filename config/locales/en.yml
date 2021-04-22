@@ -413,6 +413,8 @@ en:
       format:
         delimiter: ''
   profiles:
+    destroy:
+      success: Account deleted successfully.
     update:
       failure: Could not update profile.
       success: Profile updated successfully.

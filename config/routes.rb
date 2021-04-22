@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resource :dashboard, only: %i[show]
-  resource :profile, only: %i[show update]
+  resource :profile, only: %i[show update destroy]
 
   get '/about', to: 'about#show'
   root 'landing_page#show'

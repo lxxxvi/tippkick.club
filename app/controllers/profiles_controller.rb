@@ -15,6 +15,14 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    current_user.destroy
+    sign_out current_user
+
+    flash[:notice] = t('.success')
+    redirect_to(root_path)
+  end
+
   private
 
   def redirect_to_path

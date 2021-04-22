@@ -421,6 +421,8 @@ de-CH:
       format:
         delimiter: ''
   profiles:
+    destroy:
+      success: Konto wurde gelöscht.
     update:
       failure: Profil konnte nicht geändert werden.
       success: Profil erfolgreich gespeichert.
