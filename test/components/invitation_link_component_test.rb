@@ -11,7 +11,7 @@ class InvitationLinkComponentTest < ViewComponent::TestCase
     assert_selector 'label', text: 'Invitation link'
     assert_selector 'button', text: 'Copy'
     assert_field 'Invitation link',
-                 with: 'http://tippkick.test/teams/tkid_campeones/join/campeones_token'
+                 with: 'http://tippkick.test/teams/tkid_campeones-campeones/join/campeones_token'
   end
 
   test '#render, not if not authorized' do
