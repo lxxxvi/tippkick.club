@@ -51,15 +51,17 @@ class ProfileTest < ApplicationSystemTestCase
   end
 
   test 'deletes the account' do
-    sign_in_as :diego
-    navigate_to 'Profile'
-    click_on 'Delete my account'
-    click_on 'Yes, I confirm.'
+    using_browser do
+      sign_in_as :diego
+      click_on 'Profile'
+      click_on 'Delete my account'
+      click_on 'Confirm deletion'
 
-    assert_selector '.flash-messages', text: 'Account deleted successfully.'
+      assert_selector '.flash-messages', text: 'Account deleted successfully.'
 
-    within('nav') do
-      assert_link 'Dashboard', count: 0
+      within('nav') do
+        assert_link 'Dashboard', count: 0
+      end
     end
   end
 end
