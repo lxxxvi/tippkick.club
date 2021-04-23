@@ -8,13 +8,13 @@ class BetComponent < ViewComponent::Base
   end
 
   def border_color_class
-    return 'border-pink-200' if @bet.bet_ready?
+    return 'border-pink-300' if @bet.bet_ready?
 
     'border-gray-200'
   end
 
   def bg_color_class
-    return 'bg-pink-200' if @bet.bet_ready?
+    return 'bg-pink-300' if @bet.bet_ready?
 
     'bg-gray-200'
   end

@@ -32,6 +32,8 @@ en:
       joining_is_free: Joining is free.
       no_ads_no_trackers: There are no ads, no trackers or whatsoever.
       title: What does free mean?
+  achievement_bar_component:
+    you_scored_x_out_of_y_points: You scored %{x} out of %{y} points
   activerecord:
     attributes:
       game:
