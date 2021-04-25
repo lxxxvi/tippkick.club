@@ -3,5 +3,27 @@
 
 = render TournamentNavigationComponent.new
 
-.bets-with-game
-  = render partial: 'bet_with_game', collection: @bets_with_game
+.bets-with-game.grid.grid-cols-1.gap-4
+  - @bets_with_game.each do |bet_with_game|
+    .bet-with-game.border-2.border-pink-300.rounded-xl.overflow-hidden
+      .flex.items-stretch.flex-wrap
+        .w-full.bg-pink-300.py-4.px-2.grid.grid-col-1.justify-items-center.items-center
+          - if bet_with_game.game.live?
+            .flex.justify-items-center.items-center
+              %span.animate-pulse.block.h-3.w-3.rounded-full.bg-red-500
+              .text-xs.tracking-wider.ml-2.inline.text-gray-700 LIVE
+          - else
+            = render AchievementBarComponent.new(actual_points: bet_with_game.total_points, maximum_points: bet_with_game.game.max_total_points)
+        .w-full.py-4
+          .grid.grid-cols-2.gap-y-4.justify-items-center
+            .text-pink-500.text-sm= bet_with_game.game.decorate.display_home_team_name
+            .text-pink-500.text-sm= bet_with_game.game.decorate.display_guest_team_name
+            - if bet_with_game.game.live?
+              .text-5xl.text-gray-400= bet_with_game.game.home_team_score
+              .text-5xl.text-gray-400= bet_with_game.game.guest_team_score
+            - else
+              .text-5xl= bet_with_game.game.home_team_score
+              .text-5xl= bet_with_game.game.guest_team_score
+          .mt-4.grid.grid-cols-2.gap-y-4.justify-items-center.items-center
+            .text-blue-500= "(#{bet_with_game.home_team_score})"
+            .text-blue-500= "(#{bet_with_game.guest_team_score})"

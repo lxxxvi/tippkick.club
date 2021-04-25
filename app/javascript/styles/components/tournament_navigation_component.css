@@ -1,10 +1,14 @@
+nav.tournament-navigation {
+  @apply border-2 border-pink-300 rounded-xl;
+}
+
 nav.tournament-navigation a,
 nav.tournament-navigation span {
-  @apply w-full border-2 text-center py-2 border-collapse border-pink-300;
+  @apply w-full border-2 text-center py-2 border-collapse border-white;
 }
 
 nav.tournament-navigation a {
-  @apply bg-pink-100 hover:bg-pink-200 transition;
+  @apply hover:bg-pink-100 transition;
 }
 
 nav.tournament-navigation span {
@@ -12,14 +16,9 @@ nav.tournament-navigation span {
 }
 
 nav.tournament-navigation .left {
-  @apply rounded-l-lg border-r-0;
+  @apply rounded-l-xl border-r-0;
 }
 
 nav.tournament-navigation .right {
-  @apply rounded-r-lg border-l-0;
+  @apply rounded-r-xl border-l-0;
 }
-
-
-
-
-
