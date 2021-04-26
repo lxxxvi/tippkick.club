@@ -1,0 +1,11 @@
+%div{ id: element_id }
+  .stats-menu-toggler.w-full
+    %button.w-full
+      - if display_stats?
+        / chevron UP
+        %svg.mx-auto.h-6.w-6.text-gray-500{fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg'}
+          %path{d: 'M5 15l7-7 7 7', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2'}
+      - else
+        / chevron DOWN
+        %svg.mx-auto.h-6.w-6.text-gray-500.hover:text-black.transition{fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg'}
+          %path{d: 'M19 9l-7 7-7-7', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2'}
