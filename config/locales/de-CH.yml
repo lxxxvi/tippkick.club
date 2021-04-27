@@ -321,6 +321,9 @@ de-CH:
       header:
         one: 'Konnte %{model} nicht speichern: ein Fehler.'
         other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
+  game_stats_component:
+    bets_by_outcome: Nach Ergebnis
+    bets_by_scores: Nach Torstand
   helpers:
     select:
       prompt: Bitte wählen
@@ -494,6 +497,7 @@ de-CH:
     kickoff_in: Anpfiff in
     language: Sprache
     live: Live
+    loading: Lade
     members: Mitglieder
     meta_description: Gratis online Tippspiel für die UEFA Euro 2020.
     new_password: Neues Passwort

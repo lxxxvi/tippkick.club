@@ -3,6 +3,7 @@ class Game < ApplicationRecord
   include Venues
 
   has_many :bets, dependent: :destroy
+  has_many :bets_stats, dependent: :destroy
 
   validates :uefa_game_id, :venue, :tournament_phase,
             :home_team_score, :guest_team_score,
@@ -57,6 +58,10 @@ class Game < ApplicationRecord
 
   def teams_present?
     home_team_name.present? && guest_team_name.present?
+  end
+
+  def bets_count
+    @bets_count ||= bets_home_team_wins_count + bets_guest_team_wins_count + bets_draw_count
   end
 
   private

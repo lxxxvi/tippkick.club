@@ -321,6 +321,9 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+  game_stats_component:
+    bets_by_outcome: Bets by outcome
+    bets_by_scores: Bets by scores
   helpers:
     select:
       prompt: Please select
@@ -486,6 +489,7 @@ en:
     kickoff_in: Kickoff in
     language: Language
     live: Live
+    loading: Loading
     members: Members
     meta_description: Free online betting game for UEFA Euro 2020.
     new_password: New password

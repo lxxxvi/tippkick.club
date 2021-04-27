@@ -17,9 +17,12 @@ class GamesTest < ApplicationSystemTestCase
         navigate_to 'Tournament'
 
         within('#bet-with-game-25') do
-          assert_selector 'h3', text: 'Popular bets', count: 0
-          click_on 'button[aria-controls=game-stats]'
-          assert_selector 'h3', text: 'Popular bets'
+          assert_selector 'h3', text: 'BETS BY OUTCOME', count: 0
+          assert_selector 'h3', text: 'BETS BY SCORES', count: 0
+          click_button
+          assert_selector 'h3', text: 'BETS BY OUTCOME'
+          assert_selector 'h3', text: 'BETS BY SCORES'
+          assert_selector '.bets-stat', count: 2
         end
       end
     end

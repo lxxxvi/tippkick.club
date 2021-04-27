@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_14_052658) do
+ActiveRecord::Schema.define(version: 2021_04_29_071506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2021_04_14_052658) do
     t.index ["user_id"], name: "index_bets_on_user_id"
   end
 
+  create_table "bets_stats", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.integer "bet_home_team_score", null: false
+    t.integer "bet_guest_team_score", null: false
+    t.integer "bet_count", null: false
+    t.index ["game_id", "bet_home_team_score", "bet_guest_team_score"], name: "indx_uniq_game_bets_stats", unique: true
+    t.index ["game_id"], name: "index_bets_stats_on_game_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "uefa_game_id", null: false
     t.string "venue", null: false
@@ -45,6 +54,9 @@ ActiveRecord::Schema.define(version: 2021_04_14_052658) do
     t.integer "max_total_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "bets_home_team_wins_count", default: 0, null: false
+    t.integer "bets_guest_team_wins_count", default: 0, null: false
+    t.integer "bets_draw_count", default: 0, null: false
     t.index ["tournament_phase", "home_team_name", "guest_team_name"], name: "index_phase_home_guest", unique: true
     t.index ["uefa_game_id"], name: "index_games_on_uefa_game_id", unique: true
   end
@@ -93,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_04_14_052658) do
     t.index ["tippkick_id"], name: "index_users_on_tippkick_id", unique: true
   end
 
+  add_foreign_key "bets_stats", "games"
   add_foreign_key "memberships", "teams"
   add_foreign_key "memberships", "users"
 end

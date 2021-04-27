@@ -1,14 +1,9 @@
 class GameStatsComponent < ViewComponent::Base
-  def initialize(game, display_stats: true)
+  def initialize(game:)
     @game = game
-    @display_stats = display_stats
   end
 
-  def display_stats?
-    @display_stats
-  end
-
-  def element_id
-    "game-stats-#{@game.id}"
+  def bets_stats_element_id
+    "game-#{@game.id}-bets-stats"
   end
 end

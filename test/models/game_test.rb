@@ -161,4 +161,9 @@ class GameTest < ActiveSupport::TestCase
       assert_nil game.guest_team_name
     end
   end
+
+  test '#bets_count' do
+    game = Game.new(bets_home_team_wins_count: 8, bets_guest_team_wins_count: 9, bets_draw_count: 7)
+    assert_equal 24, game.bets_count
+  end
 end
