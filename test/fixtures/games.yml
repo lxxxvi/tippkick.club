@@ -17,6 +17,9 @@ game_1:
   kickoff_at: 2021-06-11 19:00:00
   final_whistle_at: 2021-06-11 21:00:00
   max_total_points: 12
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 1
+  bets_draw_count: 1
 
 game_2:
   <<: *DEFAULTS
@@ -30,6 +33,9 @@ game_2:
   kickoff_at: 2021-06-12 13:00:00
   final_whistle_at: 2021-06-12 15:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 2
 
 game_13:
   <<: *DEFAULTS
@@ -43,6 +49,9 @@ game_13:
   kickoff_at: 2021-06-16 16:00:00
   final_whistle_at: 2021-06-16 18:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 1
+  bets_draw_count: 0
 
 game_14:
   <<: *DEFAULTS
@@ -56,6 +65,9 @@ game_14:
   kickoff_at: 2021-06-16 19:00:00
   final_whistle_at: 2021-06-16 21:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 1
 
 # this game is currently running
 game_25:
@@ -69,6 +81,9 @@ game_25:
   guest_team_score: 2
   kickoff_at: 2021-06-20 16:00:00
   final_whistle_at:
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 0
 
 # this game is currently running
 game_26:
@@ -82,6 +97,9 @@ game_26:
   guest_team_score: 3
   kickoff_at: 2021-06-20 16:00:00
   final_whistle_at:
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 3
+  bets_draw_count: 0
 
 # Group B
 
@@ -97,6 +115,9 @@ game_3:
   kickoff_at: 2021-06-12 16:00:00
   final_whistle_at: 2021-06-12 18:00:00
   max_total_points: 8
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 1
+  bets_draw_count: 0
 
 game_4:
   <<: *DEFAULTS
@@ -110,6 +131,9 @@ game_4:
   kickoff_at: 2021-06-12 19:00:00
   final_whistle_at: 2021-06-12 21:00:00
   max_total_points: 8
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 1
 
 game_15:
   <<: *DEFAULTS
@@ -123,6 +147,9 @@ game_15:
   kickoff_at: 2021-06-16 13:00:00
   final_whistle_at: 2021-06-16 15:00:00
   max_total_points: 3
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 0
 
 game_16:
   <<: *DEFAULTS
@@ -136,6 +163,9 @@ game_16:
   kickoff_at: 2021-06-17 16:00:00
   final_whistle_at: 2021-06-17 18:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 3
 
 game_27:
   <<: *DEFAULTS
@@ -145,6 +175,9 @@ game_27:
   home_team_name: "RUS"
   guest_team_name: "DEN"
   kickoff_at: 2021-06-21 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_28:
   <<: *DEFAULTS
@@ -154,6 +187,9 @@ game_28:
   home_team_name: "FIN"
   guest_team_name: "BEL"
   kickoff_at: 2021-06-21 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Group C
 
@@ -169,6 +205,9 @@ game_6:
   kickoff_at: 2021-06-13 16:00:00
   final_whistle_at: 2021-06-13 18:00:00
   max_total_points: 8
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 1
 
 game_5:
   <<: *DEFAULTS
@@ -182,6 +221,9 @@ game_5:
   kickoff_at: 2021-06-13 19:00:00
   final_whistle_at: 2021-06-13 21:00:00
   max_total_points: 9
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 1
+  bets_draw_count: 0
 
 game_18:
   <<: *DEFAULTS
@@ -195,6 +237,9 @@ game_18:
   kickoff_at: 2021-06-17 13:00:00
   final_whistle_at: 2021-06-17 15:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 1
 
 game_17:
   <<: *DEFAULTS
@@ -208,6 +253,9 @@ game_17:
   kickoff_at: 2021-06-17 13:00:00
   final_whistle_at: 2021-06-17 15:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 0
 
 game_29:
   <<: *DEFAULTS
@@ -217,6 +265,9 @@ game_29:
   home_team_name: "MKD"
   guest_team_name: "NED"
   kickoff_at: 2021-06-21 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_30:
   <<: *DEFAULTS
@@ -226,6 +277,9 @@ game_30:
   home_team_name: "UKR"
   guest_team_name: "AUT"
   kickoff_at: 2021-06-21 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Group D
 
@@ -241,6 +295,9 @@ game_7:
   kickoff_at: 2021-06-13 13:00:00
   final_whistle_at: 2021-06-13 15:00:00
   max_total_points: 5
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 2
 
 game_8:
   <<: *DEFAULTS
@@ -254,6 +311,9 @@ game_8:
   kickoff_at: 2021-06-14 13:00:00
   final_whistle_at: 2021-06-14 15:00:00
   max_total_points: 9
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 3
 
 game_19:
   <<: *DEFAULTS
@@ -267,6 +327,9 @@ game_19:
   kickoff_at: 2021-06-18 16:00:00
   final_whistle_at: 2021-06-18 18:00:00
   max_total_points: 8
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 1
 
 game_20:
   <<: *DEFAULTS
@@ -280,6 +343,9 @@ game_20:
   kickoff_at: 2021-06-18 19:00:00
   final_whistle_at: 2021-06-18 21:00:00
   max_total_points: 9
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 1
+  bets_draw_count: 0
 
 game_31:
   <<: *DEFAULTS
@@ -298,6 +364,9 @@ game_32:
   home_team_name: "CZE"
   guest_team_name: "ENG"
   kickoff_at: 2021-06-22 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Group E
 
@@ -313,6 +382,9 @@ game_10:
   kickoff_at: 2021-06-14 16:00:00
   final_whistle_at: 2021-06-14 18:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 1
 
 game_9:
   <<: *DEFAULTS
@@ -326,6 +398,9 @@ game_9:
   kickoff_at: 2021-06-14 19:00:00
   final_whistle_at: 2021-06-14 21:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 2
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 1
 
 game_21:
   <<: *DEFAULTS
@@ -339,6 +414,9 @@ game_21:
   kickoff_at: 2021-06-18 13:00:00
   final_whistle_at: 2021-06-18 15:00:00
   max_total_points: 6
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 0
 
 game_22:
   <<: *DEFAULTS
@@ -352,6 +430,9 @@ game_22:
   kickoff_at: 2021-06-19 19:00:00
   final_whistle_at: 2021-06-19 21:00:00
   max_total_points: 6
+  bets_home_team_wins_count: 3
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_33:
   <<: *DEFAULTS
@@ -361,6 +442,9 @@ game_33:
   home_team_name: "SVK"
   guest_team_name: "ESP"
   kickoff_at: 2021-06-23 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_34:
   <<: *DEFAULTS
@@ -370,6 +454,9 @@ game_34:
   home_team_name: "SWE"
   guest_team_name: "POL"
   kickoff_at: 2021-06-23 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Group F
 
@@ -385,6 +472,9 @@ game_11:
   kickoff_at: 2021-06-15 16:00:00
   final_whistle_at: 2021-06-15 18:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 3
+  bets_draw_count: 0
 
 game_12:
   <<: *DEFAULTS
@@ -398,6 +488,9 @@ game_12:
   kickoff_at: 2021-06-15 19:00:00
   final_whistle_at: 2021-06-15 21:00:00
   max_total_points: 6
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 1
 
 game_23:
   <<: *DEFAULTS
@@ -411,6 +504,9 @@ game_23:
   kickoff_at: 2021-06-19 13:00:00
   final_whistle_at: 2021-06-19 15:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 2
 
 game_24:
   <<: *DEFAULTS
@@ -424,6 +520,9 @@ game_24:
   kickoff_at: 2021-06-19 16:00:00
   final_whistle_at: 2021-06-19 18:00:00
   max_total_points: 7
+  bets_home_team_wins_count: 1
+  bets_guest_team_wins_count: 2
+  bets_draw_count: 0
 
 game_35:
   <<: *DEFAULTS
@@ -433,6 +532,9 @@ game_35:
   home_team_name: "POR"
   guest_team_name: "FRA"
   kickoff_at: 2021-06-23 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_36:
   <<: *DEFAULTS
@@ -442,6 +544,9 @@ game_36:
   home_team_name: "GER"
   guest_team_name: "HUN"
   kickoff_at: 2021-06-23 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Round of 16
 
@@ -451,6 +556,9 @@ game_38:
   venue: "amsterdam"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-26 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_37:
   <<: *DEFAULTS
@@ -458,6 +566,9 @@ game_37:
   venue: "london"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-26 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_40:
   <<: *DEFAULTS
@@ -465,6 +576,9 @@ game_40:
   venue: "budapest"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-27 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_39:
   <<: *DEFAULTS
@@ -472,6 +586,9 @@ game_39:
   venue: "bilbao"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-27 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_42:
   <<: *DEFAULTS
@@ -479,6 +596,9 @@ game_42:
   venue: "copenhagen"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-28 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_41:
   <<: *DEFAULTS
@@ -486,6 +606,9 @@ game_41:
   venue: "bucharest"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-28 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_44:
   <<: *DEFAULTS
@@ -493,6 +616,9 @@ game_44:
   venue: "dublin"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-29 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_43:
   <<: *DEFAULTS
@@ -500,6 +626,9 @@ game_43:
   venue: "glasgow"
   tournament_phase: "round_of_16"
   kickoff_at: 2021-06-29 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Quarter-finals
 
@@ -509,6 +638,9 @@ game_45:
   venue: "saint_petersburg"
   tournament_phase: "quarter_finals"
   kickoff_at: 2021-07-02 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_46:
   <<: *DEFAULTS
@@ -516,6 +648,9 @@ game_46:
   venue: "munich"
   tournament_phase: "quarter_finals"
   kickoff_at: 2021-07-02 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_47:
   <<: *DEFAULTS
@@ -523,6 +658,9 @@ game_47:
   venue: "baku"
   tournament_phase: "quarter_finals"
   kickoff_at: 2021-07-03 16:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_48:
   <<: *DEFAULTS
@@ -530,6 +668,9 @@ game_48:
   venue: "rome"
   tournament_phase: "quarter_finals"
   kickoff_at: 2021-07-03 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Semi-finals
 
@@ -539,6 +680,9 @@ game_49:
   venue: "london"
   tournament_phase: "semi_finals"
   kickoff_at: 2021-07-06 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 game_50:
   <<: *DEFAULTS
@@ -546,6 +690,9 @@ game_50:
   venue: "london"
   tournament_phase: "semi_finals"
   kickoff_at: 2021-07-07 19:00:00
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
 
 # Final
 
@@ -555,4 +702,6 @@ game_51:
   venue: "london"
   tournament_phase: "final"
   kickoff_at: 2021-07-11 19:00:00
-
+  bets_home_team_wins_count: 0
+  bets_guest_team_wins_count: 0
+  bets_draw_count: 0
