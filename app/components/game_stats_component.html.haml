@@ -1,16 +1,17 @@
 %div{ data: { controller: 'game-stats', 'game-stats-stats-open-value': false, 'game-stats-stats-loaded-value': false, 'game-id': @game.id } }
+
   .game-stats-content.my-10{ data: { 'game-stats-target': 'statsContent' } }
-    .game-stats--bets-count.mb-5
+
+    .game-stats--bets-count.mb-8
       %h3.text-center= t('.bets_by_outcome')
-      .grid.grid-cols-3.justify-items-center
-        %div= "H#{@game.bets_home_team_wins_count}"
-        %div= "D#{@game.bets_draw_count}"
-        %div= "G#{@game.bets_guest_team_wins_count}"
+      = render BetOutcomeComponent.new(game: @game)
+
     .game-stats--bets-stats
       %h3.text-center= t('.bets_by_scores')
       %div{ id: bets_stats_element_id }
         .animate-pulse.text-center.mb-4
           .text-xs= t('shared.loading')
+
   .game-stats-navigation
     %button.w-full{ data: { action: 'click->game-stats#toggleStats' }, 'aria-controls': 'game-stats' }
       / chevron UP
