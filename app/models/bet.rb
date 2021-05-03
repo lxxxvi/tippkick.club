@@ -26,6 +26,8 @@ class Bet < ApplicationRecord
 
   delegate :kickoff_future?, :bet_ready?, to: :game
 
+  after_save :update_game_bets_count
+
   def bet_complete?
     home_team_score.present? && guest_team_score.present?
   end
@@ -42,5 +44,9 @@ class Bet < ApplicationRecord
 
   def scores_changed?
     home_team_score_changed? || guest_team_score_changed?
+  end
+
+  def update_game_bets_count
+    GameBetsCountService.new(game).call!
   end
 end

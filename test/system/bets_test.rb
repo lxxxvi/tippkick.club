@@ -25,9 +25,7 @@ class BetsTest < ApplicationSystemTestCase
       within('nav.tournament-navigation') { click_on 'Bets' }
 
       within("##{dom_id(bet)}") do
-        assert_selector 'h3', text: 'Odds'
-        assert_text 'Switzerland wins'
-        assert_text '33%'
+        assert_odds(33, 67, 0)
       end
     end
   end
@@ -60,9 +58,11 @@ class BetsTest < ApplicationSystemTestCase
           sleep 0.2
           click_on 'Bet now'
           assert_scores(0, 0)
+          assert_odds(33, 33, 33)
 
           increase_home_score
           assert_scores(1, 0)
+          assert_odds(67, 33, 0)
 
           decrease_home_score
           assert_scores(0, 0)
@@ -78,6 +78,7 @@ class BetsTest < ApplicationSystemTestCase
           increase_guest_score
           increase_guest_score
           assert_scores(0, 2)
+          assert_odds(33, 67, 0)
 
           decrease_guest_score
           assert_scores(0, 1)
@@ -121,5 +122,11 @@ class BetsTest < ApplicationSystemTestCase
   def assert_scores(expected_home_team_score, expected_guest_team_score)
     assert_selector '.bet--home-team-score', text: expected_home_team_score.to_s, wait: 4
     assert_selector '.bet--guest-team-score', text: expected_guest_team_score.to_s, wait: 4
+  end
+
+  def assert_odds(home, guest, draw)
+    assert_selector '.bet-odds--home-team-win-percentage', text: "#{home}%"
+    assert_selector '.bet-odds--guest-team-win-percentage', text: "#{guest}%"
+    assert_selector '.bet-odds--draw-percentage', text: "#{draw}%"
   end
 end
