@@ -1,4 +1,4 @@
-class BetOutcomeComponent < ViewComponent::Base
+class BetOddsComponent < ViewComponent::Base
   def initialize(game:)
     @game = game
   end
