@@ -106,6 +106,8 @@ de-CH:
   bet_component:
     bet_now: Tippen
     not_ready_to_bet: Noch nicht tippbar
+  bet_odds_component:
+    x_wins: "%{x} gewinnt"
   dashboard_bets_component:
     number_of_games:
       one: 1 Spiel
@@ -322,7 +324,6 @@ de-CH:
         one: 'Konnte %{model} nicht speichern: ein Fehler.'
         other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
   game_stats_component:
-    bets_by_outcome: Nach Ergebnis
     bets_by_scores: Nach Torstand
   helpers:
     select:
@@ -466,6 +467,7 @@ de-CH:
     change_my_password: Mein Passwort ändern
     change_your_password: Passwort ändern
     dashboard: Dashboard
+    draw: Untentschieden
     fifa_country_codes:
       AUT: Österreich
       BEL: Belgien
@@ -502,6 +504,7 @@ de-CH:
     meta_description: Gratis online Tippspiel für die UEFA Euro 2020.
     new_password: Neues Passwort
     no_one_with_brackets: "(niemanden)"
+    odds: Wettquote
     points: Punkte
     profile: Profil
     ranking: Rangliste

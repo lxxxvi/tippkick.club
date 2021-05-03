@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class BetOutcomeComponentTest < ViewComponent::TestCase
+class BetOddsComponentTest < ViewComponent::TestCase
   test '#render' do
     game = games(:game_2)
-    component = BetOutcomeComponent.new(game: game)
+    component = BetOddsComponent.new(game: game)
     render_inline(component)
     assert_text '33%'
     assert_text '67%'
@@ -15,7 +15,7 @@ class BetOutcomeComponentTest < ViewComponent::TestCase
 
   test '#render, not if there are no bets' do
     game = games(:game_37) # teams or not set for game_37, thus there are not bets
-    component = BetOutcomeComponent.new(game: game)
+    component = BetOddsComponent.new(game: game)
     render_inline(component)
     assert_text ''
   end

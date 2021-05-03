@@ -16,6 +16,22 @@ class BetsTest < ApplicationSystemTestCase
     end
   end
 
+  test 'odds are shown on index' do
+    bet = bets(:diego_game_25)
+
+    before_game_25 do
+      sign_in_as :diego
+      navigate_to 'Tournament'
+      within('nav.tournament-navigation') { click_on 'Bets' }
+
+      within("##{dom_id(bet)}") do
+        assert_selector 'h3', text: 'Odds'
+        assert_text 'Switzerland wins'
+        assert_text '33%'
+      end
+    end
+  end
+
   test 'index does not show kicked-off games' do
     bet = bets(:diego_game_25)
 

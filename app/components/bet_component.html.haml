@@ -30,6 +30,9 @@
                 \-
               %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :plus } }
                 \+
+            .col-span-full.my-4
+              %h3.text-2xs.text-center= t('shared.odds')
+              = render BetOddsComponent.new(game: @bet.game)
         - else
           .text-center
             %button.bg-pink-200.py-2.px-5.rounded-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#start', id: @bet.id } }

@@ -106,6 +106,8 @@ en:
   bet_component:
     bet_now: Bet now
     not_ready_to_bet: Not ready to bet
+  bet_odds_component:
+    x_wins: "%{x} wins"
   dashboard_bets_component:
     number_of_games:
       one: 1 game
@@ -322,7 +324,6 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
   game_stats_component:
-    bets_by_outcome: Bets by outcome
     bets_by_scores: Bets by scores
   helpers:
     select:
@@ -458,6 +459,7 @@ en:
     change_my_password: Change my password
     change_your_password: Change your password
     dashboard: Dashboard
+    draw: Draw
     fifa_country_codes:
       AUT: Austria
       BEL: Belgium
@@ -494,6 +496,7 @@ en:
     meta_description: Free online betting game for UEFA Euro 2020.
     new_password: New password
     no_one_with_brackets: "(no one)"
+    odds: Odds
     points: Points
     profile: Profile
     ranking: Ranking

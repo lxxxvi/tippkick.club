@@ -3,8 +3,8 @@
   .game-stats-content.my-10{ data: { 'game-stats-target': 'statsContent' } }
 
     .game-stats--bets-count.mb-8
-      %h3.text-center= t('.bets_by_outcome')
-      = render BetOutcomeComponent.new(game: @game)
+      %h3.text-center= t('shared.odds')
+      = render BetOddsComponent.new(game: @game)
 
     .game-stats--bets-stats
       %h3.text-center= t('.bets_by_scores')
