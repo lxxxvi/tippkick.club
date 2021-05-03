@@ -44,4 +44,32 @@ class BetTest < ActiveSupport::TestCase
       assert_not bet.kickoff_future?
     end
   end
+
+  test '#update_game_bets_count after save' do
+    game = games(:game_25)
+    bet = bets(:diego_game_25) # bets 1:2
+
+    before_game_25 do
+      bet.update(home_team_score: 0, guest_team_score: 0)
+
+      game.reload
+      assert_equal 1, game.bets_home_team_wins_count
+      assert_equal 1, game.bets_guest_team_wins_count
+      assert_equal 1, game.bets_draw_count
+
+      bet.update(home_team_score: 2, guest_team_score: 0)
+
+      game.reload
+      assert_equal 2, game.bets_home_team_wins_count
+      assert_equal 1, game.bets_guest_team_wins_count
+      assert_equal 0, game.bets_draw_count
+
+      bet.update(home_team_score: 0, guest_team_score: 2)
+
+      game.reload
+      assert_equal 1, game.bets_home_team_wins_count
+      assert_equal 2, game.bets_guest_team_wins_count
+      assert_equal 0, game.bets_draw_count
+    end
+  end
 end

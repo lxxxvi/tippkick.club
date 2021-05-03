@@ -15,7 +15,7 @@ class BetReflex < ApplicationReflex
 
   def update_bet_card
     morph dom_id(find_bet),
-          render(BetComponent.new(bet: find_bet), layout: false)
+          render(BetComponent.new(bet: find_bet.reload), layout: false)
   end
 
   def find_bet
