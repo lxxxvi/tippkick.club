@@ -182,6 +182,9 @@ Rails/AfterCommitOverride:
 Rails/AttributeDefaultBlockValue:
   Enabled: true
 
+Rails/EnvironmentVariableAccess:
+  Enabled: true
+
 Rails/FindById:
   Enabled: true
 
@@ -217,6 +220,9 @@ Rails/SkipsModelValidations:
   - test/**/*
 
 Rails/SquishedSQLHeredocs:
+  Enabled: true
+
+Rails/TimeZoneAssignment:
   Enabled: true
 
 Rails/WhereEquals:

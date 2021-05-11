@@ -2,15 +2,14 @@ require 'test_helper'
 
 class NavigationComponentTest < ViewComponent::TestCase
   test '.render, not signed_in' do
-    skip # link_to with url_for (or just params) does not work
-    # DRb::DRbRemoteError: No route matches {:locale=>:"de-CH"} (ActionController::UrlGenerationError)
-
-    component = NavigationComponent.new(signed_in: false)
-    render_inline component
-    assert_link 'Sign in'
-    assert_no_link 'Dashboard'
-    assert_no_link 'Tournament'
-    assert_no_link 'Profile'
+    with_request_url '/' do
+      component = NavigationComponent.new(signed_in: false)
+      render_inline component
+      assert_link 'Sign in'
+      assert_no_link 'Dashboard'
+      assert_no_link 'Tournament'
+      assert_no_link 'Profile'
+    end
   end
 
   test '.render, signed_in' do
