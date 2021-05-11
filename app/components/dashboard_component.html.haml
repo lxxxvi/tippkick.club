@@ -6,6 +6,6 @@
   = render DashboardTeamsComponent.new(user)
   = render DashboardProfileComponent.new
 
-.mt-16
-  %h2= t('shared.rules')
-  = render RulesComponent.new
+.rules.mt-16{ class: 'sm:w-2/3 mx-auto' }
+  .border-2.border-gray-400.bg-gray-50.rounded-xl.py-8.px-4.sm:px-8
+    = render RulesComponent.new

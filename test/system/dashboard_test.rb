@@ -13,7 +13,7 @@ class DashboardTest < ApplicationSystemTestCase
       end
 
       assert_selector 'h1', text: 'Hey digi, this is your dashboard'
-      assert_selector 'h2', text: 'Rules'
+      assert_selector '.rules', text: 'Betting rules'
       assert_text 'There are 10 games ready to bet'
       assert_text 'You are in 2 teams'
       assert_text 'Change your profile'
