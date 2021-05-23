@@ -2,7 +2,7 @@
   "name": "tippkick-club",
   "private": true,
   "engines": {
-    "node": "14.x"
+    "node": "15.x"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
