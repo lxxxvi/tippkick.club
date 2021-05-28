@@ -189,6 +189,7 @@ class TeamsTest < ApplicationSystemTestCase
         click_on 'Campeones'
 
         within('section#admin') do
+          sleep 0.1
           assert_changes -> { find_field('Einladungslink').value } do
             click_on 'Einladungslink erneuern'
           end
