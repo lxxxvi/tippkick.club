@@ -6,7 +6,7 @@
           %span.animate-pulse.block.h-3.w-3.rounded-full.bg-red-500
           .text-xs.tracking-wider.ml-2.inline.text-gray-700 LIVE
       - else
-        = render AchievementBarComponent.new(actual_points: bet_with_game.total_points, maximum_points: bet_with_game.game.max_total_points)
+        = render AchievementBarComponent.new(bet: bet_with_game)
 
     .w-full.py-4
       .grid.grid-cols-2.gap-y-4.justify-items-center

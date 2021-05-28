@@ -3,10 +3,8 @@ class BetPointsService
   def call!
     Bet.transaction do
       execute reset_bet_points_sql
-      execute reset_game_max_total_points_sql
       execute reset_user_total_points_sql
       execute update_bet_points_sql
-      execute update_game_max_total_points_sql
       execute update_user_total_points_sql
     end
   end
@@ -79,11 +77,11 @@ class BetPointsService
              , pr.bet_complete_guest_team_score
              , pr.bet_complete_result
              , CASE
-                 WHEN gr.actual_home_team_score = pr.bet_complete_home_team_score THEN gr.actual_home_team_score
+                 WHEN gr.actual_home_team_score = pr.bet_complete_home_team_score THEN 1
                  ELSE 0
                END      AS home_team_score_points
              , CASE
-                 WHEN gr.actual_guest_team_score = pr.bet_complete_guest_team_score THEN gr.actual_guest_team_score
+                 WHEN gr.actual_guest_team_score = pr.bet_complete_guest_team_score THEN 1
                  ELSE 0
                END      AS guest_team_score_points
              , CASE
@@ -92,7 +90,7 @@ class BetPointsService
                END      AS result_points
              , CASE
                  WHEN gr.actual_home_team_score = pr.bet_complete_home_team_score
-                  AND gr.actual_guest_team_score = pr.bet_complete_guest_team_score THEN 2
+                  AND gr.actual_guest_team_score = pr.bet_complete_guest_team_score THEN 1
                  ELSE 0
                END      AS perfect_bet_bonus_points
           FROM games_results gr
@@ -110,21 +108,6 @@ class BetPointsService
                                                with_points.perfect_bet_bonus_points
         FROM with_points
        WHERE with_points.bet_id = bets.id
-    SQL
-  end
-
-  def update_game_max_total_points_sql
-    <<~SQL.squish
-      WITH games_max_total_points AS (
-        SELECT id                                     AS game_id
-             , home_team_score + guest_team_score + 5 AS max_total_points
-          FROM games
-         WHERE final_whistle_at IS NOT NULL
-      )
-      UPDATE games
-         SET max_total_points = games_max_total_points.max_total_points
-        FROM games_max_total_points
-       WHERE games_max_total_points.game_id = games.id
     SQL
   end
 

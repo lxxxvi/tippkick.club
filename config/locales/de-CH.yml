@@ -33,7 +33,9 @@ de-CH:
       no_ads_no_trackers: Es gibt keine Werbung, keine Tracker oder ähnliches.
       title: Was bedeutet Gratis?
   achievement_bar_component:
-    you_scored_x_out_of_y_points: Du hast %{x} von %{y} Punkten gewonnen
+    you_scored_x_points:
+      one: Du hast 1 Punkt gewonnen
+      other: Du hast %{count} Punkte gewonnen
   activerecord:
     attributes:
       game:
