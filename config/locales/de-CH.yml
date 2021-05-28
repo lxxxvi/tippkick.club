@@ -440,10 +440,12 @@ de-CH:
       success: Profil erfolgreich gespeichert.
   rules_component:
     award_for_points:
-      points_for_each_score: Es gibt 1 Punkt für jedes richtig getippte Tor beim Endstand.
+      maximum_total_points: Die Maximalpunktezahl für jedes einzelne Spiel ist 6. Für das ganze Turnier sind es somit 306 Punkte.
+      maximum_total_points_details: 3 für den richtigen Sieger (oder Untentschieden), 1 für den korrekten Endstand des Heimteams, 1 für den korrekten Endstand des Gästeteams und 1 Bonus wenn alles stimmt.
+      one_for_each_correct_team_end_score: Es gibt 1 Punkt für jeden richtig getippten Endstand.
+      one_for_perfection: Es gibt 1 Bonus Punkt wenn das Resultat komplett korrekt getippt wurde.
       three_for_correct_outcome: Es gibt 3 Punkte für den richtig getippten Spielausgang, also Sieger bzw. Unentschieden.
       title: Punkteverteilung
-      two_for_perfection: Es gibt 2 Bonus Punkte wenn das Resultat komplett korrekt getippt wurde.
     betting_rules:
       the_score_after_playtime_counts: Der Spielstand nach 90 bzw. 120 Minuten ist entscheidend, ohne Penaltyschiessen.
       the_score_after_playtime_counts_addition: Es kann in der Knockoutphase Unentschieden geben.
@@ -451,8 +453,6 @@ de-CH:
       you_can_place_and_change_bets: Man kann bis zum Anpfiff jedes einzelnen Spieles tippen.
       you_can_place_and_change_bets_addition: Man muss also nicht alles im Vorhinein tippen.
     example:
-      maximum_total_points: Die Maximalpunktezahl liegt jedoch bei 9.
-      maximum_total_points_details: 3 für den richtigen Sieger, 4 für alle Richtigen Tore, 2 Bonus wenn alles stimmt.
       one_for_correct_score: Du kriegst 1 Punkt für den richtigen Torendstand des Gästeteams.
       three_for_correct_outcome: Du kriegst 3 Punke für den richtig getippten Sieger (Heimteam).
       title: Beispiel
