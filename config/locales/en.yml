@@ -450,6 +450,7 @@ en:
       title: Example
       your_bet_was: Your bet was 2:1, the final score was 3:1.
       your_total: Your total is 4 points.
+    notification_about_scoring_rules: '2021-05-28: We made slight changes to the scoring rules.'
   shared:
     about: About
     actions:

@@ -458,6 +458,7 @@ de-CH:
       title: Beispiel
       your_bet_was: Dein Tipp war 2:1, das Spiel endete effektiv 3:1.
       your_total: Dein Total ist 4 Punkte.
+    notification_about_scoring_rules: '2021-05-28: Wir haben kleine Anpassungen an der Punkteverteilung vorgenommen.'
   shared:
     about: Über
     actions:
