@@ -7,3 +7,6 @@
         = description
       .link.mt-8.text-center
         = link
+      - if link_addition.present?
+        .link-addition.mt-5
+          = link_addition
