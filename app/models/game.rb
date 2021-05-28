@@ -2,6 +2,8 @@ class Game < ApplicationRecord
   include TournamentPhases
   include Venues
 
+  MAX_TOTAL_POINTS = 6
+
   has_many :bets, dependent: :destroy
   has_many :bets_stats, dependent: :destroy
 
@@ -33,7 +35,7 @@ class Game < ApplicationRecord
   end
 
   def final_whistle?
-    final_whistle_at&.present?
+    final_whistle_at.present?
   end
 
   def live?

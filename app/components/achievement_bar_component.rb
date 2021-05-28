@@ -1,11 +1,10 @@
 class AchievementBarComponent < ViewComponent::Base
-  def initialize(actual_points:, maximum_points:)
-    @actual_points = actual_points
-    @maximum_points = maximum_points
+  def initialize(bet:)
+    @bet = bet
   end
 
   def render?
-    @maximum_points.to_i.positive?
+    @bet.game.final_whistle?
   end
 
   def progress_bar_width
@@ -23,6 +22,6 @@ class AchievementBarComponent < ViewComponent::Base
   end
 
   def actual_to_max_ratio
-    @actual_to_max_ratio ||= (@actual_points.to_f / @maximum_points) * 100
+    @actual_to_max_ratio ||= (@bet.total_points.to_f / Game::MAX_TOTAL_POINTS) * 100
   end
 end

@@ -16,7 +16,6 @@ game_1:
   guest_team_score: 3
   kickoff_at: 2021-06-11 19:00:00
   final_whistle_at: 2021-06-11 21:00:00
-  max_total_points: 12
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 1
   bets_draw_count: 1
@@ -32,7 +31,6 @@ game_2:
   guest_team_score: 1
   kickoff_at: 2021-06-12 13:00:00
   final_whistle_at: 2021-06-12 15:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 0
   bets_draw_count: 2
@@ -48,7 +46,6 @@ game_13:
   guest_team_score: 0
   kickoff_at: 2021-06-16 16:00:00
   final_whistle_at: 2021-06-16 18:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 1
   bets_draw_count: 0
@@ -64,7 +61,6 @@ game_14:
   guest_team_score: 2
   kickoff_at: 2021-06-16 19:00:00
   final_whistle_at: 2021-06-16 21:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 2
   bets_draw_count: 1
@@ -114,7 +110,6 @@ game_3:
   guest_team_score: 1
   kickoff_at: 2021-06-12 16:00:00
   final_whistle_at: 2021-06-12 18:00:00
-  max_total_points: 8
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 1
   bets_draw_count: 0
@@ -130,7 +125,6 @@ game_4:
   guest_team_score: 2
   kickoff_at: 2021-06-12 19:00:00
   final_whistle_at: 2021-06-12 21:00:00
-  max_total_points: 8
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 0
   bets_draw_count: 1
@@ -146,7 +140,6 @@ game_15:
   guest_team_score: 2
   kickoff_at: 2021-06-16 13:00:00
   final_whistle_at: 2021-06-16 15:00:00
-  max_total_points: 3
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 2
   bets_draw_count: 0
@@ -162,7 +155,6 @@ game_16:
   guest_team_score: 1
   kickoff_at: 2021-06-17 16:00:00
   final_whistle_at: 2021-06-17 18:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 0
   bets_draw_count: 3
@@ -204,7 +196,6 @@ game_6:
   guest_team_score: 0
   kickoff_at: 2021-06-13 16:00:00
   final_whistle_at: 2021-06-13 18:00:00
-  max_total_points: 8
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 0
   bets_draw_count: 1
@@ -220,7 +211,6 @@ game_5:
   guest_team_score: 1
   kickoff_at: 2021-06-13 19:00:00
   final_whistle_at: 2021-06-13 21:00:00
-  max_total_points: 9
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 1
   bets_draw_count: 0
@@ -236,7 +226,6 @@ game_18:
   guest_team_score: 0
   kickoff_at: 2021-06-17 13:00:00
   final_whistle_at: 2021-06-17 15:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 0
   bets_draw_count: 1
@@ -252,7 +241,6 @@ game_17:
   guest_team_score: 2
   kickoff_at: 2021-06-17 13:00:00
   final_whistle_at: 2021-06-17 15:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 2
   bets_draw_count: 0
@@ -294,7 +282,6 @@ game_7:
   guest_team_score: 0
   kickoff_at: 2021-06-13 13:00:00
   final_whistle_at: 2021-06-13 15:00:00
-  max_total_points: 5
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 0
   bets_draw_count: 2
@@ -310,7 +297,6 @@ game_8:
   guest_team_score: 2
   kickoff_at: 2021-06-14 13:00:00
   final_whistle_at: 2021-06-14 15:00:00
-  max_total_points: 9
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 0
   bets_draw_count: 3
@@ -326,7 +312,6 @@ game_19:
   guest_team_score: 2
   kickoff_at: 2021-06-18 16:00:00
   final_whistle_at: 2021-06-18 18:00:00
-  max_total_points: 8
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 2
   bets_draw_count: 1
@@ -342,7 +327,6 @@ game_20:
   guest_team_score: 1
   kickoff_at: 2021-06-18 19:00:00
   final_whistle_at: 2021-06-18 21:00:00
-  max_total_points: 9
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 1
   bets_draw_count: 0
@@ -381,7 +365,6 @@ game_10:
   guest_team_score: 1
   kickoff_at: 2021-06-14 16:00:00
   final_whistle_at: 2021-06-14 18:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 2
   bets_draw_count: 1
@@ -397,7 +380,6 @@ game_9:
   guest_team_score: 0
   kickoff_at: 2021-06-14 19:00:00
   final_whistle_at: 2021-06-14 21:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 2
   bets_guest_team_wins_count: 0
   bets_draw_count: 1
@@ -413,7 +395,6 @@ game_21:
   guest_team_score: 1
   kickoff_at: 2021-06-18 13:00:00
   final_whistle_at: 2021-06-18 15:00:00
-  max_total_points: 6
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 2
   bets_draw_count: 0
@@ -429,7 +410,6 @@ game_22:
   guest_team_score: 0
   kickoff_at: 2021-06-19 19:00:00
   final_whistle_at: 2021-06-19 21:00:00
-  max_total_points: 6
   bets_home_team_wins_count: 3
   bets_guest_team_wins_count: 0
   bets_draw_count: 0
@@ -471,7 +451,6 @@ game_11:
   guest_team_score: 2
   kickoff_at: 2021-06-15 16:00:00
   final_whistle_at: 2021-06-15 18:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 3
   bets_draw_count: 0
@@ -487,7 +466,6 @@ game_12:
   guest_team_score: 1
   kickoff_at: 2021-06-15 19:00:00
   final_whistle_at: 2021-06-15 21:00:00
-  max_total_points: 6
   bets_home_team_wins_count: 0
   bets_guest_team_wins_count: 2
   bets_draw_count: 1
@@ -503,7 +481,6 @@ game_23:
   guest_team_score: 1
   kickoff_at: 2021-06-19 13:00:00
   final_whistle_at: 2021-06-19 15:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 0
   bets_draw_count: 2
@@ -519,7 +496,6 @@ game_24:
   guest_team_score: 2
   kickoff_at: 2021-06-19 16:00:00
   final_whistle_at: 2021-06-19 18:00:00
-  max_total_points: 7
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 2
   bets_draw_count: 0

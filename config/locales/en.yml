@@ -33,7 +33,9 @@ en:
       no_ads_no_trackers: There are no ads, no trackers or whatsoever.
       title: What does free mean?
   achievement_bar_component:
-    you_scored_x_out_of_y_points: You scored %{x} out of %{y} points
+    you_scored_x_points:
+      one: You scored 1 point
+      other: You scored %{count} points
   activerecord:
     attributes:
       game:
@@ -430,10 +432,12 @@ en:
       success: Profile updated successfully.
   rules_component:
     award_for_points:
-      points_for_each_score: You get 1 point for each correctly bet score.
+      maximum_total_points: The maximum total points for each game is 6. Thus for the entire tournmanent there are 306 possible points.
+      maximum_total_points_details: 3 for the correct winning team (or draw), 1 for correct home team end score, 1 for correct guest team end score and 1 bonus for perfection.
+      one_for_each_correct_team_end_score: You get 1 point for each correct team end score.
+      one_for_perfection: You get 1 bonus point if your bet matches exactly the final score.
       three_for_correct_outcome: You get 3 points for correctly betting the winning team, or a draw.
       title: Award for points
-      two_for_perfection: You get 2 bonus points if your bet matches exactly the final score.
     betting_rules:
       the_score_after_playtime_counts: The score after 90 or 120 minutes counts, without penalty shootout.
       the_score_after_playtime_counts_addition: There can be draws in the knockout phase.
@@ -441,8 +445,6 @@ en:
       you_can_place_and_change_bets: You can place and change bets until a match begins.
       you_can_place_and_change_bets_addition: You don't have to bet all games in advance.
     example:
-      maximum_total_points: The maximum total points for this match would be 9 though.
-      maximum_total_points_details: 3 for correct winning team, 4 for all correct scores, 2 bonus for perfection.
       one_for_correct_score: You get 1 point for the correct score of the guest team.
       three_for_correct_outcome: You get 3 points for correctly betting the winning team (home team).
       title: Example

@@ -29,7 +29,7 @@ class BetWithGameComponentTest < ViewComponent::TestCase
       component = BetWithGameComponent.new(bet_with_game: bet)
       render_inline component
       assert_no_text 'LIVE'
-      assert_text 'You scored 0 out of 5 points'
+      assert_text 'You scored 0 points'
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_071506) do
+ActiveRecord::Schema.define(version: 2021_05_28_074034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2021_04_29_071506) do
     t.integer "guest_team_score", default: 0, null: false
     t.datetime "kickoff_at", null: false
     t.datetime "final_whistle_at"
-    t.integer "max_total_points"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "bets_home_team_wins_count", default: 0, null: false
