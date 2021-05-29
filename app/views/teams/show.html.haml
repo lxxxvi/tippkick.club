@@ -16,7 +16,7 @@
   %section#admin.mt-16
     %h2= t('shared.admin')
 
-    .my-4
+    .mt-4.mb-8
       = render InvitationLinkComponent.new(team: @team, user: current_user)
     .coach-actions.grid.grid-cols-1.gap-4
       = link_to t('teams.actions.edit'), edit_team_path(@team), class: 'hollow-button'
