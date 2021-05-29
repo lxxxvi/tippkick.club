@@ -9,7 +9,7 @@ class InvitationLinkComponentTest < ViewComponent::TestCase
 
     render_inline(component)
     assert_selector 'label', text: 'Invitation link'
-    assert_selector 'button', text: 'Copy'
+    assert_selector 'button[aria-label="Copy"]'
     assert_field 'Invitation link',
                  with: 'http://tippkick.test/teams/tkid_campeones-campeones/join/campeones_token'
   end
