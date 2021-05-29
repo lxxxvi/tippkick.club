@@ -8,3 +8,8 @@
       = t('.you_are_in_count_teams', count: number_of_teams)
 
     = c.link(name: t('shared.teams'), path: teams_path)
+
+    = c.link_addition do
+      .text-xs.leading-loose
+        = link_to t('.create_your_own_team'), new_team_path, class: 'link'
+        = t('.and_invite_your_friends')

@@ -125,6 +125,8 @@ en:
   dashboard_profile_component:
     change_your_profile: Change your profile
   dashboard_teams_component:
+    and_invite_your_friends: and invite your friends to join.
+    create_your_own_team: You can create your own teams
     you_are_in_count_teams:
       one: You are in 1 team
       other: You are in %{count} teams

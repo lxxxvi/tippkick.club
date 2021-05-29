@@ -125,6 +125,8 @@ de-CH:
   dashboard_profile_component:
     change_your_profile: Dein Profil ändern
   dashboard_teams_component:
+    and_invite_your_friends: und deine Freunde dazu einladen.
+    create_your_own_team: Du kannst deine eigenen Teams erstellen
     you_are_in_count_teams:
       one: Du bist in einem Team
       other: Du bist in %{count} Teams

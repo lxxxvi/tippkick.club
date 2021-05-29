@@ -14,7 +14,7 @@ class TeamsTest < ApplicationSystemTestCase
         assert_selector 'li', text: 'Global'
       end
 
-      assert_selector '.create-team', text: 'Create new team'
+      assert_link 'Create new team', href: '/teams/new'
     end
   end
 
