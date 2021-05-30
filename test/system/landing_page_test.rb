@@ -42,4 +42,12 @@ class LandingPageGamesTest < ApplicationSystemTestCase
 
     assert_selector 'h1', text: 'Über'
   end
+
+  test 'redirects home page when clicking logo icon' do
+    visit about_path
+
+    click_on find('svg.icon-tabler-ball-football').text
+
+    assert_selector 'h1', text: 'We are back!'
+  end
 end
