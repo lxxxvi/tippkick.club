@@ -21,14 +21,14 @@
             .self-center.justify-self-center.text-4xl.my-4.bet--guest-team-score
               = @bet.guest_team_score
             .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.bet--score-controls--home-team
-              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @bet.home_team_score&.zero?, data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :home, delta: :minus } }
+              %button.bet--score-controls--button.bet--score-controls--left-button{ disabled: @bet.home_team_score&.zero?, data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :home, delta: :minus } }
                 \-
-              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :home, delta: :plus } }
+              %button.bet--score-controls--button.bet--score-controls--right-button{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :home, delta: :plus } }
                 \+
             .self-center.justify-self-center.w-full.flex.divide-x-2.divide-pink-50.bet--score-controls--guest-team
-              %button.w-full.bg-pink-200.py-2.rounded-l-lg.hover:bg-pink-300.cursor-pointer.transition{ disabled: @bet.guest_team_score&.zero?, data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :minus } }
+              %button.bet--score-controls--button.bet--score-controls--left-button{ disabled: @bet.guest_team_score&.zero?, data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :minus } }
                 \-
-              %button.w-full.bg-pink-200.py-2.rounded-r-lg.hover:bg-pink-300.cursor-pointer.transition{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :plus } }
+              %button.bet--score-controls--button.bet--score-controls--right-button{ data: { reflex: 'click->Bet#change_score', id: @bet.id, team_score: :guest, delta: :plus } }
                 \+
             .col-span-full.my-4
               %h3.text-2xs.text-center= t('shared.odds')
