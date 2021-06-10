@@ -239,8 +239,8 @@ game_17:
   guest_team_name: "AUT"
   home_team_score: 0
   guest_team_score: 2
-  kickoff_at: 2021-06-17 13:00:00
-  final_whistle_at: 2021-06-17 15:00:00
+  kickoff_at: 2021-06-17 19:00:00
+  final_whistle_at: 2021-06-17 21:00:00
   bets_home_team_wins_count: 1
   bets_guest_team_wins_count: 2
   bets_draw_count: 0
