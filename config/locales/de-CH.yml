@@ -343,11 +343,11 @@ de-CH:
     link_refreshed: Link erneuert
     refresh_invitation_link: Einladungslink erneuern
   landing_page_component:
+    finally: "(Endlich!)"
     if_you_already_have_an_account: falls du bereits einen Account hast.
+    lets_go: Los geht's!
     sign_up_now: Gratis registrieren!
-    the_best_online_betting_game_is_back_for: Das beste online Tippspiel ist zurück für die
-    was_about_time_comment: "(War auch langsam Zeit.)"
-    we_are_back: Wir sind zurück!
+    the_best_online_betting_game_is_running_for: Das beste online Tippspiel läuft für die
     why_join:
       it_is_free:
         for_real: Jawohl. Wir verkaufen oder geben deine Daten auch nicht weiter.
@@ -460,7 +460,6 @@ de-CH:
       title: Beispiel
       your_bet_was: Dein Tipp war 2:1, das Spiel endete effektiv 3:1.
       your_total: Dein Total ist 4 Punkte.
-    notification_about_scoring_rules: '2021-05-28: Wir haben kleine Anpassungen an der Punkteverteilung vorgenommen.'
   shared:
     about: Über
     actions:

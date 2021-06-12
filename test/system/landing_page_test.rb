@@ -12,7 +12,7 @@ class LandingPageGamesTest < ApplicationSystemTestCase
       assert_equal 'Free online betting game for UEFA Euro 2020.', meta_element['content']
     end
 
-    assert_selector 'h1', text: 'We are back!'
+    assert_selector 'h1', text: "Let's go!"
     assert_link 'Sign up for free!', href: '/users/sign_up'
     assert_selector 'h2', text: 'Why join?'
     assert_selector 'h2', text: 'Rules'
@@ -33,7 +33,7 @@ class LandingPageGamesTest < ApplicationSystemTestCase
       assert_equal 'Gratis online Tippspiel für die UEFA Euro 2020.', meta_element['content']
     end
 
-    assert_selector 'h1', text: 'Wir sind zurück!'
+    assert_selector 'h1', text: "Los geht's!"
     assert_link 'Gratis registrieren!', href: '/users/sign_up'
     assert_selector 'h2', text: 'Warum teilnehmen?'
     assert_selector 'h2', text: 'Regeln'
@@ -48,6 +48,6 @@ class LandingPageGamesTest < ApplicationSystemTestCase
 
     click_on find('svg.icon-tabler-ball-football').text
 
-    assert_selector 'h1', text: 'We are back!'
+    assert_selector 'h1', text: "Let's go!"
   end
 end
