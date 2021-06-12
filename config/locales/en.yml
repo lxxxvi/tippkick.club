@@ -343,11 +343,11 @@ en:
     link_refreshed: Link refreshed
     refresh_invitation_link: Refresh invitation link
   landing_page_component:
+    finally: "(Finally.)"
     if_you_already_have_an_account: if you already have an account.
+    lets_go: Let's go!
     sign_up_now: Sign up for free!
-    the_best_online_betting_game_is_back_for: The best online betting game is back for
-    was_about_time_comment: "(Was about time.)"
-    we_are_back: We are back!
+    the_best_online_betting_game_is_running_for: The best online betting game is running for
     why_join:
       it_is_free:
         for_real: For real! We don't sell or give away your data either.
