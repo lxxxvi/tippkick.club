@@ -18,7 +18,9 @@ class TeamRankingService
 
   def reset_memberships_ranking_positions_sql
     <<~SQL.squish
-      UPDATE memberships SET ranking_position = NULL
+      UPDATE memberships
+         SET ranking_position = NULL
+       WHERE #{team_id_filter}
     SQL
   end
 
