@@ -22,6 +22,7 @@
             = render NavigationLinkComponent.new(t('shared.dashboard'), dashboard_path)
             = render NavigationLinkComponent.new(t('shared.tournament'), bets_or_games_path)
             = render NavigationLinkComponent.new(t('shared.teams'), teams_path)
+            = render NavigationLinkComponent.new(t('shared.profile'), profile_path)
             - if admin?
               = render NavigationLinkComponent.new(t('shared.admin'), admin_games_path)
           - else
@@ -30,16 +31,11 @@
 
       - if signed_in?
         #profile-menu.absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-6.sm:pr-0
-          .ml-3.relative
-            %div
-              %button#user-menu.bg-white.rounded-full.flex.text-sm.focus:outline-none.focus:ring-2.focus:ring-offset-2.focus:ring-pink-500{'aria-expanded': 'false', 'aria-haspopup': 'true', type: 'button', data: { action: 'click->navigation#toggleProfileMenu', 'navigation-target': 'profileMenuToggler' }}
-                %span.sr-only= t('.open_profile_menu')
-                %svg.w-8.h-8.text-pink-700.hover:text-pink-500.transition{fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg'}
-                  %path{d: 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'stroke-linecap' => 'round', 'stroke-linejoin' => 'round', 'stroke-width' => '2'}
-            .hidden.origin-top-right.absolute.right-0.mt-2.w-48.rounded-md.shadow-lg.py-1.bg-white.ring-1.ring-black.ring-opacity-5.focus:outline-none{'aria-labelledby': 'user-menu', 'aria-orientation': 'vertical', role: 'menu', data: { 'navigation-target': 'profileMenu' } }
-              = link_to t('shared.profile'), profile_path, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', role: 'menuitem'
-              = link_to t('shared.sign_out'), destroy_user_session_path, method: :delete, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100', role: 'menuitem'
-      - else
+          = link_to destroy_user_session_path, method: :delete, class: 'text-center inline-flex items-center px-2 py-2 text-gray-400 hover:text-gray-900 transition' do
+            %svg.h-4.w-4{fill: "none", stroke: "currentColor", viewbox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg"}
+              %path{d: "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
+            .sr-only= t('shared.sign_out')
+      - else signed_in?
         #profile-menu.absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-6.sm:pr-0
           .ml-3.relative.text-sm
             = link_to other_locale_abbreviation, { locale: other_locale_key }, class: 'shy-link'
@@ -50,6 +46,7 @@
         = render NavigationMobileLinkComponent.new(t('shared.dashboard'), dashboard_path)
         = render NavigationMobileLinkComponent.new(t('shared.tournament'), bets_or_games_path)
         = render NavigationMobileLinkComponent.new(t('shared.teams'), teams_path)
+        = render NavigationMobileLinkComponent.new(t('shared.profile'), profile_path)
         - if admin?
           = render NavigationMobileLinkComponent.new(t('shared.admin'), admin_games_path)
       - else

@@ -5,14 +5,11 @@ export default class extends Controller {
     "mobileMenu",
     "mobileMenuToggler",
     "mobileMenuIconClosed",
-    "mobileMenuIconOpened",
-    "profileMenu",
-    "profileMenuToggler"
+    "mobileMenuIconOpened"
   ];
 
   connect() {
     this.renderMobileMenu();
-    this.renderProfileMenu();
   }
 
   renderMobileMenu() {
@@ -27,55 +24,24 @@ export default class extends Controller {
     }
   }
 
-  renderProfileMenu() {
-    if(this.hasProfileMenuTarget) {
-      if (this.displayProfileMenu()) {
-        this.profileMenuTarget.classList.remove('hidden');
-      } else {
-        this.profileMenuTarget.classList.add('hidden');
-      }
-    }
-  }
-
   toggleMobileMenu() {
     this.switchMobileMenuAriaExpanded();
     this.renderMobileMenu();
-  }
-
-  toggleProfileMenu() {
-    this.switchProfileMenuAriaExpanded();
-    this.renderProfileMenu();
   }
 
   switchMobileMenuAriaExpanded() {
     this.setMobileMenuAriaExpanded(!this.displayMobileMenu());
   };
 
-  switchProfileMenuAriaExpanded() {
-    this.setProfileMenuAriaExpanded(!this.displayProfileMenu());
-  };
-
   displayMobileMenu() {
     return (this.getMobileMenuAriaExpanded() === 'true');
-  }
-
-  displayProfileMenu() {
-    return (this.getProfileMenuAriaExpanded() === 'true');
   }
 
   setMobileMenuAriaExpanded(boolean) {
     this.mobileMenuTogglerTarget.setAttribute('aria-expanded', String(boolean));
   }
 
-  setProfileMenuAriaExpanded(boolean) {
-    this.profileMenuTogglerTarget.setAttribute('aria-expanded', String(boolean));
-  }
-
   getMobileMenuAriaExpanded() {
     return this.mobileMenuTogglerTarget.getAttribute('aria-expanded');
-  }
-
-  getProfileMenuAriaExpanded() {
-    return this.profileMenuTogglerTarget.getAttribute('aria-expanded');
   }
 }

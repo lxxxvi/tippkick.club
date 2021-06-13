@@ -19,15 +19,10 @@ class ProfileTest < ApplicationSystemTestCase
     end
   end
 
-  test 'sees profile through profile menu' do
+  test 'sees profile through menu' do
     using_browser do
       sign_in_as :diego
-
-      within('#profile-menu') do
-        click_button
-        click_on 'Profile'
-      end
-
+      navigate_to 'Profile'
       assert_selector 'h1', text: 'PROFILE'
       assert_field 'Email', disabled: true
       assert_link 'Dashboard', href: '/dashboard'
@@ -53,7 +48,7 @@ class ProfileTest < ApplicationSystemTestCase
   test 'deletes the account' do
     using_browser do
       sign_in_as :diego
-      click_on 'Profile'
+      navigate_to 'Profile'
       click_on 'Delete my account'
       click_on 'Confirm deletion'
 
