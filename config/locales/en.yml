@@ -371,7 +371,6 @@ en:
       full: English
   navigation_component:
     open_main_menu: Open main menu
-    open_profile_menu: Open profile menu
   number:
     currency:
       format:

@@ -169,6 +169,7 @@ class TeamsTest < ApplicationSystemTestCase
 
         within('section#admin') do
           assert_changes -> { find_field('Invitation link').value } do
+            sleep 0.1
             click_on 'Refresh invitation link'
           end
         end
