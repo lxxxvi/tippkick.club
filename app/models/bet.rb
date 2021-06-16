@@ -17,6 +17,7 @@ class Bet < ApplicationRecord
   scope :ordered_antichronologically, -> { includes(:game).order('games.kickoff_at DESC, games.uefa_game_id ASC') }
   scope :kickoff_future, -> { joins(:game).where('games.kickoff_at > :datetime', datetime: Time.zone.now) }
   scope :kickoff_past, -> { joins(:game).where('games.kickoff_at <= :datetime', datetime: Time.zone.now) }
+  scope :of_ended_games, -> { joins(:game).where.not(games: { final_whistle_at: nil }) }
   scope :bet_ready, -> do
     joins(:game).where('games.kickoff_at > :time', time: Time.zone.now)
                 .where('games.home_team_name IS NOT NULL AND games.guest_team_name IS NOT NULL')

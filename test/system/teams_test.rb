@@ -46,11 +46,11 @@ class TeamsTest < ApplicationSystemTestCase
       assert_selector 'h2', text: 'Members'
       assert_selector 'h2', text: 'Admin'
 
-      within 'table.team-memberships' do
-        assert_selector 'td.ranking-position', count: 0
-        assert_selector 'td.total-points', count: 0
-        assert_selector 'td.nickname-with-emoji', text: 'digi'
-        assert_selector 'td.nickname-with-emoji', text: 'pele'
+      within '.team-memberships' do
+        assert_selector '.ranking-position', count: 0
+        assert_selector '.total-points', count: 0
+        assert_selector '.nickname-with-emoji', text: 'digi'
+        assert_selector '.nickname-with-emoji', text: 'pele'
       end
     end
   end
@@ -66,11 +66,38 @@ class TeamsTest < ApplicationSystemTestCase
 
       assert_selector 'h2', text: 'Your ranking in this team'
 
-      within 'table.team-memberships' do
-        assert_selector 'td.ranking-position', text: '1'
-        assert_selector 'td.total-points', text: '152'
-        assert_selector 'td.nickname-with-emoji', text: 'digi'
+      within '.team-memberships' do
+        assert_selector '.ranking-position', text: '1'
+        assert_selector '.total-points', text: '152'
+        assert_selector '.nickname-with-emoji', text: 'digi'
       end
+    end
+  end
+
+  test 'shows user total points history for team mates' do
+    before_game_25 do
+      using_browser do
+        sign_in_as :diego
+        navigate_to 'Teams'
+        click_on 'Campeones'
+
+        within '.team-membership-row:first-of-type' do
+          assert_selector '.user-total-points-history-navigation'
+          find('button').click
+          assert_selector '.user-total-points-history-table', count: 1
+          find('button').click
+          assert_selector '.user-total-points-history-table', count: 0
+        end
+      end
+    end
+  end
+
+  test 'does not show user total points history in global team' do
+    before_game_25 do
+      sign_in_as :diego
+      navigate_to 'Teams'
+      click_on 'Global'
+      assert_selector '.user-total-points-history-navigation', count: 0
     end
   end
 

@@ -1,9 +1,26 @@
-%tr.text-sm{ class: bg_color_class }
-  - if render_ranking_and_points?
-    %td.ranking-position.px-3.py-4.whitespace-nowrap.text-gray-900.text-center
-      = @team_membership_row.ranking_position
-    %td.total-points.px-3.py-4.whitespace-nowrap.text-gray-900.text-center
-      .inline-flex.items-center.px-2.5.py-0.5.rounded-full.font-medium.bg-pink-100.text-pink-800
-        = team_membership_user.total_points
-  %td.nickname-with-emoji.px-3.py-4.whitespace-nowrap.text-gray-900
-    = render NicknameComponent.new(user: team_membership_user, rooting_for_team: true)
+.w-full.text-sm.border-t.border-pink-200.team-membership-row{ data: { controller: 'user-total-points-history', 'user-total-points-history-opened-value': false, 'user-total-points-history-loaded-value': false, 'user-total-points-history-user-id': @team_membership_row.user_id } }
+  .flex.items-center{ class: bg_color_class }
+    - if render_ranking_and_points?
+      .ranking-position.px-3.py-4.whitespace-nowrap.text-gray-900.text-center{ class: 'w-1/6' }
+        = @team_membership_row.ranking_position
+      .total-points.px-3.py-4.whitespace-nowrap.text-gray-900.text-center{ class: 'w-1/6' }
+        .inline-flex.items-center.px-2.5.py-0.5.rounded-full.font-medium.bg-pink-100.text-pink-800
+          = team_membership_user.total_points
+    .nickname-with-emoji.px-3.py-4.whitespace-nowrap.text-gray-900{ class: 'w-4/6' }
+      .flex.items-center
+        .w-full
+          = render NicknameComponent.new(user: team_membership_user, rooting_for_team: true)
+        - if render_user_total_points_history?
+          .flex-shrink-0
+            .user-total-points-history-navigation.flex.items-center
+              %button.w-full{ data: { action: 'click->user-total-points-history#toggleHistory' }, 'aria-controls': 'game-stats' }
+                / chevron UP
+                %svg.mx-auto.h-5.w-5.text-gray-500{fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg', 'data-user-total-points-history-target': 'closeButton' }
+                  %path{d: 'M5 15l7-7 7 7', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2'}
+                / chevron DOWN
+                %svg.hidden.mx-auto.h-5.w-5.text-gray-500.hover:text-black.transition{fill: 'none', stroke: 'currentColor', viewbox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg', 'data-user-total-points-history-target': 'openButton' }
+                  %path{d: 'M19 9l-7 7-7-7', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'stroke-width': '2'}
+
+  - if render_user_total_points_history?
+    .flex.items-center{ 'data-user-total-points-history-target': 'content' }
+      .w-full.p-3{ id: "user-#{@team_membership_row.user_id}-total-points-history" }
