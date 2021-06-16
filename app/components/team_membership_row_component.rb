@@ -16,6 +16,10 @@ class TeamMembershipRowComponent < ViewComponent::Base
     Tournament.after_first_kickoff?
   end
 
+  def render_user_total_points_history?
+    render_ranking_and_points? && !@team_membership_row.team.global?
+  end
+
   private
 
   def team_membership_of_user?

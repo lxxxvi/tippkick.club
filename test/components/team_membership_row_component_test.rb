@@ -20,11 +20,9 @@ class TeamMembershipRowComponentTest < ViewComponent::TestCase
 
       render_inline(component)
 
-      page.all('td').tap do |td|
-        assert_equal '1', td[0].text.strip
-        assert_equal '152', td[1].text.strip
-        assert_selector '.nickname', text: 'digi'
-      end
+      assert_selector '.ranking-position', text: '1'
+      assert_selector '.total-points', text: '152'
+      assert_selector '.nickname', text: 'digi'
     end
   end
 end

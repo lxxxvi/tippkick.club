@@ -36,6 +36,9 @@ en:
     you_scored_x_points:
       one: You scored 1 point
       other: You scored %{count} points
+  activemodel:
+    models:
+      game: Game
   activerecord:
     attributes:
       game:
@@ -549,3 +552,5 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  user_total_points_history_component:
+    final_score: Final score

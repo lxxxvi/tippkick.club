@@ -45,6 +45,15 @@ class BetTest < ActiveSupport::TestCase
     end
   end
 
+  test '.of_ended_games' do
+    user = users(:diego)
+    before_game_25 do
+      assert_difference -> { Bet.of_user(user).of_ended_games.count }, -1 do
+        games(:game_24).final_whistle(reset: true)
+      end
+    end
+  end
+
   test '#update_game_bets_count after save' do
     game = games(:game_25)
     bet = bets(:diego_game_25) # bets 1:2

@@ -36,6 +36,9 @@ de-CH:
     you_scored_x_points:
       one: Du hast 1 Punkt gewonnen
       other: Du hast %{count} Punkte gewonnen
+  activemodel:
+    models:
+      game: Spiel
   activerecord:
     attributes:
       game:
@@ -557,3 +560,5 @@ de-CH:
       long: "%A, %d. %B %Y, %H:%M Uhr"
       short: "%d. %B, %H:%M Uhr"
     pm: nachmittags
+  user_total_points_history_component:
+    final_score: Endstand
