@@ -113,6 +113,11 @@ en:
     not_ready_to_bet: Not ready to bet
   bet_odds_component:
     x_wins: "%{x} wins"
+  bets:
+    index:
+      note_about_betting_in_ko_phase: Please note that score after 90 or 120 minutes counts, without penalty shootout.
+      note_about_betting_in_ko_phase_addition: That means there can be draws in the knockout phase.
+      welcome_to_the_knockout_phase: Welcome to the knockout phase!
   dashboard_bets_component:
     number_of_games:
       one: 1 game

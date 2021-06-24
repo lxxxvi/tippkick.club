@@ -3,5 +3,12 @@
 
 = render TournamentNavigationComponent.new
 
+- if Tournament.after_group_phase?
+  .rules.my-8{ class: 'mx-auto' }
+    .border-2.border-gray-400.bg-gray-50.rounded-xl.p-5.text-sm
+      %em.block.font-bold.not-italic.mb-1= t('.welcome_to_the_knockout_phase')
+      .block= t('.note_about_betting_in_ko_phase')
+      .block= t('.note_about_betting_in_ko_phase_addition')
+
 .grid.grid-cols-1.gap-4
   = render BetComponent.with_collection(@bets)

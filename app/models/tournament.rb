@@ -21,4 +21,8 @@ class Tournament
   def self.tournament_ongoing?
     after_first_kickoff? && before_last_kickoff?
   end
+
+  def self.after_group_phase?
+    Game.find_by(uefa_game_id: '36').final_whistle_at&.past?
+  end
 end

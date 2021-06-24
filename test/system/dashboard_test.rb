@@ -21,10 +21,10 @@ class DashboardTest < ApplicationSystemTestCase
   end
 
   test 'displays no notification about bet_pending games' do
-    Bet.bet_pending_and_ready
-       .update_all(home_team_score: 8, guest_team_score: 9)
+    before_tournament do
+      Bet.bet_pending_and_ready
+         .update_all(home_team_score: 8, guest_team_score: 9)
 
-    before_game_25 do
       sign_in_as :diego
       assert_text 'You are all set'
     end

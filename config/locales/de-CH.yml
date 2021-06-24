@@ -113,6 +113,11 @@ de-CH:
     not_ready_to_bet: Noch nicht tippbar
   bet_odds_component:
     x_wins: "%{x} gewinnt"
+  bets:
+    index:
+      note_about_betting_in_ko_phase: Beachte dass der Spielstand nach 90 bzw. 120 Minuten entscheidend ist, ohne Penaltyschiessen.
+      note_about_betting_in_ko_phase_addition: Es kann also Unentschieden geben.
+      welcome_to_the_knockout_phase: Willkommen in der Knockoutphase!
   dashboard_bets_component:
     number_of_games:
       one: 1 Spiel
