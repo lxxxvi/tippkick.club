@@ -1,21 +1,26 @@
-.grid.grid-cols-2.gap-x-3.sm:gap-x-4.gap-y-2.text-2xs
-  .flex.justify-end.text-gray-500
-    = t('.x_wins', x: @game.decorate.display_home_team_name)
-  .flex
-    .bg-blue-200.rounded-r-xl.flex.items-center.justif-start{ style: "width: #{bets_home_team_wins_percentage}%;" }
-      .bet-odds--home-team-win-percentage.ml-1.text-gray-600
-        = display_bets_home_team_wins_percentage
+- if display_odds?
+  .bet-odds
+    .grid.grid-cols-2.gap-x-3.sm:gap-x-4.gap-y-2.text-2xs
+      .flex.justify-end.text-gray-500
+        = t('.x_wins', x: @game.decorate.display_home_team_name)
+      .flex
+        .bg-blue-200.rounded-r-xl.flex.items-center.justif-start{ style: "width: #{bets_home_team_wins_percentage}%;" }
+          .bet-odds--home-team-win-percentage.ml-1.text-gray-600
+            = display_bets_home_team_wins_percentage
 
-  .flex.justify-end.text-gray-500
-    = t('.x_wins', x: @game.decorate.display_guest_team_name)
-  .flex
-    .bg-blue-200.rounded-r-xl.flex.items-center.justif-start{ style: "width: #{bets_guest_team_wins_percentage}%;" }
-      .bet-odds--guest-team-win-percentage.ml-1.text-gray-600
-        = display_bets_guest_team_wins_percentage
+      .flex.justify-end.text-gray-500
+        = t('.x_wins', x: @game.decorate.display_guest_team_name)
+      .flex
+        .bg-blue-200.rounded-r-xl.flex.items-center.justif-start{ style: "width: #{bets_guest_team_wins_percentage}%;" }
+          .bet-odds--guest-team-win-percentage.ml-1.text-gray-600
+            = display_bets_guest_team_wins_percentage
 
-  .flex.justify-end.text-gray-500
-    = t('shared.draw')
-  .flex
-    .bg-blue-200.rounded-r-xl.flex.items-center.justif-start{ style: "width: #{bets_draw_percentage}%;" }
-      .bet-odds--draw-percentage.ml-1.text-gray-600
-        = display_bets_draw_percentage
+      .flex.justify-end.text-gray-500
+        = t('shared.draw')
+      .flex
+        .bg-blue-200.rounded-r-xl.flex.items-center.justif-start{ style: "width: #{bets_draw_percentage}%;" }
+          .bet-odds--draw-percentage.ml-1.text-gray-600
+            = display_bets_draw_percentage
+- else
+  .text-gray-500.text-xs.text-center
+    = t('.disabled_after_round_of_16')

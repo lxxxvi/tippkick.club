@@ -112,6 +112,7 @@ en:
     bet_now: Bet now
     not_ready_to_bet: Not ready to bet
   bet_odds_component:
+    disabled_after_round_of_16: After Round of 16, the odds are displayed just after kickoff.
     x_wins: "%{x} wins"
   bets:
     index:
