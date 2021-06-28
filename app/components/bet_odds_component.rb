@@ -7,6 +7,10 @@ class BetOddsComponent < ViewComponent::Base
     @game.bets_count.positive?
   end
 
+  def display_odds?
+    %w[group round_of_16].include?(@game.tournament_phase) || @game.kickoff_past?
+  end
+
   def display_bets_home_team_wins_percentage
     to_percentage_display(bets_home_team_wins_percentage)
   end

@@ -112,6 +112,7 @@ de-CH:
     bet_now: Tippen
     not_ready_to_bet: Noch nicht tippbar
   bet_odds_component:
+    disabled_after_round_of_16: Nach dem Achtelfinal wird die Wettquote erst nach dem Anpfiff angezeigt.
     x_wins: "%{x} gewinnt"
   bets:
     index:
