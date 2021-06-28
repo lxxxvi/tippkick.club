@@ -16,6 +16,8 @@
 
               .min-w-0.flex-1.px-4.md:grid.md:grid-cols-2.md:gap-4
                 %div
+                  .mb-2.text-xs.text-pink-400
+                    = game.decorate.display_tournament_phase
                   = time_tag game.kickoff_at do
                     .text-xs
                       %span.text-purple-500= game.kickoff_at.strftime('%d %b')
