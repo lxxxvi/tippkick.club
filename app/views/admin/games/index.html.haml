@@ -23,14 +23,11 @@
                       %span.text-purple-500= game.kickoff_at.strftime('%d %b')
                       = game.kickoff_at.strftime('%H:%M UTC')
                   .mt-2.flex.items-center.text-lg
-                    - if game.teams_present?
-                      = game.decorate.display_teams_short
-                      - if game.live?
-                        %span.live.ml-2.text-xs.text-red-400= t('shared.live')
-                      - elsif game.final_whistle?
-                        %span.final-score.ml-2.text-xs.text-blue-600= "(#{game.decorate.display_scores_short})"
-                    - else
-                      .text-gray-500= t('shared.tbd')
+                    = game.decorate.display_teams_short
+                    - if game.live?
+                      %span.live.ml-2.text-xs.text-red-400= t('shared.live')
+                    - elsif game.final_whistle?
+                      %span.final-score.ml-2.text-xs.text-blue-600= "(#{game.decorate.display_scores_short})"
 
             %div
               %svg.h-5.w-5.text-gray-500{"aria-hidden": "true", fill: "currentColor", viewbox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg"}
