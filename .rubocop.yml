@@ -24,6 +24,9 @@ Layout/BeginEndAlignment:
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 
+Layout/LineEndStringConcatenationIndentation:
+  Enabled: true
+
 Layout/LineLength:
   Exclude:
   - config/initializers/devise.rb
@@ -76,6 +79,9 @@ Lint/EmptyConditionalBody:
   Enabled: true
 
 Lint/EmptyFile:
+  Enabled: true
+
+Lint/EmptyInPattern:
   Enabled: true
 
 Lint/FloatComparison:
@@ -170,10 +176,16 @@ Metrics/MethodLength:
   - db/migrate/*
   - test/**/*
 
+Naming/InclusiveLanguage:
+  Enabled: true
+
 Naming/VariableNumber:
   EnforcedStyle: snake_case
 
 Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/AddColumnIndex:
   Enabled: true
 
 Rails/AfterCommitOverride:
@@ -182,10 +194,19 @@ Rails/AfterCommitOverride:
 Rails/AttributeDefaultBlockValue:
   Enabled: true
 
+Rails/EagerEvaluationLogMessage:
+  Enabled: true
+
 Rails/EnvironmentVariableAccess:
   Enabled: true
 
+Rails/ExpandedDateRange:
+  Enabled: true
+
 Rails/FindById:
+  Enabled: true
+
+Rails/I18nLocaleAssignment:
   Enabled: true
 
 Rails/Inquiry:
@@ -223,6 +244,9 @@ Rails/SquishedSQLHeredocs:
   Enabled: true
 
 Rails/TimeZoneAssignment:
+  Enabled: true
+
+Rails/UnusedIgnoredColumns:
   Enabled: true
 
 Rails/WhereEquals:
@@ -303,12 +327,18 @@ Style/HashTransformValues:
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
+Style/InPatternThen:
+  Enabled: true
+
 Style/KeywordParametersOrder:
   Enabled: true
 
 Style/Lambda:
   Enabled: true
   EnforcedStyle: literal
+
+Style/MultilineInPatternThen:
+  Enabled: true
 
 Style/NegatedIfElseCondition:
   Enabled: true
@@ -320,6 +350,9 @@ Style/NumericLiterals:
   Enabled: false
 
 Style/OptionalBooleanParameter:
+  Enabled: true
+
+Style/QuotedSymbols:
   Enabled: true
 
 Style/RedundantArgument:
