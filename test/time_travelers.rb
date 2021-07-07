@@ -36,6 +36,6 @@ module TimeTravelers
   end
 
   def after_tournament(&block)
-    travel_to('2021-07-11 20:00:00 UTC', &block)
+    travel_to('2021-07-11 21:00:00 UTC', &block)
   end
 end

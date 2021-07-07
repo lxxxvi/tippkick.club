@@ -336,6 +336,13 @@ de-CH:
       header:
         one: 'Konnte %{model} nicht speichern: ein Fehler.'
         other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
+  final_ranking_component:
+    congratulations_to_our_global_winners:
+      one: Gratulation an den/die globalen Gewinner:in
+      other: Gratulationen an die globalen Gewinner
+    they_deserve_title_html:
+      one: Er/sie verdient es von nun an mit <b>FUSSBALLÜBERGOTT</b> angesprochen zu werden.
+      other: Sie verdienen es von nun an mit <b>FUSSBALLÜBERGOTT</b> angesprochen zu werden.
   game_stats_component:
     bets_by_scores: Nach Torstand
   helpers:
@@ -514,6 +521,9 @@ de-CH:
     loading: Lade
     members: Mitglieder
     meta_description: Gratis online Tippspiel für die UEFA Euro 2020.
+    n_points:
+      one: "%{count} Punkt"
+      other: "%{count} Punkte"
     new_password: Neues Passwort
     no_one_with_brackets: "(niemanden)"
     odds: Wettquote
@@ -529,6 +539,7 @@ de-CH:
     teams: Teams
     tournament: Turnier
     uefa_game_id: Spiel %{uefa_game_id}
+    your_final_global_ranking: Dein globaler Schlussrang
     your_rank: Dein Rang
     your_ranking_in_this_team: Dein Rang in diesem Team
   support:

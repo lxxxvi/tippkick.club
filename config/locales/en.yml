@@ -336,6 +336,13 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: "%{count} errors prohibited this %{model} from being saved"
+  final_ranking_component:
+    congratulations_to_our_global_winners:
+      one: Congratulations to our global winner
+      other: Congratulations to our global winners
+    they_deserve_title_html:
+      one: They deserve to be addressed with <b>FUSSBALLÜBERGOTT</b> from now on.
+      other: They deserve to be addressed with <b>FUSSBALLÜBERGOTT</b> from now on.
   game_stats_component:
     bets_by_scores: Bets by scores
   helpers:
@@ -506,6 +513,9 @@ en:
     loading: Loading
     members: Members
     meta_description: Free online betting game for UEFA Euro 2020.
+    n_points:
+      one: "%{count} point"
+      other: "%{count} points"
     new_password: New password
     no_one_with_brackets: "(no one)"
     odds: Odds
@@ -521,6 +531,7 @@ en:
     teams: Teams
     tournament: Tournament
     uefa_game_id: Match %{uefa_game_id}
+    your_final_global_ranking: Your final global ranking
     your_rank: Your rank
     your_ranking_in_this_team: Your ranking in this team
   support:

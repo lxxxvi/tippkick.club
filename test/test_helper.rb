@@ -14,6 +14,12 @@ class ActiveSupport::TestCase
   def reset_bet(bet)
     bet.update_columns(home_team_score: nil, guest_team_score: nil)
   end
+
+  def end_tournament!
+    Tournament.last_game.tap do |last_game|
+      last_game.update!(final_whistle_at: last_game.kickoff_at + 105.minutes)
+    end
+  end
 end
 
 class ActionDispatch::IntegrationTest

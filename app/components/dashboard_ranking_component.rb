@@ -7,11 +7,7 @@ class DashboardRankingComponent < ViewComponent::Base
     Tournament.after_first_kickoff?
   end
 
-  def total_points
-    @total_points ||= @user.total_points
-  end
-
-  def global_ranking_position
-    @global_ranking_position ||= @user.membership_for(Team.global)&.ranking_position
+  def display_final_ranking?
+    Tournament.after_last_final_whistle?
   end
 end
