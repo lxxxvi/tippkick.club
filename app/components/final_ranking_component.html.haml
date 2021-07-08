@@ -1,0 +1,20 @@
+%section#final-ranking
+  .border-2.border-green-300.rounded-xl.overflow-auto.shadow-xl
+    .grid.grid-cols-1.justify-items-center
+      .bg-green-300.py-4.w-full.text-center.text-sm
+        = t('shared.your_final_global_ranking')
+      .global-ranking.text-7xl.py-8.text-center
+        = global_ranking_position
+        .text-xs.mt-2.text-gray-600
+          = "(#{t('shared.n_points', count: total_points)})"
+      .text-center.border-t.m-4.mt-0.pt-8.mb-6
+        .text-gray-700
+          = t('.congratulations_to_our_global_winners', count: global_winners.count)
+        .text-center.mt-4.text-3xl 👏👏👏
+        %ul.text-2xl.my-10
+          - global_winners.each do |global_winner|
+            %li.my-3= render NicknameComponent.new(user: global_winner, rooting_for_team: true)
+        .my-4.text-gray-700
+          = t('.they_deserve_title_html', count: global_winners.count)
+      .text-center.mt-2.mb-4
+        = link_to t('shared.global_ranking'), team_path(:global), class: 'inline-flex items-center justify-center px-6 py-2 border border-transparent font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 text-sm'

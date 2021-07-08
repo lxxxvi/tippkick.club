@@ -8,28 +8,21 @@ class DashboardRankingComponentTest < ViewComponent::TestCase
     end
   end
 
-  test '.render, in_game_1' do
-    user = users(:diego)
-    Game.update_all(final_whistle_at: nil)
-
+  test '.render, before last final whistle' do
     in_game_1 do
-      FinalWhistleService.new.call!
-      user.reload
-      render_inline DashboardRankingComponent.new(user)
-      assert_selector '.points', text: '0', exact_text: true
-      assert_selector '.global-ranking', text: '1', exact_text: true
+      render_inline DashboardRankingComponent.new(users(:diego))
+      assert_selector '.points', text: '152'
+      assert_selector '.global-ranking', text: '1'
     end
   end
 
-  test '.render, during tournament' do
-    before_game_25 do
-      component = DashboardRankingComponent.new(users(:diego))
+  test '.render, after last final whistle' do
+    end_tournament!
 
-      render_inline(component)
-      assert_selector '.points', text: '152'
-      assert_selector '.global-ranking', text: '1', exact_text: true
-
-      assert_link 'Global ranking', href: '/teams/global'
+    after_tournament do
+      render_inline DashboardRankingComponent.new(users(:diego))
+      assert_text 'Your final global ranking'
+      assert_text '1'
     end
   end
 end

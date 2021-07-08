@@ -12,6 +12,7 @@ class Membership < ApplicationRecord
   scope :ordered_by_global_and_team_name, -> {
     with_teams.order(Arel.sql("CASE WHEN teams.tippkick_id = 'global' THEN 1 ELSE 2 END, teams.name"))
   }
+  scope :ranked_first, -> { where(ranking_position: 1) }
 
   after_destroy :update_stats
   after_save :update_stats
