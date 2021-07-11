@@ -35,6 +35,10 @@ module TimeTravelers
     travel_to('2021-07-11 19:00:00 UTC', &block)
   end
 
+  def after_kickoff_of_game_51(&block)
+    travel_to('2021-07-11 19:01:00 UTC', &block)
+  end
+
   def after_tournament(&block)
     travel_to('2021-07-11 21:00:00 UTC', &block)
   end
