@@ -18,4 +18,7 @@
         = t('.number_of_games', count: bet_pending_and_ready_games_count)
         = t('.ready_to_bet')
 
-    = c.link(name: t('shared.bets'), path: bets_path)
+    - if Tournament.after_last_kickoff?
+      = c.link(name: t('shared.games'), path: games_path)
+    - else
+      = c.link(name: t('shared.bets'), path: bets_path)
