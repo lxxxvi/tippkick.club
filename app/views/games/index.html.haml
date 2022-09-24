@@ -1,7 +1,0 @@
-- content_for :backlink do
-  = render BacklinkComponent.new(name: t('shared.dashboard'), path: dashboard_path)
-
-= render TournamentNavigationComponent.new
-
-.bets-with-game.grid.grid-cols-1.gap-4
-  = render BetWithGameComponent.with_collection(@bets_with_game)

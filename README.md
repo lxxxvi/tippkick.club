@@ -1,86 +1,24 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/387e31f23babd44f0951/maintainability)](https://codeclimate.com/github/lxxxvi/tippkick.club/maintainability)
+# README
 
-# tippkick.club
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Prerequisite
+Things you may want to cover:
 
-Make sure you have these dependencies installed and running:
+* Ruby version
 
-* Postgres
-* Redis
+* System dependencies
 
-## Local setup
+* Configuration
 
-Clone the repository, then
+* Database creation
 
-```
-bin/setup
-```
+* Database initialization
 
-### Seeds
+* How to run the test suite
 
-Seeds contain initial data for
+* Services (job queues, cache servers, search engines, etc.)
 
-* Team (Global Team)
-* Games (UEFA Euro 2020)
-* User (Admins)
+* Deployment instructions
 
-```
-bin/rails db:seed
-```
-
-### Fixtures
-
-Alternatively you can load the test fixtures, which contains multiple users, their bets, some game results, teams etc.
-
-```
-bin/rails db:fixtures:load
-```
-
-### Even more data
-
-If you want even more data, you can use
-
-```
-bin/rails dev:setup
-```
-
-which loads the fixtures (same as described above), and adds some more **random** data (users, teams).
-
-## Test locally
-
-To run the entire test suite, use:
-
-```
-bin/test
-```
-
-Which calls
-
-* `bin/rails test`
-* `bin/rails test:system`
-* `bundle exec rubocop`
-
-
-## Heroku Setup
-
-Node
-
-```
-heroku buildpacks:add heroku/nodejs
-heroku buildpacks:add heroku/ruby
-```
-
-```
-heroku addons:create heroku-redis:hobby-dev
-```
-
-## Run production locally
-
-```
-RAILS_ENV=production NODE_ENV=production bin/rails assets:precompile
-```
-
-```
-RAILS_SERVE_STATIC_FILES=true bin/rails s -e production
-```
+* ...

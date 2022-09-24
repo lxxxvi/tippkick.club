@@ -1,9 +1,7 @@
-def load_seeds(seed_name)
-  file_name = "./seeds/#{seed_name}.rb"
-  Rails.logger.info "Loading #{file_name}"
-  require_relative file_name
-end
-
-load_seeds 'teams'
-load_seeds 'users'
-load_seeds 'games'
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
