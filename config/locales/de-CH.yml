@@ -1,0 +1,580 @@
+---
+de-CH:
+  about_component:
+    about_us:
+      code_monkeys: Code monkeys
+      switzerland_based: In der Schweiz zuhause
+      title: Wer sind wir?
+      web_techies: Webtechnologieliebhaber*innen
+    get_in_touch:
+      mail_subject_template: Über tippkick...
+      questions_comments_bug_reports: Hast du Fragen, Kommentare oder möchtest ein Problem melden?
+      tell_us: Erzähl es uns!
+      title: Kontakt
+    intro:
+      free: Deshalb ist das Spiel gratis, die Benutzerdaten werden nicht weitergegeben und nicht aufbewahrt.
+      what_is_tippkick: Bei tippkick.club handelt sich um ein privates Projekt, bei welchem das Lernen diverser Web Technologien im Vordergrund steht.
+    what_about_privacy:
+      delete_data_after_1_month: Wir werden sämtliche Daten 1 Monat nach Turnierende löschen, also am 11. August 2021.
+      no_backups: Wir behalten auch keine Backups.
+      not_share_data: Wir teilen deine Daten mit Niemanden.
+      not_using_in_future: Wir werden die Daten auch nicht für künftige Aktionen benutzen.
+      passwords_are_encrypted: Passwörter werden verschlüsselt gespeichert.
+      title: Was passiert mit meinen Daten?
+      your_data_are_in_location: Die Daten werden bis zur Löschung auf einem Server in Dublin (Irland) gespeichert.
+    what_about_web_technologies:
+      code_is_open_sourced_on: Der Code zu diesem Projekt ist Open Sourced auf
+      title: Web Technologien?
+      used_technologies: 'Dieses Projekt unter anderem wurde mit folgenden Technologien und Tools realisiert:'
+    what_does_free_mean:
+      data_is_not_given_away: Benutzerdaten werden nicht verkauft oder weitergegeben.
+      free_means_free: Gratis bedeutet Gratis.
+      joining_is_free: Teilnehmen ist gratis.
+      no_ads_no_trackers: Es gibt keine Werbung, keine Tracker oder ähnliches.
+      title: Was bedeutet Gratis?
+  achievement_bar_component:
+    you_scored_x_points:
+      one: Du hast 1 Punkt gewonnen
+      other: Du hast %{count} Punkte gewonnen
+  activemodel:
+    models:
+      game: Spiel
+  activerecord:
+    attributes:
+      game:
+        final_whistle_at: Schlusspfiff am
+        final_whistle_at_short: Schlusspfiff
+        guest_team_name: Gästeteam
+        guest_team_score: Gästeteam Treffer
+        home_team_name: Heimteam
+        home_team_score: Heimteam Treffer
+        kickoff_at: Anpfiff am
+        kickoff_at_short: Anpfiff
+        tournament_phases:
+          final: Final
+          group: Gruppenphase
+          quarter_finals: Viertelfinal
+          round_of_16: Achtelfinal
+          semi_finals: Halbfinal
+        uefa_game_id: UEFA Spiel ID
+        uefa_game_id_short: "#"
+        venues:
+          amsterdam: Amsterdam
+          baku: Baku
+          bilbao: Bilbao
+          bucharest: Bukarest
+          budapest: Budapest
+          copenhagen: Kopenhagen
+          dublin: Dublin
+          glasgow: Glasgow
+          london: London
+          munich: München
+          rome: Rom
+          saint_petersburg: Sankt Petersburg
+      membership:
+        ranking_position_short: "#"
+      team:
+        members_count_short: Mitglieder
+        name: Name
+      user:
+        nickname: Nickname
+        rooting_for_team: Meine Mannschaft
+        total_points_short: Pkt
+    errors:
+      messages:
+        record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+        restrict_dependent_destroy:
+          has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.
+          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz existiert.
+      models:
+        bet:
+          attributes:
+            guest_team_score:
+              cannot_be_changed_after_kickoff: darf nicht nach dem Anpfiff geändert werden
+            home_team_score:
+              cannot_be_changed_after_kickoff: darf nicht nach dem Anpfiff geändert werden
+        game:
+          attributes:
+            final_whistle_at:
+              cannot_be_before_kickoff: darf nicht vor dem Anpfiff sein
+            guest_team_score:
+              cannot_be_changed_before_kickoff: darf nicht vor dem Anpfiff geändert werden
+            home_team_score:
+              cannot_be_changed_before_kickoff: darf nicht vor dem Anpfiff geändert werden
+  admin:
+    games:
+      actions:
+        edit: Spiel editieren
+      update:
+        failure: Spiel konnte nicht gespeichert werden.
+        success: Spiel erfolgreich gespeichert.
+  bet_component:
+    bet_now: Tippen
+    not_ready_to_bet: Noch nicht tippbar
+  bet_odds_component:
+    disabled_after_round_of_16: Nach dem Achtelfinal wird die Wettquote erst nach dem Anpfiff angezeigt.
+    x_wins: "%{x} gewinnt"
+  bets:
+    index:
+      note_about_betting_in_ko_phase: Beachte dass der Spielstand nach 90 bzw. 120 Minuten entscheidend ist, ohne Penaltyschiessen.
+      note_about_betting_in_ko_phase_addition: Es kann also Unentschieden geben.
+      welcome_to_the_knockout_phase: Willkommen in der Knockoutphase!
+  dashboard_bets_component:
+    number_of_games:
+      one: 1 Spiel
+      other: "%{count} Spiele"
+    ready_to_bet: zum tippen bereit.
+    there_is:
+      one: Es stehen
+      other: Es stehen
+    you_are_all_set: Du bist bereit
+  dashboard_component:
+    hey_nickname: Hey %{nickname}
+    this_is_your_dashboard: dies ist dein Dashboard
+  dashboard_profile_component:
+    change_your_profile: Dein Profil ändern
+  dashboard_teams_component:
+    and_invite_your_friends: und deine Freunde dazu einladen.
+    create_your_own_team: Du kannst deine eigenen Teams erstellen
+    you_are_in_count_teams:
+      one: Du bist in einem Team
+      other: Du bist in %{count} Teams
+  date:
+    abbr_day_names:
+    - So
+    - Mo
+    - Di
+    - Mi
+    - Do
+    - Fr
+    - Sa
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Mär
+    - Apr
+    - Mai
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Okt
+    - Nov
+    - Dez
+    day_names:
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+    formats:
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b"
+    month_names:
+    -
+    - Januar
+    - Februar
+    - März
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: etwa einer Stunde
+        other: etwa %{count} Stunden
+      about_x_months:
+        one: etwa einem Monat
+        other: etwa %{count} Monaten
+      about_x_years:
+        one: etwa einem Jahr
+        other: etwa %{count} Jahren
+      almost_x_years:
+        one: fast einem Jahr
+        other: fast %{count} Jahren
+      half_a_minute: einer halben Minute
+      less_than_x_minutes:
+        one: weniger als einer Minute
+        other: weniger als %{count} Minuten
+      less_than_x_seconds:
+        one: weniger als einer Sekunde
+        other: weniger als %{count} Sekunden
+      over_x_years:
+        one: mehr als ein Jahr
+        other: mehr als %{count} Jahre
+      x_days:
+        one: einem Tag
+        other: "%{count} Tagen"
+      x_minutes:
+        one: einer Minute
+        other: "%{count} Minuten"
+      x_months:
+        one: einem Monat
+        other: "%{count} Monaten"
+      x_seconds:
+        one: einer Sekunde
+        other: "%{count} Sekunden"
+      x_years:
+        one: einem Jahr
+        other: "%{count} Jahren"
+    prompts:
+      day: Tag
+      hour: Stunde
+      minute: Minute
+      month: Monat
+      second: Sekunde
+      year: Jahr
+  devise:
+    confirmations:
+      confirmed: Deine E-Mail-Adresse wurde erfolgreich bestätigt.
+      send_instructions: Du erhältst in wenigen Minuten eine E-Mail, mit der Du Deine Registrierung bestätigen kannst.
+      send_paranoid_instructions: Falls Deine E-Mail-Adresse in unserer Datenbank existiert, erhältst Du in wenigen Minuten eine E-Mail, mit der Du Deine Registrierung bestätigen kannst.
+    failure:
+      already_authenticated: Du bist bereits angemeldet.
+      inactive: Dein Konto ist nicht aktiv.
+      invalid: "%{authentication_keys} oder Passwort ungültig."
+      last_attempt: Du hast noch einen Versuch, bis Dein Konto gesperrt wird.
+      locked: Dein Konto ist gesperrt.
+      not_found_in_database: "%{authentication_keys} oder Passwort ungültig."
+      timeout: Deine Sitzung ist abgelaufen, bitte melde Dich erneut an.
+      unauthenticated: Du musst Dich anmelden oder registrieren, bevor Du fortfahren können.
+      unconfirmed: Du musst Dein Konto bestätigen, bevor Du fortfahren kannst.
+    mailer:
+      confirmation_instructions:
+        subject: Anleitung zur Bestätigung Deines Kontos
+      email_changed:
+        subject: E-Mail-Adresse geändert
+      password_change:
+        subject: Passwort geändert
+      reset_password_instructions:
+        subject: Anleitung für das Zurücksetzen Deines Passworts
+      unlock_instructions:
+        subject: Anleitung für die Konto-Freischaltung
+    omniauth_callbacks:
+      failure: Du konntest nicht mit Deinem %{kind}-Konto angemeldet werden, weil "%{reason}".
+      success: Du hast Dich erfolgreich mit Deinem %{kind}-Konto angemeldet.
+    passwords:
+      no_token: Du kannst Dich nicht auf dieser Seite anmelden, wenn Du nicht von einer Passwort-Zurücksetzen-E-Mail kommst. Wenn Du von solch einer E-Mail kommst, überprüfe bitte, ob Du die gesamte URL verwendet hast.
+      send_instructions: Du erhältst in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Dein Passwort zurücksetzen kannst.
+      send_paranoid_instructions: Falls Deine E-Mail-Adresse in unserer Datenbank existiert, erhältst Du in wenigen Minuten eine E-Mail, mit der Anleitung, wie Du Dein Passwort zurücksetzen können.
+      updated: Dein Passwort wurde geändert. Du bist jetzt angemeldet.
+      updated_not_active: Dein Passwort wurde geändert.
+    registrations:
+      destroyed: Dein Konto wurde gelöscht.
+      signed_up: Du hast Dich erfolgreich registriert.
+      signed_up_but_inactive: Du hast sich erfolgreich registriert. Wir konnten Dich jedoch nicht anmelden, weil Dein Konto noch nicht aktiviert ist.
+      signed_up_but_locked: Du hast dich erfolgreich registriert. Wir konnten Dich jedoch nicht anmelden, weil Dein Konto gesperrt ist.
+      signed_up_but_unconfirmed: Du erhältst in wenigen Minuten eine E-Mail mit einem Link für die Bestätigung der Registrierung. Klicke auf den Link um Dein Konto zu aktivieren.
+      update_needs_confirmation: Deine Daten wurden aktualisiert, aber Du musst Deine neue E-Mail-Adresse bestätigen. Du erhältst in wenigen Minuten eine E-Mail, mit der Du die Änderung Deiner E-Mail-Adresse abschließen kannst.
+      updated: Deine Daten wurden aktualisiert.
+      updated_but_not_signed_in: Dein Daten wurden aktualisiert. Da das Passwort geändert wurde, musst du dich erneut anmelden.
+    sessions:
+      already_signed_out: Erfolgreich abgemeldet.
+      signed_in: Erfolgreich angemeldet.
+      signed_out: Erfolgreich abgemeldet.
+    unlocks:
+      send_instructions: Du erhältst in wenigen Minuten eine E-Mail mit der Anleitung, wie Du Dein Konto entsperren kannst.
+      send_paranoid_instructions: Falls Deine E-Mail-Adresse in unserer Datenbank existiert, erhältst Du in wenigen Minuten eine E-Mail, mit der Anleitung, wie Du Dein Konto entsperren kannst.
+      unlocked: Dein Konto wurde entsperrt. Bitte melden Dich an, um fortzufahren.
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: muss akzeptiert werden
+      already_confirmed: wurde bereits bestätigt, bitte versuche, Dich anzumelden
+      blank: muss ausgefüllt werden
+      confirmation: stimmt nicht mit %{attribute} überein
+      confirmation_period_expired: musste innerhalb von %{period} bestätigt werden, bitte neu anfordern.
+      empty: muss ausgefüllt werden
+      equal_to: muss genau %{count} sein
+      even: muss gerade sein
+      exclusion: ist nicht verfügbar
+      expired: ist abgelaufen, bitte neu anfordern
+      greater_than: muss grösser als %{count} sein
+      greater_than_or_equal_to: muss grösser oder gleich %{count} sein
+      inclusion: ist kein gültiger Wert
+      invalid: ist nicht gültig
+      less_than: muss kleiner als %{count} sein
+      less_than_or_equal_to: muss kleiner oder gleich %{count} sein
+      model_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+      not_a_number: ist keine Zahl
+      not_an_integer: muss ganzzahlig sein
+      not_found: nicht gefunden
+      not_locked: ist nicht gesperrt
+      not_saved:
+        one: "%{resource} konnte aufgrund eines Fehlers nicht gespeichert werden:"
+        other: "%{count} Fehler verhinderten das Speichern von %{resource}:"
+      odd: muss ungerade sein
+      other_than: darf nicht gleich %{count} sein
+      present: darf nicht ausgefüllt werden
+      required: muss ausgefüllt werden
+      taken: ist bereits vergeben
+      too_long:
+        one: ist zu lang (mehr als 1 Zeichen)
+        other: ist zu lang (mehr als %{count} Zeichen)
+      too_short:
+        one: ist zu kurz (weniger als 1 Zeichen)
+        other: ist zu kurz (weniger als %{count} Zeichen)
+      wrong_length:
+        one: hat die falsche Länge (muss genau 1 Zeichen haben)
+        other: hat die falsche Länge (muss genau %{count} Zeichen haben)
+    template:
+      body: 'Bitte überprüfen Sie die folgenden Felder:'
+      header:
+        one: 'Konnte %{model} nicht speichern: ein Fehler.'
+        other: 'Konnte %{model} nicht speichern: %{count} Fehler.'
+  final_ranking_component:
+    congratulations_to_our_global_winners:
+      one: Gratulation an den/die globalen Gewinner:in
+      other: Gratulationen an die globalen Gewinner
+    they_deserve_title_html:
+      one: Er/sie verdient es von nun an mit <b>FUSSBALLÜBERGOTT</b> angesprochen zu werden.
+      other: Sie verdienen es von nun an mit <b>FUSSBALLÜBERGOTT</b> angesprochen zu werden.
+  game_stats_component:
+    bets_by_scores: Nach Torstand
+  helpers:
+    select:
+      prompt: Bitte wählen
+    submit:
+      create: "%{model} erstellen"
+      submit: "%{model} speichern"
+      update: "%{model} aktualisieren"
+  invitation_link_component:
+    copied: Kopiert
+    copy: Kopieren
+    invitation_link: Einladungslink
+    link_refreshed: Link erneuert
+    refresh_invitation_link: Einladungslink erneuern
+  landing_page_component:
+    finally: "(Endlich!)"
+    if_you_already_have_an_account: falls du bereits einen Account hast.
+    lets_go: Los geht's!
+    sign_up_now: Gratis registrieren!
+    the_best_online_betting_game_is_running_for: Das beste online Tippspiel läuft für die
+    why_join:
+      it_is_free:
+        for_real: Jawohl. Wir verkaufen oder geben deine Daten auch nicht weiter.
+        no_money_involved: 'Es wird nicht um Geld gewettet. Es geht um viel mehr: Ruhm und Ehre.'
+        title: Es ist gratis!
+      it_is_fun:
+        argue_with_more_points: Streite mit Freunden, die mehr Punkte haben als du.
+        compare_points: Vergleiche deine Punkte mit deren deiner Freunde.
+        invite_friends_to_teams: Lade Freunde zu deinen eigenen Teams ein.
+        make_fun_if_global_leader: Mach dich über alle anderen lustig wenn du der GLOBAL LEADER bist!
+        make_fun_of_less_points: Mach dich über Freunde lustig, die weniger Punkte haben als du.
+        title: Es macht spass!
+      read_more: Mehr darüber
+      title: Warum teilnehmen?
+  locales:
+    de-CH:
+      abbreviation: DE
+      full: Deutsch
+    en:
+      abbreviation: EN
+      full: Englisch
+  navigation_component:
+    open_main_menu: Hauptmenu öffnen
+  number:
+    currency:
+      format:
+        delimiter: "'"
+        format: "%u %n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: CHF
+    format:
+      delimiter: "'"
+      precision: 2
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: Milliarde
+            other: Milliarden
+          million:
+            one: Million
+            other: Millionen
+          quadrillion:
+            one: Billiarde
+            other: Billiarden
+          thousand: Tausend
+          trillion:
+            one: Billion
+            other: Billionen
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          eb: EB
+          gb: GB
+          kb: KB
+          mb: MB
+          pb: PB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  profile_form_component:
+    cannot_be_undone_comment: "(Dies kann nicht Rückgängig gemacht werden.)"
+    confirm_deletion: Löschen bestätigen
+    delete_account: Mein Konto löschen
+  profiles:
+    destroy:
+      success: Konto wurde gelöscht.
+    update:
+      failure: Profil konnte nicht geändert werden.
+      success: Profil erfolgreich gespeichert.
+  rules_component:
+    award_for_points:
+      maximum_total_points: Die Maximalpunktezahl für jedes einzelne Spiel ist 6. Für das ganze Turnier sind es somit 306 Punkte.
+      maximum_total_points_details: 3 für den richtigen Sieger (oder Untentschieden), 1 für den korrekten Endstand des Heimteams, 1 für den korrekten Endstand des Gästeteams und 1 Bonus wenn alles stimmt.
+      one_for_each_correct_team_end_score: Es gibt 1 Punkt für jeden richtig getippten Endstand.
+      one_for_perfection: Es gibt 1 Bonus Punkt wenn das Resultat komplett korrekt getippt wurde.
+      three_for_correct_outcome: Es gibt 3 Punkte für den richtig getippten Spielausgang, also Sieger bzw. Unentschieden.
+      title: Punkteverteilung
+    betting_rules:
+      the_score_after_playtime_counts: Der Spielstand nach 90 bzw. 120 Minuten ist entscheidend, ohne Penaltyschiessen.
+      the_score_after_playtime_counts_addition: Es kann in der Knockoutphase Unentschieden geben.
+      title: Tippregeln
+      you_can_place_and_change_bets: Man kann bis zum Anpfiff jedes einzelnen Spieles tippen.
+      you_can_place_and_change_bets_addition: Man muss also nicht alles im Vorhinein tippen.
+    example:
+      one_for_correct_score: Du kriegst 1 Punkt für den richtigen Torendstand des Gästeteams.
+      three_for_correct_outcome: Du kriegst 3 Punke für den richtig getippten Sieger (Heimteam).
+      title: Beispiel
+      your_bet_was: Dein Tipp war 2:1, das Spiel endete effektiv 3:1.
+      your_total: Dein Total ist 4 Punkte.
+  shared:
+    about: Über
+    actions:
+      cancel: Abbrechen
+      save: Speichern
+    admin: Admin
+    are_you_sure: Bist du sicher?
+    bets: Tipps
+    change_my_password: Mein Passwort ändern
+    change_your_password: Passwort ändern
+    dashboard: Dashboard
+    draw: Untentschieden
+    fifa_country_codes:
+      AUT: Österreich
+      BEL: Belgien
+      CRO: Kroatien
+      CZE: Tschechien
+      DEN: Dänemark
+      ENG: England
+      ESP: Spanien
+      FIN: Finnland
+      FRA: Frankreich
+      GER: Deutschland
+      HUN: Ungarn
+      ITA: Italien
+      MKD: Nordmazedonien
+      NED: Niederlande
+      POL: Polen
+      POR: Portugal
+      RUS: Russland
+      SCO: Schottland
+      SUI: Schweiz
+      SVK: Slowakei
+      SWE: Schweden
+      TUR: Türkei
+      UKR: Ukraine
+      WAL: Wales
+    forgot_your_password: Passwort vergessen?
+    games: Spiele
+    global_ranking: Globale Rangliste
+    kickoff_in: Anpfiff in
+    language: Sprache
+    live: Live
+    loading: Lade
+    members: Mitglieder
+    meta_description: Gratis online Tippspiel für die UEFA Euro 2020.
+    n_points:
+      one: "%{count} Punkt"
+      other: "%{count} Punkte"
+    new_password: Neues Passwort
+    no_one_with_brackets: "(niemanden)"
+    odds: Wettquote
+    points: Punkte
+    profile: Profil
+    ranking: Rangliste
+    reset_my_password: Passwort zurücksetzen
+    rules: Regeln
+    sign_in: Anmelden
+    sign_out: Abmelden
+    sign_up: Registrieren
+    start: Start
+    teams: Teams
+    tournament: Turnier
+    uefa_game_id: Spiel %{uefa_game_id}
+    your_final_global_ranking: Dein globaler Schlussrang
+    your_rank: Dein Rang
+    your_ranking_in_this_team: Dein Rang in diesem Team
+  support:
+    array:
+      last_word_connector: " und "
+      two_words_connector: " und "
+      words_connector: ", "
+  teams:
+    actions:
+      create: Team erstellen
+      create_new: Neues Team erstellen
+      delete: Team löschen
+      edit: Team editieren
+      leave: Team verlassen
+      new: Neues Team
+      update: Team updaten
+    create:
+      failure: Konnte Team nicht erstellen.
+      success: Team erfolgreich erstellt.
+    destroy:
+      success: Team erfolgreich gelöscht.
+    join:
+      invalid_token: Konnte Team nicht beitreten, falscher Token.
+      success: Team erfolgreich beigetreten.
+    leave:
+      success: Team erfolreich verlassen.
+    update:
+      failure: Team konnte nicht geändert werden.
+      success: Team erfolgreich geändert.
+  time:
+    am: vormittags
+    formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+      short: "%d. %B, %H:%M Uhr"
+    pm: nachmittags
+  user_total_points_history_component:
+    final_score: Endstand
