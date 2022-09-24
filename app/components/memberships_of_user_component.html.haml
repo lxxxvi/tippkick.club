@@ -1,0 +1,19 @@
+.bg-white.shadow.overflow-hidden.rounded-xl.border-pink-300.border-2
+  %ul.divide-y.divide-pink-300.memberships-of-user
+    - @memberships_of_user.each do |membership_of_user_row|
+      %li
+        = link_to(team_path(membership_of_user_row.team), class: 'block hover:bg-pink-50 transition') do
+          .flex.items-center.px-4.py-4.sm:px-6
+            .flex-1
+              .flex.flex-wrap.sm:flex-no-wrap
+                .w-full.sm:flex-1.text-sm
+                  = render TeamNameComponent.new(team: membership_of_user_row.team)
+
+                - if show_ranking?
+                  .ranking.w-full.sm:flex-shrink-0.pt-1
+                    .text-xs.text-gray-500
+                      = t('shared.your_rank')
+                      = membership_of_user_row.ranking_position
+            .flex-shrink-0
+              %svg.h-5.w-5.text-gray-500{"aria-hidden": "true", fill: "currentColor", viewbox: "0 0 20 20", xmlns: "http://www.w3.org/2000/svg"}
+                %path{"clip-rule": "evenodd", d: "M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z", "fill-rule": "evenodd"}

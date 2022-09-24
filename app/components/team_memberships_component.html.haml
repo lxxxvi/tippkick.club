@@ -1,0 +1,16 @@
+%section#memberships.mt-5
+  %h2= t('shared.members')
+
+  - if display_pagination?
+    .text-right
+      = raw pagy_nav(@pagy)
+
+  .flex.table.border-2.border-pink-200.rounded-xl.overflow-hidden.team-memberships
+    .flex.table-header.bg-pink-200.text-pink-700
+      - if Tournament.after_first_kickoff?
+        .text-center.px-3.py-4{ class: 'w-1/6' }= t('activerecord.attributes.membership.ranking_position_short')
+        .text-center.px-3.py-4{ class: 'w-1/6' }= t('activerecord.attributes.user.total_points_short')
+      .px-3.py-4{ class: 'w-4/6' }= t('activerecord.attributes.user.nickname')
+
+    .flex.flex-wrap.table-body
+      = render TeamMembershipRowComponent.with_collection(@records, user: user)

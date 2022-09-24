@@ -1,0 +1,10 @@
+.user-total-points-history-table
+  .grid.grid-cols-3.user-total-points-history-table--header-row
+    .w-full.text-xs.text-pink-500= Game.model_name.human
+    .w-full.text-xs.text-pink-500.text-center= t('.final_score')
+    .w-full.text-xs.text-pink-500.text-right= t('shared.points')
+  - users_bets_with_games.each do |bet|
+    .grid.grid-cols-3.user-total-points-history-table--body-row
+      .w-full= bet.game.decorate.display_teams_short
+      .w-full.text-center= bet.game.decorate.display_scores_short
+      .w-full.text-right= bet.total_points

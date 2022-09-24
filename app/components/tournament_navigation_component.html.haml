@@ -1,0 +1,7 @@
+%h1= t('shared.tournament')
+
+%nav.tournament-navigation.flex.mb-8.text-sm.w-full{ class: 'sm:w-1/2' }
+  = link_to_unless_current t('shared.games'), games_path, class: 'left' do
+    %span.left= t('shared.games')
+  = link_to_unless_current t('shared.bets'), bets_path, class: 'right' do
+    %span.right= t('shared.bets')

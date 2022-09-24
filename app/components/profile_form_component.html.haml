@@ -1,0 +1,36 @@
+= form_with model: @form, class: 'tippkick-form' do |f|
+  .mb-5
+    = f.label :email, class: 'label'
+    = f.email_field :email, class: 'w-full input', disabled: true
+
+  .mb-5
+    = f.label :nickname, class: 'label'
+    = f.text_field :nickname, class: 'w-full input'
+    - if @form.errors.key?(:nickname)
+      .errors.text-xs.text-red-400
+        = @form.errors.full_messages_for(:nickname).join(', ')
+
+  .mb-5
+    = f.label :rooting_for_team, I18n.t('activerecord.attributes.user.rooting_for_team'), class: 'label'
+    = f.select :rooting_for_team, @form.rooting_for_team_collection, { include_blank: t('shared.no_one_with_brackets') }, { class: 'w-full input' }
+
+  .mb-5
+    = f.label :locale, t('shared.language'), class: 'label'
+    = f.select :locale, @form.locales_collection, {}, class: 'w-full input'
+
+  .actions.mt-8.grid.grid-cols-1.gap-4
+    = f.hidden_field :redirect_to_path
+    = f.submit t('shared.actions.save'), class: 'button w-full'
+    = link_to t('shared.actions.cancel'), dashboard_path, class: 'text-center text-sm shy-link'
+
+.actions
+  = render ConfirmableComponent.new do |c|
+    = c.pre do
+      = t('.delete_account')
+
+    = c.cancel do
+      = t('shared.actions.cancel')
+
+    = c.proceed do
+      = link_to t('.confirm_deletion'), profile_path, method: :delete, class: 'really-dangerous-button w-full'
+      .text-gray-500.mt-2.text-xs.text-center= t('.cannot_be_undone_comment')

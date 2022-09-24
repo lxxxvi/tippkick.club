@@ -1,0 +1,6 @@
+.achievement-bar-component{ class: 'w-3/4 sm:w-1/2'}
+  .text-center.text-gray-800.text-xs
+    = t('.you_scored_x_points', count: @bet.total_points)
+  .mt-2
+    %div.w-full.rounded-xl.bg-white.overflow-hidden.border-2.border-white
+      %div.h-3{ class: progress_bar_color_class, style: "width: #{progress_bar_width}%;" }

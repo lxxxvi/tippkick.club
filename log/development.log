@@ -1,0 +1,163 @@
+Started GET "/" for 127.0.0.1 at 2022-09-24 12:38:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandingPageController#show as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 1579)
+
+
+  
+ActionController::MissingExactTemplate (LandingPageController#show is missing a template for request formats: text/html):
+  
+actionpack (7.0.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:107:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-09-24 12:39:06 +0200
+Processing by LandingPageController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering landing_page/show.html within layouts/application
+  Rendered landing_page/show.html within layouts/application (Duration: 0.8ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 147.4ms | Allocations: 114997)
+Completed 200 OK in 151ms (Views: 149.7ms | ActiveRecord: 0.0ms | Allocations: 115948)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-24 12:44:56 +0200
+Processing by LandingPageController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering landing_page/show.html.erb within layouts/application
+  Rendered landing_page/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1949)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2037)
+Completed 500 Internal Server Error in 5ms (Allocations: 2786)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x0000000105e54a60>::LandingPageComponent
+
+            @virtual_path = "landing_page/show";;@output_buffer.append=( render LandingPageComponent.new );
+                                                                                ^^^^^^^^^^^^^^^^^^^^):
+    1: <%= render LandingPageComponent.new %>
+  
+app/views/landing_page/show.html.erb:1
+Started GET "/" for 127.0.0.1 at 2022-09-24 12:45:06 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandingPageController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering landing_page/show.html.erb within layouts/application
+  Rendered landing_page/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2233)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2343)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4511)
+
+
+  
+ActionView::Template::Error (Couldn't find a template file or inline render method for LandingPageComponent.):
+    1: <%= render LandingPageComponent.new %>
+  
+app/views/landing_page/show.html.erb:1
+Started GET "/" for 127.0.0.1 at 2022-09-24 12:46:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LandingPageController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering landing_page/show.html.haml within layouts/application
+  Rendered landing_page/show.html.haml within layouts/application (Duration: 21.5ms | Allocations: 20643)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 20753)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 22919)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registration_path' for #<LandingPageComponent:0x0000000109fd8f18 @_routes=nil, @view_context=#<ActionView::Base:0x00000000007be8>, @__vc_original_view_context=#<ActionView::Base:0x00000000007be8>, @output_buffer="", @lookup_context=#<ActionView::LookupContext:0x0000000109f40f38 @details_key=#<ActionView::TemplateDetails::Requested:0x0000000109f09bc8 @locale=[:en], @handlers=[:raw, :erb, :html, :builder, :ruby, :haml], @formats=[:html], @variants=[], @locale_idx={:en=>0, nil=>1}, @handlers_idx={:raw=>0, :erb=>1, :html=>2, :builder=>3, :ruby=>4, :haml=>5, nil=>6}, @formats_idx={:html=>0, nil=>1}, @variants_idx={nil=>0}>, @digest_cache=nil, @cache=true, @prefixes=["landing_page", "application"], @details={:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :haml]}, @view_paths=#<ActionView::PathSet:0x0000000109f406f0 @paths=[#<ActionView::FileSystemResolver:0x0000000109a9e7f0 @unbound_templates=#<Concurrent::Map:0x0000000109a9e7a0 entries=3 default_proc=nil>, @path_parser=#<ActionView::Resolver::PathParser:0x0000000109b1dfc8 @regex=/
+          \A
+          (?:(?<prefix>.*)\/)?
+          (?<partial>_)?
+          (?<action>.*?)
+          (?:\.(?<locale>[a-z]{2}(?:[-_][A-Z]{2})?))??
+          (?:\.(?<format>html|text|js|css|ics|csv|vcf|vtt|png|jpeg|gif|bmp|tiff|svg|mpeg|mp3|ogg|m4a|webm|mp4|otf|ttf|woff|woff2|xml|rss|atom|yaml|multipart_form|url_encoded_form|json|pdf|zip|gzip|turbo_stream))??
+          (?:\+(?<variant>[^.]*))??
+          (?:\.(?<handler>raw|erb|html|builder|ruby|haml))?
+          \z
+        /x>, @path="/Users/mario/Projects/lxxxvi/tippkick.club/app/views">, #<ActionView::FileSystemResolver:0x0000000109a9ec00 @unbound_templates=#<Concurrent::Map:0x0000000109a9eb60 entries=1 default_proc=nil>, @path_parser=#<ActionView::Resolver::PathParser:0x0000000109b1df28>, @path="/Users/mario/.rvm/gems/ruby-3.1.0/gems/view_component-2.72.0/app/views">]>>, @view_renderer=#<ActionView::Renderer:0x0000000109f6ab08 @lookup_context=#<ActionView::LookupContext:0x0000000109f40f38 @details_key=#<ActionView::TemplateDetails::Requested:0x0000000109f09bc8 @locale=[:en], @handlers=[:raw, :erb, :html, :builder, :ruby, :haml], @formats=[:html], @variants=[], @locale_idx={:en=>0, nil=>1}, @handlers_idx={:raw=>0, :erb=>1, :html=>2, :builder=>3, :ruby=>4, :haml=>5, nil=>6}, @formats_idx={:html=>0, nil=>1}, @variants_idx={nil=>0}>, @digest_cache=nil, @cache=true, @prefixes=["landing_page", "application"], @details={:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :haml]}, @view_paths=#<ActionView::PathSet:0x0000000109f406f0 @paths=[#<ActionView::FileSystemResolver:0x0000000109a9e7f0 @unbound_templates=#<Concurrent::Map:0x0000000109a9e7a0 entries=3 default_proc=nil>, @path_parser=#<ActionView::Resolver::PathParser:0x0000000109b1dfc8 @regex=/
+          \A
+          (?:(?<prefix>.*)\/)?
+          (?<partial>_)?
+          (?<action>.*?)
+          (?:\.(?<locale>[a-z]{2}(?:[-_][A-Z]{2})?))??
+          (?:\.(?<format>html|text|js|css|ics|csv|vcf|vtt|png|jpeg|gif|bmp|tiff|svg|mpeg|mp3|ogg|m4a|webm|mp4|otf|ttf|woff|woff2|xml|rss|atom|yaml|multipart_form|url_encoded_form|json|pdf|zip|gzip|turbo_stream))??
+          (?:\+(?<variant>[^.]*))??
+          (?:\.(?<handler>raw|erb|html|builder|ruby|haml))?
+          \z
+        /x>, @path="/Users/mario/Projects/lxxxvi/tippkick.club/app/views">, #<ActionView::FileSystemResolver:0x0000000109a9ec00 @unbound_templates=#<Concurrent::Map:0x0000000109a9eb60 entries=1 default_proc=nil>, @path_parser=#<ActionView::Resolver::PathParser:0x0000000109b1df28>, @path="/Users/mario/.rvm/gems/ruby-3.1.0/gems/view_component-2.72.0/app/views">]>>>, @view_flow=#<ActionView::OutputFlow:0x0000000109f695a0 @content={}>, @virtual_path="/landing_page_component", @__vc_variant=nil, @current_template=nil, @__vc_content_evaluated=false, @__vc_render_in_block=nil, @haml_buffer=nil, @_scope_key_by_partial_cache={"/landing_page_component"=>".landing_page_component"}, @tag_builder=#<ActionView::Helpers::TagHelper::TagBuilder:0x000000010a0b17a0 @view_context=#<LandingPageComponent:0x0000000109fd8f18 ...>>>
+
+::Haml::Helpers.html_escape((( link_to t('.sign_up_now'), new_user_registration_path, class: 'text-xl p-4 bg-pink-300 rounded-xl text-pink-900 shadow-xl hover:bg-pink-400 hover:text-white transition block'
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^):
+    1: = render LandingPageComponent.new
+  
+app/components/landing_page_component.html.haml:15:in `call'
+app/views/landing_page/show.html.haml:1

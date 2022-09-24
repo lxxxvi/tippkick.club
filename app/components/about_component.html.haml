@@ -1,0 +1,58 @@
+- content_for :backlink do
+  = render BacklinkComponent.new(name: t('shared.start'), path: root_path)
+
+.about
+  %h1.text-3xl= t('shared.about')
+
+  %p
+    = t('.intro.what_is_tippkick')
+  %p.mt-6
+    = t('.intro.free')
+
+  %section#about-free.my-10
+    %h2= t('.what_does_free_mean.title')
+    %ul.list-disc.list-outside.my-3.ml-4
+      %li= t('.what_does_free_mean.joining_is_free')
+      %li= t('.what_does_free_mean.data_is_not_given_away')
+      %li= t('.what_does_free_mean.no_ads_no_trackers')
+    %p.mt-3= t('.what_does_free_mean.free_means_free')
+
+  %section#about-privacy.my-10
+    %h2= t('.what_about_privacy.title')
+
+    %ul.list-disc.list-outside.my-3.ml-4
+      %li= t('.what_about_privacy.not_share_data')
+      %li= t('.what_about_privacy.not_using_in_future')
+      %li= t('.what_about_privacy.passwords_are_encrypted')
+      %li= t('.what_about_privacy.your_data_are_in_location')
+      %li= t('.what_about_privacy.delete_data_after_1_month')
+      %li= t('.what_about_privacy.no_backups')
+
+  %section#about-learn-by-doing.my-10
+    %h2= t('.what_about_web_technologies.title')
+
+    %p.pb-3= t('.what_about_web_technologies.used_technologies')
+
+    %ul.open-source-credits.pb-5
+      - open_source_credits_list_items.each do |list_item|
+        %li= raw list_item
+
+    %p.pb-3
+      = t('.what_about_web_technologies.code_is_open_sourced_on')
+      = succeed "." do
+        = link_to 'GitHub', 'https://github.com/lxxxvi/tippkick.club', class: 'link'
+
+  %section#about-learn-by-doing.my-10
+    %h2= t('.about_us.title')
+
+    %ul.list-disc.list-outside.my-3.ml-4
+      %li= t('.about_us.switzerland_based')
+      %li= t('.about_us.web_techies')
+      %li= t('.about_us.code_monkeys')
+
+  %section#about-contact.my-10
+    %h2= t('.get_in_touch.title')
+
+    %p.my-5= t('.get_in_touch.questions_comments_bug_reports')
+    .mt-5
+      = mail_to 'tippkick@schuettel.dev', t('.get_in_touch.tell_us'), subject: t('.get_in_touch.mail_subject_template'), class: 'p-3 bg-pink-300 w-full block text-pink-900 rounded-xl text-center text-xl hover:bg-pink-600 hover:text-pink-100 transition shadow-xl'

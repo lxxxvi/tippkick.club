@@ -1,0 +1,8 @@
+.bets-stat.py-0.5
+  .flex.items-center
+    .flex-shrink-0.px-4
+      = bet_final_score
+    .flex-1.px-2
+      %div.h-3.bg-blue-200.rounded-r-xl{ style: "width: #{bet_percentage}%;" }
+    .flex-shrink-0.px-4
+      .text-xs.text-gray-500= "#{bet_percentage.round}%"
